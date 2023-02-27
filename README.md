@@ -1,2 +1,2 @@
 # Final_Contact
-Take 2
+Official Repository for the game "Final Contact"
