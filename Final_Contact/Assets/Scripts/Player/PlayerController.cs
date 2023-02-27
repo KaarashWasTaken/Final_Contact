@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boostTime = 0.2f;
     private bool isBoostActivated = false;
+    private float pauseInput = 0;
+    private float lastPause = 0;
 
-   
+
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -41,6 +43,10 @@ public class PlayerController : MonoBehaviour
     public void OnShoot(InputAction.CallbackContext context)
     {
         shooting = context.ReadValue<float>();
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        pauseInput = context.ReadValue<float>();
     }
     public void Aiming(InputAction.CallbackContext context)
     {
@@ -79,6 +85,11 @@ public class PlayerController : MonoBehaviour
             lastDodge = Time.time;
             Dodge();
         }
+        if (pauseInput != 0 && Time.time > lastPause + 0.1)
+        {
+            Pause();
+            lastPause= Time.time;
+        }
     }
     private void aimDirection()
     {
@@ -94,6 +105,18 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponentInChildren<AR>().Shoot();
         }
         gameObject.GetComponentInChildren<AR>().Shoot();
+    }
+    private void Pause() 
+    {
+        
+        if (!PauseMenu.paused)
+        {
+            GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Pause();
+        }
+        else
+        {
+            GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Continue();
+        }
     }
     private void Dodge()
     {
