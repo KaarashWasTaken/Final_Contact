@@ -19,7 +19,7 @@ public class PickupBehaviour : MonoBehaviour
             }
             else
             {
-                Destroy(other.gameObject);
+                Destroy(gameObject);
             }
         }
     }
