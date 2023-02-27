@@ -328,9 +328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initalPlayerSpeed: 10
   rotationSpeed: 720
-  FiringPoint: {fileID: 2977159803006040813}
-  projectilePrefab: {fileID: 8590623308785216238, guid: 86fb42294fdc58e4fa1335a9ea5a6fd0, type: 3}
-  firingspeed: 0.1
   dodgeCD: 5
   boostIncrease: 30
   boostTime: 0.2
@@ -447,6 +444,7 @@ MonoBehaviour:
   timeFiringSpeed: 0
   originalFiringSpeed: 0
   firingSpeedActive: 0
+  playerWeapon: 0
 --- !u!143 &3180714120510177334
 CharacterController:
   m_ObjectHideFlags: 0
@@ -670,13 +668,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9008022089767296814, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: firingspeed
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
---- !u!4 &2977159803006040813 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8895128036765072904, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
-  m_PrefabInstance: {fileID: 5918056203849614565}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5640848869347933818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2047302651567504031, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}

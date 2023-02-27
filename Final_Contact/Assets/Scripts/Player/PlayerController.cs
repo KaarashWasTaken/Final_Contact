@@ -11,17 +11,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 720f;
     private Vector2 movementInput = Vector2.zero;
-    [SerializeField]
-    private Transform FiringPoint;
-    [SerializeField]
-    private Rigidbody projectilePrefab;
+    
     private CharacterController controller;
     //Shooting & aiming variables
-    [SerializeField]
-    public float firingspeed = 0.5f;
     private float shooting = 0;
     private Vector2 aiming = Vector2.zero;
-    private float lastTimeShot = 0;
+    
     //Dodge variables
     [SerializeField]
     private float dodgeCD = 5.0f;
@@ -93,11 +88,12 @@ public class PlayerController : MonoBehaviour
     }
     private void Shoot()
     {
-        if (lastTimeShot + firingspeed <= Time.time)
+        Debug.Log(gameObject.GetComponent<playerBehaviour>().playerWeapon);
+        if (gameObject.GetComponent<playerBehaviour>().playerWeapon == playerBehaviour.equipedWeapon.AR)
         {
-            lastTimeShot = Time.time;
-            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
+            gameObject.GetComponentInChildren<AR>().Shoot();
         }
+        gameObject.GetComponentInChildren<AR>().Shoot();
     }
     private void Dodge()
     {

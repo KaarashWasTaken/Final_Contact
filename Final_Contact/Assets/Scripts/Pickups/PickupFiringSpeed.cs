@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickupFiringSpeed : MonoBehaviour
 {
     [SerializeField]
-    public float firingSpeedBonus = -0.05f;
+    public float firingSpeedMultiplier = 0.5f;
     [SerializeField]
     public float bonusTime = 3f;
 }

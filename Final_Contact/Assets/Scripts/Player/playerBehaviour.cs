@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,12 +14,23 @@ public class playerBehaviour : MonoBehaviour
     public float timeFiringSpeed;
     public float originalFiringSpeed;
     public bool firingSpeedActive = false;
+    public enum equipedWeapon
+    {
+        AR,
+        none,
+        shotgun,
+        SMG,
+        MG,
+        sword
+    }
+    public equipedWeapon playerWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
-        originalFiringSpeed = gameObject.GetComponent<PlayerController>().firingspeed;
+        originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
+        equipedWeapon playerWeapon = equipedWeapon.AR;
     }
     // Update is called once per frame
     void Update()
@@ -28,9 +40,9 @@ public class playerBehaviour : MonoBehaviour
         {
             Down();
         }
-        if (firingSpeedActive && gameObject.GetComponent<PlayerController>().firingspeed != originalFiringSpeed && Time.time > timeFiringSpeed)
+        if (firingSpeedActive && gameObject.GetComponentInChildren<AR>().firingspeed != originalFiringSpeed && Time.time > timeFiringSpeed)
         {
-            gameObject.GetComponent<PlayerController>().firingspeed = originalFiringSpeed;
+            gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
             firingSpeedActive = false;
         }
     }
@@ -56,10 +68,10 @@ public class playerBehaviour : MonoBehaviour
                 health = maxHealth;
             }
         }
-        if (other.gameObject.CompareTag("PickupFiringSpeed"))
+        if (other.gameObject.CompareTag("PickupFiringSpeed") && !firingSpeedActive)
         {
             firingSpeedActive = true;
-            gameObject.GetComponent<PlayerController>().firingspeed += other.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedBonus;
+            gameObject.GetComponentInChildren<AR>().firingspeed = gameObject.GetComponentInChildren<AR>().firingspeed * other.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
             timeFiringSpeed = Time.time + other.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
         }
     }
