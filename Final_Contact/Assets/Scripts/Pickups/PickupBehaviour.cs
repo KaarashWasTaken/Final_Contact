@@ -15,7 +15,7 @@ public class PickupBehaviour : MonoBehaviour
         {
             if (health > 0)
             {
-                health -= other.GetComponent<MoveForward>().damage;
+                health -= other.GetComponentInParent<MoveForward>().damage;
             }
             else
             {
