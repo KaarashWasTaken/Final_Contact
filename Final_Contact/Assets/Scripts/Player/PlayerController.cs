@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody projectilePrefab;
     private CharacterController controller;
+    public bool ready = false;
     //Shooting & aiming variables
-    [SerializeField]
     public float firingspeed = 0.5f;
     private float shooting = 0;
     private Vector2 aiming = Vector2.zero;
@@ -57,9 +57,9 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        Vector3 move = new Vector3(movementInput.x * 10, 0, movementInput.y * 10);
+        Vector3 move = new(movementInput.x * 10, 0, movementInput.y * 10);
         move.Normalize();
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        controller.Move(playerSpeed * Time.deltaTime * move);
         Vector3 tempPos = transform.position;
         if (tempPos.y != 2f)
         {
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         }
         if (aiming != Vector2.zero)
         {
-            aimDirection();
+            AimDirection();
         }
         if (shooting != 0)
         {
@@ -85,9 +85,9 @@ public class PlayerController : MonoBehaviour
             Dodge();
         }
     }
-    private void aimDirection()
+    private void AimDirection()
     {
-        Vector3 aim = new Vector3(aiming.x, 0, aiming.y);
+        Vector3 aim = new(aiming.x, 0, aiming.y);
         Quaternion toRotation = Quaternion.LookRotation(aim, Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Boosting player speed");
             isBoostActivated = true;
-            Invoke("EndBoost", boostTime);
+            Invoke(nameof(EndBoost), boostTime);
         }
         if (isBoostActivated)
         {

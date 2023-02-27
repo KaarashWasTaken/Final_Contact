@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartPlaying()
     {
-        SceneManager.LoadScene("CombatScene");
+        SceneManager.LoadScene("Armory");
     }
     public void StopPlaying()
     {
