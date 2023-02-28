@@ -25,10 +25,4 @@ public class AR : MonoBehaviour
             Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
         }
     }
-    public void Activete()
-    {
-        gameObject.SetActive(true);
-    }
-
-
 }

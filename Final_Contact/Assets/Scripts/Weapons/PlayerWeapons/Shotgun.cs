@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Shotgun : MonoBehaviour
@@ -12,23 +13,32 @@ public class Shotgun : MonoBehaviour
     private float lastTimeShot = 0;
     [SerializeField]
     private Transform FiringPoint;
+    private Transform FiringPointDeviation;
     [SerializeField]
     private Rigidbody projectilePrefab;
 
+    void Update()
+    {
+        FiringPointDeviation = FiringPoint;
+    }
 
-
-    public void Shoot()
+        public void Shoot()
     {
         if (lastTimeShot + firingspeed <= Time.time)
         {
             lastTimeShot = Time.time;
-            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
+            //Quaternion deviation = FiringPoint.rotation;
+            FiringPointDeviation = FiringPoint;
+
+            Instantiate(projectilePrefab, FiringPointDeviation.position, FiringPointDeviation.rotation);
+
+            FiringPointDeviation.Rotate(FiringPointDeviation.position, 25);
+            FiringPointDeviation.rotation.Normalize();
+            Instantiate(projectilePrefab, FiringPointDeviation.position, FiringPointDeviation.rotation);
+
+            FiringPointDeviation.Rotate(FiringPointDeviation.position, -50);
+            FiringPointDeviation.rotation.Normalize();
+            Instantiate(projectilePrefab, FiringPointDeviation.position, FiringPointDeviation.rotation);
         }
     }
-    public void Activete()
-    {
-        gameObject.SetActive(true);
-    }
-
-
 }
