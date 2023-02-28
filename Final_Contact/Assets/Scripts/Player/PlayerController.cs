@@ -33,11 +33,16 @@ public class PlayerController : MonoBehaviour
     private float boostTime = 0.2f;
     private bool isBoostActivated = false;
     // PLayer Down
-    public bool downed = false;
+    private bool downed = false;
     [SerializeField]
     private Rigidbody Player;
     public SphereCollider ReviveCollider;
     public GameObject ReviveSphere;
+    private float reviveTimer = 0;
+    private float reviveBaseTime;
+    private bool reviving = false;
+    [SerializeField]
+    private float timeToRevive = 3;
 
 
     private void Start()
@@ -103,7 +108,12 @@ public class PlayerController : MonoBehaviour
         {
             Player.velocity = Vector3.zero;
         }
-        
+        //tracks time in revive circle
+        if (reviving == true)
+        {
+            reviveTimer = Time.time - reviveBaseTime;
+        }
+        //Debug.Log(reviveTimer);
     }
     private void aimDirection()
     {
@@ -151,19 +161,54 @@ public class PlayerController : MonoBehaviour
             Debug.Log("playerisdown");
             transform.rotation = Quaternion.Euler(90, 0, 0);
             
+            
         }
 
     }
 
     public void OnTriggerEnter(Collider other)
     {
+        //timer Start
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player Revivied");
-            downed = false;
-            gameObject.tag = "Player";
-            gameObject.GetComponent<playerBehaviour>().health = 75;
+            reviveBaseTime = Time.time;
+            reviving = true;
+            Debug.Log("PlayerisRevivingotherplayer");
+        }
+
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        //Timer reset to 0
+        if (other.gameObject.CompareTag("Player"))
+        {
+            reviving = false;
         }
     }
 
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && reviveTimer > timeToRevive)
+        {
+            Debug.Log("Player Revived");
+            downed = false;
+            gameObject.tag = "Player";
+            gameObject.GetComponent<playerBehaviour>().health = 75;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+    }
+
+
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("Player Revivied");
+    //        downed = false;
+    //        gameObject.tag = "Player";
+    //        gameObject.GetComponent<playerBehaviour>().health = 75;
+    //    }
+    //}
 }

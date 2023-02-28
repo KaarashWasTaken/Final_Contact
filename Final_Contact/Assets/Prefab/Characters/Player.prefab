@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670848593748686284}
   m_LocalRotation: {x: 0.7071068, y: -4.656613e-10, z: 4.656613e-10, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1, z: -0}
+  m_LocalPosition: {x: -0, y: -0, z: 1}
   m_LocalScale: {x: 5, y: 0, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -423,6 +423,7 @@ MonoBehaviour:
   Player: {fileID: 258041556028351291}
   ReviveCollider: {fileID: 7733064913002944239}
   ReviveSphere: {fileID: 1670848593748686284}
+  timeToRevive: 3
 --- !u!114 &5398606198345106264
 MonoBehaviour:
   m_ObjectHideFlags: 0
