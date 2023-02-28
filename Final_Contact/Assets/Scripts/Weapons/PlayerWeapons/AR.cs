@@ -15,17 +15,8 @@ public class AR : MonoBehaviour
     [SerializeField]
     private Rigidbody projectilePrefab;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
     public void Shoot()
     {
         if (lastTimeShot + firingspeed <= Time.time)
@@ -34,4 +25,10 @@ public class AR : MonoBehaviour
             Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
         }
     }
+    public void Activete()
+    {
+        gameObject.SetActive(true);
+    }
+
+
 }

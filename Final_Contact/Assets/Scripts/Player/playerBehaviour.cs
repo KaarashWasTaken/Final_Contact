@@ -14,23 +14,14 @@ public class playerBehaviour : MonoBehaviour
     public float timeFiringSpeed;
     public float originalFiringSpeed;
     public bool firingSpeedActive = false;
-    public enum equipedWeapon
-    {
-        AR,
-        none,
-        shotgun,
-        SMG,
-        MG,
-        sword
-    }
-    public equipedWeapon playerWeapon;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
-        originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
-        playerWeapon = equipedWeapon.AR;
+        //originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
+        
     }
     // Update is called once per frame
     void Update()
@@ -74,6 +65,12 @@ public class playerBehaviour : MonoBehaviour
             gameObject.GetComponentInChildren<AR>().firingspeed = gameObject.GetComponentInChildren<AR>().firingspeed * other.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
             timeFiringSpeed = Time.time + other.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
         }
+        if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon==WeaponManager.equippedWeapon.None)
+        {
+            gameObject.GetComponentInChildren<WeaponManager>().PickupWeapon(other.gameObject);
+        }
+            
+
     }
     //public void Revived()
     //{

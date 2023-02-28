@@ -89,13 +89,8 @@ public class PlayerController : MonoBehaviour
     }
     private void Shoot()
     {
-        Debug.Log(gameObject.GetComponent<playerBehaviour>().playerWeapon);
-        if (gameObject.GetComponent<playerBehaviour>().playerWeapon == playerBehaviour.equipedWeapon.AR)
-        {
-            gameObject.GetComponentInChildren<AR>().Shoot();
-        }
-        
-
+        Debug.Log(gameObject.GetComponentInChildren<WeaponManager>().playerWeapon);
+        gameObject.GetComponentInChildren<WeaponManager>().shoot();
     }
     private void Dodge()
     {
