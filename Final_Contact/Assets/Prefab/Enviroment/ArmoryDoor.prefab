@@ -291,7 +291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 273dd9a519ed5ab4aaa6c40b44678519, type: 2}
+  - {fileID: 2100000, guid: 153d13a853e769448b68378fb7f63be6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,7 +486,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 273dd9a519ed5ab4aaa6c40b44678519, type: 2}
+  - {fileID: 2100000, guid: 153d13a853e769448b68378fb7f63be6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -531,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5663063421249658231}
   m_Layer: 0
-  m_Name: NextLevelDoor
+  m_Name: ArmoryDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,8 +757,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5126742485660508196}
-  - component: {fileID: 5366343001206381059}
   - component: {fileID: 5330987347954002370}
+  - component: {fileID: 5621016119589276150}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -783,18 +783,6 @@ Transform:
   m_Father: {fileID: 5663063421249658231}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5366343001206381059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8808147376606164065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7105cf99ad56638478b9065a4f79bddc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &5330987347954002370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -808,3 +796,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6, y: 4, z: 6}
   m_Center: {x: 3, y: 1.5, z: 2}
+--- !u!114 &5621016119589276150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808147376606164065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289e0aaacbd7dc945a7c6465dc6ead40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

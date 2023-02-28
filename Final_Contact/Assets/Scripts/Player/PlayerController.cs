@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerSpeed = initalPlayerSpeed;
+        DontDestroyOnLoad(this.gameObject.transform.parent);
     }
     public void OnMove(InputAction.CallbackContext context)
     {

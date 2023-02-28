@@ -13,12 +13,30 @@ public class playerBehaviour : MonoBehaviour
     public float timeFiringSpeed;
     public float originalFiringSpeed;
     public bool firingSpeedActive = false;
+<<<<<<< Updated upstream
+=======
+    public enum equippedWeapon
+    {
+        AR,
+        none,
+        shotgun,
+        SMG,
+        MG,
+        sword
+    }
+    public equippedWeapon playerWeapon;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
+<<<<<<< Updated upstream
         originalFiringSpeed = gameObject.GetComponent<PlayerController>().firingspeed;
+=======
+        originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
+        playerWeapon = equippedWeapon.AR;
+>>>>>>> Stashed changes
     }
     // Update is called once per frame
     void Update()
