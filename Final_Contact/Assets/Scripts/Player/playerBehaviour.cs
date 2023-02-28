@@ -30,7 +30,7 @@ public class playerBehaviour : MonoBehaviour
     {
         maxHealth = health;
         originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
-        equipedWeapon playerWeapon = equipedWeapon.AR;
+        playerWeapon = equipedWeapon.AR;
     }
     // Update is called once per frame
     void Update()
