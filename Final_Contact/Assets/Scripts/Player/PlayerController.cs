@@ -11,12 +11,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 720f;
     private Vector2 movementInput = Vector2.zero;
-    
+    [SerializeField]
+    private Transform FiringPoint;
+    [SerializeField]
+    private Rigidbody projectilePrefab;
     private CharacterController controller;
+    public bool ready = false;
     //Shooting & aiming variables
+    public float firingspeed = 0.5f;
     private float shooting = 0;
     private Vector2 aiming = Vector2.zero;
-    
+    private float lastTimeShot = 0;
     //Dodge variables
     [SerializeField]
     private float dodgeCD = 5.0f;
@@ -27,10 +32,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boostTime = 0.2f;
     private bool isBoostActivated = false;
-    private float pauseInput = 0;
-    private float lastPause = 0;
 
-
+   
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -44,10 +47,6 @@ public class PlayerController : MonoBehaviour
     {
         shooting = context.ReadValue<float>();
     }
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        pauseInput = context.ReadValue<float>();
-    }
     public void Aiming(InputAction.CallbackContext context)
     {
         aiming = context.ReadValue<Vector2>();
@@ -58,9 +57,9 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        Vector3 move = new Vector3(movementInput.x * 10, 0, movementInput.y * 10);
+        Vector3 move = new(movementInput.x * 10, 0, movementInput.y * 10);
         move.Normalize();
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        controller.Move(playerSpeed * Time.deltaTime * move);
         Vector3 tempPos = transform.position;
         if (tempPos.y != 2f)
         {
@@ -74,7 +73,7 @@ public class PlayerController : MonoBehaviour
         }
         if (aiming != Vector2.zero)
         {
-            aimDirection();
+            AimDirection();
         }
         if (shooting != 0)
         {
@@ -85,37 +84,19 @@ public class PlayerController : MonoBehaviour
             lastDodge = Time.time;
             Dodge();
         }
-        if (pauseInput != 0 && Time.time > lastPause + 0.1)
-        {
-            Pause();
-            lastPause= Time.time;
-        }
     }
-    private void aimDirection()
+    private void AimDirection()
     {
-        Vector3 aim = new Vector3(aiming.x, 0, aiming.y);
+        Vector3 aim = new(aiming.x, 0, aiming.y);
         Quaternion toRotation = Quaternion.LookRotation(aim, Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
     private void Shoot()
     {
-        Debug.Log(gameObject.GetComponent<playerBehaviour>().playerWeapon);
-        if (gameObject.GetComponent<playerBehaviour>().playerWeapon == playerBehaviour.equipedWeapon.AR)
+        if (lastTimeShot + firingspeed <= Time.time)
         {
-            gameObject.GetComponentInChildren<AR>().Shoot();
-        }
-        gameObject.GetComponentInChildren<AR>().Shoot();
-    }
-    private void Pause() 
-    {
-        
-        if (!PauseMenu.paused)
-        {
-            GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Pause();
-        }
-        else
-        {
-            GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Continue();
+            lastTimeShot = Time.time;
+            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
         }
     }
     private void Dodge()
@@ -124,7 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Boosting player speed");
             isBoostActivated = true;
-            Invoke("EndBoost", boostTime);
+            Invoke(nameof(EndBoost), boostTime);
         }
         if (isBoostActivated)
         {
