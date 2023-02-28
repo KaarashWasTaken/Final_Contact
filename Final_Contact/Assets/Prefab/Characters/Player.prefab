@@ -419,7 +419,6 @@ MonoBehaviour:
   dodgeCD: 5
   boostIncrease: 30
   boostTime: 0.2
-  downed: 0
   Player: {fileID: 258041556028351291}
   ReviveCollider: {fileID: 7733064913002944239}
   ReviveSphere: {fileID: 1670848593748686284}
@@ -729,6 +728,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR
       objectReference: {fileID: 0}
+    - target: {fileID: 230280963014658921, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403543256594717547, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2047302651567504031, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -743,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047302651567504031, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.39
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 2047302651567504031, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_LocalRotation.w
@@ -772,6 +779,22 @@ PrefabInstance:
     - target: {fileID: 2047302651567504031, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429800804262009796, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387229887173389743, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747299482139612706, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233952430125864003, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}

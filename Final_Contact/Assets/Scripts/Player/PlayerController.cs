@@ -174,6 +174,7 @@ public class PlayerController : MonoBehaviour
             reviveBaseTime = Time.time;
             reviving = true;
             Debug.Log("PlayerisRevivingotherplayer");
+            Debug.Log(reviveBaseTime);
         }
 
     }
@@ -193,6 +194,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player Revived");
             downed = false;
+            reviving = false;
+            reviveTimer = 0;
             gameObject.tag = "Player";
             gameObject.GetComponent<playerBehaviour>().health = 75;
             transform.rotation = Quaternion.Euler(0, 0, 0);

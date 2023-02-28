@@ -23,8 +23,9 @@ public class EnemyNavMeshRanged : MonoBehaviour
     }
     private void Update()
     {
-        if (currentTarget == null)
-            currentTarget = GameObject.Find("TempTarget");
+        if (currentTarget == null || gameObject.CompareTag("PlayerDown"))
+            currentTarget = GameObject.Find("Player");
+
         players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {
@@ -55,7 +56,6 @@ public class EnemyNavMeshRanged : MonoBehaviour
         navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
         if (!wandering)
             wandering = true;
-        Debug.Log("Wandering");
         navMeshAgent.isStopped = false;
         Invoke(nameof(EndWander), Random.Range(1, 3));
     }
