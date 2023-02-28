@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7244877471631457954}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,6 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4620384408837567465}
+  - component: {fileID: 7987057912899945438}
   m_Layer: 0
   m_Name: SHOTGUN
   m_TagString: Shotgun
@@ -262,6 +263,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7987057912899945438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579033685295767858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bf469c620f8f04b9a97dfe0440aceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingspeed: 0.5
+  shooting: 0
+  aiming: {x: 0, y: 0}
+  FiringPoint: {fileID: 7244877471631457954}
+  projectilePrefab: {fileID: 8590623308785216238, guid: 86fb42294fdc58e4fa1335a9ea5a6fd0, type: 3}
 --- !u!1 &7826460077611852713
 GameObject:
   m_ObjectHideFlags: 0

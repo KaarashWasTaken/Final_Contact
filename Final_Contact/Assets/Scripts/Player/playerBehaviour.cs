@@ -11,9 +11,7 @@ public class playerBehaviour : MonoBehaviour
     private float maxHealth;
     public Image healthBar;
     public bool downed;
-    public float timeFiringSpeed;
-    public float originalFiringSpeed;
-    public bool firingSpeedActive = false;
+    
     
 
     // Start is called before the first frame update
@@ -31,11 +29,7 @@ public class playerBehaviour : MonoBehaviour
         {
             Down();
         }
-        if (firingSpeedActive && gameObject.GetComponentInChildren<AR>().firingspeed != originalFiringSpeed && Time.time > timeFiringSpeed)
-        {
-            gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
-            firingSpeedActive = false;
-        }
+        
     }
     public void Down()
     {
@@ -59,11 +53,9 @@ public class playerBehaviour : MonoBehaviour
                 health = maxHealth;
             }
         }
-        if (other.gameObject.CompareTag("PickupFiringSpeed") && !firingSpeedActive)
+        if (other.gameObject.CompareTag("PickupFiringSpeed") )
         {
-            firingSpeedActive = true;
-            gameObject.GetComponentInChildren<AR>().firingspeed = gameObject.GetComponentInChildren<AR>().firingspeed * other.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
-            timeFiringSpeed = Time.time + other.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
+            gameObject.GetComponentInChildren<WeaponManager>().FiringSpeedBonus(other.gameObject);
         }
         if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon==WeaponManager.equippedWeapon.None)
         {

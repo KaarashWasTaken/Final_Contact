@@ -18,6 +18,10 @@ public class WeaponManager : MonoBehaviour
     public GameObject Shotgun;
     public GameObject SMG;
     public GameObject MG;
+    public float timeFiringSpeed;
+    private float currentFiringSpeed;
+    private float originalFiringSpeed;
+    public bool firingSpeedActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +32,14 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (firingSpeedActive && currentFiringSpeed != originalFiringSpeed && Time.time > timeFiringSpeed)
+        {
+            if (playerWeapon == equippedWeapon.AR)
+                gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
+            if (playerWeapon == equippedWeapon.Shotgun)
+                gameObject.GetComponentInChildren<Shotgun>().firingspeed = originalFiringSpeed;
+            firingSpeedActive = false;
+        }
     }
     public void PickupWeapon(GameObject weapon)
     {
@@ -36,11 +47,31 @@ public class WeaponManager : MonoBehaviour
         {
             AR.SetActive(true);
             playerWeapon = equippedWeapon.AR;
+            originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
         }
         else if(weapon.gameObject.CompareTag("Shotgun"))
         {
             Shotgun.SetActive(true);
             playerWeapon = equippedWeapon.Shotgun;
+            originalFiringSpeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed;
+        }
+    }
+    public void FiringSpeedBonus(GameObject pickup)
+    {
+        if (!firingSpeedActive)
+        {
+            firingSpeedActive = true;
+            timeFiringSpeed = Time.time + pickup.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
+            if (playerWeapon == equippedWeapon.AR)
+            {
+                gameObject.GetComponentInChildren<AR>().firingspeed = gameObject.GetComponentInChildren<AR>().firingspeed * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
+                currentFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
+            }
+            if (playerWeapon == equippedWeapon.Shotgun)
+            {
+                gameObject.GetComponentInChildren<Shotgun>().firingspeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
+                currentFiringSpeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed;
+            }
         }
     }
     public void shoot()
@@ -48,6 +79,10 @@ public class WeaponManager : MonoBehaviour
         if (playerWeapon == equippedWeapon.AR)
         {
             gameObject.GetComponentInChildren<AR>().Shoot();
+        }
+        if (playerWeapon == equippedWeapon.Shotgun)
+        {
+            gameObject.GetComponentInChildren<Shotgun>().Shoot();
         }
     }
 }
