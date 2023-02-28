@@ -51,7 +51,8 @@ public class MoveForward : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (
-            other.gameObject.CompareTag("PickupHealth")
+            other.gameObject.CompareTag("PickupHealth")||
+            other.gameObject.CompareTag("PickupFiringSpeed")
             )
         {
             Destroy(gameObject);
