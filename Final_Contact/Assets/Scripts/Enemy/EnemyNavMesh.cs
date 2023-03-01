@@ -20,8 +20,8 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void Update()
     {
-        if(currentTarget== null)
-            currentTarget = GameObject.Find("TempTarget");
+        if (currentTarget == null || gameObject.CompareTag("PlayerDown"))
+            currentTarget = GameObject.Find("Player");
         players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {

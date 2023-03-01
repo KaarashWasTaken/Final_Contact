@@ -1,6 +1,6 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,16 +10,18 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField]
     private float maxHealth;
     public Image healthBar;
-    public bool downed;
-    
-    
+    //public bool downed;
+    public float timeFiringSpeed;
+    public float originalFiringSpeed;
+    public bool firingSpeedActive = false;
+    [SerializeField]
+    private GameObject PlayerDownPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
-        //originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
-        
+        originalFiringSpeed = gameObject.GetComponent<PlayerController>().firingspeed;
     }
     // Update is called once per frame
     void Update()
@@ -27,15 +29,28 @@ public class playerBehaviour : MonoBehaviour
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
         if (health <= 0)
         {
-            Down();
+            GetComponent<PlayerController>().Down();
         }
-        
+        if (firingSpeedActive && gameObject.GetComponent<PlayerController>().firingspeed != originalFiringSpeed && Time.time > timeFiringSpeed)
+        {
+            gameObject.GetComponent<PlayerController>().firingspeed = originalFiringSpeed;
+            firingSpeedActive = false;
+        }
     }
-    public void Down()
+
+    public void SetTrigger()
     {
-        downed = true;
-        Destroy(transform.parent.gameObject);
+
     }
+
+    //public void Down()
+    //{
+    //    downed = true;
+    //    Destroy(transform.parent.gameObject);
+       
+    //    GameObject prefabToSpawn = Instantiate(PlayerDownPrefab,transform.position,transform.rotation);
+
+    //}
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("EnemyProjectile"))
@@ -53,16 +68,12 @@ public class playerBehaviour : MonoBehaviour
                 health = maxHealth;
             }
         }
-        if (other.gameObject.CompareTag("PickupFiringSpeed") )
+        if (other.gameObject.CompareTag("PickupFiringSpeed") && !firingSpeedActive)
         {
-            gameObject.GetComponentInChildren<WeaponManager>().FiringSpeedBonus(other.gameObject);
+            firingSpeedActive = true;
+            gameObject.GetComponent<PlayerController>().firingspeed += other.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedBonus;
+            timeFiringSpeed = Time.time + other.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
         }
-        if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon==WeaponManager.equippedWeapon.None)
-        {
-            gameObject.GetComponentInChildren<WeaponManager>().PickupWeapon(other.gameObject);
-        }
-            
-
     }
     //public void Revived()
     //{
