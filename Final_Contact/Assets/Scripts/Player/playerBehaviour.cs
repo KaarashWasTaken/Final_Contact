@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class playerBehaviour : MonoBehaviour
 {
     public float health;
@@ -21,13 +22,8 @@ public class playerBehaviour : MonoBehaviour
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
         if (health <= 0)
         {
-            Down();
+            GetComponent<PlayerController>().Down();
         }
-    }
-    public void Down()
-    {
-        downed = true;
-        Destroy(transform.parent.gameObject);
     }
     private void OnCollisionEnter(Collision other)
     {

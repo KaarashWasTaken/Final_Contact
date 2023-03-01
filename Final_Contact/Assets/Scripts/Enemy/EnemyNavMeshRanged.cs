@@ -23,9 +23,8 @@ public class EnemyNavMeshRanged : MonoBehaviour
     }
     private void Update()
     {
-        if (currentTarget == null || gameObject.CompareTag("PlayerDown"))
-            currentTarget = GameObject.Find("Player");
-
+        if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
+            currentTarget = GameObject.Find("TempTarget");
         players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {

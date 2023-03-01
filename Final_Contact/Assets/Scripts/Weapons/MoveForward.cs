@@ -20,11 +20,12 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeNow = Time.time;
-        MoveProjectile();
+        timeNow = Time.time; //Updates the variable timeNow every frame to be the current time
+        DestroyProjectileAfterTime(); //Calls the DestroyProjectileAfterTime function every frame
+        //The line below rotates the projectile in the looking direction every frame
         transform.rotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
     }
-    void MoveProjectile()
+    void DestroyProjectileAfterTime() //Destroys the projectile after the time given in "destroyAfterSeconds"
     {
         if (startTime < timeNow - destroyAfterSeconds)
         {
@@ -33,29 +34,16 @@ public class MoveForward : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (
-            other.gameObject.CompareTag("InnerWalls") ||
-            other.gameObject.CompareTag("Enemy")
-            
-            )
+        //If a projectile collides with an innerwall the projectile will be destroyed
+        if (other.gameObject.CompareTag("InnerWalls"))
         {
             Destroy(gameObject);
-
         }
-        if (other.gameObject.CompareTag("Player")) // may need balancing to avoid being invulnerable when up close
+        if (other.gameObject.CompareTag("Player"))
         {
+            //If a projectile collides with a player the player will lose 5 health and the projectile will be destroyed
             other.gameObject.GetComponent<playerBehaviour>().health -= 5;
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (
-            other.gameObject.CompareTag("PickupHealth")||
-            other.gameObject.CompareTag("PickupFiringSpeed")
-            )
-        {
-            Destroy(gameObject);
-        }
-    }
-    }
+}

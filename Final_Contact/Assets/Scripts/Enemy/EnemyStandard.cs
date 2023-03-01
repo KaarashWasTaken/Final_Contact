@@ -24,6 +24,7 @@ public class EnemyStandard : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             health -= other.gameObject.GetComponent<MoveForward>().damage;
+            Destroy(other.gameObject);
         }
     }
 }
