@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody projectilePrefab;
     private CharacterController controller;
+    public bool ready = false;
+    private float pauseInput = 0;
+    private float lastPause = 0;
     //Shooting & aiming variables
     [SerializeField]
     public float firingspeed = 0.5f;
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         playerSpeed = initalPlayerSpeed;
         ReviveCollider= gameObject.GetComponent<SphereCollider>();
+        DontDestroyOnLoad(gameObject.transform.parent);
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -66,6 +70,10 @@ public class PlayerController : MonoBehaviour
     public void OnDodge(InputAction.CallbackContext context)
     {
         dodgeInput= context.ReadValue<float>();
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        pauseInput = context.ReadValue<float>();
     }
     void Update()
     {
@@ -102,7 +110,11 @@ public class PlayerController : MonoBehaviour
                 lastDodge = Time.time;
                 Dodge();
             }
-            
+            if (pauseInput != 0 && Time.time > lastPause + 0.1)
+            {
+                Pause();
+                lastPause = Time.time;
+            }
         }
         if (downed)
         {
@@ -140,6 +152,18 @@ public class PlayerController : MonoBehaviour
         if (isBoostActivated)
         {
             playerSpeed += boostIncrease;
+        }
+    }
+    private void Pause()
+    {
+
+        if (!PauseMenu.paused)
+        {
+            GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Pause();
+        }
+        else
+        {
+            GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Continue();
         }
     }
     private void EndBoost()

@@ -415,6 +415,7 @@ MonoBehaviour:
   rotationSpeed: 720
   FiringPoint: {fileID: 2977159803006040813}
   projectilePrefab: {fileID: 8590623308785216238, guid: 86fb42294fdc58e4fa1335a9ea5a6fd0, type: 3}
+  ready: 0
   firingspeed: 0.1
   dodgeCD: 5
   boostIncrease: 30
@@ -512,6 +513,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 54843920-6444-4c7c-b9c9-5621fa63ebde
     m_ActionName: Player/Aim[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3683223426829868389}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2e234129-01e8-4ed2-b4d1-370ed6f46a32
+    m_ActionName: Player/Pause[/XInputControllerWindows/start,/XInputControllerWindows1/start,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
