@@ -42,7 +42,7 @@ public class MoveForward : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (other.gameObject.CompareTag("Player") && timeNow >= startTime + 0.05) // may need balancing to avoid being invulnerable when up close
+        if (other.gameObject.CompareTag("Player")) // may need balancing to avoid being invulnerable when up close
         {
             other.gameObject.GetComponent<playerBehaviour>().health -= 5;
             Destroy(gameObject);
@@ -51,7 +51,8 @@ public class MoveForward : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (
-            other.gameObject.CompareTag("PickupHealth")
+            other.gameObject.CompareTag("PickupHealth")||
+            other.gameObject.CompareTag("PickupFiringSpeed")
             )
         {
             Destroy(gameObject);

@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody projectilePrefab;
     private CharacterController controller;
-    public bool ready = false;
     //Shooting & aiming variables
+    [SerializeField]
     public float firingspeed = 0.5f;
     private float shooting = 0;
     private Vector2 aiming = Vector2.zero;
@@ -32,13 +32,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boostTime = 0.2f;
     private bool isBoostActivated = false;
+    // PLayer Down
+    private bool downed = false;
+    [SerializeField]
+    private Rigidbody Player;
+    public SphereCollider ReviveCollider;
+    public GameObject ReviveSphere;
+    private float reviveTimer = 0;
+    private float reviveBaseTime;
+    private bool reviving = false;
+    [SerializeField]
+    private float timeToRevive = 3;
 
-   
+
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerSpeed = initalPlayerSpeed;
-        DontDestroyOnLoad(this.gameObject.transform.parent);
+        ReviveCollider= gameObject.GetComponent<SphereCollider>();
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -58,37 +69,55 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        Vector3 move = new(movementInput.x * 10, 0, movementInput.y * 10);
-        move.Normalize();
-        controller.Move(playerSpeed * Time.deltaTime * move);
-        Vector3 tempPos = transform.position;
-        if (tempPos.y != 2f)
+        if (!downed)
         {
-            tempPos.y = 2f;
-            transform.position = tempPos;
+            //Player.isKinematic = false;
+            controller.detectCollisions = true;
+            ReviveSphere.SetActive(false);
+            ReviveCollider.enabled = false; //revive collider inactive if not downed
+            Vector3 move = new Vector3(movementInput.x * 10, 0, movementInput.y * 10);
+            move.Normalize();
+            controller.Move(move * Time.deltaTime * playerSpeed);
+            Vector3 tempPos = transform.position;
+            if (tempPos.y != 2f)
+            {
+                tempPos.y = 2f;
+                transform.position = tempPos;
+            }
+            if (move != Vector3.zero && aiming == Vector2.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            }
+            if (aiming != Vector2.zero)
+            {
+                aimDirection();
+            }
+            if (shooting != 0)
+            {
+                Shoot();
+            }
+            if (dodgeInput != 0 && Time.time >= lastDodge + dodgeCD)
+            {
+                lastDodge = Time.time;
+                Dodge();
+            }
+            
         }
-        if (move != Vector3.zero && aiming == Vector2.zero)
+        if (downed)
         {
-            Quaternion toRotation = Quaternion.LookRotation(move, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            Player.velocity = Vector3.zero;
         }
-        if (aiming != Vector2.zero)
+        //tracks time in revive circle
+        if (reviving == true)
         {
-            AimDirection();
+            reviveTimer = Time.time - reviveBaseTime;
         }
-        if (shooting != 0)
-        {
-            Shoot();
-        }
-        if (dodgeInput != 0 && Time.time >= lastDodge + dodgeCD)
-        {
-            lastDodge = Time.time;
-            Dodge();
-        }
+        //Debug.Log(reviveTimer);
     }
-    private void AimDirection()
+    private void aimDirection()
     {
-        Vector3 aim = new(aiming.x, 0, aiming.y);
+        Vector3 aim = new Vector3(aiming.x, 0, aiming.y);
         Quaternion toRotation = Quaternion.LookRotation(aim, Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
@@ -106,7 +135,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Boosting player speed");
             isBoostActivated = true;
-            Invoke(nameof(EndBoost), boostTime);
+            Invoke("EndBoost", boostTime);
         }
         if (isBoostActivated)
         {
@@ -118,4 +147,71 @@ public class PlayerController : MonoBehaviour
         isBoostActivated = false;
         playerSpeed = initalPlayerSpeed;
     }
+
+    public void Down()
+    {
+        if (!downed)
+        {
+            gameObject.tag = "PlayerDown";
+            downed = true;
+            controller.detectCollisions= false;
+            ReviveSphere.SetActive(true);
+            //Player.isKinematic= true;
+            ReviveCollider.enabled = true;
+            Debug.Log("playerisdown");
+            transform.rotation = Quaternion.Euler(90, 0, 0);
+            
+            
+        }
+
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        //timer Start
+        if (other.gameObject.CompareTag("Player"))
+        {
+            reviveBaseTime = Time.time;
+            reviving = true;
+            Debug.Log("PlayerisRevivingotherplayer");
+            Debug.Log(reviveBaseTime);
+        }
+
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        //Timer reset to 0
+        if (other.gameObject.CompareTag("Player"))
+        {
+            reviving = false;
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && reviveTimer > timeToRevive)
+        {
+            Debug.Log("Player Revived");
+            downed = false;
+            reviving = false;
+            reviveTimer = 0;
+            gameObject.tag = "Player";
+            gameObject.GetComponent<playerBehaviour>().health = 75;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+    }
+
+
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        Debug.Log("Player Revivied");
+    //        downed = false;
+    //        gameObject.tag = "Player";
+    //        gameObject.GetComponent<playerBehaviour>().health = 75;
+    //    }
+    //}
 }
