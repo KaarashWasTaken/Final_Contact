@@ -20,8 +20,8 @@ public class ArmoryNextLevel : MonoBehaviour
             readyPlayers++;
             if (readyPlayers >= nrOfPlayers)
             {
-                SceneManager.LoadScene("CombatScene");
-                Debug.Log("Next Level");
+                GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
+                Debug.Log("Choose Level");
             }
             Debug.Log("Player ready");
             //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
