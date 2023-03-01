@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.InputSystem;
 public class NextLevel : MonoBehaviour
 {
     EnemyManager enemyManager;
@@ -32,10 +32,45 @@ public class NextLevel : MonoBehaviour
             //{
             //    SceneManager.LoadScene(nextSceneIndex);
             //}
-        }
-        else if (other.CompareTag("Player") && enemyManager.enemyLevelCount > 0)
-        {
-            Debug.Log("Kill all enemies to progress");
+
+            //public static bool paused = false;
+            //public GameObject pauseMenuUI;
+            // Update is called once per frame
+            //    void Update()
+            //    {
+            //        if (Input.GetKeyDown(KeyCode.Escape))
+            //        {
+            //            if (paused)
+            //            {
+            //                Continue();
+            //            }
+            //            else
+            //            {
+            //                Pause();
+            //            }
+            //        }
+            //    }
+            //    public void Pause()
+            //    {
+            //        pauseMenuUI.SetActive(true);
+            //        Time.timeScale = 0f;
+            //        paused = true;
+            //    }
+            //    public void Continue()
+            //    {
+            //        pauseMenuUI.SetActive(false);
+            //        Time.timeScale = 1f;
+            //        paused = false;
+            //    }
+            //    public void StopPlaying()
+            //    {
+            //        Application.Quit();
+            //    }
+            //}
+            else if (other.CompareTag("Player") && enemyManager.enemyLevelCount > 0)
+            {
+                Debug.Log("Kill all enemies to progress");
+            }
         }
     }
 }
