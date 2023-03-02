@@ -25,6 +25,7 @@ public class Shotgun : MonoBehaviour
     [SerializeField]
     private float coolingEffect = 0.005f;
     [SerializeField]
+    public float heatEffect = 1;
     public float heat;
     private bool onCooldown;
 
@@ -50,7 +51,7 @@ public class Shotgun : MonoBehaviour
         
         if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
-            heat = heat + 3;
+            heat = heat + heatEffect;
             originalAngle = FiringPoint.rotation;
             //deviation = originalAngle.EulerAngles();
             lastTimeShot = Time.time;

@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyNavMesh : MonoBehaviour
 {
+    private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
 
     private void Start()
     {
+        rb= GetComponent<Rigidbody>();
         currentTarget = GameObject.Find("TempTarget");
     }
     private void Awake()
@@ -20,6 +22,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void Update()
     {
+        rb.velocity = Vector3.zero;
         if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
             currentTarget = GameObject.Find("TempTarget");
         players = GameObject.FindGameObjectsWithTag("Player");
