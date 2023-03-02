@@ -14,13 +14,36 @@ public class AR : MonoBehaviour
     private Transform FiringPoint;
     [SerializeField]
     private Rigidbody projectilePrefab;
-    
-    
-    
+    //cooldown variables
+    [SerializeField]
+    public float maxHeat=25;
+    [SerializeField]
+    private float coolingEffect = 0.005f;
+    [SerializeField]
+    public float heat;
+    private bool onCooldown;
+
+    void Update()
+    {
+        //Gets a cooldown so cant shoot if weapon gets too hot
+        if (heat>maxHeat)
+        {
+            onCooldown= true;
+        }
+        //checks if cooldown is over
+        if (heat<0 && onCooldown)
+        {
+            onCooldown = false;
+        }
+        //cools the weapon each frame
+        if(heat>0 && lastTimeShot + firingspeed <= Time.time)
+            heat = heat - coolingEffect;
+    }
     public void Shoot()
     {
-        if (lastTimeShot + firingspeed <= Time.time)
+        if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
+            heat++;
             lastTimeShot = Time.time;
             Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
         }

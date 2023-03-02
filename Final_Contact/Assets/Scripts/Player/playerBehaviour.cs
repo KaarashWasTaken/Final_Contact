@@ -10,6 +10,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField]
     private float maxHealth;
     public Image healthBar;
+    public Image cooldownBar;
     public bool downed;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class playerBehaviour : MonoBehaviour
         {
             GetComponent<PlayerController>().Down();
         }
+        cooldownBar.fillAmount = Mathf.Clamp(1-GetComponentInChildren<WeaponManager>().heat, 0, 1);
     }
     private void OnCollisionEnter(Collision other)
     {

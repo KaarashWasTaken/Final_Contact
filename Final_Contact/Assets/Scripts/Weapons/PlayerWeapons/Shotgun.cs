@@ -12,33 +12,64 @@ public class Shotgun : MonoBehaviour
     public Vector2 aiming = Vector2.zero;
     private float lastTimeShot = 0;
     [SerializeField]
+    private float spread = 25;
+    [SerializeField]
     private Transform FiringPoint;
-    private Transform FiringPointDeviation;
     [SerializeField]
     private Rigidbody projectilePrefab;
+    private Quaternion originalAngle;
+    private Vector3 deviation;
+    //cooldown variables
+    [SerializeField]
+    public float maxHeat = 25;
+    [SerializeField]
+    private float coolingEffect = 0.005f;
+    [SerializeField]
+    public float heat;
+    private bool onCooldown;
 
     void Update()
     {
-        FiringPointDeviation = FiringPoint;
+        //Gets a cooldown so cant shoot if weapon gets too hot
+        if (heat > maxHeat)
+        {
+            onCooldown = true;
+        }
+        //checks if cooldown is over
+        if (heat < 0 && onCooldown)
+        {
+            onCooldown = false;
+        }
+        //cools the weapon each frame
+        if (heat > 0 && lastTimeShot + firingspeed <= Time.time)
+            heat = heat - coolingEffect;
     }
 
-        public void Shoot()
+    public void Shoot()
     {
-        if (lastTimeShot + firingspeed <= Time.time)
+        
+        if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
+            heat = heat + 3;
+            originalAngle = FiringPoint.rotation;
+            //deviation = originalAngle.EulerAngles();
             lastTimeShot = Time.time;
             //Quaternion deviation = FiringPoint.rotation;
-            FiringPointDeviation = FiringPoint;
 
-            Instantiate(projectilePrefab, FiringPointDeviation.position, FiringPointDeviation.rotation);
 
-            FiringPointDeviation.Rotate(FiringPointDeviation.position, 25);
-            FiringPointDeviation.rotation.Normalize();
-            Instantiate(projectilePrefab, FiringPointDeviation.position, FiringPointDeviation.rotation);
+            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
 
-            FiringPointDeviation.Rotate(FiringPointDeviation.position, -50);
-            FiringPointDeviation.rotation.Normalize();
-            Instantiate(projectilePrefab, FiringPointDeviation.position, FiringPointDeviation.rotation);
+            //FiringPointDeviation.Rotate(FiringPointDeviation.position, -25);
+            FiringPoint.Rotate(FiringPoint.position, -spread);
+            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
+
+            FiringPoint.Rotate(FiringPoint.position, (2*spread));
+            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
+            
+            Debug.Log(FiringPoint.rotation.ToString());
+            FiringPoint.rotation=originalAngle;
+            Debug.Log(spread.ToString());
         }
+        
     }
 }

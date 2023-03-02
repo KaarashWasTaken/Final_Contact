@@ -22,6 +22,8 @@ public class WeaponManager : MonoBehaviour
     private float currentFiringSpeed;
     private float originalFiringSpeed;
     public bool firingSpeedActive = false;
+    public float heat;
+    // this script handles weapon types and general effects
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //returns firing speed to normal after pickup
         if (firingSpeedActive && currentFiringSpeed != originalFiringSpeed && Time.time > timeFiringSpeed)
         {
             if (playerWeapon == equippedWeapon.AR)
@@ -40,9 +43,20 @@ public class WeaponManager : MonoBehaviour
                 gameObject.GetComponentInChildren<Shotgun>().firingspeed = originalFiringSpeed;
             firingSpeedActive = false;
         }
+
+        //gets how close the picked up weapon is to overheating
+        if (playerWeapon == equippedWeapon.AR)
+        {
+            heat = gameObject.GetComponentInChildren<AR>().heat / gameObject.GetComponentInChildren<AR>().maxHeat;
+        }
+        else if (playerWeapon == equippedWeapon.Shotgun)
+        {
+            heat = gameObject.GetComponentInChildren<Shotgun>().heat / gameObject.GetComponentInChildren<Shotgun>().maxHeat;
+        }
     }
     public void PickupWeapon(GameObject weapon)
     {
+        //picks up weapons depending on tag
         if (weapon.gameObject.CompareTag("AR"))
         {
             AR.SetActive(true);
@@ -58,6 +72,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void FiringSpeedBonus(GameObject pickup)
     {
+        //activates bonus firingspeed
         if (!firingSpeedActive)
         {
             firingSpeedActive = true;
@@ -76,6 +91,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void shoot()
     {
+        //shoots the picked up weapon
         if (playerWeapon == equippedWeapon.AR)
         {
             gameObject.GetComponentInChildren<AR>().Shoot();
