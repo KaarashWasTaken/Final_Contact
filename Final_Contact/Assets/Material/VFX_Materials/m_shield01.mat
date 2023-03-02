@@ -7,25 +7,21 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m_projectileorb02 1
-  m_Shader: {fileID: -6465566751694194690, guid: e75c70afd2e59434b99d0100d3f610c9, type: 3}
+  m_Name: m_shield01
+  m_Shader: {fileID: -6465566751694194690, guid: 0a6eaa1209f12034189384daad1917e4, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3004
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Mask01:
-        m_Texture: {fileID: 2800000, guid: da157e450c818aa4d97faeff7aa875d9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Mask02:
-        m_Texture: {fileID: 2800000, guid: 1d0b3e4e520061043b6fbc37334b1cfb, type: 3}
+    - _SampleTexture2D_3bef72fa35744794b52e578f0a5c8ed3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5ccbc98049f4a5a44aeb85986400155f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -42,16 +38,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fresnel_Amount: 1.02
-    - _Fresnel_Intensity: 2
+    - _Fresnel_Amount: 1.4
+    - _Fresnel_Intensity: 1.5
+    - _Gird_Intensity: 1.5
+    - _Grid_Speed: -0.03
     - _QueueControl: 0
-    - _QueueOffset: 4
+    - _QueueOffset: 0
     m_Colors:
-    - _Color1: {r: 0.7572973, g: 1.5004394, b: 0.93181956, a: 0}
-    - _Color2: {r: 0.52938575, g: 1.8398325, b: 1.1225299, a: 0}
-    - _Color_Glow: {r: 0.6568174, g: 0.7923209, b: 1.132076, a: 0}
+    - _Color1: {r: 1.1772726, g: 0.5807561, b: 1.8800751, a: 0}
+    - _Color2: {r: 0.055224285, g: 0.5771291, b: 0.6886792, a: 0}
+    - _Color_Glow: {r: 0.5471698, g: 0.21987599, b: 0.20389818, a: 0}
+    - _Fill: {r: 0, g: 0, b: 0, a: 0}
+    - _Grid_Color: {r: 1.2862746, g: 1.8352941, b: 2.9960785, a: 0}
+    - _Inner_Color: {r: 0.5754717, g: 0.24158953, b: 0.31033003, a: 0}
+    - _Intersect_Fade_Scale: {r: 0.6, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &5161134977014650084
+--- !u!114 &6001503617265816942
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

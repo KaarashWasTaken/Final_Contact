@@ -6,21 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
-    Scene scene;
-    public PlayerInputManager playerManager;
-    bool leftArmory=false;
+    PlayerInputManager playerManager;
+    private GameObject[] players;
     // Start is called before the first frame update
     private void Awake()
     {
+        playerManager = GetComponent<PlayerInputManager>();
         DontDestroyOnLoad(gameObject);
     }
-    private void Update()
+    void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // called second
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
         scene = SceneManager.GetActiveScene();
-        if (scene.name != "Armory" && !leftArmory)
-        {
+        if (scene.name != "Armory")
             playerManager.DisableJoining();
-            leftArmory= true;
-        }   
+        players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject g in players)
+            g.GetComponent<PlayerController>().ready = false;
     }
 }

@@ -36,15 +36,15 @@ public class playerBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PickupHealth"))
+        if (other.CompareTag("PickupHealth"))
         {
-            health += other.gameObject.GetComponent<PickupHealth>().healthBonus;
+            health += other.GetComponent<PickupHealth>().healthBonus;
             if (health > maxHealth)
             {
                 health = maxHealth;
             }
         }
-        if (other.gameObject.CompareTag("PickupFiringSpeed"))
+        if (other.CompareTag("PickupFiringSpeed"))
         {
             gameObject.GetComponentInChildren<WeaponManager>().FiringSpeedBonus(other.gameObject);
         }

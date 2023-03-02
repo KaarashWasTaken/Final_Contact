@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Rendering.CameraUI;
 
 public class EnemyNavMesh : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class EnemyNavMesh : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
+    private bool wandering = false;
 
     private void Start()
     {
-        rb= GetComponent<Rigidbody>();
         currentTarget = GameObject.Find("TempTarget");
+        rb= GetComponent<Rigidbody>();
     }
     private void Awake()
     {
@@ -23,8 +25,13 @@ public class EnemyNavMesh : MonoBehaviour
     private void Update()
     {
         rb.velocity = Vector3.zero;
+        //If the enemy doenst have a target or targets a downed player it will 
         if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
             currentTarget = GameObject.Find("TempTarget");
+        if (currentTarget != gameObject.CompareTag("Player") && !wandering)
+        {
+            Invoke(nameof(Wander), 0);
+        }
         players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {
@@ -33,6 +40,21 @@ public class EnemyNavMesh : MonoBehaviour
                 currentTarget = g;
             }
         }
-        navMeshAgent.destination = currentTarget.transform.position;
+        if (currentTarget.CompareTag("Player"))
+            navMeshAgent.destination = currentTarget.transform.position;
+    }
+
+    private void Wander()
+    {
+        navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
+        if (!wandering)
+            wandering = true;
+        navMeshAgent.isStopped = false;
+        Invoke(nameof(EndWander), 1);
+    }
+    private void EndWander()
+    {
+        if (wandering)
+            wandering = false;
     }
 }

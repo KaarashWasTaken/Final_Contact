@@ -25,7 +25,7 @@ public class NextLevel : MonoBehaviour
             if (readyPlayers >= nrOfPlayers + 1)
             {
                 //SceneManager.LoadScene("CombatScene");
-                Debug.Log("Next Level");
+                Debug.Log("Choose Level");
             }
             //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             //if (SceneManager.sceneCount > nextSceneIndex)
