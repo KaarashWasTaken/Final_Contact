@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7244877471631457954}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6543269598386426207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.62, z: 0}
+  m_LocalPosition: {x: 0, y: 4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,10 +237,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4620384408837567465}
-  - component: {fileID: 7236782876060722437}
   - component: {fileID: 6228330906356583116}
+  - component: {fileID: 8427060050935830141}
   m_Layer: 0
-  m_Name: SHOTGUN 1
+  m_Name: SHOTGUN_1
   m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 7579033685295767858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8725642656919531616}
@@ -264,18 +264,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7236782876060722437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579033685295767858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3baa64ee0af29c84e82b0cfb30f261d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6228330906356583116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -289,6 +277,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 3.2}
   m_Center: {x: 0, y: 0, z: -0.3}
+--- !u!114 &8427060050935830141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579033685295767858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bf469c620f8f04b9a97dfe0440aceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingspeed: 0.5
+  shooting: 0
+  aiming: {x: 0, y: 0}
+  FiringPoint: {fileID: 7244877471631457954}
+  projectilePrefab: {fileID: 8590623308785216238, guid: 86fb42294fdc58e4fa1335a9ea5a6fd0, type: 3}
+  numberProjectiles: 3
+  spread: 25
+  maxHeat: 25
+  coolingEffect: 0.005
+  heatEffect: 1
+  heat: 0
 --- !u!1 &7826460077611852713
 GameObject:
   m_ObjectHideFlags: 0
