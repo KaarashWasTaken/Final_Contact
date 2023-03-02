@@ -9,7 +9,7 @@ public class PickupBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
         if (other.CompareTag("Projectile"))
         {
@@ -20,7 +20,7 @@ public class PickupBehaviour : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(transform.parent.gameObject);
             }
         }
     }

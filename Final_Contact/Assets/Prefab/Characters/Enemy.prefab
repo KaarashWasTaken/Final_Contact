@@ -43,13 +43,9 @@ GameObject:
   - component: {fileID: 8331782269615533662}
   - component: {fileID: 4935540561827889646}
   - component: {fileID: 4208202342429472432}
-  - component: {fileID: 3904500034187740617}
   - component: {fileID: 3800316552187270660}
   - component: {fileID: 2318798238492380523}
   - component: {fileID: 482920361293061440}
-  - component: {fileID: 8494307391269659085}
-  - component: {fileID: 1888910138029768140}
-  - component: {fileID: 1108925437454755151}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -122,28 +118,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!195 &3904500034187740617
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216977634021453346}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.19
-  m_Speed: 7
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 720
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &3800316552187270660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,44 +161,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
---- !u!114 &8494307391269659085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216977634021453346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0bb9260d65bbba4694fd6f40f3aeac4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1888910138029768140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216977634021453346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abe16c689251f1408e432c6b86c201d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FiringPoint: {fileID: 0}
-  projectilePrefab: {fileID: 8048764812907920434, guid: c23df6523b403d64b9c29726ce2ca87c, type: 3}
-  firingspeed: 2
---- !u!114 &1108925437454755151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216977634021453346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa2e0cc96f7f7543a15ee753dff6223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCD: 2
-  damage: 10
