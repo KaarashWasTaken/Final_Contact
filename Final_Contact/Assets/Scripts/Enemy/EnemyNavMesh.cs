@@ -6,6 +6,7 @@ using static UnityEditor.Rendering.CameraUI;
 
 public class EnemyNavMesh : MonoBehaviour
 {
+    private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
@@ -14,6 +15,7 @@ public class EnemyNavMesh : MonoBehaviour
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
+        rb= GetComponent<Rigidbody>();
     }
     private void Awake()
     {
@@ -22,10 +24,6 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void Update()
     {
-<<<<<<< Updated upstream
-        if (currentTarget == null || gameObject.CompareTag("PlayerDown"))
-            currentTarget = GameObject.Find("Player");
-=======
         rb.velocity = Vector3.zero;
         //If the enemy doenst have a target or targets a downed player it will 
         if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
@@ -34,8 +32,6 @@ public class EnemyNavMesh : MonoBehaviour
         {
             Invoke(nameof(Wander), 0);
         }
-
->>>>>>> Stashed changes
         players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {
