@@ -13,7 +13,7 @@ public class PickupBehaviour : MonoBehaviour
         }
         if (other.CompareTag("Projectile"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
             if (health > 0)
             {
                 health -= other.GetComponentInParent<MoveForward>().damage;
