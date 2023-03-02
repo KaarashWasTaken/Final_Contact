@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7352858271907079012}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: ArmoryDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4208202342429472432}
   - component: {fileID: 3800316552187270660}
   - component: {fileID: 2318798238492380523}
-  - component: {fileID: 2780214795123864582}
+  - component: {fileID: 96558083429813363}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -132,7 +132,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!136 &2318798238492380523
 CapsuleCollider:
@@ -148,7 +148,7 @@ CapsuleCollider:
   m_Height: 2.0310264
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: -0.018832922, z: 0.0009581819}
---- !u!114 &2780214795123864582
+--- !u!114 &96558083429813363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
