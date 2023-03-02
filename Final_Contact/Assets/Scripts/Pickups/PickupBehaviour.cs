@@ -9,12 +9,6 @@ public class PickupBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-<<<<<<< Updated upstream
-            Destroy(gameObject);
-        }
-        if (other.CompareTag("Projectile"))
-        {
-=======
             //Destroys the pickup
             Destroy(transform.parent.gameObject);
         }
@@ -23,7 +17,7 @@ public class PickupBehaviour : MonoBehaviour
             //Destroys the projectile
             Destroy(other.transform.parent.gameObject);
             //If the pickup has health
->>>>>>> Stashed changes
+
             if (health > 0)
             {
                 //Decreases health by the damage variable in the projectile
@@ -32,12 +26,8 @@ public class PickupBehaviour : MonoBehaviour
             //If the pickup has no health
             else
             {
-<<<<<<< Updated upstream
-                Destroy(other.gameObject);
-=======
                 //Destroys the pickup
                 Destroy(transform.parent.gameObject);
->>>>>>> Stashed changes
             }
         }
     }

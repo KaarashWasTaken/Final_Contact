@@ -9,8 +9,6 @@ public class ArmoryNextLevel : MonoBehaviour
     private int readyPlayers;
     [SerializeField]
     private int nrOfPlayers;
-    GameObject[] Players;
-    GameObject[] ReadyPlayers;
     private void OnTriggerEnter(Collider other)
     {
         //Sets the value of nrOfPlayers to the amount of objects that have the tag Player
@@ -24,14 +22,9 @@ public class ArmoryNextLevel : MonoBehaviour
             //If all players are ready the following if statement is run
             if (readyPlayers >= nrOfPlayers)
             {
-<<<<<<< Updated upstream
-                SceneManager.LoadScene("CombatScene");
-                Debug.Log("Next Level");
-=======
                 //Opens level select menu
                 GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
                 Debug.Log("Choose Level");
->>>>>>> Stashed changes
             }
             Debug.Log("Player ready");
             //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
