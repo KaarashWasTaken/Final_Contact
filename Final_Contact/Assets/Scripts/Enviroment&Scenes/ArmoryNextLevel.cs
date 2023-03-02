@@ -13,15 +13,25 @@ public class ArmoryNextLevel : MonoBehaviour
     GameObject[] ReadyPlayers;
     private void OnTriggerEnter(Collider other)
     {
+        //Sets the value of nrOfPlayers to the amount of objects that have the tag Player
         nrOfPlayers = GameObject.FindGameObjectsWithTag("Player").Length;
-        if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().ready)
+        //Checks if the trigger is a player, if the player isn't ready and if the player has a weapon equipped
+        if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().ready && other.gameObject.GetComponentInChildren<WeaponManager>().playerWeapon != WeaponManager.equippedWeapon.None)
         {
+            //Sets the bool ready in PlayerController to true
             other.GetComponent<PlayerController>().ready = true;
-            readyPlayers++;
+            readyPlayers++;//Adds 1 to readyPlayers
+            //If all players are ready the following if statement is run
             if (readyPlayers >= nrOfPlayers)
             {
+<<<<<<< Updated upstream
                 SceneManager.LoadScene("CombatScene");
                 Debug.Log("Next Level");
+=======
+                //Opens level select menu
+                GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
+                Debug.Log("Choose Level");
+>>>>>>> Stashed changes
             }
             Debug.Log("Player ready");
             //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
@@ -34,22 +44,14 @@ public class ArmoryNextLevel : MonoBehaviour
     }
     private void OnTriggerExit(Collider other) 
     {
+        //If a player leaves the ready zone and is ready
         if(other.CompareTag("Player") && other.GetComponent<PlayerController>().ready)
         {
+            //Sets the bool ready in PlayerController to false
             other.GetComponent<PlayerController>().ready = false;
+            //Decreases the amount of readyplayers by 1
             readyPlayers--;
             Debug.Log("Player Unready");
         }
     }
-    //private void CheckIfReady()
-    //{
-    //    GameObject[] Players = GameObject.FindGameObjectsWithTag("Player");
-    //    foreach(GameObject g in Players)
-    //    {
-    //        if(g.GetComponent<PlayerController>().ready)
-    //        {
-
-    //        }
-    //    }
-    //}
 }
