@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject nextLevelDoor;
     [SerializeField]
     private int baseEnemyCount = 20;
-    private readonly int baseEnemyLimit = 20;
+    private readonly int baseEnemyLimit = 10;
     [SerializeField]
     private int enemyLimit;
     private int enemies;

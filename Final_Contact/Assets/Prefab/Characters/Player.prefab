@@ -983,6 +983,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9008022089767296814, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: maxHeat
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
 --- !u!1 &82208665558755938 stripped
@@ -1067,8 +1071,12 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8427060050935830141, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
+      propertyPath: heatEffect
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427060050935830141, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
       propertyPath: numberProjectiles
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
