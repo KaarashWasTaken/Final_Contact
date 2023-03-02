@@ -2,24 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Shotgun : MonoBehaviour
 {
     //Shooting & aiming variables
+    [Header("Shooting")]
     [SerializeField]
     public float firingspeed = 0.5f;
     public float shooting = 0;
     public Vector2 aiming = Vector2.zero;
     private float lastTimeShot = 0;
     [SerializeField]
-    private float spread = 25;
-    [SerializeField]
     private Transform FiringPoint;
     [SerializeField]
     private Rigidbody projectilePrefab;
+    [SerializeField]
+    private int numberProjectiles = 3;
+    [SerializeField]
+    private float spread = 25;
     private Quaternion originalAngle;
-    private Vector3 deviation;
     //cooldown variables
+    [Header("Cooldown")]
     [SerializeField]
     public float maxHeat = 25;
     [SerializeField]
@@ -53,23 +57,19 @@ public class Shotgun : MonoBehaviour
         {
             heat = heat + heatEffect;
             originalAngle = FiringPoint.rotation;
-            //deviation = originalAngle.EulerAngles();
             lastTimeShot = Time.time;
-            //Quaternion deviation = FiringPoint.rotation;
 
-
-            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
-
-            //FiringPointDeviation.Rotate(FiringPointDeviation.position, -25);
-            FiringPoint.Rotate(FiringPoint.position, -spread);
-            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
-
-            FiringPoint.Rotate(FiringPoint.position, (2*spread));
-            Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
-            
-            Debug.Log(FiringPoint.rotation.ToString());
+            float startAngle = -(spread / 2f);
+            float angleIncrease = spread / (numberProjectiles);
+            FiringPoint.Rotate(0, 0, startAngle);
+            for (int i = 0; i < numberProjectiles; i++)
+            {
+                FiringPoint.Rotate(0, 0, angleIncrease);
+                //FiringPoint.rotation.Normalize();
+                Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
+            }
             FiringPoint.rotation=originalAngle;
-            Debug.Log(spread.ToString());
+
         }
         
     }

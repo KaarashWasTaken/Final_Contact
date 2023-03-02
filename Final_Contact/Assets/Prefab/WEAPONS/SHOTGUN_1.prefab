@@ -206,7 +206,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7244877471631457954}
-  - component: {fileID: 5002319227596748890}
   m_Layer: 0
   m_Name: FiringPoint
   m_TagString: Untagged
@@ -222,29 +221,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6543269598386426207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.62, z: 0}
+  m_LocalPosition: {x: 0, y: 4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8220164464717033920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5002319227596748890
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6543269598386426207}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
 --- !u!1 &7579033685295767858
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,9 +237,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4620384408837567465}
-  - component: {fileID: 7987057912899945438}
+  - component: {fileID: 6228330906356583116}
+  - component: {fileID: 8427060050935830141}
   m_Layer: 0
-  m_Name: SHOTGUN
+  m_Name: SHOTGUN_1
   m_TagString: Shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 7579033685295767858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8725642656919531616}
@@ -280,7 +264,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7987057912899945438
+--- !u!65 &6228330906356583116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579033685295767858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 3.2}
+  m_Center: {x: 0, y: 0, z: -0.3}
+--- !u!114 &8427060050935830141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,9 +292,14 @@ MonoBehaviour:
   firingspeed: 0.5
   shooting: 0
   aiming: {x: 0, y: 0}
-  spread: 15
   FiringPoint: {fileID: 7244877471631457954}
   projectilePrefab: {fileID: 8590623308785216238, guid: 86fb42294fdc58e4fa1335a9ea5a6fd0, type: 3}
+  numberProjectiles: 3
+  spread: 25
+  maxHeat: 25
+  coolingEffect: 0.005
+  heatEffect: 1
+  heat: 0
 --- !u!1 &7826460077611852713
 GameObject:
   m_ObjectHideFlags: 0
