@@ -2,40 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.Rendering.CameraUI;
 
-public class EnemyNavMesh : MonoBehaviour
+public class EnemyNavMeshBomber : MonoBehaviour
 {
+    [SerializeField]
+    private float bomberDamage = 60;
+    [SerializeField]
+    private float explosionRadius = 5;
+    private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
     private bool wandering = false;
+    private bool isExploding = false;
 
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
+        rb = GetComponent<Rigidbody>();
     }
     private void Awake()
     {
-        navMeshAgent= GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-<<<<<<< Updated upstream
-        if (currentTarget == null || gameObject.CompareTag("PlayerDown"))
-            currentTarget = GameObject.Find("Player");
-=======
-        rb.velocity = Vector3.zero;
+
         //If the enemy doenst have a target or targets a downed player it will 
         if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
             currentTarget = GameObject.Find("TempTarget");
-        if (currentTarget != gameObject.CompareTag("Player") && !wandering)
+        if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isExploding)
         {
             Invoke(nameof(Wander), 0);
         }
-
->>>>>>> Stashed changes
         players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject g in players)
         {
@@ -44,8 +44,18 @@ public class EnemyNavMesh : MonoBehaviour
                 currentTarget = g;
             }
         }
-        if (currentTarget.CompareTag("Player"))
+        if (currentTarget.CompareTag("Player") && !isExploding)
             navMeshAgent.destination = currentTarget.transform.position;
+        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 0.5f); //check for players and trigger explosion
+        foreach (Collider c in colliders)
+        {
+            if (c.gameObject.CompareTag("Player"))
+            {
+                isExploding = true;
+                navMeshAgent.isStopped = true;
+                Invoke(nameof(BomberExplode), 1f);
+            }
+        }
     }
 
     private void Wander()
@@ -61,4 +71,20 @@ public class EnemyNavMesh : MonoBehaviour
         if (wandering)
             wandering = false;
     }
+
+
+
+    private void BomberExplode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius); //check for players and do dmg
+        foreach (Collider c in colliders)
+        {
+            if (c.gameObject.CompareTag("Player"))
+            {
+                c.GetComponent<playerBehaviour>().health -= bomberDamage;
+            }
+        }
+        Destroy(transform.parent.gameObject);
+    }
+
 }
