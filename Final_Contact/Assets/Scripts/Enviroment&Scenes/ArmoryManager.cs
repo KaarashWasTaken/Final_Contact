@@ -27,19 +27,25 @@ public class ArmoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Look how many health pickups are active in the scene
         pickupHealth = GameObject.FindGameObjectsWithTag("PickupHealth").Length;
+        //Look how many firerate pickups are active in the scene
         pickupFiringSpeed = GameObject.FindGameObjectsWithTag("PickupFiringSpeed").Length;
+        //Look how many dummies are active in the scene
         dummy = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        //If there are no health pickups and there arent any respaning pickups
         if(pickupHealth < 1 && !respawningHealth)
         {
             Invoke(nameof(RespawnHealthPickup), 5);
             respawningHealth= true;
         }
+        //If there are no firerate pickups and there arent any respawning pickups
         if (pickupFiringSpeed < 1 && !respawningFirerate)
         {
             Invoke(nameof(RespawnFireRatePickup), 5);
             respawningFirerate = true;
         }
+        //If there are no dummies and there arent any respawning dummies
         if (dummy  < 1 && !respawningDummy)
         {
             Invoke(nameof(RespawnDummy), 5);
@@ -48,16 +54,19 @@ public class ArmoryManager : MonoBehaviour
     }
     private void RespawnHealthPickup()
     {
+        //Spawns a health pickup at the southernmost pickup spawnpoint
         Instantiate(healthPrefab, pickupSpawnPoints[1].transform.position, Quaternion.identity);    
         respawningHealth = false;
     }
     private void RespawnFireRatePickup()
     {
+        //Spawns a firerate pickup at the northernmost pickup spawnpoint
         Instantiate(fireRatePrefab, pickupSpawnPoints[0].transform.position, Quaternion.identity);
         respawningFirerate = false;
     }
     private void RespawnDummy()
     {
+        //Spawns a dummy at the given coordinates with the given rotation
         Instantiate(dummyPrefab, new Vector3(40,2.5f,0), Quaternion.Euler(0,270,0));
         respawningDummy = false;
     }
