@@ -15,6 +15,9 @@ public class ArmoryManager : MonoBehaviour
     private GameObject dummyPrefab;
     [SerializeField]
     private Transform[] pickupSpawnPoints;
+    private bool respawningHealth = false;
+    private bool respawningFirerate = false;
+    private bool respawningDummy = false;
     private void Start()
     {
         Instantiate(dummyPrefab, new Vector3(40,2.5f,0), Quaternion.Euler(0,270,0));
@@ -27,40 +30,35 @@ public class ArmoryManager : MonoBehaviour
         pickupHealth = GameObject.FindGameObjectsWithTag("PickupHealth").Length;
         pickupFiringSpeed = GameObject.FindGameObjectsWithTag("PickupFiringSpeed").Length;
         dummy = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if(pickupHealth < 1)
+        if(pickupHealth < 1 && !respawningHealth)
         {
-            RespawnHealthPickup();
+            Invoke(nameof(RespawnHealthPickup), 5);
+            respawningHealth= true;
         }
-        if (pickupFiringSpeed < 1)
+        if (pickupFiringSpeed < 1 && !respawningFirerate)
         {
-            RespawnFirePickup();
+            Invoke(nameof(RespawnFireRatePickup), 5);
+            respawningFirerate = true;
         }
-        if (dummy  < 1)
+        if (dummy  < 1 && !respawningDummy)
         {
-            RespawnDummy();
+            Invoke(nameof(RespawnDummy), 5);
+            respawningDummy = true;
         }
     }
     private void RespawnHealthPickup()
     {
-        float timeSinceDeath;
-        timeSinceDeath = Time.time;
-        if (Time.time > timeSinceDeath + 5)
-            Instantiate(healthPrefab, pickupSpawnPoints[1].transform.position, Quaternion.identity);
-            
+        Instantiate(healthPrefab, pickupSpawnPoints[1].transform.position, Quaternion.identity);    
+        respawningHealth = false;
     }
-    private void RespawnFirePickup()
+    private void RespawnFireRatePickup()
     {
-        float timeSinceDeath;
-        timeSinceDeath = Time.time;
-        if (Time.time > timeSinceDeath + 5)
-            Instantiate(fireRatePrefab, pickupSpawnPoints[0].transform.position, Quaternion.identity);
-            
+        Instantiate(fireRatePrefab, pickupSpawnPoints[0].transform.position, Quaternion.identity);
+        respawningFirerate = false;
     }
     private void RespawnDummy()
     {
-        float timeSinceDeath;
-        timeSinceDeath = Time.time;
-        if(Time.time > timeSinceDeath + 5)
-            Instantiate(dummyPrefab, new Vector3(40,2.5f,0), Quaternion.Euler(0,270,0));
+        Instantiate(dummyPrefab, new Vector3(40,2.5f,0), Quaternion.Euler(0,270,0));
+        respawningDummy = false;
     }
 }
