@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
 {
     PlayerInputManager playerManager;
     private GameObject[] players;
+    private GameObject[] downedPlayers;
+    private float nrOfPlayers;
+    private GameObject gameOver;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -22,12 +25,26 @@ public class PlayerManager : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        gameOver = GameObject.FindWithTag("GameOver");
         Debug.Log("OnSceneLoaded: " + scene.name);
         scene = SceneManager.GetActiveScene();
+        //Diables joining when the scene is not armory
         if (scene.name != "Armory")
             playerManager.DisableJoining();
         players = GameObject.FindGameObjectsWithTag("Player");
+        nrOfPlayers = players.Length;
+        //Loops through the players and set them to unready
         foreach (GameObject g in players)
             g.GetComponent<PlayerController>().ready = false;
+    }
+    public void CheckIfAllDown()
+    {
+        downedPlayers = GameObject.FindGameObjectsWithTag("PlayerDown");
+        if(downedPlayers.Length >= nrOfPlayers)
+        {
+            Debug.Log("GameOver");
+            //insert Gameover script here
+            GameObject.FindWithTag("GameOver").GetComponent<GameOver>().Activate();
+        }
     }
 }

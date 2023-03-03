@@ -14,7 +14,7 @@ public class ArmoryNextLevel : MonoBehaviour
         //Sets the value of nrOfPlayers to the amount of objects that have the tag Player
         nrOfPlayers = GameObject.FindGameObjectsWithTag("Player").Length;
         //Checks if the trigger is a player, if the player isn't ready and if the player has a weapon equipped
-        if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().ready && other.gameObject.GetComponentInChildren<WeaponManager>().playerWeapon != WeaponManager.equippedWeapon.None)
+        if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().ready && other.gameObject.GetComponentInChildren<WeaponManager>().playerWeapon != WeaponManager.EquippedWeapon.None)
         {
             //Sets the bool ready in PlayerController to true
             other.GetComponent<PlayerController>().ready = true;

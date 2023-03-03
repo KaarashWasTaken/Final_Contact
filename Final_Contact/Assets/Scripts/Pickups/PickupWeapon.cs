@@ -8,7 +8,7 @@ public class PickupWeapon : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(other.gameObject.GetComponentInChildren<WeaponManager>().playerWeapon==WeaponManager.equippedWeapon.None)
+            if(other.gameObject.GetComponentInChildren<WeaponManager>().playerWeapon==WeaponManager.EquippedWeapon.None)
                 Destroy(gameObject);
         }
         

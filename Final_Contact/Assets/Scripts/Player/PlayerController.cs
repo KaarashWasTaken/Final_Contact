@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         playerSpeed = initalPlayerSpeed;
         //ReviveCollider= gameObject.GetComponentInChildren<MeshCollider>();
         DontDestroyOnLoad(gameObject.transform.parent);
+        lastDodge = -3;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -118,7 +119,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Shoot()
     {
-        gameObject.GetComponentInChildren<WeaponManager>().shoot();
+        gameObject.GetComponentInChildren<WeaponManager>().Shoot();
     }
     private void Dodge()
     {
@@ -133,6 +134,11 @@ public class PlayerController : MonoBehaviour
             playerSpeed += boostIncrease;
         }
     }
+    private void EndBoost()
+    {
+        isBoostActivated = false;
+        playerSpeed = initalPlayerSpeed;
+    }
     private void Pause()
     {
 
@@ -144,11 +150,6 @@ public class PlayerController : MonoBehaviour
         {
             GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Continue();
         }
-    }
-    private void EndBoost()
-    {
-        isBoostActivated = false;
-        playerSpeed = initalPlayerSpeed;
     }
     public void Down()
     {
@@ -162,6 +163,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("playerisdown");
             transform.rotation = Quaternion.Euler(90, 0, 0);
         }
+        GameObject.Find("PlayerManager").GetComponent<PlayerManager>().CheckIfAllDown();
     }
     
 }

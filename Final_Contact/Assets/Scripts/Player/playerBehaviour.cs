@@ -21,7 +21,7 @@ public class playerBehaviour : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
-        if (health <= 0)
+        if (health <= 0 && !GetComponent<PlayerController>().downed)
         {
             GetComponent<PlayerController>().Down();
         }
@@ -48,7 +48,7 @@ public class playerBehaviour : MonoBehaviour
         {
             gameObject.GetComponentInChildren<WeaponManager>().FiringSpeedBonus(other.gameObject);
         }
-        if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon == WeaponManager.equippedWeapon.None)
+        if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon == WeaponManager.EquippedWeapon.None)
         {
             gameObject.GetComponentInChildren<WeaponManager>().PickupWeapon(other.gameObject);
         }

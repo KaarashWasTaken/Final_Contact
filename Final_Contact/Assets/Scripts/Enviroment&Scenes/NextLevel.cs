@@ -2,75 +2,68 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+
 public class NextLevel : MonoBehaviour
 {
-    EnemyManager enemyManager;
+    [SerializeField]
     private int readyPlayers;
+    [SerializeField]
     private int nrOfPlayers;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
-    }
+    private EnemyManager enemyManager;
+    private bool popupActive = false;
+    public GameObject enemiesPopup;
     private void OnTriggerEnter(Collider other)
     {
+        //Sets the value of nrOfPlayers to the amount of objects that have the tag Player
         nrOfPlayers = GameObject.FindGameObjectsWithTag("Player").Length;
-        if (other.CompareTag("Player") && enemyManager.enemyLevelCount <= 0 && !other.GetComponent<PlayerController>().ready)
+        enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+        //Checks if the trigger is a player, if the player isn't ready and if the player has a weapon equipped
+        if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().ready && enemyManager.enemyLevelCount <= 0)
         {
+            //Sets the bool ready in PlayerController to true
             other.GetComponent<PlayerController>().ready = true;
-            readyPlayers++;
-            Debug.Log("Player ready");
-            if (readyPlayers >= nrOfPlayers + 1)
+            readyPlayers++;//Adds 1 to readyPlayers
+            //If all players are ready the following if statement is run
+            if (readyPlayers >= nrOfPlayers)
             {
-                //SceneManager.LoadScene("CombatScene");
+                //Opens level select menu
+                GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
                 Debug.Log("Choose Level");
             }
+            Debug.Log("Player ready");
             //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             //if (SceneManager.sceneCount > nextSceneIndex)
             //{
             //    SceneManager.LoadScene(nextSceneIndex);
             //}
-
-            //public static bool paused = false;
-            //public GameObject pauseMenuUI;
-            // Update is called once per frame
-            //    void Update()
-            //    {
-            //        if (Input.GetKeyDown(KeyCode.Escape))
-            //        {
-            //            if (paused)
-            //            {
-            //                Continue();
-            //            }
-            //            else
-            //            {
-            //                Pause();
-            //            }
-            //        }
-            //    }
-            //    public void Pause()
-            //    {
-            //        pauseMenuUI.SetActive(true);
-            //        Time.timeScale = 0f;
-            //        paused = true;
-            //    }
-            //    public void Continue()
-            //    {
-            //        pauseMenuUI.SetActive(false);
-            //        Time.timeScale = 1f;
-            //        paused = false;
-            //    }
-            //    public void StopPlaying()
-            //    {
-            //        Application.Quit();
-            //    }
-            //}
-            else if (other.CompareTag("Player") && enemyManager.enemyLevelCount > 0)
-            {
-                Debug.Log("Kill all enemies to progress");
-            }
+            //CheckIfReady();
         }
+        else if(other.CompareTag("Player") && enemyManager.enemyLevelCount > 0 && !popupActive)
+        {
+            Invoke(nameof(KillEnemiesPopup), 0);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        //If a player leaves the ready zone and is ready
+        if (other.CompareTag("Player") && other.GetComponent<PlayerController>().ready)
+        {
+            //Sets the bool ready in PlayerController to false
+            other.GetComponent<PlayerController>().ready = false;
+            //Decreases the amount of readyplayers by 1
+            readyPlayers--;
+            Debug.Log("Player Unready");
+        }
+    }
+    private void KillEnemiesPopup()
+    {
+        popupActive = true;
+        enemiesPopup.SetActive(true);
+        Invoke(nameof(EndPopup), 5);
+    }
+    private void EndPopup()
+    {
+        popupActive = false;
+        enemiesPopup.SetActive(false);
     }
 }

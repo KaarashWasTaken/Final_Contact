@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public enum equippedWeapon
+    public enum EquippedWeapon
     {
         AR,
         None,
@@ -13,7 +13,7 @@ public class WeaponManager : MonoBehaviour
         MG,
         Sword
     }
-    public equippedWeapon playerWeapon;
+    public EquippedWeapon playerWeapon;
     public GameObject AR;
     public GameObject Shotgun;
     public GameObject SMG;
@@ -30,7 +30,7 @@ public class WeaponManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerWeapon = equippedWeapon.None;
+        playerWeapon = EquippedWeapon.None;
     }
 
     // Update is called once per frame
@@ -39,28 +39,37 @@ public class WeaponManager : MonoBehaviour
         //returns firing speed to normal after pickup
         if (firingSpeedActive && currentFiringSpeed != originalFiringSpeed && Time.time > timeFiringSpeed)
         {
-            if (playerWeapon == equippedWeapon.AR)
+            if (playerWeapon == EquippedWeapon.AR)
             {
                 gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
                 gameObject.GetComponentInChildren<AR>().heatEffect = originalHeatEffect;
             }
-            if (playerWeapon == equippedWeapon.Shotgun)
+            if (playerWeapon == EquippedWeapon.Shotgun)
             {
                 gameObject.GetComponentInChildren<Shotgun>().firingspeed = originalFiringSpeed;
                 gameObject.GetComponentInChildren<Shotgun>().heatEffect = originalHeatEffect;
             }
-                
+            if (playerWeapon == EquippedWeapon.MG)
+            {
+                gameObject.GetComponentInChildren<MG>().firingspeed = originalFiringSpeed;
+                gameObject.GetComponentInChildren<MG>().heatEffect = originalHeatEffect;
+            }
+
             firingSpeedActive = false;
         }
 
         //gets how close the picked up weapon is to overheating
-        if (playerWeapon == equippedWeapon.AR)
+        if (playerWeapon == EquippedWeapon.AR)
         {
             heat = gameObject.GetComponentInChildren<AR>().heat / gameObject.GetComponentInChildren<AR>().maxHeat;
         }
-        else if (playerWeapon == equippedWeapon.Shotgun)
+        else if (playerWeapon == EquippedWeapon.Shotgun)
         {
             heat = gameObject.GetComponentInChildren<Shotgun>().heat / gameObject.GetComponentInChildren<Shotgun>().maxHeat;
+        }
+        else if (playerWeapon == EquippedWeapon.MG)
+        {
+            heat = gameObject.GetComponentInChildren<MG>().heat / gameObject.GetComponentInChildren<MG>().maxHeat;
         }
     }
     public void PickupWeapon(GameObject weapon)
@@ -69,16 +78,23 @@ public class WeaponManager : MonoBehaviour
         if (weapon.gameObject.CompareTag("AR"))
         {
             AR.SetActive(true);
-            playerWeapon = equippedWeapon.AR;
+            playerWeapon = EquippedWeapon.AR;
             originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
             originalHeatEffect = gameObject.GetComponentInChildren<AR>().heatEffect;
         }
         else if(weapon.gameObject.CompareTag("Shotgun"))
         {
             Shotgun.SetActive(true);
-            playerWeapon = equippedWeapon.Shotgun;
+            playerWeapon = EquippedWeapon.Shotgun;
             originalFiringSpeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed;
             originalHeatEffect = gameObject.GetComponentInChildren<Shotgun>().heatEffect;
+        }
+        else if (weapon.gameObject.CompareTag("MG"))
+        {
+            MG.SetActive(true);
+            playerWeapon = EquippedWeapon.MG;
+            originalFiringSpeed = gameObject.GetComponentInChildren<MG>().firingspeed;
+            originalHeatEffect = gameObject.GetComponentInChildren<MG>().heatEffect;
         }
     }
     public void FiringSpeedBonus(GameObject pickup)
@@ -88,32 +104,43 @@ public class WeaponManager : MonoBehaviour
         {
             firingSpeedActive = true;
             timeFiringSpeed = Time.time + pickup.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
-            if (playerWeapon == equippedWeapon.AR)
+            if (playerWeapon == EquippedWeapon.AR)
             {
                 gameObject.GetComponentInChildren<AR>().firingspeed = gameObject.GetComponentInChildren<AR>().firingspeed * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
                 gameObject.GetComponentInChildren<AR>().heatEffect= gameObject.GetComponentInChildren<AR>().heatEffect * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
                 currentFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
                 currentHeatEffect = gameObject.GetComponentInChildren<AR>().heatEffect;
             }
-            if (playerWeapon == equippedWeapon.Shotgun)
+            if (playerWeapon == EquippedWeapon.Shotgun)
             {
                 gameObject.GetComponentInChildren<Shotgun>().firingspeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
                 gameObject.GetComponentInChildren<Shotgun>().heatEffect = gameObject.GetComponentInChildren<Shotgun>().heatEffect * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
                 currentFiringSpeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed;
                 currentHeatEffect = gameObject.GetComponentInChildren<Shotgun>().heatEffect;
             }
+            if (playerWeapon == EquippedWeapon.MG)
+            {
+                gameObject.GetComponentInChildren<MG>().firingspeed = gameObject.GetComponentInChildren<MG>().firingspeed * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
+                gameObject.GetComponentInChildren<MG>().heatEffect = gameObject.GetComponentInChildren<MG>().heatEffect * pickup.gameObject.GetComponent<PickupFiringSpeed>().firingSpeedMultiplier;
+                currentFiringSpeed = gameObject.GetComponentInChildren<MG>().firingspeed;
+                currentHeatEffect = gameObject.GetComponentInChildren<MG>().heatEffect;
+            }
         }
     }
-    public void shoot()
+    public void Shoot()
     {
         //shoots the picked up weapon
-        if (playerWeapon == equippedWeapon.AR)
+        if (playerWeapon == EquippedWeapon.AR)
         {
             gameObject.GetComponentInChildren<AR>().Shoot();
         }
-        if (playerWeapon == equippedWeapon.Shotgun)
+        if (playerWeapon == EquippedWeapon.Shotgun)
         {
             gameObject.GetComponentInChildren<Shotgun>().Shoot();
+        }
+        if (playerWeapon == EquippedWeapon.MG)
+        {
+            gameObject.GetComponentInChildren<MG>().Shoot();
         }
     }
 }
