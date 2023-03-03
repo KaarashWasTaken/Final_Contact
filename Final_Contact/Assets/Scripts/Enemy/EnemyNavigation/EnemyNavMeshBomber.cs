@@ -84,19 +84,10 @@ public class EnemyNavMeshBomber : MonoBehaviour
         {
             if (c.gameObject.CompareTag("Player"))
             {
-                Debug.Log("ExplosionsDamage");
                 c.GetComponent<playerBehaviour>().health -= bomberDamage;
                 Destroy(transform.parent.gameObject);
             }
         }
         Destroy(transform.parent.gameObject);
-
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
-    }
-
 }
