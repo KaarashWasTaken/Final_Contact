@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 aiming = Vector2.zero;
     //Dodge variables
     [SerializeField]
-    private float dodgeCD = 5.0f;
+    private float dodgeCD = 3.0f;
     private float dodgeInput = 0;
     private float lastDodge;
     [SerializeField]

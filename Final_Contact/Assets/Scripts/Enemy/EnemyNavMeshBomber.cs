@@ -9,6 +9,8 @@ public class EnemyNavMeshBomber : MonoBehaviour
     private float bomberDamage = 60;
     [SerializeField]
     private float explosionRadius = 5;
+    [SerializeField]
+    private float timeToExplosion = 0.5f;
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
     private GameObject[] players;
@@ -53,7 +55,7 @@ public class EnemyNavMeshBomber : MonoBehaviour
             {
                 isExploding = true;
                 navMeshAgent.isStopped = true;
-                Invoke(nameof(BomberExplode), 1f);
+                Invoke(nameof(BomberExplode), timeToExplosion);
             }
         }
     }
@@ -76,15 +78,25 @@ public class EnemyNavMeshBomber : MonoBehaviour
 
     private void BomberExplode()
     {
+        
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius); //check for players and do dmg
         foreach (Collider c in colliders)
         {
             if (c.gameObject.CompareTag("Player"))
             {
+                Debug.Log("ExplosionsDamage");
                 c.GetComponent<playerBehaviour>().health -= bomberDamage;
+                Destroy(transform.parent.gameObject);
             }
         }
         Destroy(transform.parent.gameObject);
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 
 }
