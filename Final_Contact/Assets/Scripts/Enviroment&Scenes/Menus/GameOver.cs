@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour
     private void Start()
     {
         gameOverUI.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
     public void Activate()
     {

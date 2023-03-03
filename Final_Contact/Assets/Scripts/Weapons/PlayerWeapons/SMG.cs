@@ -18,7 +18,7 @@ public class SMG : MonoBehaviour
     [SerializeField]
     public float maxHeat = 25;
     [SerializeField]
-    private float coolingEffect = 0.5f;
+    private float coolingEffect = 0.03f;
     [SerializeField]
     public float heatEffect = 1;
     public float heat;

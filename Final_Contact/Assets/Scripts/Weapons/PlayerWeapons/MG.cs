@@ -6,7 +6,7 @@ public class MG : MonoBehaviour
 {
     //Shooting & aiming variables
     [SerializeField]
-    public float firingspeed = 0.5f;
+    public float firingspeed = 0.3f;
     public float shooting = 0;
     public Vector2 aiming = Vector2.zero;
     private float lastTimeShot = 0;
@@ -16,9 +16,9 @@ public class MG : MonoBehaviour
     private Rigidbody projectilePrefab;
     //cooldown variables
     [SerializeField]
-    public float maxHeat = 25;
+    public float maxHeat = 30;
     [SerializeField]
-    private float coolingEffect = 0.5f;
+    private float coolingEffect = 0.01f;
     [SerializeField]
     public float heatEffect = 1;
     public float heat;

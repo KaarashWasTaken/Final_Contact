@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1234612948534855605}
   - component: {fileID: 6424253813374181722}
   - component: {fileID: 6768987579432164211}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1462940348315621528}
   - component: {fileID: 7465261111820029180}
   - component: {fileID: 5360282635291142628}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4486965230124474768}
   - component: {fileID: 4948245028523807498}
   - component: {fileID: 7756401972599451450}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 3539870460627572309}
   - component: {fileID: 6506239400777283090}
   - component: {fileID: 4774306458981625870}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 2803428184215263094}
   - component: {fileID: 6321365005235394277}
   - component: {fileID: 7522049878150728031}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,9 +495,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 178861879346704405}
-  - component: {fileID: 98142650501584574}
-  m_Layer: 9
-  m_Name: SMG
+  - component: {fileID: 8726285193781621086}
+  - component: {fileID: 4882609580820876146}
+  m_Layer: 0
+  m_Name: SMG-Pickup
   m_TagString: SMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +525,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &98142650501584574
+--- !u!114 &8726285193781621086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,19 +534,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6859727675911608801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3d958a2d7882824883e199e3a575600, type: 3}
+  m_Script: {fileID: 11500000, guid: 3baa64ee0af29c84e82b0cfb30f261d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingspeed: 0.05
-  shooting: 0
-  aiming: {x: 0, y: 0}
-  FiringPoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
-  maxHeat: 25
-  coolingEffect: 0.05
-  heatEffect: 2
-  heat: 0
-  shootSpread: 15
+--- !u!65 &4882609580820876146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859727675911608801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7499412338482829892
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +562,7 @@ GameObject:
   - component: {fileID: 4124083178401653717}
   - component: {fileID: 1059144629785137373}
   - component: {fileID: 304704209475635268}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
