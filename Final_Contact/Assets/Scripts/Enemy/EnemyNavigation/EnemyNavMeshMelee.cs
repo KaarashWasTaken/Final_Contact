@@ -40,6 +40,10 @@ public class EnemyNavMeshMelee : MonoBehaviour
         }
         if (currentTarget.CompareTag("Player"))
             navMeshAgent.destination = currentTarget.transform.position;
+        if (GetComponent<EnemyStandard>().health <= 0)
+        {
+            navMeshAgent.isStopped = true;
+        }
     }
 
     private void Wander()

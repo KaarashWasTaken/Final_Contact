@@ -43,6 +43,10 @@ public class EnemyNavMeshRanged : MonoBehaviour
         {
             ShootAtPlayer();
         }
+        if (GetComponent<EnemyStandard>().health <= 0)
+        {
+            navMeshAgent.isStopped = true;
+        }
     }
     private void ShootAtPlayer()
     {

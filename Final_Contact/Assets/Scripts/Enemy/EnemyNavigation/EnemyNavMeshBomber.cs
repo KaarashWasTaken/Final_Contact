@@ -58,6 +58,10 @@ public class EnemyNavMeshBomber : MonoBehaviour
                 Invoke(nameof(BomberExplode), timeToExplosion);
             }
         }
+        if (GetComponent<EnemyStandard>().health <= 0)
+        {
+            navMeshAgent.isStopped = true;
+        }
     }
 
     private void Wander()

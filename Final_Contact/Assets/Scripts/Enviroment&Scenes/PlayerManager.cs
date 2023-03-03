@@ -29,10 +29,10 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("OnSceneLoaded: " + scene.name);
         scene = SceneManager.GetActiveScene();
         //Diables joining when the scene is not armory
-        if (scene.name != "Armory")
-            playerManager.DisableJoining();
-        if (scene.name == "Armory")
-            playerManager.EnableJoining();
+        //if (scene.name != "Armory")
+        //    playerManager.DisableJoining();
+        //if (scene.name == "Armory")
+        //    playerManager.EnableJoining();
         players = GameObject.FindGameObjectsWithTag("Player");
         //Loops through the players and set them to unready
         foreach (GameObject g in players)

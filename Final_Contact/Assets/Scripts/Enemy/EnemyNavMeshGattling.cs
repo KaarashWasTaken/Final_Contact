@@ -23,7 +23,7 @@ public class EnemyNavMeshGattling : MonoBehaviour
     {
         currentTarget = GameObject.Find("TempTarget");
         navMeshAgent = GetComponent<NavMeshAgent>();
-        //Invoke(nameof(Wander), Random.Range(3, 8));
+        Invoke(nameof(Wander), Random.Range(5, 10));
     }
     private void Update()
     {
@@ -47,6 +47,10 @@ public class EnemyNavMeshGattling : MonoBehaviour
         {
             ShootAtPlayer();
         }
+        if(GetComponent<EnemyStandard>().health <= 0)
+        {
+            navMeshAgent.isStopped=true;
+        }
     }
     private void ShootAtPlayer()
     {
@@ -54,19 +58,19 @@ public class EnemyNavMeshGattling : MonoBehaviour
         navMeshAgent.isStopped = true;
         gameObject.GetComponent<EnemyShoot>().SpreadShoot();
     }
-    //private void Wander()
-    //{
-    //    navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
-    //    if (!wandering)
-    //        wandering = true;
-    //    navMeshAgent.isStopped = false;
-    //    Invoke(nameof(EndWander), Random.Range(1, 3));
-    //}
-    //private void EndWander()
-    //{
-    //    transform.LookAt(currentTarget.transform.position);
-    //    if (wandering)
-    //        wandering = false;
-    //    Invoke(nameof(Wander), Random.Range(3, 8));
-    //}
+    private void Wander()
+    {
+        navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
+        if (!wandering)
+            wandering = true;
+        navMeshAgent.isStopped = false;
+        Invoke(nameof(EndWander), Random.Range(1, 3));
+    }
+    private void EndWander()
+    {
+        transform.LookAt(currentTarget.transform.position);
+        if (wandering)
+            wandering = false;
+        Invoke(nameof(Wander), Random.Range(5, 10));
+    }
 }
