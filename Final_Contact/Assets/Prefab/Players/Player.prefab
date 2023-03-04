@@ -1020,6 +1020,14 @@ PrefabInstance:
       propertyPath: maxHeat
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9008022089767296814, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: heatEffect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008022089767296814, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: coolingEffect
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
 --- !u!1 &82208665558755938 stripped
@@ -1143,7 +1151,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3691607741591800424, guid: 4d8a4a5b12f7685479aad6341a2d0e66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d8a4a5b12f7685479aad6341a2d0e66, type: 3}
 --- !u!4 &548736347062807774 stripped
 Transform:
@@ -1173,10 +1182,10 @@ MonoBehaviour:
   FiringPoint: {fileID: 548736347062807774}
   projectilePrefab: {fileID: 8590623308785216238, guid: a891f4254d870684dad6c1cc4b0dbb4a, type: 3}
   maxHeat: 30
-  coolingEffect: 0.008
-  heatEffect: 1
+  coolingEffect: 3
+  heatEffect: 1.5
   heat: 0
-  shootSpread: 15
+  shootSpread: 12
 --- !u!4 &7693305456197598002 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7362066976207026428, guid: 4d8a4a5b12f7685479aad6341a2d0e66, type: 3}
@@ -1191,7 +1200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
       propertyPath: heatEffect
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
       propertyPath: FiringPoint
@@ -1202,8 +1211,12 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
+      propertyPath: shootSpread
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
       propertyPath: coolingEffect
-      value: 0.03
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
       propertyPath: projectilePrefab
@@ -1367,7 +1380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8427060050935830141, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
       propertyPath: spread
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8427060050935830141, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
       propertyPath: heatEffect
@@ -1375,11 +1388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8427060050935830141, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
       propertyPath: coolingEffect
-      value: 0.035
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8427060050935830141, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}
       propertyPath: numberProjectiles
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09c981c033f5bc4dba8126e119080f8, type: 3}

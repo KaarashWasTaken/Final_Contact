@@ -9,7 +9,7 @@ public class EnemyNavMeshMelee : MonoBehaviour
     private GameObject[] players;
     private GameObject currentTarget;
     private bool wandering = false;
-
+    private bool dissolving;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -22,27 +22,31 @@ public class EnemyNavMeshMelee : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = Vector3.zero;
-        //If the enemy doenst have a target or targets a downed player it will 
-        if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
-            currentTarget = GameObject.Find("TempTarget");
-        if (currentTarget != gameObject.CompareTag("Player") && !wandering)
+        if (!dissolving)
         {
-            Invoke(nameof(Wander), 0);
-        }
-        players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject g in players)
-        {
-            if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+            //If the enemy doenst have a target or targets a downed player it will 
+            if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
+                currentTarget = GameObject.Find("TempTarget");
+            if (currentTarget != gameObject.CompareTag("Player") && !wandering)
             {
-                currentTarget = g;
+                Invoke(nameof(Wander), 0);
             }
-        }
-        if (currentTarget.CompareTag("Player"))
-            navMeshAgent.destination = currentTarget.transform.position;
-        if (GetComponent<EnemyStandard>().health <= 0)
-        {
-            navMeshAgent.isStopped = true;
+            players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject g in players)
+            {
+                if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+                {
+                    currentTarget = g;
+                }
+            }
+            if (currentTarget.CompareTag("Player"))
+                navMeshAgent.destination = currentTarget.transform.position;
+
+            if (GetComponent<EnemyStandard>().health <= 0)
+            {
+                dissolving = true;
+                navMeshAgent.isStopped = true;
+            }
         }
     }
 
@@ -58,5 +62,14 @@ public class EnemyNavMeshMelee : MonoBehaviour
     {
         if (wandering)
             wandering = false;
+    }
+    public void AttackCD()
+    {
+        navMeshAgent.isStopped= true;
+        Invoke(nameof(StopCD), 1);
+    }
+    private void StopCD()
+    {
+        navMeshAgent.isStopped= false;
     }
 }

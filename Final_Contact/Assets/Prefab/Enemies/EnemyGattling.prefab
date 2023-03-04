@@ -145,8 +145,8 @@ GameObject:
   - component: {fileID: 2318798238492380523}
   - component: {fileID: 482920361293061440}
   - component: {fileID: 1888910138029768140}
-  - component: {fileID: 1108925437454755151}
   - component: {fileID: 952210467244832639}
+  - component: {fileID: 1625047186757104115}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -302,20 +302,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 491760456140334473, guid: 1caac775bcc1e034a95937972a728a75, type: 3}
   firingspeed: 0.2
   shootSpread: 15
---- !u!114 &1108925437454755151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216977634021453346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa2e0cc96f7f7543a15ee753dff6223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCD: 2
-  damage: 10
 --- !u!114 &952210467244832639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +317,20 @@ MonoBehaviour:
   maxDistance: 50
   currentDistance: 0
   timeUntilWander: 0
+--- !u!114 &1625047186757104115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216977634021453346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d9c2d568b15814eb1c4d3ddbf1b2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCD: 2
+  damage: 25
 --- !u!1 &8563019753211805002
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,9 +548,13 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9008022089767296814, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
+      propertyPath: firingspeed
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008022089767296814, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 491760456140334473, guid: 1caac775bcc1e034a95937972a728a75, type: 3}
+      objectReference: {fileID: 491760456140334473, guid: 1b1503f04d385a54d8b9c0fe6f1de59a, type: 3}
     - target: {fileID: 9211002689406795803, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.40586

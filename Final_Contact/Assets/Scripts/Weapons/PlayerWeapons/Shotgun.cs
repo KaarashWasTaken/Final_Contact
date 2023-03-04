@@ -20,16 +20,16 @@ public class Shotgun : MonoBehaviour
     [SerializeField]
     private int numberProjectiles = 3;
     [SerializeField]
-    private float spread = 25;
+    private float spread = 35;
     private Quaternion originalAngle;
     //cooldown variables
     [Header("Cooldown")]
     [SerializeField]
     public float maxHeat = 25;
     [SerializeField]
-    private float coolingEffect = 0.005f;
+    private float coolingEffect = 7f;
     [SerializeField]
-    public float heatEffect = 1;
+    public float heatEffect = 4;
     public float heat;
     private bool onCooldown;
 
@@ -47,7 +47,7 @@ public class Shotgun : MonoBehaviour
         }
         //cools the weapon each frame
         if (heat > 0 && lastTimeShot + firingspeed <= Time.time)
-            heat = heat - coolingEffect;
+            heat -= coolingEffect * Time.deltaTime;
     }
 
     public void Shoot()

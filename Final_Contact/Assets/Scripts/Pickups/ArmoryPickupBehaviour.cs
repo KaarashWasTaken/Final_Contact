@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupBehaviour : MonoBehaviour
+public class ArmoryPickupBehaviour : MonoBehaviour
 {
     public float health = 100f;
     private void OnTriggerEnter(Collider other)
@@ -33,9 +33,6 @@ public class PickupBehaviour : MonoBehaviour
     }
     private void KillPickup()
     {
-        transform.parent.gameObject.GetComponentInParent<SpawnPickup>().hasPickup = false;
-        transform.parent.gameObject.GetComponentInParent<SpawnPickup>().StartSpawn();
         Destroy(transform.parent.gameObject);
-
     }
 }

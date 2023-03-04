@@ -16,7 +16,7 @@ public class EnemyNavMeshGattling : MonoBehaviour
     [SerializeField]
     private float timeUntilWander;
     private bool wandering = false;
-
+    private bool dissolving;
 
     // Start is called before the first frame update
     private void Start()
@@ -27,29 +27,34 @@ public class EnemyNavMeshGattling : MonoBehaviour
     }
     private void Update()
     {
-        if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
-            currentTarget = GameObject.Find("TempTarget");
-        players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject g in players)
+        if (!dissolving)
         {
-            if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+            if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
+                currentTarget = GameObject.Find("TempTarget");
+            players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject g in players)
             {
-                currentTarget = g;
+                if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+                {
+                    currentTarget = g;
+                }
             }
-        }
-        currentDistance = Vector3.Distance(currentTarget.transform.position, gameObject.transform.position);
-        if (currentDistance > maxDistance && !wandering)
-        {
-            navMeshAgent.SetDestination(currentTarget.transform.position);
-            navMeshAgent.isStopped = false;
-        }
-        else if (currentDistance <= maxDistance && !wandering)
-        {
-            ShootAtPlayer();
-        }
-        if(GetComponent<EnemyStandard>().health <= 0)
-        {
-            navMeshAgent.isStopped=true;
+            currentDistance = Vector3.Distance(currentTarget.transform.position, gameObject.transform.position);
+            if (currentDistance > maxDistance && !wandering)
+            {
+                navMeshAgent.SetDestination(currentTarget.transform.position);
+                navMeshAgent.isStopped = false;
+            }
+            else if (currentDistance <= maxDistance && !wandering)
+            {
+                ShootAtPlayer();
+            }
+
+            if (GetComponent<EnemyStandard>().health <= 0)
+            {
+                dissolving = true;
+                navMeshAgent.isStopped = true;
+            }
         }
     }
     private void ShootAtPlayer()

@@ -627,6 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7362066976207026428}
+  - component: {fileID: 3691607741591800424}
   m_Layer: 0
   m_Name: MG
   m_TagString: MG
@@ -657,6 +658,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3691607741591800424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377268982918972842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b80fc21250ae409383f4686604e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingspeed: 0.3
+  shooting: 0
+  aiming: {x: 0, y: 0}
+  FiringPoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  maxHeat: 30
+  coolingEffect: 0.01
+  heatEffect: 1
+  heat: 0
+  shootSpread: 10
 --- !u!1 &5595178722139267011
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class EnemyNavMeshBomber : MonoBehaviour
     private GameObject currentTarget;
     private bool wandering = false;
     private bool isExploding = false;
-
+    private bool dissolving;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -30,37 +30,40 @@ public class EnemyNavMeshBomber : MonoBehaviour
 
     private void Update()
     {
-
-        //If the enemy doenst have a target or targets a downed player it will 
-        if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
-            currentTarget = GameObject.Find("TempTarget");
-        if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isExploding)
+        if (!dissolving)
         {
-            Invoke(nameof(Wander), 0);
-        }
-        players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject g in players)
-        {
-            if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+            //If the enemy doenst have a target or targets a downed player it will 
+            if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
+                currentTarget = GameObject.Find("TempTarget");
+            if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isExploding)
             {
-                currentTarget = g;
+                Invoke(nameof(Wander), 0);
             }
-        }
-        if (currentTarget.CompareTag("Player") && !isExploding)
-            navMeshAgent.destination = currentTarget.transform.position;
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 0.5f); //check for players and trigger explosion
-        foreach (Collider c in colliders)
-        {
-            if (c.gameObject.CompareTag("Player"))
+            players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject g in players)
             {
-                isExploding = true;
+                if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+                {
+                    currentTarget = g;
+                }
+            }
+            if (currentTarget.CompareTag("Player") && !isExploding)
+                navMeshAgent.destination = currentTarget.transform.position;
+            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 0.5f); //check for players and trigger explosion
+            foreach (Collider c in colliders)
+            {
+                if (c.gameObject.CompareTag("Player"))
+                {
+                    isExploding = true;
+                    navMeshAgent.isStopped = true;
+                    Invoke(nameof(BomberExplode), timeToExplosion);
+                }
+            }
+            if (GetComponent<EnemyStandard>().health <= 0)
+            {
+                dissolving = true;
                 navMeshAgent.isStopped = true;
-                Invoke(nameof(BomberExplode), timeToExplosion);
             }
-        }
-        if (GetComponent<EnemyStandard>().health <= 0)
-        {
-            navMeshAgent.isStopped = true;
         }
     }
 

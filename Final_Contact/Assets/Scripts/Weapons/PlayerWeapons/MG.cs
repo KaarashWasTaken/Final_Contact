@@ -18,13 +18,13 @@ public class MG : MonoBehaviour
     [SerializeField]
     public float maxHeat = 30;
     [SerializeField]
-    private float coolingEffect = 0.01f;
+    private float coolingEffect = 2f;
     [SerializeField]
     public float heatEffect = 1;
     public float heat;
     private bool onCooldown;
     [SerializeField]
-    private float shootSpread = 15;
+    private float shootSpread = 10;
     private Quaternion originalAngle;
     void Update()
     {
@@ -40,7 +40,7 @@ public class MG : MonoBehaviour
         }
         //cools the weapon each frame
         if (heat > 0 && lastTimeShot + firingspeed <= Time.time)
-            heat -= coolingEffect;
+            heat -= coolingEffect * Time.deltaTime;
     }
     public void Shoot()
     {

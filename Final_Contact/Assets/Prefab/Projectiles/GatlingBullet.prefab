@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 491760456140334473}
   - component: {fileID: 275107849643481685}
   m_Layer: 3
-  m_Name: Enemybullet01
+  m_Name: GatlingBullet
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,9 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c0cdaf85781ff489961876171112ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 15
-  destroyAfterSeconds: 6
-  damage: 10
+  projectileSpeed: 20
+  destroyAfterSeconds: 5
+  damage: 8
 --- !u!1001 &2160119599630633847
 PrefabInstance:
   m_ObjectHideFlags: 0

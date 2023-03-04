@@ -6,7 +6,7 @@ public class SMG : MonoBehaviour
 {
     //Shooting & aiming variables
     [SerializeField]
-    public float firingspeed = 0.1f;
+    public float firingspeed = 0.05f;
     public float shooting = 0;
     public Vector2 aiming = Vector2.zero;
     private float lastTimeShot = 0;
@@ -18,13 +18,13 @@ public class SMG : MonoBehaviour
     [SerializeField]
     public float maxHeat = 25;
     [SerializeField]
-    private float coolingEffect = 0.03f;
+    private float coolingEffect = 6f;
     [SerializeField]
-    public float heatEffect = 1;
+    public float heatEffect = 1.2f;
     public float heat;
     private bool onCooldown;
     [SerializeField]
-    private float shootSpread = 15;
+    private float shootSpread = 12;
     private Quaternion originalAngle;
     void Update()
     {
@@ -40,7 +40,7 @@ public class SMG : MonoBehaviour
         }
         //cools the weapon each frame
         if (heat > 0 && lastTimeShot + firingspeed <= Time.time)
-            heat -= coolingEffect;
+            heat -= coolingEffect *Time.deltaTime;
     }
     public void Shoot()
     {

@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 2207024588580569019}
   - component: {fileID: 2573418285985722142}
   - component: {fileID: 8357571320146132854}
+  - component: {fileID: 3847190077198608249}
   m_Layer: 0
   m_Name: PickupSpawnpoint
   m_TagString: Untagged
@@ -198,6 +199,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3847190077198608249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693258440148897370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49abb7dcff024314583512f9f96ab786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSpawnPoint: {fileID: 2285474237255436611}
+  pickupPrefabs:
+  - {fileID: 2034579064936032327, guid: 25c99877c57767b418479f314d8d7f19, type: 3}
+  - {fileID: 7934621836613638767, guid: bbaef82a5107bab48ac80eeaba984353, type: 3}
+  parentSpawnPoint: {fileID: 4693258440148897370}
 --- !u!1 &8741489590877920318
 GameObject:
   m_ObjectHideFlags: 0

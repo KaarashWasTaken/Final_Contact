@@ -7,10 +7,9 @@ public class EnemyManager : MonoBehaviour
 {
     public Transform[] SpawnPoints;
     public GameObject[] EnemyPrefabs;
-    public GameObject nextLevelDoor;
     [SerializeField]
-    private int baseEnemyCount = 20;
-    private readonly int baseEnemyLimit = 10;
+    private int baseEnemyCount = 60;
+    private readonly int baseEnemyLimit = 15;
     [SerializeField]
     private int enemyLimit;
     private int enemies;
@@ -60,7 +59,7 @@ public class EnemyManager : MonoBehaviour
         //Randomizes which enemy type will spawn
         int randomPrefab = Random.Range(0, EnemyPrefabs.Length); 
         //Randomizes which door the enemy will spawn at
-        int randomNumber = Mathf.RoundToInt(Random.Range(0f, SpawnPoints.Length - 1));
+        int randomNumber = Random.Range(0, SpawnPoints.Length - 1);
         //Spawns the enemy with random type and spawn door
         Instantiate(EnemyPrefabs[randomPrefab], SpawnPoints[randomNumber].transform.position, Quaternion.identity);
         //Decreases enemySpawnCount by one so the correct amount of enemies will spawn per level
