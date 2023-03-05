@@ -10,6 +10,7 @@ public class EnemyNavMeshMelee : MonoBehaviour
     private GameObject currentTarget;
     private bool wandering = false;
     private bool dissolving;
+    private bool isStopped;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -27,7 +28,7 @@ public class EnemyNavMeshMelee : MonoBehaviour
             //If the enemy doenst have a target or targets a downed player it will 
             if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
                 currentTarget = GameObject.Find("TempTarget");
-            if (currentTarget != gameObject.CompareTag("Player") && !wandering)
+            if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isStopped)
             {
                 Invoke(nameof(Wander), 0);
             }
@@ -65,11 +66,15 @@ public class EnemyNavMeshMelee : MonoBehaviour
     }
     public void AttackCD()
     {
+        Debug.Log("AttackCD");
+        isStopped= true;
         navMeshAgent.isStopped= true;
         Invoke(nameof(StopCD), 1);
     }
     private void StopCD()
     {
+        isStopped= false;
+        Debug.Log("AttackCdstopped");
         navMeshAgent.isStopped= false;
     }
 }
