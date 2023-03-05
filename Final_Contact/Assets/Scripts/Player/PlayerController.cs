@@ -75,9 +75,9 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 2f)
+            if (tempPos.y != 0f && !downed)
             {
-                tempPos.y = 2f;
+                tempPos.y = 0f;
                 transform.position = tempPos;
             }
             if (move != Vector3.zero && aiming == Vector2.zero)
@@ -159,9 +159,14 @@ public class PlayerController : MonoBehaviour
             downed = true;
             controller.detectCollisions= false;
             ReviveSphere.SetActive(true);
-            //ReviveCollider.enabled = true;
             Debug.Log("playerisdown");
             transform.rotation = Quaternion.Euler(90, 0, 0);
+            Vector3 tempPos = transform.position;
+            if (tempPos.y != 1f)
+            {
+                tempPos.y = 1f;
+                transform.position = tempPos;
+            }
         }
         GameObject.Find("PlayerManager").GetComponent<PlayerManager>().CheckIfAllDown();
     }

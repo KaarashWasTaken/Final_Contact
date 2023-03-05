@@ -8,9 +8,9 @@ public class ArmoryDummy : MonoBehaviour
     private float health;
     public Material dissolveMaterial;
     private MaterialPropertyBlock propBlock;
-    private Renderer _renderer;
+    private Renderer[] _renderer;
     private float dissolveValue = 0.1f;
-    private float dissolveSpeed = 0.3f;
+    private float dissolveSpeed = 0.05f;
     private bool dissolve = false;
     // Update is called once per frame
     void Update()
@@ -24,16 +24,19 @@ public class ArmoryDummy : MonoBehaviour
     {
         if (!dissolve)
         {
-            _renderer = GetComponent<Renderer>();
+            _renderer = GetComponentsInChildren<Renderer>();
             propBlock = new MaterialPropertyBlock();
             dissolve = true;
             propBlock.SetFloat("_Dissolve_Amount", 0);
         }
-        _renderer.GetPropertyBlock(propBlock);
-        _renderer.material = dissolveMaterial;
-        dissolveMaterial.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
-        _renderer.SetPropertyBlock(propBlock);
-        Destroy(transform.parent.gameObject, 2.5f);
+        foreach (Renderer g in _renderer)
+        {
+            g.GetPropertyBlock(propBlock);
+            g.material = dissolveMaterial;
+            dissolveMaterial.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
+            g.SetPropertyBlock(propBlock);
+            Destroy(transform.parent.gameObject, 2.5f);
+        }
     }
     private void OnCollisionEnter(Collision other)
     {

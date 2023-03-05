@@ -55,17 +55,19 @@ public class Shotgun : MonoBehaviour
         
         if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
-            heat = heat + heatEffect;
+            heat += heatEffect;
             originalAngle = FiringPoint.rotation;
             lastTimeShot = Time.time;
 
-            float startAngle = -(spread / 2f);
-            float angleIncrease = spread / (numberProjectiles);
+            float startAngle = -spread/2f;
+            float angleIncrease = spread / (numberProjectiles-1);
             FiringPoint.Rotate(0, 0, startAngle);
             for (int i = 0; i < numberProjectiles; i++)
             {
-                FiringPoint.Rotate(0, 0, angleIncrease);
-                //FiringPoint.rotation.Normalize();
+                if (i != 0)
+                {
+                    FiringPoint.Rotate(0, 0, angleIncrease);
+                }
                 Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
             }
             FiringPoint.rotation=originalAngle;

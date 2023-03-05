@@ -9,7 +9,7 @@ public class EnemyStandard : MonoBehaviour
     private MaterialPropertyBlock propBlock;
     private Renderer[] _renderer;
     private float dissolveValue = 0.1f;
-    private float dissolveSpeed = 0.1f;
+    private float dissolveSpeed = 0.05f;
     private bool dissolve = false;
     // Update is called once per frame
     void Update()
