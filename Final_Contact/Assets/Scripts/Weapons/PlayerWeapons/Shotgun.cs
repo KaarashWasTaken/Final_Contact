@@ -32,7 +32,7 @@ public class Shotgun : MonoBehaviour
     public float heatEffect = 4;
     public float heat;
     private bool onCooldown;
-
+    public ParticleSystem muzzleFlash;
     void Update()
     {
         //Gets a cooldown so cant shoot if weapon gets too hot
@@ -58,7 +58,7 @@ public class Shotgun : MonoBehaviour
             heat += heatEffect;
             originalAngle = FiringPoint.rotation;
             lastTimeShot = Time.time;
-
+            muzzleFlash.Play();
             float startAngle = -spread/2f;
             float angleIncrease = spread / (numberProjectiles-1);
             FiringPoint.Rotate(0, 0, startAngle);

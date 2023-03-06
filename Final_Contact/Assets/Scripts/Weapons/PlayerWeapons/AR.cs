@@ -26,7 +26,7 @@ public class AR : MonoBehaviour
     [SerializeField]
     private float shootSpread = 7;
     private Quaternion originalAngle;
-
+    public ParticleSystem muzzleFlash;
     void Update()
     {
         //Gets a cooldown so cant shoot if weapon gets too hot
@@ -47,6 +47,7 @@ public class AR : MonoBehaviour
     {
         if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
+            muzzleFlash.Play();
             originalAngle = FiringPoint.rotation;
             heat += heatEffect;
             lastTimeShot = Time.time;
