@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public Transform[] SpawnPoints;
     public GameObject[] EnemyPrefabs;
     [SerializeField]
-    private int baseEnemyCount = 60;
+    private int baseEnemyCount = 20;
     private readonly int baseEnemyLimit = 15;
     [SerializeField]
     private int enemyLimit;
@@ -56,8 +56,20 @@ public class EnemyManager : MonoBehaviour
     }
     void SpawnNewEnemy()
     {
+        float randomizer = Random.value;
+        int enemySelectorTop = 0;
+        int enemySelectorBottom = 0;
+        if (randomizer > 0.3) // 70% chance
+        {
+            enemySelectorTop = 2; // +1 as random.range top is exclusive not inclusive
+        }
+        if (randomizer > 0.7) // 30% chance
+        {
+            enemySelectorBottom = 2;
+            enemySelectorTop = 5; // +1 as random.range top is exclusive not inclusive
+        }
         //Randomizes which enemy type will spawn
-        int randomPrefab = Random.Range(0, EnemyPrefabs.Length); 
+        int randomPrefab = Random.Range(enemySelectorBottom, enemySelectorTop); 
         //Randomizes which door the enemy will spawn at
         int randomNumber = Random.Range(0, SpawnPoints.Length - 1);
         //Spawns the enemy with random type and spawn door
