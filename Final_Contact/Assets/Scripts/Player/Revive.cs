@@ -23,8 +23,6 @@ public class Revive : MonoBehaviour
         {
             reviveBaseTime = Time.time;
             reviving = true;
-            Debug.Log("PlayerisRevivingotherplayer");
-            Debug.Log(reviveBaseTime);
         }
     }
     public void OnTriggerExit(Collider other)
@@ -39,7 +37,6 @@ public class Revive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && reviveTimer > timeToRevive)
         {
-            Debug.Log("Player Revived");
             GetComponentInParent<PlayerController>().downed = false;
             reviving = false;
             reviveTimer = 0;

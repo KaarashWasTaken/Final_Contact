@@ -9794,7 +9794,7 @@ GameObject:
   - component: {fileID: 7934621836613638766}
   m_Layer: 0
   m_Name: ge_healthPickup01
-  m_TagString: Untagged
+  m_TagString: PickupHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9830,9 +9830,11 @@ GameObject:
   - component: {fileID: 7934621836851808251}
   - component: {fileID: 7934621836851808252}
   - component: {fileID: 7934621836851808253}
+  - component: {fileID: 5020419401437048322}
+  - component: {fileID: 1446528102328140327}
   m_Layer: 0
   m_Name: sm_healthPickupOrb
-  m_TagString: Untagged
+  m_TagString: PickupHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9910,8 +9912,34 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7934621836851808255}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5020419401437048322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934621836851808255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bed8d9b38c33a944bbde6bbf3438099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBonus: 50
+--- !u!114 &1446528102328140327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934621836851808255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37c2ebc38500f74a838ce36504aeb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

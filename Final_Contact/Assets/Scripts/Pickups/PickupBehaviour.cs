@@ -9,19 +9,33 @@ public class PickupBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            //Destroys the pickup
+            KillPickup();
         }
         if (other.CompareTag("Projectile"))
         {
-            Destroy(other.gameObject);
+            //Destroys the projectile
+            Destroy(other.transform.parent.gameObject);
+            //If the pickup has health
+
             if (health > 0)
             {
+                //Decreases health by the damage variable in the projectile
                 health -= other.GetComponentInParent<MoveForward>().damage;
             }
+            //If the pickup has no health
             else
             {
-                Destroy(gameObject);
+                //Destroys the pickup
+                KillPickup();
             }
         }
+    }
+    private void KillPickup()
+    {
+        transform.parent.gameObject.GetComponentInParent<SpawnPickup>().hasPickup = false;
+        transform.parent.gameObject.GetComponentInParent<SpawnPickup>().StartSpawn();
+        Destroy(transform.parent.gameObject);
+
     }
 }

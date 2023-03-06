@@ -10,6 +10,7 @@ public class playerBehaviour : MonoBehaviour
     [SerializeField]
     private float maxHealth;
     public Image healthBar;
+    public Image cooldownBar;
     public bool downed;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,11 @@ public class playerBehaviour : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
-        if (health <= 0)
+        if (health <= 0 && !GetComponent<PlayerController>().downed)
         {
             GetComponent<PlayerController>().Down();
         }
+        cooldownBar.fillAmount = Mathf.Clamp(1-GetComponentInChildren<WeaponManager>().heat, 0, 1);
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -34,19 +36,19 @@ public class playerBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PickupHealth"))
+        if (other.CompareTag("PickupHealth"))
         {
-            health += other.gameObject.GetComponent<PickupHealth>().healthBonus;
+            health += other.GetComponent<PickupHealth>().healthBonus;
             if (health > maxHealth)
             {
                 health = maxHealth;
             }
         }
-        if (other.gameObject.CompareTag("PickupFiringSpeed"))
+        if (other.CompareTag("PickupFiringSpeed"))
         {
             gameObject.GetComponentInChildren<WeaponManager>().FiringSpeedBonus(other.gameObject);
         }
-        if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon == WeaponManager.equippedWeapon.None)
+        if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon == WeaponManager.EquippedWeapon.None)
         {
             gameObject.GetComponentInChildren<WeaponManager>().PickupWeapon(other.gameObject);
         }

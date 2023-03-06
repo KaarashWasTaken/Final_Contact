@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 aiming = Vector2.zero;
     //Dodge variables
     [SerializeField]
-    private float dodgeCD = 5.0f;
+    private float dodgeCD = 3.0f;
     private float dodgeInput = 0;
     private float lastDodge;
     [SerializeField]
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         playerSpeed = initalPlayerSpeed;
         //ReviveCollider= gameObject.GetComponentInChildren<MeshCollider>();
         DontDestroyOnLoad(gameObject.transform.parent);
+        lastDodge = -3;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -74,9 +75,9 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 2f)
+            if (tempPos.y != 0f && !downed)
             {
-                tempPos.y = 2f;
+                tempPos.y = 0f;
                 transform.position = tempPos;
             }
             if (move != Vector3.zero && aiming == Vector2.zero)
@@ -118,7 +119,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Shoot()
     {
-        gameObject.GetComponentInChildren<WeaponManager>().shoot();
+        gameObject.GetComponentInChildren<WeaponManager>().Shoot();
     }
     private void Dodge()
     {
@@ -133,6 +134,11 @@ public class PlayerController : MonoBehaviour
             playerSpeed += boostIncrease;
         }
     }
+    private void EndBoost()
+    {
+        isBoostActivated = false;
+        playerSpeed = initalPlayerSpeed;
+    }
     private void Pause()
     {
 
@@ -145,11 +151,6 @@ public class PlayerController : MonoBehaviour
             GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Continue();
         }
     }
-    private void EndBoost()
-    {
-        isBoostActivated = false;
-        playerSpeed = initalPlayerSpeed;
-    }
     public void Down()
     {
         if (!downed)
@@ -158,10 +159,16 @@ public class PlayerController : MonoBehaviour
             downed = true;
             controller.detectCollisions= false;
             ReviveSphere.SetActive(true);
-            //ReviveCollider.enabled = true;
             Debug.Log("playerisdown");
             transform.rotation = Quaternion.Euler(90, 0, 0);
+            Vector3 tempPos = transform.position;
+            if (tempPos.y != 1f)
+            {
+                tempPos.y = 1f;
+                transform.position = tempPos;
+            }
         }
+        GameObject.Find("PlayerManager").GetComponent<PlayerManager>().CheckIfAllDown();
     }
     
 }
