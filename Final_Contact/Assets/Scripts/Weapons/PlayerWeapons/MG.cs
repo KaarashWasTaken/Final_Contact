@@ -24,8 +24,12 @@ public class MG : MonoBehaviour
     public float heat;
     private bool onCooldown;
     [SerializeField]
-    private float shootSpread = 10;
+    private float shootSpreadMoving = 10;
+    [SerializeField]
+    private float shootSpreadStill = 4;
+    private float shootSpread = 4;
     private Quaternion originalAngle;
+    public ParticleSystem muzzleFlash;
     void Update()
     {
         //Gets a cooldown so cant shoot if weapon gets too hot
@@ -38,6 +42,15 @@ public class MG : MonoBehaviour
         {
             onCooldown = false;
         }
+        //Changes shootSpread depending on if player is moving
+        if (GetComponentInParent<PlayerController>().moving)
+        {
+            shootSpread = shootSpreadMoving;
+        }
+        else
+        {
+            shootSpread = shootSpreadStill;
+        }
         //cools the weapon each frame
         if (heat > 0 && lastTimeShot + firingspeed <= Time.time)
             heat -= coolingEffect * Time.deltaTime;
@@ -46,6 +59,7 @@ public class MG : MonoBehaviour
     {
         if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
+            muzzleFlash.Play();
             originalAngle = FiringPoint.rotation;
             heat += heatEffect;
             lastTimeShot = Time.time;

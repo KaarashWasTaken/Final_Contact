@@ -25,9 +25,12 @@ public class GameOver : MonoBehaviour
         {
             Destroy(player.transform.parent.gameObject);
         }
+        Destroy(GameObject.Find("EventSystem"));
+        Destroy(GameObject.Find("PlayerManager"));
+        Destroy(GameObject.Find("Pause"));
         gameOverUI.SetActive(false);
+        Destroy(GameObject.Find("GameOver"));
         SceneManager.LoadScene("Armory");
-        EventSystem.current.SetSelectedGameObject(null);
     }
     public void MainMenu()
     {
@@ -37,6 +40,7 @@ public class GameOver : MonoBehaviour
             Destroy(player.transform.parent.gameObject);
         }
         Destroy(GameObject.Find("PlayerManager"));
+        Destroy(GameObject.Find("EventSystem"));
         gameOverUI.SetActive(false);
         SceneManager.LoadScene("MainMenu");
         EventSystem.current.SetSelectedGameObject(null);

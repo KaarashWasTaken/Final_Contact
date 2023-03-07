@@ -29,7 +29,7 @@ public class MoveForward : MonoBehaviour
     {
         if (startTime < timeNow - destroyAfterSeconds)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision other)

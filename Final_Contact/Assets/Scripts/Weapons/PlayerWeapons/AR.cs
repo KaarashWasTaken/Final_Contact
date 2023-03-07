@@ -24,9 +24,12 @@ public class AR : MonoBehaviour
     public float heat;
     private bool onCooldown;
     [SerializeField]
-    private float shootSpread = 7;
+    private float shootSpreadMoving = 7;
+    [SerializeField]
+    private float shootSpreadStill = 3;
+    private float shootSpread = 4;
     private Quaternion originalAngle;
-
+    public ParticleSystem muzzleFlash;
     void Update()
     {
         //Gets a cooldown so cant shoot if weapon gets too hot
@@ -39,14 +42,24 @@ public class AR : MonoBehaviour
         {
             onCooldown = false;
         }
+        //Changes shootSpread depending on if player is moving
+        if (GetComponentInParent<PlayerController>().moving)
+        {
+            shootSpread = shootSpreadMoving;
+        }
+        else
+        {
+            shootSpread = shootSpreadStill;
+        }
         //cools the weapon each frame
-        if(heat>0 && lastTimeShot + firingspeed <= Time.time)
+        if (heat>0 && lastTimeShot + firingspeed <= Time.time)
             heat -= coolingEffect * Time.deltaTime;
     }
     public void Shoot()
     {
         if (lastTimeShot + firingspeed <= Time.time && !onCooldown)
         {
+            muzzleFlash.Play();
             originalAngle = FiringPoint.rotation;
             heat += heatEffect;
             lastTimeShot = Time.time;
