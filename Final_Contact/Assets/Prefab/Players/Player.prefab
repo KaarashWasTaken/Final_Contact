@@ -989,7 +989,8 @@ MonoBehaviour:
   coolingEffect: 3
   heatEffect: 1.5
   heat: 0
-  shootSpread: 12
+  shootSpreadMoving: 12
+  shootSpreadStill: 4
   muzzleFlash: {fileID: 3739473838027261158}
 --- !u!4 &7693305456197598002 stripped
 Transform:
@@ -1418,6 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initalPlayerSpeed: 10
   rotationSpeed: 720
+  moving: 0
   ready: 0
   shooting: 0
   dodgeCD: 3
