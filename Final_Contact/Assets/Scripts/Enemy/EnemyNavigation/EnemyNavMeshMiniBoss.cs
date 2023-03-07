@@ -105,7 +105,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
     private void DashAtPlayer()
     {
         dashing = true;
-        navMeshAgent.speed *= 3;
+        navMeshAgent.speed *= 2;
         Invoke(nameof(EndDashAtPlayer), 0.2f);
     }
 
