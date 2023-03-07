@@ -10,6 +10,7 @@ public class ExplosionDissolve : MonoBehaviour
     private float dissolveValue = 0f;
     [SerializeField]
     private float dissolveSpeed = 1f;
+    public bool exploding;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,11 @@ public class ExplosionDissolve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _renderer.GetPropertyBlock(propBlock);
-        propBlock.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
-        _renderer.SetPropertyBlock(propBlock);
-
+        if (exploding)
+        {
+            _renderer.GetPropertyBlock(propBlock);
+            propBlock.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
+            _renderer.SetPropertyBlock(propBlock);
+        }
     }
 }

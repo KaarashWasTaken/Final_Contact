@@ -18,9 +18,10 @@ public class ArmoryManager : MonoBehaviour
     private bool respawningHealth = false;
     private bool respawningFirerate = false;
     private bool respawningDummy = false;
+    private Vector3 dummySpawnLocation = new(30, 0, 0);
     private void Start()
     {
-        Instantiate(dummyPrefab, new Vector3(40,0,0), Quaternion.Euler(0,270,0));
+        Instantiate(dummyPrefab, dummySpawnLocation, Quaternion.Euler(0,270,0));
         Instantiate(healthPrefab, pickupSpawnPoints[1].transform.position, Quaternion.identity);
         Instantiate(fireRatePrefab, pickupSpawnPoints[0].transform.position, Quaternion.identity);    
     }
@@ -67,7 +68,7 @@ public class ArmoryManager : MonoBehaviour
     private void RespawnDummy()
     {
         //Spawns a dummy at the given coordinates with the given rotation
-        Instantiate(dummyPrefab, new Vector3(40,0,0), Quaternion.Euler(0,270,0));
+        Instantiate(dummyPrefab, dummySpawnLocation, Quaternion.Euler(0,270,0));
         respawningDummy = false;
     }
 }
