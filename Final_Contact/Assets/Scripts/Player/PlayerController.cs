@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 720f;
     private Vector2 movementInput = Vector2.zero;
+    public bool moving = false;
     private CharacterController controller;
     public bool ready = false;
     private float pauseInput = 0;
@@ -45,6 +46,14 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+        if (Vector2.zero == movementInput)
+        {
+            moving = false;
+        }
+        else
+        {
+            moving= true;
+        }
     }
     public void OnShoot(InputAction.CallbackContext context)
     {
