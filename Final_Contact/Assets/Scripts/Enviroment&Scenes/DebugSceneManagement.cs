@@ -15,5 +15,9 @@ public class DebugSceneManagement : MonoBehaviour
         {
             SceneManager.LoadScene("MiniBossTesting");
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("FinalBossTest");
+        }
     }
 }
