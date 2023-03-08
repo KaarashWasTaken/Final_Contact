@@ -134,7 +134,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!isBoostActivated)
         {
-            Debug.Log("Boosting player speed");
             isBoostActivated = true;
             Invoke(nameof(EndBoost), boostTime);
         }

@@ -27,4 +27,12 @@ public class NextLevelSelect : MonoBehaviour
         SceneManager.LoadScene("1B");
         EventSystem.current.SetSelectedGameObject(null);
     }
+
+    public void NextLevelMiniBoss()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MiniBoss");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
 }
