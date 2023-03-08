@@ -12,71 +12,49 @@ public class BossManager : MonoBehaviour
     //private readonly int baseEnemyLimit = 15;
     //[SerializeField]
     //private int enemyLimit;
-    private int turrets;
+    public int turrets;
     //public int enemyLevelCount;
     //[SerializeField]
     //private int enemySpawnCount;
     //[SerializeField]
     //private float spawnCooldown = 0.25f;
-    private float lastSpawn;
-    private bool firstSpawn;
 
-
+    public enum BossStage
+    {
+        Turrets,
+        Boss
+    }
+    public BossStage activeStage;
     private void Start()
     {
-        firstSpawn = true;
+        //firstSpawn = true;
+        activeStage = BossStage.Turrets;
     }
     private void Update()
     {
         //Looks through the scene if there are any players, doesnt spawn any enemies unless players exist
         if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
         {
-            //If the first enemy hasnt spawned yet it will skip to the else if statement
-            if (!firstSpawn)
-            {
-                SpawnUpdate();
-            }
-            //If the first enemy hasnt spawned this else if statement will run
-            else if (firstSpawn) 
-            {
-                //enemyLevelCount = baseEnemyCount * GameObject.FindGameObjectsWithTag("Player").Length;
-                //enemyLimit = baseEnemyLimit * GameObject.FindGameObjectsWithTag("Player").Length;
-                //enemySpawnCount = enemyLevelCount;
-                firstSpawn = false;
-            }
+            SpawnUpdate();
         }
     }
     private void SpawnUpdate()
     {
         turrets = GameObject.FindGameObjectsWithTag("Enemy").Length;
         //Spawns enemies until it reaches the currently spawned limit or runs out of enemis to spawn per level
-        if (turrets == 0 )
+        if (turrets == 0 && activeStage == BossStage.Turrets)
         {
-            SpawnNewEnemy();
-            lastSpawn = Time.time;
+            SpawnTurrets();
         }
+        
+        
     }
-    void SpawnNewEnemy()
+    void SpawnTurrets()
     {
-        float randomizer = Random.value;
-        int enemySelectorTop = 0;
-        int enemySelectorBottom = 0;
-        if (randomizer > 0.3) // 70% chance
+        Debug.Log("Spawning");
+        for (int i = 0; i < SpawnPoints.Length; i++)
         {
-            enemySelectorTop = 2; // +1 as random.range top is exclusive not inclusive
+            Instantiate(EnemyPrefabs[0], SpawnPoints[i].transform.position, Quaternion.identity);
         }
-        if (randomizer > 0.7) // 30% chance
-        {
-            enemySelectorBottom = 2;
-            enemySelectorTop = 5; // +1 as random.range top is exclusive not inclusive
-        }
-        //Randomizes which enemy type will spawn
-        int randomPrefab = Random.Range(enemySelectorBottom, enemySelectorTop); 
-        //Randomizes which door the enemy will spawn at
-        int randomNumber = Random.Range(0, SpawnPoints.Length - 1);
-        //Spawns the enemy with random type and spawn door
-        Instantiate(EnemyPrefabs[randomPrefab], SpawnPoints[randomNumber].transform.position, Quaternion.identity);
-        //Decreases enemySpawnCount by one so the correct amount of enemies will spawn per level
-        //enemySpawnCount--;
     }
 }
