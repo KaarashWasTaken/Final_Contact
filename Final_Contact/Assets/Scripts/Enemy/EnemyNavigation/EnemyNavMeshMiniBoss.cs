@@ -9,7 +9,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
     private GameObject[] players;
     private GameObject currentTarget;
     [SerializeField]
-    private float maxDistance = 50;
+    private float maxDistance = 60;
     [SerializeField]
     private float currentDistance;
     [SerializeField]
@@ -17,16 +17,22 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
     private bool wandering = false;
     private bool dissolving;
     private bool dashing = false;
+    //Dash Damage
+    [SerializeField]
+    private float attackCD = 2.0f;
+    private float lastAttack;
+    [SerializeField]
+    private float dashDamage = 5f;
+    // Start is called before the first frame update
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
-        Invoke(nameof(Wander), Random.Range(3, 8));
+        //Invoke(nameof(Wander), Random.Range(3, 8));
+        InvokeRepeating(nameof(DashAtPlayer), 10, Random.Range(8,16));
     }
     private void Update()
     {
-        InvokeRepeating(nameof(DashAtPlayer), 5.0f, 10.0f);
-
         // NavMeshRanged Scripting (main script)
         if (!dissolving && !dashing)
         {
@@ -46,7 +52,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
                 navMeshAgent.SetDestination(currentTarget.transform.position);
                 navMeshAgent.isStopped = false;
             }
-            else if (currentDistance <= maxDistance && !wandering)
+            else if (currentDistance <= maxDistance)
             {
                 ShootAtPlayer();
             }
@@ -60,7 +66,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
         // NavMeshMelee Scripting
         if (!dissolving && dashing)
         {
-            //If the enemy doenst have a target or targets a downed player it will 
+            
             if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
                 currentTarget = GameObject.Find("TempTarget");
             players = GameObject.FindGameObjectsWithTag("Player");
@@ -87,31 +93,32 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
         navMeshAgent.isStopped = true;
         gameObject.GetComponentInChildren<EnemyShootShotgun>().Shoot();
     }
-    private void Wander()
-    {
-        navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
-        if (!wandering)
-            wandering = true;
-        navMeshAgent.isStopped = false;
-        Invoke(nameof(EndWander), Random.Range(1, 2));
-    }
-    private void EndWander()
-    {
-        transform.LookAt(currentTarget.transform.position);
-        if (wandering)
-            wandering = false;
-        Invoke(nameof(Wander), Random.Range(6, 12));
-    }
     private void DashAtPlayer()
     {
+        navMeshAgent.isStopped = false;
         dashing = true;
-        navMeshAgent.speed *= 2;
-        Invoke(nameof(EndDashAtPlayer), 0.2f);
+        navMeshAgent.speed *= 5;
+        Invoke(nameof(EndDashAtPlayer), 1.0f);
     }
 
     private void EndDashAtPlayer()
     {
+        navMeshAgent.isStopped = true;
+        Invoke(nameof(ShootDelay),3);
+    }
+    private void ShootDelay()
+    {
         dashing = false;
         navMeshAgent.speed = 10;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player") && (Time.time >= (lastAttack + attackCD)))
+        {
+            lastAttack = Time.time;
+            other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
+            navMeshAgent.isStopped = true;
+        }
     }
 }
