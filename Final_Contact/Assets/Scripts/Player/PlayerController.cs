@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
     private float pauseInput = 0;
     private float lastPause = 0;
     //Shooting & aiming variables
-    [SerializeField]
-    private float shooting = 0;
+    public float shooting = 0;
     private Vector2 aiming = Vector2.zero;
     //Dodge variables
     [SerializeField]
