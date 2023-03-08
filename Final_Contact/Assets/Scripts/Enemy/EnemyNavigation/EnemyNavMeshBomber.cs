@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,6 +19,7 @@ public class EnemyNavMeshBomber : MonoBehaviour
     private bool wandering = false;
     private bool isExploding = false;
     private bool dissolving;
+    public ParticleSystem explosion;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -56,17 +58,17 @@ public class EnemyNavMeshBomber : MonoBehaviour
                 {
                     isExploding = true;
                     navMeshAgent.isStopped = true;
+                    explosion.Play();
                     Invoke(nameof(BomberExplode), timeToExplosion);
                 }
             }
-            if (GetComponent<EnemyStandard>().health <= 0)
+            if (GetComponentInChildren<EnemyStandard>().health <= 0)
             {
                 dissolving = true;
                 navMeshAgent.isStopped = true;
             }
         }
     }
-
     private void Wander()
     {
         navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
@@ -80,21 +82,18 @@ public class EnemyNavMeshBomber : MonoBehaviour
         if (wandering)
             wandering = false;
     }
-
-
-
     private void BomberExplode()
     {
-        
+        GameObject.Find("ge_bomberCloud01").GetComponent<ExplosionDissolve>().exploding = true;
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius); //check for players and do dmg
         foreach (Collider c in colliders)
         {
             if (c.gameObject.CompareTag("Player"))
             {
-                c.GetComponent<playerBehaviour>().health -= bomberDamage;
-                Destroy(transform.parent.gameObject);
+                c.GetComponent<playerBehaviour>().health -= bomberDamage * Time.deltaTime;
+                GetComponentInChildren<EnemyStandard>().Death();
             }
         }
-        Destroy(transform.parent.gameObject);
+        GetComponentInChildren<EnemyStandard>().Death();
     }
 }
