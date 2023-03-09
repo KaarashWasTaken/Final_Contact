@@ -11,6 +11,7 @@ public class EnemyStandard : MonoBehaviour
     private float dissolveValue = 0.1f;
     private float dissolveSpeed = 0.05f;
     private bool dissolve = false;
+    public ParticleSystem deathSpark;
     // Update is called once per frame
     void Update()
     {
@@ -46,3 +47,4 @@ public class EnemyStandard : MonoBehaviour
         }
     }
 }
+

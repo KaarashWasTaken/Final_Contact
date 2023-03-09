@@ -24,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -56,7 +56,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
+    optimizeBones: 0
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -80,7 +80,157 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: sm_PlayerCharacter(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_PlayerCharacter
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.006568022, y: 1.465647, z: 0.01815447}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_shoulderPads1
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.30868024, y: 2.5195124, z: -0.0444355}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_R_ShoulderPad1
+      parentName: sm_shoulderPads1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_L_ShoulderPad1
+      parentName: sm_shoulderPads1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_shoulderPads2
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.3286752, y: 2.2993586, z: -0.06520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sk_R_ShoulderPad2
+      parentName: sm_shoulderPads2
+      position: {x: -0.3286752, y: -2.2993586, z: 0.06520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sk_L_ShoulderPad2
+      parentName: sm_shoulderPads2
+      position: {x: -0.3286752, y: -2.2993586, z: 0.06520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_upperArmPads
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.62557536, y: 2.269622, z: -0.06520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sk_L_UpperArmPads
+      parentName: sm_upperArmPads
+      position: {x: -0.62557536, y: -2.269622, z: 0.06520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sk_R_UpperArmPads
+      parentName: sm_upperArmPads
+      position: {x: -0.62557536, y: -2.269622, z: 0.06520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_gauntlets
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 1.0735832, y: 2.4143822, z: -0.003555827}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sk_L_Gauntlet
+      parentName: sm_gauntlets
+      position: {x: -2.1401658, y: -0.050097123, z: -0.010900673}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sk_R_Gauntlet1
+      parentName: sm_gauntlets
+      position: {x: -0.0070008296, y: -0.050097123, z: -0.010900673}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_gloveCovers
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 1.341458, y: 2.374709, z: 0.07022158}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_L_GloveCovers
+      parentName: sm_gloveCovers
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_R_GloveCovers
+      parentName: sm_gloveCovers
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_Skirt
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 4.4408918e-17, y: 1.6869203, z: 0.041142598}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_stomachPlate
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.006568022, y: 1.7528633, z: 0.25153622}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_backPlate
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.006568022, y: 2.0952086, z: -0.12218551}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_chestPlate
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: -0, y: 2.165256, z: 0.23830993}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_PCLegs
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.16268492, y: 1.1843758, z: 0.012436017}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_R_Legs
+      parentName: sm_PCLegs
+      position: {x: 0.0019032233, y: 0.002931728, z: -0.0023543548}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.1781011, y: 1, z: 1.1781011}
+    - name: sm_L_Legs
+      parentName: sm_PCLegs
+      position: {x: -0.32727307, y: 0.002931728, z: -0.0023543548}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.1781011, y: 1, z: 1.1781011}
+    - name: sm_Greaves
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: -0.19252157, y: 0.51837623, z: -0.038235255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_R_Greaves
+      parentName: sm_Greaves
+      position: {x: 0.19908959, y: -0.51837623, z: 0.03934615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_L_Greaves
+      parentName: sm_Greaves
+      position: {x: 0.19908959, y: -0.51837623, z: 0.03934615}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_Boots
+      parentName: sm_PlayerCharacter(Clone)
+      position: {x: 0.096568145, y: 0.202061, z: 0.14780708}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_R_Boots
+      parentName: sm_Boots
+      position: {x: -0.090000115, y: -0.202061, z: -0.14669617}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: sm_L_Boots
+      parentName: sm_Boots
+      position: {x: -0.090000115, y: -0.202061, z: -0.14669617}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -95,7 +245,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1

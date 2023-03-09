@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float rotationSpeed = 720f;
     private Vector2 movementInput = Vector2.zero;
+    public bool moving = false;
     private CharacterController controller;
     public bool ready = false;
     private float pauseInput = 0;
     private float lastPause = 0;
     //Shooting & aiming variables
-    [SerializeField]
-    private float shooting = 0;
+    public float shooting = 0;
     private Vector2 aiming = Vector2.zero;
     //Dodge variables
     [SerializeField]
@@ -45,6 +45,14 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+        if (Vector2.zero == movementInput)
+        {
+            moving = false;
+        }
+        else
+        {
+            moving= true;
+        }
     }
     public void OnShoot(InputAction.CallbackContext context)
     {
@@ -125,7 +133,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!isBoostActivated)
         {
-            Debug.Log("Boosting player speed");
             isBoostActivated = true;
             Invoke(nameof(EndBoost), boostTime);
         }

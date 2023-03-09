@@ -11,11 +11,9 @@ public class NavigationBaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         for (int i = 0; i < surfaces.Length; i++)
         {
             surfaces[i].BuildNavMesh();
         }
-
     }
 }

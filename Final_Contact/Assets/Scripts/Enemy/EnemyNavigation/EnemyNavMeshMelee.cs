@@ -73,7 +73,7 @@ public class EnemyNavMeshMelee : MonoBehaviour
     }
     private void StopCD()
     {
-        isStopped= false;
+        isStopped = false;
         Debug.Log("AttackCdstopped");
         navMeshAgent.isStopped= false;
     }
