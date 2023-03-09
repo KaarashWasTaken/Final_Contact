@@ -14,6 +14,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     private float currentDistance;
     [SerializeField]
     private bool dissolving;
+    public GameObject shield;
 
     // Start is called before the first frame update
     private void Start()
@@ -48,6 +49,8 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
 
             if (GetComponent<EnemyStandard>().health <= 0)
             {
+
+                shield.SetActive(true);
                 dissolving = true;
                 navMeshAgent.isStopped = true;
             }
