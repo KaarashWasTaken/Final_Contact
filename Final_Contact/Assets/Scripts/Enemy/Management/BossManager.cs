@@ -46,8 +46,6 @@ public class BossManager : MonoBehaviour
         {
             SpawnTurrets();
         }
-
-
     }
     void SpawnTurrets()
     {
