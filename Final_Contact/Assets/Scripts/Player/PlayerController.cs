@@ -83,8 +83,9 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 0f && !downed)
+            if (tempPos.y != 0f)
             {
+                Debug.Log("Updatingpos");
                 tempPos.y = 0f;
                 transform.position = tempPos;
             }

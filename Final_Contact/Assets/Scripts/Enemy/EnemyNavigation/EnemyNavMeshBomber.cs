@@ -7,17 +7,17 @@ using UnityEngine.AI;
 public class EnemyNavMeshBomber : MonoBehaviour
 {
     [SerializeField]
-    private float bomberDamage = 60;
+    private float bomberDamage = 80;
     [SerializeField]
     private float explosionRadius = 5;
     [SerializeField]
     private float timeToExplosion = 0.5f;
     private Rigidbody rb;
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
     private bool wandering = false;
-    private bool isExploding = false;
+    public bool isExploding = false;
     private bool dissolving;
     public ParticleSystem explosion;
     private void Start()
@@ -51,15 +51,18 @@ public class EnemyNavMeshBomber : MonoBehaviour
             }
             if (currentTarget.CompareTag("Player") && !isExploding)
                 navMeshAgent.destination = currentTarget.transform.position;
-            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 0.5f); //check for players and trigger explosion
+            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 1f); //check for players and trigger explosion
             foreach (Collider c in colliders)
             {
                 if (c.gameObject.CompareTag("Player"))
                 {
+                    if (!isExploding)
+                    {
+                        explosion.Play();
+                        Invoke(nameof(BomberExplode), timeToExplosion);
+                    }
                     isExploding = true;
                     navMeshAgent.isStopped = true;
-                    explosion.Play();
-                    Invoke(nameof(BomberExplode), timeToExplosion);
                 }
             }
             if (GetComponentInChildren<EnemyStandard>().health <= 0)
@@ -90,10 +93,12 @@ public class EnemyNavMeshBomber : MonoBehaviour
         {
             if (c.gameObject.CompareTag("Player"))
             {
-                c.GetComponent<playerBehaviour>().health -= bomberDamage * Time.deltaTime;
+                c.GetComponent<playerBehaviour>().health -= bomberDamage;
                 GetComponentInChildren<EnemyStandard>().Death();
             }
+            else
+                Destroy(gameObject, 0.55f);
+            //GetComponentInChildren<EnemyStandard>().Death();
         }
-        GetComponentInChildren<EnemyStandard>().Death();
     }
 }
