@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 64e486eb9eb49aa49912fdcd8e4d9572, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
+  - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -50,15 +51,15 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Dissolve_Amount: 0.5
+    - _Dissolve_Amount: 0
     - _Dissolve_Scale: 40
     - _DstBlend: 10
     - _Metallic: 0
     - _Normal_Strength: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _ReceiveShadows: 0
+    - _Smoothness: 0
     - _SrcBlend: 5
     - _Surface: 1
     - _WorkflowMode: 1
@@ -66,8 +67,8 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor: {r: 4.3216834, g: 24.762077, b: 6.414006, a: 0.3921569}
-    - _Dissolve_Color: {r: 1.0212992, g: 1.9505895, b: 1.1137416, a: 0}
+    - _BaseColor: {r: 0.997576, g: 4.316043, b: 1.1285684, a: 0.039215688}
+    - _Dissolve_Color: {r: 0.31466997, g: 0.933033, b: 0.31466997, a: 1}
     - _Texture_Speed: {r: 2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6524543245030291582
