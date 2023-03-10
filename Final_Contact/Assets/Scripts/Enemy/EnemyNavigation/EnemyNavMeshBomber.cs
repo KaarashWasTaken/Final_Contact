@@ -96,8 +96,8 @@ public class EnemyNavMeshBomber : MonoBehaviour
                 c.GetComponent<playerBehaviour>().health -= bomberDamage;
                 GetComponentInChildren<EnemyStandard>().Death();
             }
-            else
-                Destroy(gameObject, 0.55f);
+            //else
+            //    Destroy(gameObject, 0.55f);
             //GetComponentInChildren<EnemyStandard>().Death();
         }
     }
