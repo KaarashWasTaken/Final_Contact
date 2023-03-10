@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody Player;
     public MeshCollider ReviveCollider;
     public GameObject ReviveSphere;
+    private float dropping = 0;
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -57,6 +58,10 @@ public class PlayerController : MonoBehaviour
     public void OnShoot(InputAction.CallbackContext context)
     {
         shooting = context.ReadValue<float>();
+    }
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        dropping = context.ReadValue<float>();
     }
     public void Aiming(InputAction.CallbackContext context)
     {
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
             Vector3 tempPos = transform.position;
             if (tempPos.y != 0f)
             {
-                Debug.Log("Updatingpos");
+                //Debug.Log("Updatingpos");
                 tempPos.y = 0f;
                 transform.position = tempPos;
             }
@@ -101,6 +106,10 @@ public class PlayerController : MonoBehaviour
             if (shooting != 0)
             {
                 Shoot();
+            }
+            if (dropping != 0)
+            {
+                Drop();
             }
             if (dodgeInput != 0 && Time.time >= lastDodge + dodgeCD)
             {
@@ -129,6 +138,10 @@ public class PlayerController : MonoBehaviour
     private void Shoot()
     {
         gameObject.GetComponentInChildren<WeaponManager>().Shoot();
+    }
+    private void Drop()
+    {
+        gameObject.GetComponentInChildren<WeaponManager>().Drop();
     }
     private void Dodge()
     {
