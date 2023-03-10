@@ -25,7 +25,7 @@ public class playerBehaviour : MonoBehaviour
         {
             GetComponent<PlayerController>().Down();
         }
-        cooldownBar.fillAmount = Mathf.Clamp(1-GetComponentInChildren<WeaponManager>().heat, 1, 0);
+        cooldownBar.fillAmount = Mathf.Clamp(GetComponentInChildren<WeaponManager>().heat, 0, 1);
     }
     private void OnCollisionEnter(Collision other)
     {

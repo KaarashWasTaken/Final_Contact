@@ -25,6 +25,14 @@ public class WeaponManager : MonoBehaviour
     private float originalHeatEffect;
     public bool firingSpeedActive = false;
     public float heat;
+    [Header("Drop pickups")]
+    public GameObject AR_Pickup;
+    public GameObject Shotgun_Pickup;
+    public GameObject SMG_Pickup;
+    public GameObject MG_Pickup;
+
+    [SerializeField]
+    private Transform DropPoint;
     // this script handles weapon types and general effects
 
     // Start is called before the first frame update
@@ -168,6 +176,43 @@ public class WeaponManager : MonoBehaviour
         if (playerWeapon == EquippedWeapon.SMG)
         {
             gameObject.GetComponentInChildren<SMG>().Shoot();
+        }
+    }
+    public void Drop()
+    {
+        Debug.Log("drop");
+        //shoots the picked up weapon
+        if (playerWeapon == EquippedWeapon.AR)
+        {
+            AR.SetActive(false);
+            playerWeapon = EquippedWeapon.None;
+            originalFiringSpeed = 0;
+            originalHeatEffect = 0;
+            Instantiate(AR_Pickup, DropPoint.position, DropPoint.rotation);
+        }
+        if (playerWeapon == EquippedWeapon.Shotgun)
+        {
+            Shotgun.SetActive(false);
+            playerWeapon = EquippedWeapon.None;
+            originalFiringSpeed = 0;
+            originalHeatEffect = 0;
+            Instantiate(Shotgun_Pickup, DropPoint.position, DropPoint.rotation);
+        }
+        if (playerWeapon == EquippedWeapon.MG)
+        {
+            MG.SetActive(false);
+            playerWeapon = EquippedWeapon.None;
+            originalFiringSpeed = 0;
+            originalHeatEffect = 0;
+            Instantiate(MG_Pickup, DropPoint.position, DropPoint.rotation);
+        }
+        if (playerWeapon == EquippedWeapon.SMG)
+        {
+            SMG.SetActive(false);
+            playerWeapon = EquippedWeapon.None;
+            originalFiringSpeed = 0;
+            originalHeatEffect = 0;
+            Instantiate(SMG_Pickup, DropPoint.position, DropPoint.rotation);
         }
     }
 }
