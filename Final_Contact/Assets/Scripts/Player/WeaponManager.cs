@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -180,39 +181,43 @@ public class WeaponManager : MonoBehaviour
     }
     public void Drop()
     {
-        Debug.Log("drop");
-        //shoots the picked up weapon
-        if (playerWeapon == EquippedWeapon.AR)
+        if (SceneManager.GetActiveScene().name == "Armory")
         {
-            AR.SetActive(false);
-            playerWeapon = EquippedWeapon.None;
-            originalFiringSpeed = 0;
-            originalHeatEffect = 0;
-            Instantiate(AR_Pickup, DropPoint.position, DropPoint.rotation);
-        }
-        if (playerWeapon == EquippedWeapon.Shotgun)
-        {
-            Shotgun.SetActive(false);
-            playerWeapon = EquippedWeapon.None;
-            originalFiringSpeed = 0;
-            originalHeatEffect = 0;
-            Instantiate(Shotgun_Pickup, DropPoint.position, DropPoint.rotation);
-        }
-        if (playerWeapon == EquippedWeapon.MG)
-        {
-            MG.SetActive(false);
-            playerWeapon = EquippedWeapon.None;
-            originalFiringSpeed = 0;
-            originalHeatEffect = 0;
-            Instantiate(MG_Pickup, DropPoint.position, DropPoint.rotation);
-        }
-        if (playerWeapon == EquippedWeapon.SMG)
-        {
-            SMG.SetActive(false);
-            playerWeapon = EquippedWeapon.None;
-            originalFiringSpeed = 0;
-            originalHeatEffect = 0;
-            Instantiate(SMG_Pickup, DropPoint.position, DropPoint.rotation);
+            Debug.Log("drop");
+            //shoots the picked up weapon
+            if (playerWeapon == EquippedWeapon.AR)
+            {
+                AR.SetActive(false);
+                playerWeapon = EquippedWeapon.None;
+                originalFiringSpeed = 0;
+                originalHeatEffect = 0;
+                Instantiate(AR_Pickup, DropPoint.position, DropPoint.rotation);
+            }
+            if (playerWeapon == EquippedWeapon.Shotgun)
+            {
+                Shotgun.SetActive(false);
+                playerWeapon = EquippedWeapon.None;
+                originalFiringSpeed = 0;
+                originalHeatEffect = 0;
+                Instantiate(Shotgun_Pickup, DropPoint.position, DropPoint.rotation);
+            }
+            if (playerWeapon == EquippedWeapon.MG)
+            {
+                MG.SetActive(false);
+                playerWeapon = EquippedWeapon.None;
+                originalFiringSpeed = 0;
+                originalHeatEffect = 0;
+                Instantiate(MG_Pickup, DropPoint.position, DropPoint.rotation);
+            }
+            if (playerWeapon == EquippedWeapon.SMG)
+            {
+                SMG.SetActive(false);
+                playerWeapon = EquippedWeapon.None;
+                originalFiringSpeed = 0;
+                originalHeatEffect = 0;
+                Instantiate(SMG_Pickup, DropPoint.position, DropPoint.rotation);
+            }
+            heat = 0;
         }
     }
 }
