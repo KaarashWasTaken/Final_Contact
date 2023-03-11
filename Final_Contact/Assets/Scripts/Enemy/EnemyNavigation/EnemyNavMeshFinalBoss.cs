@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,53 +26,53 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     [SerializeField]
     private float dashDamage = 5f;
 
+    [SerializeField]
+    public Transform bossStartingPoint;
+    [NonSerialized]
+    public Transform bossCurrentPoint;
     public GameObject shield;
+    public static bool bossAtBase = false;
     // Start is called before the first frame update
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
+        bossCurrentPoint = GetComponent<Transform>();
         //Invoke(nameof(Wander), Random.Range(3, 8));
-        InvokeRepeating(nameof(DashAtPlayer), 10, Random.Range(8, 16));
+        //InvokeRepeating(nameof(DashAtPlayer), 10, Random.Range(8, 16));
     }
     private void Update()
     {
-        // NavMeshRanged Scripting (main script)
-        if (!dissolving && !dashing)
+        bossCurrentPoint.position = transform.position;
+        if(bossCurrentPoint.position.x == bossStartingPoint.position.x && bossCurrentPoint.position.z == bossStartingPoint.position.z)
         {
-            if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
-                currentTarget = GameObject.Find("TempTarget");
-            players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject g in players)
-            {
-                if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
-                {
-                    currentTarget = g;
-                }
-            }
-            currentDistance = Vector3.Distance(currentTarget.transform.position, gameObject.transform.position);
-            if (currentDistance > maxDistance && !wandering)
-            {
-                navMeshAgent.SetDestination(currentTarget.transform.position);
-                navMeshAgent.isStopped = false;
-            }
-            else if (currentDistance <= maxDistance)
-            {
-                ShootAtPlayer();
-            }
-            if (GetComponent<EnemyStandard>().health <= 0)
-            {
-                dissolving = true;
-                navMeshAgent.isStopped = true;
-            }
+            bossAtBase = true;
+            Debug.Log("bossatbase");
         }
-
-        // NavMeshMelee Scripting
-        if (!dissolving && dashing)
+        else
         {
+            bossAtBase = false;
+            Debug.Log("boss away");
+        }
+       if(GetComponentInParent<BossManager>().bossAttacking == false) // boss stage turret
+        {
+            BossShielded();
+        }
+        if (GetComponentInParent<BossManager>().bossAttacking == true) // boss stage boss
+        {
+            BossAttack();
+        }
+    }
 
+    public void BossAttack()
+    {
+        //Debug.Log("Attacking");
+        if (!dissolving)
+        {
+            //If the enemy doenst have a target or targets a downed player it will 
             if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
                 currentTarget = GameObject.Find("TempTarget");
+
             players = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject g in players)
             {
@@ -90,30 +91,12 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             }
         }
     }
-    private void ShootAtPlayer()
+    public void BossShielded()
     {
-        transform.LookAt(currentTarget.transform.position);
-        navMeshAgent.isStopped = true;
-        gameObject.GetComponentInChildren<EnemyShootShotgun>().Shoot();
+        //Debug.Log("Shielded");
+        navMeshAgent.destination = bossStartingPoint.position;
     }
-    private void DashAtPlayer()
-    {
-        navMeshAgent.isStopped = false;
-        dashing = true;
-        navMeshAgent.speed *= 5;
-        Invoke(nameof(EndDashAtPlayer), 1.0f);
-    }
-
-    private void EndDashAtPlayer()
-    {
-        navMeshAgent.isStopped = true;
-        Invoke(nameof(ShootDelay), 3);
-    }
-    private void ShootDelay()
-    {
-        dashing = false;
-        navMeshAgent.speed = 10;
-    }
+ 
 
     private void OnCollisionEnter(Collision other)
     {

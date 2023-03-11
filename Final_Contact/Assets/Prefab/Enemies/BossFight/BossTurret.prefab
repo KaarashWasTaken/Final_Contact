@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2703601187788945912}
   - component: {fileID: 4595326015464265482}
   - component: {fileID: 886054134202912372}
-  - component: {fileID: 6153692823790721372}
+  - component: {fileID: 7628085224683547695}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -119,6 +119,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 491760456140334473, guid: 1b1503f04d385a54d8b9c0fe6f1de59a, type: 3}
   firingspeed: 0.2
   shootSpread: 15
+  muzzleFlash: {fileID: 0}
 --- !u!114 &2703601187788945912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +171,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6153692823790721372
+--- !u!114 &7628085224683547695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,12 +180,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3725205069905602049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0258439581af946b4888bf73a53c8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 710b45d8770ae4b4581699cd2cb6e089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 200
+  maxDistance: 250
   currentDistance: 0
-  dissolving: 0
+  timeUntilWander: 0
+  FinalBoss: {fileID: 5737302056134528622, guid: e78937736670ca64c83c90d84df5eb51, type: 3}
 --- !u!1 &5737302056134528622
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +198,7 @@ GameObject:
   - component: {fileID: 7352858271907079012}
   m_Layer: 8
   m_Name: BossTurret
-  m_TagString: Enemy
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

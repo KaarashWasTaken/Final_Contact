@@ -18,35 +18,42 @@ public class BossManager : MonoBehaviour
     //private int enemySpawnCount;
     //[SerializeField]
     //private float spawnCooldown = 0.25f;
+    public bool bossAttacking = false;
+    public bool turretsSpawned = false;
 
-    public enum BossStage
-    {
-        Turrets,
-        Boss
-    }
-    public BossStage activeStage;
+    //public enum BossStage
+    //{
+    //    Turrets,
+    //    Boss
+    //}
+    //public BossStage activeStage;
     private void Start()
     {
         //firstSpawn = true;
-        activeStage = BossStage.Turrets;
+        //activeStage = BossStage.Turrets;
+        turretsSpawned = true;
     }
     private void Update()
     {
-        //Looks through the scene if there are any players, doesnt spawn any enemies unless players exist
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 0)
+        if (GetComponentInChildren<EnemyStandard>().health == 75) 
         {
-            SpawnUpdate();
+            GetComponentInChildren<EnemyStandard>().health -= 1;
+            bossAttacking = false;
         }
-    }
-    private void SpawnUpdate()
-    {
-        turrets = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        //Spawns enemies until it reaches the currently spawned limit or runs out of enemis to spawn per level
-        if (turrets == 0 && activeStage == BossStage.Turrets)
+        if (!bossAttacking && GameObject.FindGameObjectsWithTag("Turret").Length <=3 && turretsSpawned == false)
         {
             SpawnTurrets();
+            turretsSpawned = true;
         }
+        if (GameObject.FindGameObjectsWithTag("Turret").Length <= 0)
+        {
+            bossAttacking = true;
+            turretsSpawned = false;
+        }
+     
+        //Looks through the scene if there are any players, doesnt spawn any enemies unless players exist
     }
+
     void SpawnTurrets()
     {
         Debug.Log("Spawning");
