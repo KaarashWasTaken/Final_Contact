@@ -31,7 +31,6 @@ public class WeaponManager : MonoBehaviour
     public GameObject Shotgun_Pickup;
     public GameObject SMG_Pickup;
     public GameObject MG_Pickup;
-
     [SerializeField]
     private Transform DropPoint;
     // this script handles weapon types and general effects

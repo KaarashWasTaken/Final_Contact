@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool ready = false;
     private float pauseInput = 0;
     private float lastPause = 0;
+    private float upMenuInput = 0;
     //Shooting & aiming variables
     public float shooting = 0;
     private Vector2 aiming = Vector2.zero;
@@ -75,6 +76,10 @@ public class PlayerController : MonoBehaviour
     {
         pauseInput = context.ReadValue<float>();
     }
+    public void OnOpenUpgradeMenu(InputAction.CallbackContext context)
+    {
+        upMenuInput = context.ReadValue<float>();
+    }
     void Update()
     {
         if (!downed)
@@ -121,6 +126,10 @@ public class PlayerController : MonoBehaviour
                 Pause();
                 lastPause = Time.time;
             }
+            if(upMenuInput != 0)
+            {
+                OpenUpgradeMenu();
+            }
         }
         if (downed)
         {
@@ -159,6 +168,10 @@ public class PlayerController : MonoBehaviour
     {
         isBoostActivated = false;
         playerSpeed = initalPlayerSpeed;
+    }
+    private void OpenUpgradeMenu()
+    {
+        GameObject.FindGameObjectWithTag("UpgradeMenu").GetComponent<UpgradeMenu>().Activate();
     }
     private void Pause()
     {

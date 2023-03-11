@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1707015635638193012}
   - component: {fileID: 8590623308785216238}
   - component: {fileID: 5586679819397542278}
+  - component: {fileID: 838820850762341308}
   m_Layer: 6
   m_Name: Shotgun-Bullet
   m_TagString: Projectile
@@ -67,7 +68,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 20
   destroyAfterSeconds: 2
-  damage: 35
+  damage: 0
+--- !u!114 &838820850762341308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437717003302422094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9822ef89ca2a3fd42a18f2303342b182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1596112035826826920
 PrefabInstance:
   m_ObjectHideFlags: 0

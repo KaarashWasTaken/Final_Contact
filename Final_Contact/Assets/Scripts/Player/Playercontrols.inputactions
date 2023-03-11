@@ -1,5 +1,5 @@
 {
-    "name": "PlayerControls",
+    "name": "Playercontrols",
     "maps": [
         {
             "name": "Player",
@@ -54,6 +54,15 @@
                     "name": "Drop",
                     "type": "Button",
                     "id": "f7fe94e9-5d81-4ffc-b69a-a940db7c9619",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DebugUpgradeMenu",
+                    "type": "Button",
+                    "id": "e8a4d674-c805-4761-9b0d-071324a330a4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -278,6 +287,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Drop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63c5a7d3-2815-4386-9b3e-1de404df024f",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DebugUpgradeMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

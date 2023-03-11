@@ -293,7 +293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstbutton: {fileID: 1813797712923333186}
   upgradeMenu: {fileID: 9098679833076987551}
-  player: {fileID: 8674476827718666148}
 --- !u!1 &541901840537075627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,7 +4613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928469163831415715}
   m_Layer: 0
-  m_Name: DebugPlayer
+  m_Name: AnimTEst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5974,8 +5973,8 @@ Transform:
   m_GameObject: {fileID: 8674476827718666148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8348219879900683636}
   - {fileID: 3735999701205915609}
@@ -6061,7 +6060,7 @@ MonoBehaviour:
   boostIncrease: 30
   boostTime: 0.2
   downed: 0
-  Player: {fileID: 1839169112382031740}
+  Player: {fileID: 0}
   ReviveCollider: {fileID: 0}
   ReviveSphere: {fileID: 7445038870646543926}
 --- !u!114 &8383555806658543395
@@ -6210,37 +6209,9 @@ MonoBehaviour:
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8695172709987482352}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnDrop
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: f7fe94e9-5d81-4ffc-b69a-a940db7c9619
     m_ActionName: Player/Drop[/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest,/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8695172709987482352}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnOpenUpgradeMenu
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e8a4d674-c805-4761-9b0d-071324a330a4
-    m_ActionName: Player/DebugUpgradeMenu[/XInputControllerWindows/select,/XInputControllerWindows1/select]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -6585,7 +6556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7588530482434605709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6837,7 +6808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 230280963014658921, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_TagString
-      value: AR
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1403543256594717547, guid: 050a571b5e4a2a747bac358512b48a54, type: 3}
       propertyPath: m_Layer

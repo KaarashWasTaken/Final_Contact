@@ -30,6 +30,7 @@ public class MG : MonoBehaviour
     private float shootSpread = 4;
     private Quaternion originalAngle;
     public ParticleSystem muzzleFlash;
+    public float damage;
     void Update()
     {
         //Gets a cooldown so cant shoot if weapon gets too hot
