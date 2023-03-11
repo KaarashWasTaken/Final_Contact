@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6090905768623556914}
   - component: {fileID: 2007127840376075521}
   - component: {fileID: 697523645063917040}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,9 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7550780478967743400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sm_Breakable_barrier_end (2)
-  m_TagString: Untagged
+  m_TagString: InnerWalls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,9 +127,12 @@ GameObject:
   - component: {fileID: 5150518309985143682}
   - component: {fileID: 9131237592220532018}
   - component: {fileID: 5760484526294003995}
-  m_Layer: 0
+  - component: {fileID: 439697385594680164}
+  - component: {fileID: 8442891679693764527}
+  - component: {fileID: 675954132439189898}
+  m_Layer: 7
   m_Name: Cube.013
-  m_TagString: Untagged
+  m_TagString: InnerWalls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,3 +202,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &439697385594680164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382857690081011670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 682801d1b607a394db4a5b66357fa58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!208 &8442891679693764527
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382857690081011670}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.001, y: 0.010000001, z: 0.007}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.007}
+  m_TimeToStationary: 0.5
+--- !u!65 &675954132439189898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382857690081011670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0016498775, y: 0.019999996, z: 0.01349547}
+  m_Center: {x: 0.00001867942, y: 0.00000037858257, z: 0.0069130203}
