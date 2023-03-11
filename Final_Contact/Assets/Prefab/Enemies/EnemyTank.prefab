@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7352858271907079012}
   m_Layer: 8
   m_Name: EnemyTank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,6 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
+  deathSpark: {fileID: 0}
 --- !u!114 &6802285732398027918
 MonoBehaviour:
   m_ObjectHideFlags: 0

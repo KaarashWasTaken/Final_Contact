@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7352858271907079012}
   m_Layer: 8
   m_Name: FinalBossTemp
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,7 +680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 30
   currentDistance: 0
-  dissolving: 0
+  timeUntilWander: 0
+  attackCD: 2
+  dashDamage: 5
   shield: {fileID: 6231965012595088567}
 --- !u!4 &836564288407266138 stripped
 Transform:
