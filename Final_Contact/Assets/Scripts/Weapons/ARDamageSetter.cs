@@ -8,7 +8,7 @@ public class ARDamageSetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = GameObject.FindGameObjectWithTag("AR").GetComponent<AR>().damage;
+        damage = GameObject.Find("AR").GetComponent<AR>().damage;
         GetComponent<MoveForward>().damage = damage;
     }
 

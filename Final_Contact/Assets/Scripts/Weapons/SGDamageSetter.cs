@@ -8,7 +8,7 @@ public class SGDamageSetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = GameObject.FindGameObjectWithTag("Shotgun").GetComponent<Shotgun>().damage;
+        damage = GameObject.Find("Shotgun").GetComponent<Shotgun>().damage;
         GetComponent<MoveForward>().damage = damage;
     }
 
