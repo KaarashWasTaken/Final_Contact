@@ -8,7 +8,7 @@ public class MGDamageSetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = GameObject.FindGameObjectWithTag("MG").GetComponent<MG>().damage;
+        damage = GameObject.Find("MG").GetComponent<MG>().damage;
         GetComponent<MoveForward>().damage = damage;
     }
 

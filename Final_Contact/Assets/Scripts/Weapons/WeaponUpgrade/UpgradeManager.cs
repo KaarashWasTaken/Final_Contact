@@ -17,6 +17,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if(GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !upgradeMenuOpened)
         {
+            SetMenuActive();
             upgradeMenuOpened = true;
         }
     }

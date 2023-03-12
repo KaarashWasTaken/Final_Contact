@@ -28,6 +28,7 @@ public class EnemyStandard : MonoBehaviour
             propBlock = new MaterialPropertyBlock();
             dissolve = true;
             propBlock.SetFloat("_Dissolve_Amount", 0);
+            GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount--;
         }
         foreach (Renderer g in _renderer)
         {
@@ -36,7 +37,7 @@ public class EnemyStandard : MonoBehaviour
             propBlock.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
             g.SetPropertyBlock(propBlock);
         }
-        Destroy(transform.parent.gameObject, 2.5f);
+        Destroy(transform.parent.gameObject, 1.5f);
     }
     private void OnCollisionEnter(Collision other)
     {
