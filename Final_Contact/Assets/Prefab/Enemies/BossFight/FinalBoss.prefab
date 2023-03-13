@@ -541,7 +541,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 4
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 720
@@ -553,6 +553,25 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1987197171716171265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60730859593578976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0258439581af946b4888bf73a53c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 60
+  currentDistance: 0
+  timeUntilWander: 0
+  attackCD: 2
+  dashDamage: 5
+  bossStartingPoint: {fileID: 0}
+  shield: {fileID: 0}
 --- !u!114 &6802285732398027918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,25 +601,6 @@ MonoBehaviour:
   health: 1100
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
   deathSpark: {fileID: 0}
---- !u!114 &1987197171716171265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60730859593578976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0258439581af946b4888bf73a53c8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 60
-  currentDistance: 0
-  timeUntilWander: 0
-  attackCD: 2
-  dashDamage: 5
-  bossStartingPoint: {fileID: 0}
-  shield: {fileID: 0}
 --- !u!4 &836564288407266138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48ca992a785ea924f87a0ece2b1fdba3, type: 3}
