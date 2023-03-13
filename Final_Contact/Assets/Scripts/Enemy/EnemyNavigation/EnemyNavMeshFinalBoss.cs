@@ -31,6 +31,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     [NonSerialized]
     public Transform bossCurrentPoint;
     public GameObject shield;
+    [SerializeField]
     public static bool bossAtBase = false;
     // Start is called before the first frame update
     private void Start()
@@ -38,22 +39,11 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
         currentTarget = GameObject.Find("TempTarget");
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
         bossCurrentPoint = GetComponent<Transform>();
-        //Invoke(nameof(Wander), Random.Range(3, 8));
-        //InvokeRepeating(nameof(DashAtPlayer), 10, Random.Range(8, 16));
+        shield.SetActive(true);
     }
     private void Update()
     {
         bossCurrentPoint.position = transform.position;
-        if(bossCurrentPoint.position.x == bossStartingPoint.position.x && bossCurrentPoint.position.z == bossStartingPoint.position.z)
-        {
-            bossAtBase = true;
-            Debug.Log("bossatbase");
-        }
-        else
-        {
-            bossAtBase = false;
-            Debug.Log("boss away");
-        }
        if(GetComponentInParent<BossManager>().bossAttacking == false) // boss stage turret
         {
             BossShielded();
@@ -66,6 +56,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
 
     public void BossAttack()
     {
+        navMeshAgent.speed = 10;
         //Debug.Log("Attacking");
         if (!dissolving)
         {
@@ -84,7 +75,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             if (currentTarget.CompareTag("Player"))
                 navMeshAgent.destination = currentTarget.transform.position;
 
-            if (GetComponent<EnemyStandard>().health <= 0)
+            if (GetComponent<EnemyBossStandard>().health <= 0)
             {
                 dissolving = true;
                 navMeshAgent.isStopped = true;
@@ -94,6 +85,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     public void BossShielded()
     {
         //Debug.Log("Shielded");
+        navMeshAgent.speed = 15;
         navMeshAgent.destination = bossStartingPoint.position;
     }
  
@@ -105,6 +97,24 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             lastAttack = Time.time;
             other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
             navMeshAgent.isStopped = true;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BossShieldPosition"))
+        {
+            bossAtBase = true;
+            Debug.Log("boss at base");
+            shield.SetActive(true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("BossShieldPosition"))
+        {
+            bossAtBase = false;
+            Debug.Log("bossaway");
+            shield.SetActive(false);
         }
     }
 }
