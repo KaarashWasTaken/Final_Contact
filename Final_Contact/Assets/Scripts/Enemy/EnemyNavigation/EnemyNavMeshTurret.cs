@@ -17,8 +17,6 @@ public class EnemyNavMeshTurret : MonoBehaviour
     private float timeUntilWander;
     private bool wandering = false;
     private bool dissolving;
-    [SerializeField]
-    public GameObject FinalBoss;
 
     // Start is called before the first frame update
     private void Start()
@@ -43,11 +41,11 @@ public class EnemyNavMeshTurret : MonoBehaviour
             currentDistance = Vector3.Distance(currentTarget.transform.position, gameObject.transform.position);
             if (currentDistance <= maxDistance && !wandering && EnemyNavMeshFinalBoss.bossAtBase == true)
             {
-                //ShootAtPlayer();
-                Debug.Log("Turret firing");
+                ShootAtPlayer();
+                //Debug.Log("Turret firing");
             }
 
-            if (GetComponent<EnemyStandard>().health <= 0)
+            if (GetComponent<EnemyStandardTurret>().health <= 0)
             {
                 dissolving = true;
                 navMeshAgent.isStopped = true;

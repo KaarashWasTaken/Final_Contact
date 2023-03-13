@@ -47,12 +47,12 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
         if(bossCurrentPoint.position.x == bossStartingPoint.position.x && bossCurrentPoint.position.z == bossStartingPoint.position.z)
         {
             bossAtBase = true;
-            Debug.Log("bossatbase");
+            //Debug.Log("bossatbase");
         }
         else
         {
             bossAtBase = false;
-            Debug.Log("boss away");
+            //Debug.Log("boss away");
         }
        if(GetComponentInParent<BossManager>().bossAttacking == false) // boss stage turret
         {
@@ -84,7 +84,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             if (currentTarget.CompareTag("Player"))
                 navMeshAgent.destination = currentTarget.transform.position;
 
-            if (GetComponent<EnemyStandard>().health <= 0)
+            if (GetComponent<EnemyBossStandard>().health <= 0)
             {
                 dissolving = true;
                 navMeshAgent.isStopped = true;

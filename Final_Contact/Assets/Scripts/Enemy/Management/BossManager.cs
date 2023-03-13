@@ -19,7 +19,9 @@ public class BossManager : MonoBehaviour
     //[SerializeField]
     //private float spawnCooldown = 0.25f;
     public bool bossAttacking = false;
-    public bool turretsSpawned = false;
+    public bool turretsActive = false;
+    private bool switchStage = true;
+    private float bossHealth;
 
     //public enum BossStage
     //{
@@ -31,25 +33,37 @@ public class BossManager : MonoBehaviour
     {
         //firstSpawn = true;
         //activeStage = BossStage.Turrets;
-        turretsSpawned = true;
+        turretsActive = true;
+        bossHealth = GetComponentInChildren<EnemyBossStandard>().health;
     }
     private void Update()
     {
-        if (GetComponentInChildren<EnemyStandard>().health == 75) 
+        if (GetComponentInChildren<EnemyBossStandard>().health <= 0.75 * bossHealth && GetComponentInChildren<EnemyBossStandard>().health >= 0.50 * bossHealth && switchStage)
         {
-            GetComponentInChildren<EnemyStandard>().health -= 1;
+            switchStage = false;
             bossAttacking = false;
         }
-        if (!bossAttacking && GameObject.FindGameObjectsWithTag("Turret").Length <=3 && turretsSpawned == false)
+        if (GetComponentInChildren<EnemyBossStandard>().health <= 0.50 * bossHealth && GetComponentInChildren<EnemyBossStandard>().health >= 0.25 * bossHealth && !switchStage)
+        {
+            switchStage = true;
+            bossAttacking = false;
+        }
+        if (GetComponentInChildren<EnemyBossStandard>().health <= 0.25 * bossHealth && GetComponentInChildren<EnemyBossStandard>().health >= 0 * bossHealth && switchStage)
+        {
+            switchStage = false;
+            bossAttacking = false;
+        }
+        if (!bossAttacking && GameObject.FindGameObjectsWithTag("Turret").Length <=3 && turretsActive == false)
         {
             SpawnTurrets();
-            turretsSpawned = true;
+            turretsActive = true;
         }
         if (GameObject.FindGameObjectsWithTag("Turret").Length <= 0)
         {
             bossAttacking = true;
-            turretsSpawned = false;
+            turretsActive = false;
         }
+        //Debug.Log(bossAttacking);
      
         //Looks through the scene if there are any players, doesnt spawn any enemies unless players exist
     }
