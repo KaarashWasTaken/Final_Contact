@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class UpgradeMenu : MonoBehaviour
 {
+    UpgradeManager manager;
     public GameObject upgradeMenu;
     public GameObject player;
     WeaponManager weaponManager;
     public void Activate()
     {
+        manager = GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>();
         upgradeMenu.SetActive(true);
-        Time.timeScale = 0;
         weaponManager = player.GetComponentInChildren<WeaponManager>();
     }
 
@@ -31,16 +32,16 @@ public class UpgradeMenu : MonoBehaviour
         {
             weaponManager.gameObject.GetComponentInChildren<SMG>().damage += 3f;
         }
+        manager.SetDMGInactive();
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        Time.timeScale = 1;
     }
     public void HPUpgrade()
     {
+        manager.SetHPInactive();
         player.GetComponent<playerBehaviour>().health += 20;
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        Time.timeScale = 1;
     }
     public void HeatUpgrade()
     {
@@ -64,13 +65,13 @@ public class UpgradeMenu : MonoBehaviour
         }
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        Time.timeScale = 1;
+        manager.SetHeatInactive();
     }
     public void DodgeCDUpgrade()
     {
         player.GetComponent<PlayerController>().dodgeCD -= 0.2f;
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        Time.timeScale = 1;
+        manager.SetDodgeCDInactive();
     }
 }

@@ -9,7 +9,7 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
@@ -28,6 +28,22 @@ public class UpgradeManager : MonoBehaviour
         {
             g.GetComponent<UpgradeMenu>().Activate();
         }
+    }
+    public void SetDMGInactive()
+    {
+
+    }
+    public void SetHPInactive()
+    {
+
+    }
+    public void SetHeatInactive()
+    {
+
+    }
+    public void SetDodgeCDInactive()
+    {
+
     }
     //private void 
 }
