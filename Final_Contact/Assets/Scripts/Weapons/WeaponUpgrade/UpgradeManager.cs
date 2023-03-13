@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UpgradeManager : MonoBehaviour
 {
     public GameObject[] upgrades;
+    GameObject[] playerMenu;
     public bool upgradeMenuOpened= false;
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,9 @@ public class UpgradeManager : MonoBehaviour
             upgradeMenuOpened = true;
         }
     }
-    private void SetMenuActive()
+    public void SetMenuActive()
     {
-        GameObject[] playerMenu = GameObject.FindGameObjectsWithTag("UpgradeMenu");
+        playerMenu = GameObject.FindGameObjectsWithTag("UpgradeMenu");
         foreach (GameObject g in playerMenu)
         {
             g.GetComponent<UpgradeMenu>().Activate();
@@ -31,7 +32,10 @@ public class UpgradeManager : MonoBehaviour
     }
     public void SetDMGInactive()
     {
-
+        foreach (GameObject g in playerMenu)
+        {
+            GameObject.Find("DMG").SetActive(false);
+        }
     }
     public void SetHPInactive()
     {

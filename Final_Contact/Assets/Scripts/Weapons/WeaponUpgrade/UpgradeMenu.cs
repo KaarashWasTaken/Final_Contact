@@ -6,6 +6,21 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject player;
     WeaponManager weaponManager;
+    private GameObject firstButton;
+    private void Update()
+    {
+        if(upgradeMenu.activeSelf)
+        {
+            CheckIfButtonSelected();
+        }
+    }
+    private void CheckIfButtonSelected()
+    {
+        if(EventSystem.current.currentSelectedGameObject == null)
+        {
+            EventSystem.current.SetSelectedGameObject(firstButton);
+        }
+    }
     public void Activate()
     {
         manager = GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>();
@@ -38,10 +53,10 @@ public class UpgradeMenu : MonoBehaviour
     }
     public void HPUpgrade()
     {
-        manager.SetHPInactive();
         player.GetComponent<playerBehaviour>().health += 20;
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
+        manager.SetHPInactive();
     }
     public void HeatUpgrade()
     {
