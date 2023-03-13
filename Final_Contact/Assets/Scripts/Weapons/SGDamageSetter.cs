@@ -11,10 +11,4 @@ public class SGDamageSetter : MonoBehaviour
         damage = GameObject.Find("Shotgun").GetComponent<Shotgun>().damage;
         GetComponent<MoveForward>().damage = damage;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
