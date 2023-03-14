@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boostTime = 0.2f;
     private bool isBoostActivated = false;
+    private float timeSinceDodge;
+    //for hud
+    public float dodgeTimePercentage=1;
     // PLayer Down
     public bool downed = false;
     [SerializeField]
@@ -132,10 +135,21 @@ public class PlayerController : MonoBehaviour
         }
         if (downed)
         {
+            //tracks time in revive circle
             Player.velocity = Vector3.zero;
         }
-        //tracks time in revive circle
         
+        timeSinceDodge = Time.time - lastDodge;
+        dodgeTimePercentage = timeSinceDodge / dodgeCD;
+        
+        if (dodgeTimePercentage > 1)
+        {
+            dodgeTimePercentage = 1;
+            lastDodge= Time.time - dodgeCD;
+        }
+        Debug.Log(dodgeTimePercentage);
+        
+
     }
     private void AimDirection()
     {
