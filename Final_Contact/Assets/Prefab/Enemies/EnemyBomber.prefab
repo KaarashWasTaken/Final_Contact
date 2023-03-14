@@ -1760,6 +1760,7 @@ GameObject:
   - component: {fileID: 8980212345782049945}
   - component: {fileID: 5445336937500454113}
   - component: {fileID: 1887807134861953576}
+  - component: {fileID: 5934394832046388232}
   m_Layer: 8
   m_Name: sk_AlienBBomber
   m_TagString: Enemy
@@ -1819,7 +1820,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
-  deathSpark: {fileID: 0}
 --- !u!54 &5445336937500454113
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1850,6 +1850,18 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.13, z: 0}
+--- !u!114 &5934394832046388232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228887294583076626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f12a799ee4bfc4c9a8d6ab701fcb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7647602191450435380
 GameObject:
   m_ObjectHideFlags: 0

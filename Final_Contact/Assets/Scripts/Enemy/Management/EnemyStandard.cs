@@ -9,7 +9,7 @@ public class EnemyStandard : MonoBehaviour
     private MaterialPropertyBlock propBlock;
     private Renderer[] _renderer;
     private float dissolveValue = 0.1f;
-    private float dissolveSpeed = 0.5f;
+    private float dissolveSpeed = 0.03f;
     private bool dissolve = false;
     // Update is called once per frame
     void Update()
@@ -34,6 +34,7 @@ public class EnemyStandard : MonoBehaviour
             g.GetPropertyBlock(propBlock);
             for(int i = 0; i < g.materials.Length; i++)
                 g.materials[i] = dissolveMaterial;
+            g.material = dissolveMaterial;
             propBlock.SetFloat("_Dissolve_Amount", dissolveValue += dissolveSpeed*Time.deltaTime);
             g.SetPropertyBlock(propBlock);
         }

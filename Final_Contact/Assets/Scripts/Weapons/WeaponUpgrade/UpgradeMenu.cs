@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 public class UpgradeMenu : MonoBehaviour
 {
     UpgradeManager manager;
@@ -18,7 +20,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         if(EventSystem.current.currentSelectedGameObject == null)
         {
-            EventSystem.current.SetSelectedGameObject(firstButton);
+            
         }
     }
     public void Activate()
