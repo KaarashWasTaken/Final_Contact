@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyNavMeshRanged : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
     [SerializeField]
@@ -16,6 +16,7 @@ public class EnemyNavMeshRanged : MonoBehaviour
     private float timeUntilWander;
     private bool wandering = false;
     private bool dissolving;
+    public bool isShooting = false;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -55,12 +56,14 @@ public class EnemyNavMeshRanged : MonoBehaviour
     }
     private void ShootAtPlayer()
     {
+        isShooting = true;
         transform.LookAt(currentTarget.transform.position);
         navMeshAgent.isStopped = true;
         gameObject.GetComponent<EnemyShoot>().Shoot();
     }
     private void Wander()
     {
+        isShooting = false;
         navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
         if (!wandering)
             wandering = true;

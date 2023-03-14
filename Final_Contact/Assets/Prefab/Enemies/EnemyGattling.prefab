@@ -1415,6 +1415,7 @@ GameObject:
   - component: {fileID: 5139184822047768192}
   - component: {fileID: 3425636646240767382}
   - component: {fileID: 4586281909152907982}
+  - component: {fileID: 6163213877208790801}
   m_Layer: 8
   m_Name: sk_Gatling_chara
   m_TagString: Enemy
@@ -1449,7 +1450,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5177124212953724404}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b2c01a6816adb0a438272010ea3452b8, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 808bb6d6b75e11d4b9737af2d6743d20, type: 3}
   m_Controller: {fileID: 9100000, guid: 1cfb46f8c922d2d44a46ffe5b959f187, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1520,7 +1521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
-  deathSpark: {fileID: 0}
 --- !u!136 &5139184822047768192
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1573,6 +1573,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6163213877208790801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177124212953724404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5747779c47bdf04199f63daaaac7752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5229185030382414844
 GameObject:
   m_ObjectHideFlags: 0

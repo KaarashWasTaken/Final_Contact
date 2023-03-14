@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyNavMeshGattling : MonoBehaviour
 {
     
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
     [SerializeField]
@@ -17,7 +17,7 @@ public class EnemyNavMeshGattling : MonoBehaviour
     private float timeUntilWander;
     private bool wandering = false;
     private bool dissolving;
-
+    public bool isShooting = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -59,12 +59,14 @@ public class EnemyNavMeshGattling : MonoBehaviour
     }
     private void ShootAtPlayer()
     {
+        isShooting= true;
         transform.LookAt(currentTarget.transform.position);
         navMeshAgent.isStopped = true;
         gameObject.GetComponent<EnemyShoot>().SpreadShoot();
     }
     private void Wander()
     {
+        isShooting = false;
         navMeshAgent.SetDestination(Random.onUnitSphere * 10 + gameObject.transform.position);
         if (!wandering)
             wandering = true;
