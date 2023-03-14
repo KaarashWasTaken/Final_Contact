@@ -9,9 +9,8 @@ public class EnemyStandard : MonoBehaviour
     private MaterialPropertyBlock propBlock;
     private Renderer[] _renderer;
     private float dissolveValue = 0.1f;
-    private float dissolveSpeed = 0.05f;
+    private float dissolveSpeed = 0.03f;
     private bool dissolve = false;
-    public ParticleSystem deathSpark;
     // Update is called once per frame
     void Update()
     {
@@ -33,8 +32,10 @@ public class EnemyStandard : MonoBehaviour
         foreach (Renderer g in _renderer)
         {
             g.GetPropertyBlock(propBlock);
+            for(int i = 0; i < g.materials.Length; i++)
+                g.materials[i] = dissolveMaterial;
             g.material = dissolveMaterial;
-            propBlock.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
+            propBlock.SetFloat("_Dissolve_Amount", dissolveValue += dissolveSpeed*Time.deltaTime);
             g.SetPropertyBlock(propBlock);
         }
         Destroy(transform.parent.gameObject, 1.5f);

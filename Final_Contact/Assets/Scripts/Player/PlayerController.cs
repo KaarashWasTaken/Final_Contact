@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OpenUpgradeMenu()
     {
-        GameObject.FindGameObjectWithTag("UpgradeMenu").GetComponent<UpgradeMenu>().Activate();
+        GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>().SetMenuActive();
     }
     private void Pause()
     {

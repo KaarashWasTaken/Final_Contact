@@ -11,10 +11,4 @@ public class ARDamageSetter : MonoBehaviour
         damage = GameObject.Find("AR").GetComponent<AR>().damage;
         GetComponent<MoveForward>().damage = damage;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
