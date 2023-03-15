@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyBossStandard : MonoBehaviour
 {
-    public float health;
+    private GameObject[] players;
+    public float health = 2000; // boss health vs 1 player
     public Material dissolveMaterial;
     private MaterialPropertyBlock propBlock;
     private Renderer[] _renderer;
@@ -12,13 +14,25 @@ public class EnemyBossStandard : MonoBehaviour
     private float dissolveSpeed = 0.05f;
     private bool dissolve = false;
     public ParticleSystem deathSpark;
+
+    private void Start()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
+        foreach (GameObject g in players)
+        {
+            health += 250;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (health <= 0)
         {
             Death();
+            WinScreen();
         }
+        
     }
     public void Death()
     {
@@ -49,5 +63,10 @@ public class EnemyBossStandard : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+    private void WinScreen()
+    {
+        // Trigger win screen here
+        Debug.Log("YOU WIN!!!");
     }
 }
