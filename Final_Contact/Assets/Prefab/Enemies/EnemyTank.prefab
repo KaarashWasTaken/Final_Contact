@@ -418,13 +418,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400644369805629243}
+  - component: {fileID: 6575274813279572138}
   - component: {fileID: 3482520516768459449}
   - component: {fileID: 6854648686063193604}
   - component: {fileID: 518913950698234548}
   - component: {fileID: 661964347435088586}
   - component: {fileID: 797327125567368977}
   - component: {fileID: 4928351387306948424}
-  - component: {fileID: 6575274813279572138}
   - component: {fileID: 8986137664739025005}
   m_Layer: 8
   m_Name: sk_Alien_tank
@@ -451,6 +451,26 @@ Transform:
   m_Father: {fileID: 7352858271907079012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6575274813279572138
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746207047128059265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5ff268586bb06244dba442da75b11af5, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9d68106beff07fb45aa20af0560abf4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!54 &3482520516768459449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -543,26 +563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bb9260d65bbba4694fd6f40f3aeac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &6575274813279572138
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9d68106beff07fb45aa20af0560abf4f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  navMeshAgent: {fileID: 0}
+  isAttacking: 0
 --- !u!114 &8986137664739025005
 MonoBehaviour:
   m_ObjectHideFlags: 0

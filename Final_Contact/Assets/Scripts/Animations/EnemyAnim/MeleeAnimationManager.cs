@@ -20,9 +20,5 @@ public class MeleeAnimationManager : MonoBehaviour
             animator.SetBool("isAttacking", true);
         else
             animator.SetBool("isAttacking", false);
-        if (!melee.navMeshAgent.isStopped)
-            animator.SetBool("isMoving", true);
-        else
-            animator.SetBool("isMoving", false);
     }
 }

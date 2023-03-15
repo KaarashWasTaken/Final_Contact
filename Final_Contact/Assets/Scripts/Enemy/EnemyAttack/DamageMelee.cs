@@ -5,19 +5,17 @@ using UnityEngine;
 public class DamageMelee : MonoBehaviour
 {
     [SerializeField]
-    private float attackCD = 2.0f;
-    private float lastAttack;
-    [SerializeField]
-    private float damage = 5f;
+    private float damage = 30f;
+    private float attackCD = 0.5f;
+    private float lastAttack = -2;
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && (Time.time >= (lastAttack + attackCD)))
+        if (other.CompareTag("Player") && Time.time >= lastAttack + attackCD)
         {
-            lastAttack = Time.time;
-            other.gameObject.GetComponent<playerBehaviour>().health -= damage;
+            lastAttack= Time.time;
+            other.GetComponent<playerBehaviour>().health -= damage;
             Debug.Log("hit");
-            GetComponent<EnemyNavMeshMelee>().AttackCD();
         }
     }
 }
