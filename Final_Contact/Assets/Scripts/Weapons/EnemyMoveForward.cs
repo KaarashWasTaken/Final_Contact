@@ -10,7 +10,6 @@ public class EnemyMoveForward : MonoBehaviour
     private float startTime;
     private Rigidbody rb;
     public float damage = 5.0f;
-    //Rigidbody Projectile;
     // Start is called before the first frame update
     void Start()
     {

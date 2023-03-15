@@ -1473,9 +1473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6122abcb7e6626a4da84131d6d5d77d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}
   maxDistance: 50
   currentDistance: 0
   timeUntilWander: 0
+  isShooting: 0
 --- !u!114 &7726753588821595759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,6 +1523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
+  dissolveSpeed: 0.03
 --- !u!136 &5139184822047768192
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -45,6 +45,7 @@ public class EnemyNavMeshRanged : MonoBehaviour
             }
             else if (currentDistance <= maxDistance && !wandering)
             {
+                isShooting = true;
                 ShootAtPlayer();
             }
             if (GetComponent<EnemyStandard>().health <= 0)
@@ -56,7 +57,6 @@ public class EnemyNavMeshRanged : MonoBehaviour
     }
     private void ShootAtPlayer()
     {
-        isShooting = true;
         transform.LookAt(currentTarget.transform.position);
         navMeshAgent.isStopped = true;
         gameObject.GetComponent<EnemyShoot>().Shoot();
