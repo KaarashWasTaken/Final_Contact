@@ -8,7 +8,7 @@ public class DamageMelee : MonoBehaviour
     private float attackCD = 2.0f;
     private float lastAttack;
     [SerializeField]
-    private float damage = 5f;
+    public float damage = 5f;
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision other)
     {
