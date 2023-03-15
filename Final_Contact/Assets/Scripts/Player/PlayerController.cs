@@ -147,7 +147,6 @@ public class PlayerController : MonoBehaviour
             dodgeTimePercentage = 1;
             lastDodge= Time.time - dodgeCD;
         }
-        Debug.Log(dodgeTimePercentage);
         
 
     }

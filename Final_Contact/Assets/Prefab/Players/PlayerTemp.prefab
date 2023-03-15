@@ -3546,7 +3546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &544812961852183297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9876,7 +9876,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 0
   healthBar: {fileID: 7877149784554317365}
-  cooldownBar: {fileID: 3700257201249343772}
+  heatBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   downed: 0
 --- !u!143 &1826875994561038200
 CharacterController:
@@ -9916,6 +9917,7 @@ MonoBehaviour:
   dodgeCD: 3
   boostIncrease: 30
   boostTime: 0.2
+  dodgeTimePercentage: 1
   downed: 0
   Player: {fileID: 6025184705785201760}
   ReviveCollider: {fileID: 0}
