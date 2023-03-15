@@ -20,9 +20,5 @@ public class RangedAnimationManager : MonoBehaviour
             animator.SetBool("isAttacking", true);
         else
             animator.SetBool("isAttacking", false);
-        if (!ranged.navMeshAgent.isStopped)
-            animator.SetBool("isMoving", true);
-        else
-            animator.SetBool("isMoving", false);
     }
 }

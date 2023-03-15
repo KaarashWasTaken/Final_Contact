@@ -11,6 +11,7 @@ public class EnemyNavMeshMelee : MonoBehaviour
     private bool wandering = false;
     private bool dissolving;
     public bool isAttacking;
+    private float lastAttack = -2;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -64,17 +65,32 @@ public class EnemyNavMeshMelee : MonoBehaviour
         if (wandering)
             wandering = false;
     }
-    public void AttackCD()
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            navMeshAgent.isStopped = true;
+            isAttacking = true;
+            if (Time.time >= lastAttack + 2)
+            {
+                lastAttack = Time.time;
+                Attack();
+            }
+        }
+    }
+    public void Attack()
     {
         Debug.Log("AttackCD");
-        isAttacking= true;
-        navMeshAgent.isStopped= true;
         Invoke(nameof(StopCD), 1);
     }
     private void StopCD()
     {
         isAttacking = false;
         Debug.Log("AttackCdstopped");
+    }
+    private void Chase()
+    {
+        Debug.Log("Chasing");
         navMeshAgent.isStopped= false;
     }
 }
