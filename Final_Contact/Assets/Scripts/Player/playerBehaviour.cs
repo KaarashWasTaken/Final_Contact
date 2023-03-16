@@ -26,9 +26,10 @@ public class playerBehaviour : MonoBehaviour
         {
             GetComponent<PlayerController>().Down();
         }
-        //heatBar.fillAmount = Mathf.Clamp(GetComponentInChildren<WeaponManager>().heat, 0, 1);
-        //staminaBar.fillAmount = Mathf.Clamp(GetComponent<PlayerController>().dodgeTimePercentage, 0, 1);
-
+        heatBar.fillAmount = Mathf.Clamp(GetComponentInChildren<WeaponManager>().heat, 0, 1);
+        staminaBar.fillAmount = Mathf.Clamp(GetComponent<PlayerController>().dodgeTimePercentage, 0, 1);
+        
+        
     }
     private void OnCollisionEnter(Collision other)
     {

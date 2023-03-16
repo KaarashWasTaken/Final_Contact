@@ -31,6 +31,11 @@ public class WeaponManager : MonoBehaviour
     public GameObject Shotgun_Pickup;
     public GameObject SMG_Pickup;
     public GameObject MG_Pickup;
+    [Header("Weapon HUD images")]
+    public GameObject AR_Image;
+    public GameObject MG_Image;
+    public GameObject SMG_Image;
+    public GameObject SG_Image;
     [SerializeField]
     private Transform DropPoint;
     // this script handles weapon types and general effects
@@ -98,6 +103,7 @@ public class WeaponManager : MonoBehaviour
             playerWeapon = EquippedWeapon.AR;
             originalFiringSpeed = gameObject.GetComponentInChildren<AR>().firingspeed;
             originalHeatEffect = gameObject.GetComponentInChildren<AR>().heatEffect;
+            AR_Image.SetActive(true);
         }
         else if(weapon.gameObject.CompareTag("Shotgun"))
         {
@@ -105,6 +111,7 @@ public class WeaponManager : MonoBehaviour
             playerWeapon = EquippedWeapon.Shotgun;
             originalFiringSpeed = gameObject.GetComponentInChildren<Shotgun>().firingspeed;
             originalHeatEffect = gameObject.GetComponentInChildren<Shotgun>().heatEffect;
+            SG_Image.SetActive(true);
         }
         else if (weapon.gameObject.CompareTag("MG"))
         {
@@ -112,6 +119,7 @@ public class WeaponManager : MonoBehaviour
             playerWeapon = EquippedWeapon.MG;
             originalFiringSpeed = gameObject.GetComponentInChildren<MG>().firingspeed;
             originalHeatEffect = gameObject.GetComponentInChildren<MG>().heatEffect;
+            MG_Image.SetActive(true);
         }
         else if (weapon.gameObject.CompareTag("SMG"))
         {
@@ -119,6 +127,7 @@ public class WeaponManager : MonoBehaviour
             playerWeapon = EquippedWeapon.SMG;
             originalFiringSpeed = gameObject.GetComponentInChildren<SMG>().firingspeed;
             originalHeatEffect = gameObject.GetComponentInChildren<SMG>().heatEffect;
+            SMG_Image.SetActive(true);
         }
     }
     public void FiringSpeedBonus(GameObject pickup)
@@ -191,6 +200,7 @@ public class WeaponManager : MonoBehaviour
                 originalFiringSpeed = 0;
                 originalHeatEffect = 0;
                 Instantiate(AR_Pickup, DropPoint.position, DropPoint.rotation);
+                AR_Image.SetActive(false);
             }
             if (playerWeapon == EquippedWeapon.Shotgun)
             {
@@ -199,6 +209,7 @@ public class WeaponManager : MonoBehaviour
                 originalFiringSpeed = 0;
                 originalHeatEffect = 0;
                 Instantiate(Shotgun_Pickup, DropPoint.position, DropPoint.rotation);
+                SG_Image.SetActive(false);
             }
             if (playerWeapon == EquippedWeapon.MG)
             {
@@ -207,6 +218,7 @@ public class WeaponManager : MonoBehaviour
                 originalFiringSpeed = 0;
                 originalHeatEffect = 0;
                 Instantiate(MG_Pickup, DropPoint.position, DropPoint.rotation);
+                MG_Image.SetActive(false);
             }
             if (playerWeapon == EquippedWeapon.SMG)
             {
@@ -215,6 +227,7 @@ public class WeaponManager : MonoBehaviour
                 originalFiringSpeed = 0;
                 originalHeatEffect = 0;
                 Instantiate(SMG_Pickup, DropPoint.position, DropPoint.rotation);
+                SMG_Image.SetActive(false);
             }
             heat = 0;
         }

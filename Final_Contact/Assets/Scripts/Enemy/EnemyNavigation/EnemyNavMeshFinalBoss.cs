@@ -14,17 +14,11 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     private float maxDistance = 60;
     [SerializeField]
     private float currentDistance;
-    [SerializeField]
-    private float timeUntilWander;
-    private bool wandering = false;
     private bool dissolving;
-    private bool dashing = false;
     //Dash Damage
     [SerializeField]
     private float attackCD = 2.0f;
     private float lastAttack;
-    [SerializeField]
-    private float dashDamage = 5f;
 
     [SerializeField]
     public Transform bossStartingPoint;
@@ -56,7 +50,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
 
     public void BossAttack()
     {
-        navMeshAgent.speed = 10;
+        navMeshAgent.speed = 11;
         //Debug.Log("Attacking");
         if (!dissolving)
         {
@@ -85,7 +79,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     public void BossShielded()
     {
         //Debug.Log("Shielded");
-        navMeshAgent.speed = 15;
+        navMeshAgent.speed = 18;
         navMeshAgent.destination = bossStartingPoint.position;
     }
  
@@ -95,7 +89,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && (Time.time >= (lastAttack + attackCD)))
         {
             lastAttack = Time.time;
-            other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
+            other.gameObject.GetComponent<playerBehaviour>().health -= GetComponentInChildren<DamageMelee>().damage;
             navMeshAgent.isStopped = true;
         }
     }
