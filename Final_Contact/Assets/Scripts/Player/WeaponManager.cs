@@ -192,7 +192,6 @@ public class WeaponManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Armory")
         {
             Debug.Log("drop");
-            //shoots the picked up weapon
             if (playerWeapon == EquippedWeapon.AR)
             {
                 AR.SetActive(false);
