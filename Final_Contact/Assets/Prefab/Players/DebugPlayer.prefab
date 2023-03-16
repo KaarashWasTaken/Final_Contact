@@ -217,6 +217,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeMenu: {fileID: 9098679833076987551}
   player: {fileID: 8674476827718666148}
+  buttons:
+  - {fileID: 1813797712923333186}
+  - {fileID: 7253576881897393344}
+  - {fileID: 1642057895665473830}
+  - {fileID: 3996957341261404587}
 --- !u!1 &541901840537075627
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +881,7 @@ GameObject:
   - component: {fileID: 4868078091531508741}
   m_Layer: 0
   m_Name: HEAT
-  m_TagString: Untagged
+  m_TagString: UpgradeMenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1144,7 +1149,7 @@ GameObject:
   - component: {fileID: 6775732537445629798}
   m_Layer: 0
   m_Name: DMG
-  m_TagString: Untagged
+  m_TagString: UpgradeMenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3086,7 +3091,7 @@ GameObject:
   - component: {fileID: 7091384829619607997}
   m_Layer: 0
   m_Name: DODGECD
-  m_TagString: Untagged
+  m_TagString: UpgradeMenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4997,7 +5002,7 @@ GameObject:
   - component: {fileID: 2166337865392447131}
   m_Layer: 0
   m_Name: HP
-  m_TagString: Untagged
+  m_TagString: UpgradeMenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6266,7 +6271,8 @@ MonoBehaviour:
   health: 1000000
   maxHealth: 0
   healthBar: {fileID: 1829332519057712369}
-  cooldownBar: {fileID: 4798393059898295958}
+  heatBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   downed: 0
 --- !u!143 &1826875994561038200
 CharacterController:
@@ -6306,6 +6312,7 @@ MonoBehaviour:
   dodgeCD: 3
   boostIncrease: 30
   boostTime: 0.2
+  dodgeTimePercentage: 1
   downed: 0
   Player: {fileID: 1839169112382031740}
   ReviveCollider: {fileID: 0}

@@ -37,6 +37,10 @@ public class PlayerManager : MonoBehaviour
         //Loops through the players and set them to unready
         foreach (GameObject g in players)
             g.GetComponent<PlayerController>().ready = false;
+        GameObject[] upgradeMenuButtons = GameObject.FindGameObjectsWithTag("UpgradeMenuButton");
+        foreach (GameObject g in upgradeMenuButtons)
+            g.SetActive(true);
+
     }
     public void CheckIfAllDown()
     {
