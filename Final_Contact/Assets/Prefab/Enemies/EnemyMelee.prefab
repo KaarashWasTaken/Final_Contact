@@ -457,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 0}
   isAttacking: 0
+  slashEffect: {fileID: 1191615351312640838}
 --- !u!114 &8022584897606433262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,6 +3453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa2e0cc96f7f7543a15ee753dff6223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCD: 0.5
   damage: 50
 --- !u!1 &6380925837506154445
 GameObject:
@@ -4962,12 +4964,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 189.352
       objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547137, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3801554313378547143, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
       propertyPath: m_Name
       value: ge_slash01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+--- !u!198 &1191615351312640838 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3801554313378547137, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+  m_PrefabInstance: {fileID: 2614518084956597895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1191615351312640839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}

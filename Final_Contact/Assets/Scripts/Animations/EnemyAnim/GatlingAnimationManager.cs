@@ -20,9 +20,5 @@ public class GatlingAnimationManager : MonoBehaviour
             animator.SetBool("isShooting", true);
         else
             animator.SetBool("isShooting", false);
-        if (!ranged.navMeshAgent.isStopped)
-            animator.SetBool("isMoving", true);
-        else
-            animator.SetBool("isMoving", false);
     }
 }

@@ -20,9 +20,5 @@ public class BomberAnimationManager : MonoBehaviour
             animator.SetBool("isExploding", true);
         else
             animator.SetBool("isExploding", false);
-        if (!bomber.navMeshAgent.isStopped)
-            animator.SetBool("isMoving", true);
-        else
-            animator.SetBool("isMoving", false);
     }
 }

@@ -405,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeMenu: {fileID: 9098679833076987551}
   player: {fileID: 0}
+  buttons: []
 --- !u!1 &521784052616319693
 GameObject:
   m_ObjectHideFlags: 0
@@ -9797,6 +9798,10 @@ MonoBehaviour:
   Shotgun_Pickup: {fileID: 7579033685295767858, guid: d8a548807d2b06e458366b3a143db077, type: 3}
   SMG_Pickup: {fileID: 6859727675911608801, guid: d7edea58152b48a4084ba12bf481519c, type: 3}
   MG_Pickup: {fileID: 5377268982918972842, guid: aaf4309e309c2eb43a5379b3ebf752cd, type: 3}
+  AR_Image: {fileID: 0}
+  MG_Image: {fileID: 0}
+  SMG_Image: {fileID: 0}
+  SG_Image: {fileID: 0}
   DropPoint: {fileID: 9202524360614624892}
 --- !u!1 &8674476827718666148
 GameObject:
@@ -10973,6 +10978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2515680712810696446}
     m_Modifications:
+    - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
+      propertyPath: damage
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 98142650501584574, guid: 04c1e047d40c22745aade47428939104, type: 3}
       propertyPath: heatEffect
       value: 1.2
