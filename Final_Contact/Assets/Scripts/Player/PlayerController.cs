@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerSpeed = initalPlayerSpeed;
-        //ReviveCollider= gameObject.GetComponentInChildren<MeshCollider>();
         DontDestroyOnLoad(gameObject.transform.parent);
         lastDodge = -3;
         StartPos();
@@ -93,6 +92,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(transform.position);
         if (!downed)
         {
             controller.detectCollisions = true;
