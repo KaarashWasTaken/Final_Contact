@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private float pauseInput = 0;
     private float lastPause = 0;
     private float upMenuInput = 0;
+    private GameObject spawnPoint;
     //Shooting & aiming variables
     public float shooting = 0;
     private Vector2 aiming = Vector2.zero;
@@ -42,9 +43,16 @@ public class PlayerController : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerSpeed = initalPlayerSpeed;
-        //ReviveCollider= gameObject.GetComponentInChildren<MeshCollider>();
         DontDestroyOnLoad(gameObject.transform.parent);
         lastDodge = -3;
+        StartPos();
+    }
+    public void StartPos()
+    {
+        spawnPoint = GameObject.Find("PlayerSpawnPoint");
+        controller.enabled = false;
+        transform.position = spawnPoint.transform.position;
+        controller.enabled = true;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -84,6 +92,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(transform.position);
         if (!downed)
         {
             controller.detectCollisions = true;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -28,6 +26,7 @@ public class PlayerManager : MonoBehaviour
         gameOver = GameObject.FindWithTag("GameOver");
         Debug.Log("OnSceneLoaded: " + scene.name);
         scene = SceneManager.GetActiveScene();
+        checkSceneName(scene);
         //Diables joining when the scene is not armory
         //if (scene.name != "Armory")
         //    playerManager.DisableJoining();
@@ -38,6 +37,7 @@ public class PlayerManager : MonoBehaviour
         foreach (GameObject g in players)
         {
             g.GetComponent<PlayerController>().ready = false;
+            g.GetComponent<PlayerController>().StartPos();
             g.GetComponent<playerBehaviour>().health = g.GetComponent<playerBehaviour>().maxHealth;
         }
         GameObject[] upgradeMenuButtons = GameObject.FindGameObjectsWithTag("UpgradeMenuButton");
@@ -54,5 +54,49 @@ public class PlayerManager : MonoBehaviour
             //insert Gameover script here
             GameObject.FindWithTag("GameOver").GetComponent<GameOver>().Activate();
         }
+    }
+    private void checkSceneName(Scene scene)
+    {
+
+    }
+    private void LVL1A()
+    {
+
+    }
+    private void LVL1B()
+    {
+
+    }
+    private void LVL2A()
+    {
+
+    }
+    private void LVL2B()
+    {
+
+    }
+    private void LVL3()
+    {
+
+    }
+    private void LVL4A()
+    {
+
+    }
+    private void LVL4B()
+    {
+
+    }
+    private void LVL5A()
+    {
+
+    }
+    private void LVL5B()
+    {
+
+    }
+    private void LVL6()
+    {
+
     }
 }
