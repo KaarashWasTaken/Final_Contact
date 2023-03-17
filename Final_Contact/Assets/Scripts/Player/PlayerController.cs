@@ -104,10 +104,10 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 1f)
+            if (tempPos.y != spawnPoint.transform.position.y)
             {
                 //Debug.Log("Updatingpos");
-                tempPos.y = 1f;
+                tempPos.y = spawnPoint.transform.position.y;
                 transform.position = tempPos;
             }
             if (move != Vector3.zero && aiming == Vector2.zero)
