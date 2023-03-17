@@ -104,10 +104,10 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != spawnPoint.transform.position.y)
+            if (tempPos.y != spawnPoint.transform.position.y+1)
             {
                 //Debug.Log("Updatingpos");
-                tempPos.y = spawnPoint.transform.position.y;
+                tempPos.y = spawnPoint.transform.position.y + 1;
                 transform.position = tempPos;
             }
             if (move != Vector3.zero && aiming == Vector2.zero)
@@ -217,9 +217,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log("playerisdown");
             transform.rotation = Quaternion.Euler(90, 0, 0);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 1f)
+            if (tempPos.y != spawnPoint.transform.position.y + 1)
             {
-                tempPos.y = 1f;
+                tempPos.y = spawnPoint.transform.position.y + 1;
                 transform.position = tempPos;
             }
         }
