@@ -32,22 +32,31 @@ public class UpgradeManager : MonoBehaviour
     }
     public void SetDMGInactive()
     {
-        foreach (GameObject g in playerMenu)
+        for (int i = 0; i < playerMenu.Length; i++)
         {
             GameObject.Find("DMG").SetActive(false);
         }
     }
     public void SetHPInactive()
     {
-
+        for (int i = 0; i < playerMenu.Length; i++)
+        {
+            GameObject.Find("HP").SetActive(false);
+        }
     }
     public void SetHeatInactive()
     {
-
+        for (int i = 0; i < playerMenu.Length; i++)
+        {
+            GameObject.Find("HEAT").SetActive(false);
+        }
     }
     public void SetDodgeCDInactive()
     {
-
+        for (int i = 0; i < playerMenu.Length; i++)
+        {
+            GameObject.Find("DODGECD").SetActive(false);
+        }
     }
     //private void 
 }

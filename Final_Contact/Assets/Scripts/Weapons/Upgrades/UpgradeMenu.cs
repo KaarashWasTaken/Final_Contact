@@ -8,7 +8,7 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject player;
     WeaponManager weaponManager;
-    private GameObject firstButton;
+    public GameObject[] buttons;
     private void Update()
     {
         if(upgradeMenu.activeSelf)
@@ -19,8 +19,14 @@ public class UpgradeMenu : MonoBehaviour
     private void CheckIfButtonSelected()
     {
         if(EventSystem.current.currentSelectedGameObject == null)
-        {
-            
+        {   
+            for(int i = 0; i < buttons.Length; i++)
+            {
+                if (buttons[i].activeSelf)
+                {
+                    EventSystem.current.SetSelectedGameObject(buttons[i].gameObject);
+                }
+            }
         }
     }
     public void Activate()
@@ -64,21 +70,21 @@ public class UpgradeMenu : MonoBehaviour
     {
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.AR)
         {
-            weaponManager.gameObject.GetComponentInChildren<AR>().heatEffect -= 0.1f;
+            weaponManager.gameObject.GetComponentInChildren<AR>().heatEffect *= 0.9f;
         }
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.Shotgun)
         {
-            weaponManager.gameObject.GetComponentInChildren<Shotgun>().heatEffect -= 0.1f;
+            weaponManager.gameObject.GetComponentInChildren<Shotgun>().heatEffect *= 0.9f;
 
         }
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.MG)
         {
-            weaponManager.gameObject.GetComponentInChildren<MG>().heatEffect -= 0.1f;
+            weaponManager.gameObject.GetComponentInChildren<MG>().heatEffect *= 0.9f;
 
         }
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.SMG)
         {
-            weaponManager.gameObject.GetComponentInChildren<SMG>().heatEffect -= 0.1f;
+            weaponManager.gameObject.GetComponentInChildren<SMG>().heatEffect *= 0.9f;
         }
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
@@ -86,7 +92,7 @@ public class UpgradeMenu : MonoBehaviour
     }
     public void DodgeCDUpgrade()
     {
-        player.GetComponent<PlayerController>().dodgeCD -= 0.2f;
+        player.GetComponent<PlayerController>().dodgeCD *= 0.85f;
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         manager.SetDodgeCDInactive();

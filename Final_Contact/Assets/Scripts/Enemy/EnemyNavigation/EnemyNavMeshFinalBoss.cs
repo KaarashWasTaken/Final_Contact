@@ -10,8 +10,8 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
-    [SerializeField]
-    private float maxDistance = 60;
+    //[SerializeField]
+    //private float maxDistance = 60;
     [SerializeField]
     private float currentDistance;
     private bool dissolving;

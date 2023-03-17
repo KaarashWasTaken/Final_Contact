@@ -95,10 +95,10 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 0f)
+            if (tempPos.y != 1f)
             {
                 //Debug.Log("Updatingpos");
-                tempPos.y = 0f;
+                tempPos.y = 1f;
                 transform.position = tempPos;
             }
             if (move != Vector3.zero && aiming == Vector2.zero)
@@ -147,6 +147,8 @@ public class PlayerController : MonoBehaviour
             dodgeTimePercentage = 1;
             lastDodge= Time.time - dodgeCD;
         }
+        
+
     }
     private void AimDirection()
     {

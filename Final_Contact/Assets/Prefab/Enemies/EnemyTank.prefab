@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &588422813066765835
+--- !u!1 &82543534726447423
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,30 +8,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1444555734216302774}
+  - component: {fileID: 1229188294373359212}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_ChestEndEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_ChestEndEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1444555734216302774
+--- !u!4 &1229188294373359212
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588422813066765835}
-  m_LocalRotation: {x: -2.0816682e-17, y: -1.3197925e-17, z: 1.3996837e-16, w: 1}
-  m_LocalPosition: {x: -0, y: 0.1753304, z: -0.0025480795}
+  m_GameObject: {fileID: 82543534726447423}
+  m_LocalRotation: {x: 0.07262027, y: -9.7822975e-17, z: -1.0068731e-16, w: 0.9973597}
+  m_LocalPosition: {x: -0, y: 0.17473516, z: 0.0058501884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
+  m_Father: {fileID: 2532042923427973906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &675909197781838327
+--- !u!1 &84048397422788734
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,428 +39,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 484772553021373414}
+  - component: {fileID: 747959547563596484}
+  - component: {fileID: 6665720980920205502}
+  - component: {fileID: 3536209321007257165}
+  - component: {fileID: 6690740774103138668}
+  - component: {fileID: 9211285810429088483}
+  - component: {fileID: 96208271903111966}
+  - component: {fileID: 7092042719958927410}
+  - component: {fileID: 8511867005843420130}
+  - component: {fileID: 6574037937536066797}
   m_Layer: 8
-  m_Name: QuickRigCharacter_RightHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &484772553021373414
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675909197781838327}
-  m_LocalRotation: {x: 0, y: 0, z: 0.0000338554, w: 1}
-  m_LocalPosition: {x: 0.027548416, y: 0.000000093225, z: -0.0000000036316277}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6232540197674210182}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &728135303917079809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8407104856195977485}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_LeftUpLeg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8407104856195977485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728135303917079809}
-  m_LocalRotation: {x: -0.04071437, y: -0.09697119, z: 0.99262387, w: -0.060305662}
-  m_LocalPosition: {x: 0.00024980155, y: 0.0005139911, z: 0.012827234}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6013088485283200405}
-  m_Father: {fileID: 3462143008716987514}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &732971402080796561
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7383552555951045160}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightWristEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7383552555951045160
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732971402080796561}
-  m_LocalRotation: {x: -0.00051626074, y: -0.041677363, z: -0.013214945, w: 0.99904364}
-  m_LocalPosition: {x: 0.11214038, y: 0.17321031, z: -0.0019795895}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &793253375275222252
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2676658031166812860}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_LeftArm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2676658031166812860
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793253375275222252}
-  m_LocalRotation: {x: 0.7072238, y: -0.0022433607, z: 0.02063543, w: 0.706685}
-  m_LocalPosition: {x: -0.018726803, y: 0, z: 3.330669e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7805338272986262777}
-  m_Father: {fileID: 4523756624363836510}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &952067196055273539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4416117367325877877}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_RightFoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4416117367325877877
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952067196055273539}
-  m_LocalRotation: {x: 0.03483062, y: -0.017285574, z: 0.38924035, w: 0.92031515}
-  m_LocalPosition: {x: 0.053588632, y: -0.00000004912115, z: 0.000000009731286}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7193024853915153071}
-  m_Father: {fileID: 6543591029568656434}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1018471764670202555
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3975303921067805383}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightArm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3975303921067805383
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018471764670202555}
-  m_LocalRotation: {x: 0.00037381102, y: 0.01615692, z: -0.0130167175, w: 0.9997847}
-  m_LocalPosition: {x: 0.018726794, y: 3.5527136e-17, z: 1.110223e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3006972617640314908}
-  m_Father: {fileID: 6746198129207961454}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1094142089107040670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4267093497965374400}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4267093497965374400
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094142089107040670}
-  m_LocalRotation: {x: -0.00000022628133, y: -0.000031667074, z: 0.000000038403723, w: 1}
-  m_LocalPosition: {x: -0.02754839, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2564985006301690526}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1214801813721930795
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7702718442391297257}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightUpLeg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7702718442391297257
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214801813721930795}
-  m_LocalRotation: {x: -0.06203428, y: 0.09675102, z: 0.040501993, w: 0.9925475}
-  m_LocalPosition: {x: 0.012827234, y: -0.0002537918, z: 0.0005120325}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6474540047202714575}
-  m_Father: {fileID: 408116707503424486}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1611743337295844319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3289361022563239284}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightHipEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3289361022563239284
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611743337295844319}
-  m_LocalRotation: {x: -0.06203428, y: 0.09675102, z: 0.040501997, w: 0.9925475}
-  m_LocalPosition: {x: 0.012827234, y: 0.11736224, z: -0.0024350362}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1619078421867664071
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6205378662837394469}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightShoulderEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6205378662837394469
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619078421867664071}
-  m_LocalRotation: {x: 0.00037381102, y: 0.01615692, z: -0.0130167175, w: 0.9997847}
-  m_LocalPosition: {x: 0.031211322, y: 0.1753304, z: -0.00254808}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1689655871338959753
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 639545022231198074}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Head
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &639545022231198074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689655871338959753}
-  m_LocalRotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.031687792, z: 0.0027883607}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9122414043709688376}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1740495112554751645
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2357972820471658918}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_LeftFoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2357972820471658918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740495112554751645}
-  m_LocalRotation: {x: 0.034832418, y: -0.017285606, z: 0.38923892, w: 0.92031574}
-  m_LocalPosition: {x: -0.05358872, y: 0.00000002549615, z: -0.000000013299729}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3522554407437452042}
-  m_Father: {fileID: 6013088485283200405}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1746207047128059265
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1400644369805629243}
-  - component: {fileID: 6575274813279572138}
-  - component: {fileID: 3482520516768459449}
-  - component: {fileID: 6854648686063193604}
-  - component: {fileID: 518913950698234548}
-  - component: {fileID: 661964347435088586}
-  - component: {fileID: 797327125567368977}
-  - component: {fileID: 4928351387306948424}
-  - component: {fileID: 8986137664739025005}
-  m_Layer: 8
-  m_Name: sk_Alien_tank
+  m_Name: a_tank_walk
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1400644369805629243
+--- !u!4 &747959547563596484
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
+  m_GameObject: {fileID: 84048397422788734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 8, z: 8}
+  m_LocalScale: {x: 10, y: 7, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5500866641572341098}
-  - {fileID: 6218579157807258025}
-  - {fileID: 7726436110076451501}
+  - {fileID: 8967112954219960164}
+  - {fileID: 2532042923427973906}
+  - {fileID: 4140534394230099745}
   m_Father: {fileID: 7352858271907079012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6575274813279572138
+--- !u!95 &6665720980920205502
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
+  m_GameObject: {fileID: 84048397422788734}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 5ff268586bb06244dba442da75b11af5, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 9acc916f5522b1a42abbcf500df29d15, type: 3}
   m_Controller: {fileID: 9100000, guid: 9d68106beff07fb45aa20af0560abf4f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -471,57 +93,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!54 &3482520516768459449
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
---- !u!136 &6854648686063193604
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.04
-  m_Height: 0.3
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &518913950698234548
+--- !u!114 &3536209321007257165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa2e0cc96f7f7543a15ee753dff6223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCD: 1
-  damage: 50
---- !u!114 &661964347435088586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
+  m_GameObject: {fileID: 84048397422788734}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f9afdf23a9d30448ab5081ffdb7d795, type: 3}
@@ -529,13 +107,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
---- !u!195 &797327125567368977
+  dissolveSpeed: 0.03
+--- !u!114 &6690740774103138668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84048397422788734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bb9260d65bbba4694fd6f40f3aeac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}
+  isAttacking: 0
+  slashEffect: {fileID: 6793297660185398383}
+--- !u!114 &9211285810429088483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84048397422788734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0514aa441cefba6488e4c6f135db8a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &96208271903111966
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
+  m_GameObject: {fileID: 84048397422788734}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.04
@@ -551,33 +157,51 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4928351387306948424
-MonoBehaviour:
+--- !u!54 &7092042719958927410
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0bb9260d65bbba4694fd6f40f3aeac4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
-  isAttacking: 0
---- !u!114 &8986137664739025005
-MonoBehaviour:
+  m_GameObject: {fileID: 84048397422788734}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
+--- !u!136 &8511867005843420130
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746207047128059265}
+  m_GameObject: {fileID: 84048397422788734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9228ceabf84d79b4a98bedd2f3c32228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1942786410529861797
+  m_Radius: 0.11
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.11, z: 0}
+--- !u!136 &6574037937536066797
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84048397422788734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.11, z: 0}
+--- !u!1 &203614445234354681
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -585,30 +209,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 302216388847529678}
+  - component: {fileID: 4563265842887062650}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftShoulderEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightWristEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &302216388847529678
+--- !u!4 &4563265842887062650
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942786410529861797}
-  m_LocalRotation: {x: 0.0003743325, y: -0.016157297, z: 0.013015198, w: 0.9997847}
-  m_LocalPosition: {x: -0.031211322, y: 0.1753304, z: -0.00254808}
+  m_GameObject: {fileID: 203614445234354681}
+  m_LocalRotation: {x: -0.28258607, y: -0.26905262, z: -0.5897048, w: 0.70710963}
+  m_LocalPosition: {x: 0.053996313, y: 0.11176648, z: 0.003409028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 10
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2053615626815431414
+--- !u!1 &414741283604012712
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -616,31 +240,93 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6013088485283200405}
+  - component: {fileID: 841665423897568386}
   m_Layer: 8
-  m_Name: QuickRigCharacter_LeftLeg
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftHipEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6013088485283200405
+--- !u!4 &841665423897568386
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053615626815431414}
-  m_LocalRotation: {x: 0.056849886, y: -0.010323573, z: -0.17836337, w: 0.9822668}
-  m_LocalPosition: {x: -0.047429994, y: -0.0000005608759, z: -0.00000009405167}
+  m_GameObject: {fileID: 414741283604012712}
+  m_LocalRotation: {x: -0.1671407, y: -0.08410087, z: -0.06283024, w: 0.98032826}
+  m_LocalPosition: {x: -0.012827222, y: 0.11736204, z: -0.0024350493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &733038168363840280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3000335491888813548}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3000335491888813548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733038168363840280}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.031810094, y: 0.000000008944921, z: 2.7755575e-19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6896477274738023871}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &873829426589490467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3224711714721979624}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3224711714721979624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873829426589490467}
+  m_LocalRotation: {x: 0.6768025, y: 0.4758578, z: 0.380162, w: 0.41349074}
+  m_LocalPosition: {x: -0.018726822, y: 3.5527136e-17, z: -3.330669e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2357972820471658918}
-  m_Father: {fileID: 8407104856195977485}
+  - {fileID: 1959550204260779850}
+  m_Father: {fileID: 2103024182496107272}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2198122469148771608
+--- !u!1 &967669322561668570
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,62 +334,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3627579749069534501}
+  - component: {fileID: 5775021242056804244}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightFoot
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_HipsEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3627579749069534501
+--- !u!4 &5775021242056804244
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2198122469148771608}
-  m_LocalRotation: {x: -0.11753224, y: -0.03815659, z: -0.006955991, w: 0.99231136}
-  m_LocalPosition: {x: -0.0000000011920929, y: -0.05358863, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6528040073836956516}
-  m_Father: {fileID: 6474540047202714575}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2551083917028969883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1404004988179040692}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightKneeEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1404004988179040692
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2551083917028969883}
-  m_LocalRotation: {x: 0.11740522, y: 0.045362394, z: 0.015836054, w: 0.9919211}
-  m_LocalPosition: {x: 0.01721007, y: 0.070452906, z: 0.003035009}
+  m_GameObject: {fileID: 967669322561668570}
+  m_LocalRotation: {x: 0.072620146, y: 4.4467013e-18, z: -4.4467013e-18, w: 0.9973597}
+  m_LocalPosition: {x: -0, y: 0.11736204, z: -0.0024350493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 16
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2683497099129514701
+--- !u!1 &1217108718603482453
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -711,30 +365,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5636172878070369264}
+  - component: {fileID: 6860412006120501261}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftAnkleEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightFootEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5636172878070369264
+--- !u!4 &6860412006120501261
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2683497099129514701}
-  m_LocalRotation: {x: 0.00020767747, y: -0.006132673, z: -0.009684939, w: 0.9999343}
-  m_LocalPosition: {x: -0.0183228, y: 0.018368427, z: -0.009523581}
+  m_GameObject: {fileID: 1217108718603482453}
+  m_LocalRotation: {x: 0.00020882492, y: 0.0061210087, z: 0.009666357, w: 0.99993455}
+  m_LocalPosition: {x: 0.01861816, y: 0.0074816905, z: -0.0026364243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1273894481920272663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5336900958312180512}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftAnkleEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5336900958312180512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273894481920272663}
+  m_LocalRotation: {x: 0.00020584463, y: -0.006132549, z: -0.009685141, w: 0.9999343}
+  m_LocalPosition: {x: -0.017310597, y: 0.032353856, z: -0.022260787}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2694711440531617760
+--- !u!1 &1279743857930848899
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -742,30 +427,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1383356360632990419}
+  - component: {fileID: 657562127671227035}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftWristEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftKneeEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1383356360632990419
+--- !u!4 &657562127671227035
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2694711440531617760}
-  m_LocalRotation: {x: -0.0005163846, y: 0.041678093, z: 0.013217694, w: 0.9990436}
-  m_LocalPosition: {x: -0.11214039, y: 0.17321031, z: -0.0019795876}
+  m_GameObject: {fileID: 1279743857930848899}
+  m_LocalRotation: {x: 0.34795445, y: -0.04718913, z: 0.009296579, w: 0.9362769}
+  m_LocalPosition: {x: -0.020003283, y: 0.07295709, z: 0.012608611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 11
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3078730867110856089
+--- !u!1 &1612817188457036538
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -773,30 +458,320 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7299305647731869352}
+  - component: {fileID: 5860283102825464858}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftToeBase
+  m_Name: Alien_tank_rig:QuickRigCharacter_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7299305647731869352
+--- !u!4 &5860283102825464858
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078730867110856089}
-  m_LocalRotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+  m_GameObject: {fileID: 1612817188457036538}
+  m_LocalRotation: {x: 0.5367844, y: -0.4602853, z: -0.5367844, w: 0.4602853}
+  m_LocalPosition: {x: 7.4505804e-11, y: 0.117687315, z: -0.002904918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1787493465222434311}
+  - {fileID: 7398595308632427978}
+  - {fileID: 7212410464223302165}
+  m_Father: {fileID: 4140534394230099745}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1661362591144074438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541375262990435721}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Spine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541375262990435721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661362591144074438}
+  m_LocalRotation: {x: 0.0000000147439945, y: 1.237333e-16, z: 1.0419812e-16, w: 1}
+  m_LocalPosition: {x: -0, y: 0.0106121255, z: -0.0007755828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9026134371544501101}
+  - {fileID: 1675936259284511047}
+  - {fileID: 2799610623950747505}
+  m_Father: {fileID: 386673715996188911}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1664957256758250312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6896477274738023871}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6896477274738023871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664957256758250312}
+  m_LocalRotation: {x: 0, y: -0, z: -0.072876975, w: 0.9973409}
+  m_LocalPosition: {x: -0.031180233, y: 0.000000003015925, z: -1.3877787e-19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3000335491888813548}
+  m_Father: {fileID: 3659452934389358823}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2084510670147401048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8540030085065057972}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightShoulder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8540030085065057972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084510670147401048}
+  m_LocalRotation: {x: 0.51431745, y: 0.48526037, z: -0.51431745, w: 0.48526037}
+  m_LocalPosition: {x: -0.02564622, y: 0.003362431, z: -0.012484529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5918459834177072100}
+  m_Father: {fileID: 3659452934389358823}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2275657725167411466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4140534394230099745}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Reference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4140534394230099745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275657725167411466}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0006440639, y: 0.00014231443, z: 0.01094521}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5860283102825464858}
+  m_Father: {fileID: 747959547563596484}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2393123152205093541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4540205558458025738}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4540205558458025738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393123152205093541}
+  m_LocalRotation: {x: 0.102253996, y: 0.11300302, z: -0.5631275, w: 0.8121957}
+  m_LocalPosition: {x: 0.018726794, y: 3.5527136e-17, z: 1.110223e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 569945338111303148}
+  m_Father: {fileID: 2799610623950747505}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2654148401824439996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8357945927009197561}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightToeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8357945927009197561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654148401824439996}
+  m_LocalRotation: {x: 0.00002539865, y: -0.000000037029867, z: 9.405087e-13, w: 1}
+  m_LocalPosition: {x: 0.0128855165, y: 0.0000000032233491, z: -7.5656204e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2135277922799760918}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2684358855793116842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441179561986962412}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftForeArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &441179561986962412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684358855793116842}
+  m_LocalRotation: {x: -0.00017071365, y: 0.2345125, z: -0.0002780707, w: 0.9721131}
+  m_LocalPosition: {x: -0.053532183, y: -3.5527136e-17, z: 1.110223e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7846661985095516027}
+  m_Father: {fileID: 5818548051420072017}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2694020364301903308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2685056144839056828}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightShoulderEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2685056144839056828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2694020364301903308}
+  m_LocalRotation: {x: 0.16096586, y: 0.15359908, z: -0.5534344, w: 0.80262554}
+  m_LocalPosition: {x: 0.031211352, y: 0.17473516, z: 0.0058501884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2702406950553370288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3624244551935632257}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftToeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3624244551935632257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702406950553370288}
+  m_LocalRotation: {x: 2.2365468e-32, y: -0, z: -1.2246467e-16, w: 1}
   m_LocalPosition: {x: -0.0000000047683715, y: -0.010886516, z: 0.006893494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8242698523801807165}
+  m_Father: {fileID: 7730311862538042945}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3189449945623792747
+--- !u!1 &2940855804895529317
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -804,284 +779,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5357915497484582172}
+  - component: {fileID: 1680141246152472048}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_HeadEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5357915497484582172
+--- !u!4 &1680141246152472048
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189449945623792747}
-  m_LocalRotation: {x: 3.061617e-17, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.21234713, z: -0.0034379165}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3426409607011246496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4299914240281751741}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftLeg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4299914240281751741
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3426409607011246496}
-  m_LocalRotation: {x: 0.17836927, y: 0.056665074, z: 0.010289328, w: 0.98227674}
-  m_LocalPosition: {x: -2.220446e-18, y: -0.047430065, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8242698523801807165}
-  m_Father: {fileID: 3433966325533814275}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3439357708709927522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3824358125355558314}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Spine1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3824358125355558314
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3439357708709927522}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.010640427, y: -2.3390598e-10, z: 2.220446e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8833058880613541926}
-  m_Father: {fileID: 7871647699810986167}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3976046853006856664
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6112762872565449798}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_RightShoulder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6112762872565449798
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976046853006856664}
-  m_LocalRotation: {x: 0.5143174, y: 0.48526037, z: -0.5143174, w: 0.48526037}
-  m_LocalPosition: {x: -0.025646217, y: 0.0033624312, z: -0.012484524}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7961896366269743888}
-  m_Father: {fileID: 8833058880613541926}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4077832511370096695
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3390198629089201541}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_LeftHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3390198629089201541
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4077832511370096695}
-  m_LocalRotation: {x: 0, y: 0, z: 0.000033433353, w: 1}
-  m_LocalPosition: {x: -0.027548352, y: -0.00000009262849, z: -0.00000001182964}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7805338272986262777}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4097777773639117885
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1529140233590629697}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftShoulder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1529140233590629697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4097777773639117885}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.012484529, y: 0.025798224, z: 0.001866976}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7582272279533251112}
-  m_Father: {fileID: 1802771385129930219}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4120089496786441004
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 768251738646572332}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightFootEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &768251738646572332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4120089496786441004}
-  m_LocalRotation: {x: 0.00020852685, y: 0.0061207153, z: 0.009666263, w: 0.99993455}
-  m_LocalPosition: {x: 0.01861821, y: 0.0074820085, z: -0.0026364166}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4380167308801811457
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8242698523801807165}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftFoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8242698523801807165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4380167308801811457}
-  m_LocalRotation: {x: -0.11753347, y: 0.03814407, z: 0.006938077, w: 0.99231184}
-  m_LocalPosition: {x: -0, y: -0.05358863, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7299305647731869352}
-  m_Father: {fileID: 4299914240281751741}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4797801546922206017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7467393030180721064}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Spine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7467393030180721064
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4797801546922206017}
-  m_LocalRotation: {x: -3.469447e-17, y: -4.3224826e-17, z: 5.911439e-17, w: 1}
+  m_GameObject: {fileID: 2940855804895529317}
+  m_LocalRotation: {x: 0.00000011363489, y: -6.4837255e-17, z: 1.4418273e-16, w: 1}
   m_LocalPosition: {x: -0, y: 0.010691881, z: 0.00008317888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4165925401692103111}
-  m_Father: {fileID: 408116707503424486}
+  - {fileID: 386673715996188911}
+  m_Father: {fileID: 3699173546289947061}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4824220764386609425
+--- !u!1 &2987689673422838402
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1089,62 +811,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6474540047202714575}
+  - component: {fileID: 7920852722047924115}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightLeg
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftElbowEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6474540047202714575
+--- !u!4 &7920852722047924115
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824220764386609425}
-  m_LocalRotation: {x: 0.17836848, y: -0.056682568, z: -0.010283649, w: 0.98227596}
-  m_LocalPosition: {x: 0.0000000023841857, y: -0.047430065, z: 0.00000046372412}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3627579749069534501}
-  m_Father: {fileID: 7702718442391297257}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4909098739006588429
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8157826251171831028}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightElbowEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8157826251171831028
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4909098739006588429}
-  m_LocalRotation: {x: -0.00051679957, y: -0.041709498, z: -0.0132153435, w: 0.9990423}
-  m_LocalPosition: {x: 0.08469747, y: 0.17393656, z: -0.004275737}
+  m_GameObject: {fileID: 2987689673422838402}
+  m_LocalRotation: {x: 0.092077956, y: 0.19999325, z: 0.64809227, w: 0.729041}
+  m_LocalPosition: {x: -0.045031507, y: 0.1249047, z: -0.00799274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 13
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5112246601693010804
+--- !u!1 &3021869960058919565
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1152,62 +842,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6543591029568656434}
+  - component: {fileID: 8104160018456890523}
   m_Layer: 8
-  m_Name: QuickRigCharacter_RightLeg
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftWristEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6543591029568656434
+--- !u!4 &8104160018456890523
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5112246601693010804}
-  m_LocalRotation: {x: 0.056867495, y: -0.010318519, z: -0.17836802, w: 0.982265}
-  m_LocalPosition: {x: 0.047430042, y: 0.0000006222706, z: 0.00000011350927}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4416117367325877877}
-  m_Father: {fileID: 2254903379165624288}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5118882532163374814
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3450888116278002647}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_HipsEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3450888116278002647
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5118882532163374814}
-  m_LocalRotation: {x: -0.0056378106, y: -3.452163e-19, z: 3.452163e-19, w: 0.99998415}
-  m_LocalPosition: {x: -0, y: 0.11736224, z: -0.002435037}
+  m_GameObject: {fileID: 3021869960058919565}
+  m_LocalRotation: {x: 0.09238815, y: 0.2001063, z: 0.648019, w: 0.72903585}
+  m_LocalPosition: {x: -0.047234315, y: 0.09785758, z: -0.003247524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 4
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5201556720583955887
+--- !u!1 &3054320095288982549
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1215,31 +873,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6232540197674210182}
+  - component: {fileID: 2103024182496107272}
   m_Layer: 8
-  m_Name: QuickRigCharacter_RightForeArm
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6232540197674210182
+--- !u!4 &2103024182496107272
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5201556720583955887}
-  m_LocalRotation: {x: -0.00014034154, y: 0.00021089376, z: -0.057876367, w: 0.99832374}
-  m_LocalPosition: {x: 0.05353216, y: -0.0000022580941, z: -0.0000011160762}
+  m_GameObject: {fileID: 3054320095288982549}
+  m_LocalRotation: {x: -0.48526037, y: 0.51431745, z: 0.48526037, w: 0.51431745}
+  m_LocalPosition: {x: -0.02564622, y: 0.003362431, z: 0.012484529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 484772553021373414}
-  m_Father: {fileID: 7961896366269743888}
+  - {fileID: 3224711714721979624}
+  m_Father: {fileID: 3659452934389358823}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5330340187290817592
+--- !u!1 &3348414298189156698
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1247,123 +905,599 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3347494553901992831}
+  - component: {fileID: 1675936259284511047}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftHipEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3347494553901992831
+--- !u!4 &1675936259284511047
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5330340187290817592}
-  m_LocalRotation: {x: -0.062034633, y: -0.0967347, z: -0.040505078, w: 0.992549}
-  m_LocalPosition: {x: -0.012827234, y: 0.11736224, z: -0.0024350362}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5526187840984939045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2254903379165624288}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_RightUpLeg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2254903379165624288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526187840984939045}
-  m_LocalRotation: {x: -0.09698732, y: 0.040712237, z: 0.06030864, w: 0.9926222}
-  m_LocalPosition: {x: 0.00024980155, y: 0.0005139911, z: -0.012827234}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6543591029568656434}
-  m_Father: {fileID: 3462143008716987514}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5544878069061312387
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3797814792938524536}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Head
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3797814792938524536
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544878069061312387}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.031810243, y: -0.000000004541142, z: 7.216449e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8296938533678206480}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5635418272022849040
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9122414043709688376}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Neck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9122414043709688376
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5635418272022849040}
-  m_LocalRotation: {x: 3.469447e-17, y: 2.2782849e-17, z: 5.7730424e-17, w: 1}
+  m_GameObject: {fileID: 3348414298189156698}
+  m_LocalRotation: {x: -0.000004428448, y: -8.29475e-17, z: -7.298567e-18, w: 1}
   m_LocalPosition: {x: -0, y: 0.031127166, z: -0.0018112218}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 639545022231198074}
-  m_Father: {fileID: 1802771385129930219}
+  - {fileID: 3672003027870987876}
+  m_Father: {fileID: 1541375262990435721}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3455909618019317134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8800102932546477009}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftToeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8800102932546477009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455909618019317134}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.012885524, y: 0.0000000017712533, z: 0.0000000062058936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6669883475335289356}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3562463023125234476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3110807537391179897}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3110807537391179897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3562463023125234476}
+  m_LocalRotation: {x: 0.00031459064, y: 0.0000014477985, z: 0.00012783647, w: 0.99999994}
+  m_LocalPosition: {x: -0.027548408, y: -0.00000020408594, z: 0.000000004193921}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1959550204260779850}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3606483437284885203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386673715996188911}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Spine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386673715996188911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606483437284885203}
+  m_LocalRotation: {x: -0.0000000147439945, y: 8.092435e-18, z: -2.9532362e-19, w: 1}
+  m_LocalPosition: {x: -0, y: 0.0106121255, z: -0.0007755834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1541375262990435721}
+  m_Father: {fileID: 1680141246152472048}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3769386580851121956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115291667888808526}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftShoulderEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115291667888808526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769386580851121956}
+  m_LocalRotation: {x: 0.24167599, y: 0.02353188, z: 0.6085941, w: 0.7554152}
+  m_LocalPosition: {x: -0.031211352, y: 0.17473516, z: 0.0058501884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3772585890492207365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4223939321865326521}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightHipEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4223939321865326521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772585890492207365}
+  m_LocalRotation: {x: -0.061929967, y: 0.09277241, z: 0.039995376, w: 0.9929544}
+  m_LocalPosition: {x: 0.012827222, y: 0.11736204, z: -0.0024350493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3808697966880626781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9026134371544501101}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftShoulder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9026134371544501101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808697966880626781}
+  m_LocalRotation: {x: -0.000000052335505, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.012484529, y: 0.025798224, z: 0.001866976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5818548051420072017}
+  m_Father: {fileID: 1541375262990435721}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3912083924632274747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5918459834177072100}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5918459834177072100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3912083924632274747}
+  m_LocalRotation: {x: 0.64660907, y: 0.31830248, z: 0.4781031, w: 0.5019937}
+  m_LocalPosition: {x: 0.018726822, y: -3.5527136e-17, z: 4.440892e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5863502734062661306}
+  m_Father: {fileID: 8540030085065057972}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3995083565484937567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3659452934389358823}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Spine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3659452934389358823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995083565484937567}
+  m_LocalRotation: {x: 2.7046862e-20, y: -1.7751554e-21, z: -0.007416254, w: 0.9999725}
+  m_LocalPosition: {x: -0.01064043, y: 5.0726784e-10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2103024182496107272}
+  - {fileID: 6896477274738023871}
+  - {fileID: 8540030085065057972}
+  m_Father: {fileID: 6396976249001972977}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4118038715592602688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6396976249001972977}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Spine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6396976249001972977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118038715592602688}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01064043, y: 5.0726784e-10, z: -1.3877787e-19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3659452934389358823}
+  m_Father: {fileID: 7212410464223302165}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4202429552837099915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 569945338111303148}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightForeArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &569945338111303148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202429552837099915}
+  m_LocalRotation: {x: -0.00016252579, y: -0.59436065, z: 0.00030587724, w: 0.80419856}
+  m_LocalPosition: {x: 0.053532183, y: -3.5527136e-17, z: 1.110223e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8131802337771127486}
+  m_Father: {fileID: 4540205558458025738}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4302201371657138386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7398595308632427978}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightUpLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7398595308632427978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302201371657138386}
+  m_LocalRotation: {x: -0.095558845, y: 0.032780718, z: 0.13772528, w: 0.9853049}
+  m_LocalPosition: {x: 0.0002498032, y: 0.00051399146, z: -0.012827248}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9141785996839966069}
+  m_Father: {fileID: 5860283102825464858}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4744508847067832653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7188015839593755224}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7188015839593755224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744508847067832653}
+  m_LocalRotation: {x: 0.052790575, y: -0.030794263, z: -0.5013505, w: 0.8630832}
+  m_LocalPosition: {x: -0.047430053, y: -0.0000017946597, z: -0.0000004373511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6669883475335289356}
+  m_Father: {fileID: 1787493465222434311}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4799670773096625894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8880938692090274530}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8880938692090274530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799670773096625894}
+  m_LocalRotation: {x: -0.11763833, y: -0.036541346, z: -0.0074327523, w: 0.9923562}
+  m_LocalPosition: {x: -0.0000000011920929, y: -0.05358863, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1915389954660090152}
+  m_Father: {fileID: 7498674020429778089}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4803693878336058509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176062693763755222}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_HeadEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176062693763755222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803693878336058509}
+  m_LocalRotation: {x: 0.0726158, y: 4.4464354e-18, z: -4.4464354e-18, w: 0.99736}
+  m_LocalPosition: {x: -0, y: 0.21149038, z: 0.010331588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4827262287489741685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915389954660090152}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightToeBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915389954660090152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827262287489741685}
+  m_LocalRotation: {x: 2.2365468e-32, y: -0, z: -1.2246467e-16, w: 1}
+  m_LocalPosition: {x: 0.00000057816504, y: -0.010886516, z: 0.006893495}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8880938692090274530}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4873736783985238628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382635449183909724}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightAnkleEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382635449183909724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4873736783985238628}
+  m_LocalRotation: {x: 0.0002088249, y: 0.0061210087, z: 0.009666358, w: 0.99993455}
+  m_LocalPosition: {x: 0.018322747, y: 0.018368222, z: -0.009523558}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5077490061551708963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7212795311925555430}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightElbowEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7212795311925555430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077490061551708963}
+  m_LocalRotation: {x: -0.19957456, y: -0.3534842, z: -0.5404724, w: 0.736959}
+  m_LocalPosition: {x: 0.04942668, y: 0.12982497, z: -0.016886849}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5700647957487046178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2799610623950747505}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightShoulder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2799610623950747505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700647957487046178}
+  m_LocalRotation: {x: -0.000000052335505, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.012484529, y: 0.025798224, z: 0.001866976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4540205558458025738}
+  m_Father: {fileID: 1541375262990435721}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5737302056134528622
 GameObject:
@@ -1374,9 +1508,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7352858271907079012}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyTank
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1393,11 +1527,12 @@ Transform:
   m_LocalScale: {x: 3, y: 4.479551, z: 4.479551}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1400644369805629243}
+  - {fileID: 747959547563596484}
+  - {fileID: 6793297660185398382}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5816763226767876519
+--- !u!1 &5813535690192895842
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1405,156 +1540,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4165925401692103111}
+  - component: {fileID: 7212410464223302165}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Spine1
+  m_Name: Alien_tank_rig:QuickRigCharacter_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4165925401692103111
+--- !u!4 &7212410464223302165
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5816763226767876519}
-  m_LocalRotation: {x: -6.938894e-17, y: -1.1496874e-17, z: 1.1245477e-16, w: 1}
-  m_LocalPosition: {x: -0, y: 0.0106121255, z: -0.0007755834}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1802771385129930219}
-  m_Father: {fileID: 7467393030180721064}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5903453807428411158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3669239980808096257}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftFootEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3669239980808096257
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5903453807428411158}
-  m_LocalRotation: {x: 0.00020767748, y: -0.0061326735, z: -0.009684939, w: 0.9999343}
-  m_LocalPosition: {x: -0.018618207, y: 0.007481904, z: -0.0026364208}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5966649936568062428
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8625090162088550996}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftKneeEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8625090162088550996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5966649936568062428}
-  m_LocalRotation: {x: 0.11740496, y: -0.045363955, z: -0.01583523, w: 0.9919211}
-  m_LocalPosition: {x: -0.017210156, y: 0.07045296, z: 0.0030349707}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6040439620216397282
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7193024853915153071}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_RightToeBase
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7193024853915153071
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6040439620216397282}
-  m_LocalRotation: {x: 0.000025378991, y: -0.000000037608505, z: 9.54466e-13, w: 1}
-  m_LocalPosition: {x: 0.012885512, y: 8.5003726e-10, z: -2.314256e-11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4416117367325877877}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6277616303795356287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7871647699810986167}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Spine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7871647699810986167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6277616303795356287}
+  m_GameObject: {fileID: 5813535690192895842}
   m_LocalRotation: {x: 0, y: 0, z: 0.04035623, w: 0.9991854}
-  m_LocalPosition: {x: -0.010692204, y: -1.6198289e-10, z: 2.4980017e-18}
+  m_LocalPosition: {x: -0.010692217, y: -0.000000002754098, z: 1.3877787e-19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3824358125355558314}
-  m_Father: {fileID: 3462143008716987514}
+  - {fileID: 6396976249001972977}
+  m_Father: {fileID: 5860283102825464858}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6309968254556587381
+--- !u!1 &5983866155344101314
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1562,65 +1572,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6746198129207961454}
+  - component: {fileID: 6669883475335289356}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightShoulder
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6746198129207961454
+--- !u!4 &6669883475335289356
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6309968254556587381}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012484529, y: 0.025798224, z: 0.001866976}
+  m_GameObject: {fileID: 5983866155344101314}
+  m_LocalRotation: {x: 0.04108945, y: 0.00499665, z: 0.5952956, w: 0.8024399}
+  m_LocalPosition: {x: -0.05358861, y: -0.0000000010486679, z: -0.0000000072903075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3975303921067805383}
-  m_Father: {fileID: 1802771385129930219}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6414669165163318457
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3462143008716987514}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Hips
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3462143008716987514
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6414669165163318457}
-  m_LocalRotation: {x: 0.49912518, y: -0.50087327, z: -0.49912518, w: 0.50087327}
-  m_LocalPosition: {x: 7.4505804e-11, y: 0.11761023, z: -0.0029498988}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8407104856195977485}
-  - {fileID: 2254903379165624288}
-  - {fileID: 7871647699810986167}
-  m_Father: {fileID: 7726436110076451501}
+  - {fileID: 8800102932546477009}
+  m_Father: {fileID: 7188015839593755224}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6448608876325477858
+--- !u!1 &5988662787733736865
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1628,31 +1604,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2564985006301690526}
+  - component: {fileID: 5863502734062661306}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftForeArm
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2564985006301690526
+--- !u!4 &5863502734062661306
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6448608876325477858}
-  m_LocalRotation: {x: -0.00013401994, y: 0.057854243, z: 0.0002047857, w: 0.99832505}
-  m_LocalPosition: {x: -0.053532183, y: -3.5527136e-17, z: 1.110223e-18}
+  m_GameObject: {fileID: 5988662787733736865}
+  m_LocalRotation: {x: -0.00016029761, y: -0.00032663092, z: -0.5943578, w: 0.80420065}
+  m_LocalPosition: {x: 0.053532157, y: 0.00000037456778, z: 0.000001920913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4267093497965374400}
-  m_Father: {fileID: 7582272279533251112}
+  - {fileID: 7810239712314210515}
+  m_Father: {fileID: 5918459834177072100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6624847012536212278
+--- !u!1 &6127410750341727460
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1660,81 +1636,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6218579157807258025}
+  - component: {fileID: 7498674020429778089}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Reference
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6218579157807258025
+--- !u!4 &7498674020429778089
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6624847012536212278}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0006440639, y: 0.00014231443, z: 0.01094521}
+  m_GameObject: {fileID: 6127410750341727460}
+  m_LocalRotation: {x: 0.17837122, y: -0.054297935, z: -0.009863981, w: 0.9824145}
+  m_LocalPosition: {x: 0.0000000023841857, y: -0.047430065, z: 0.00000046372412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1444555734216302774}
-  - {fileID: 4999109704225735997}
-  - {fileID: 5357915497484582172}
-  - {fileID: 408116707503424486}
-  - {fileID: 3450888116278002647}
-  - {fileID: 5636172878070369264}
-  - {fileID: 6934327565073454920}
-  - {fileID: 3669239980808096257}
-  - {fileID: 3347494553901992831}
-  - {fileID: 8625090162088550996}
-  - {fileID: 302216388847529678}
-  - {fileID: 1383356360632990419}
-  - {fileID: 5469006061065014661}
-  - {fileID: 8157826251171831028}
-  - {fileID: 768251738646572332}
-  - {fileID: 3289361022563239284}
-  - {fileID: 1404004988179040692}
-  - {fileID: 6205378662837394469}
-  - {fileID: 7383552555951045160}
-  m_Father: {fileID: 1400644369805629243}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6640376658570756344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3006972617640314908}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightForeArm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3006972617640314908
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640376658570756344}
-  m_LocalRotation: {x: -0.00013370131, y: -0.057853628, z: -0.0002010052, w: 0.99832505}
-  m_LocalPosition: {x: 0.053532183, y: -3.5527136e-17, z: 1.110223e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7458469689724073321}
-  m_Father: {fileID: 3975303921067805383}
+  - {fileID: 8880938692090274530}
+  m_Father: {fileID: 8296039890163439433}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6872396930565833200
+--- !u!1 &6449690556210611723
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1742,127 +1668,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3522554407437452042}
+  - component: {fileID: 5982766195716198725}
   m_Layer: 8
-  m_Name: QuickRigCharacter_LeftToeBase
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3522554407437452042
+--- !u!4 &5982766195716198725
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6872396930565833200}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.012885515, y: -9.54471e-10, z: 0.000000005899337}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2357972820471658918}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6875507810323637799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 408116707503424486}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Hips
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &408116707503424486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6875507810323637799}
-  m_LocalRotation: {x: -0.0056378106, y: -3.452163e-19, z: 3.452163e-19, w: 0.99998415}
-  m_LocalPosition: {x: -0, y: 0.11761024, z: -0.0029498981}
+  m_GameObject: {fileID: 6449690556210611723}
+  m_LocalRotation: {x: 0.5013463, y: 0.05278908, z: 0.030789694, w: 0.86308587}
+  m_LocalPosition: {x: -2.220446e-18, y: -0.047430065, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3433966325533814275}
-  - {fileID: 7702718442391297257}
-  - {fileID: 7467393030180721064}
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7257264355007054754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4999109704225735997}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_ChestOriginEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4999109704225735997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7257264355007054754}
-  m_LocalRotation: {x: -3.469447e-17, y: -4.3224826e-17, z: 5.911439e-17, w: 1}
-  m_LocalPosition: {x: -0, y: 0.12830792, z: -0.0028638893}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7431513252573796484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7805338272986262777}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_LeftForeArm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7805338272986262777
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7431513252573796484}
-  m_LocalRotation: {x: -0.00014082507, y: 0.00021459316, z: -0.057876498, w: 0.99832374}
-  m_LocalPosition: {x: -0.053532183, y: 0.0000021984101, z: 0.0000011035569}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3390198629089201541}
-  m_Father: {fileID: 2676658031166812860}
+  - {fileID: 7730311862538042945}
+  m_Father: {fileID: 797752695284713797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7612305693458711022
+--- !u!1 &6478486565395939800
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1870,69 +1700,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7961896366269743888}
+  - component: {fileID: 8967112954219960164}
+  - component: {fileID: 8933225994683270592}
   m_Layer: 8
-  m_Name: QuickRigCharacter_RightArm
+  m_Name: Alien_tank_rig:Bottom.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7961896366269743888
+--- !u!4 &8967112954219960164
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7612305693458711022}
-  m_LocalRotation: {x: 0.7072234, y: -0.0022425507, z: 0.020636473, w: 0.70668536}
-  m_LocalPosition: {x: 0.018726803, y: -7.105427e-17, z: 8.881784e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6232540197674210182}
-  m_Father: {fileID: 6112762872565449798}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7824202672718486654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5500866641572341098}
-  - component: {fileID: 8979737987144342875}
-  m_Layer: 8
-  m_Name: Bottom.002
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5500866641572341098
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824202672718486654}
+  m_GameObject: {fileID: 6478486565395939800}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1400644369805629243}
+  m_Father: {fileID: 747959547563596484}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &8979737987144342875
+--- !u!137 &8933225994683270592
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824202672718486654}
+  m_GameObject: {fileID: 6478486565395939800}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1946,8 +1744,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 5ff268586bb06244dba442da75b11af5, type: 3}
-  - {fileID: 1695841675134466970, guid: 5ff268586bb06244dba442da75b11af5, type: 3}
+  - {fileID: -5378061232119397090, guid: 9acc916f5522b1a42abbcf500df29d15, type: 3}
+  - {fileID: -4289147808593509214, guid: 9acc916f5522b1a42abbcf500df29d15, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1972,35 +1770,35 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 1734093675471572766, guid: 5ff268586bb06244dba442da75b11af5, type: 3}
+  m_Mesh: {fileID: -7176354957193612504, guid: 9acc916f5522b1a42abbcf500df29d15, type: 3}
   m_Bones:
-  - {fileID: 3462143008716987514}
-  - {fileID: 8407104856195977485}
-  - {fileID: 6013088485283200405}
-  - {fileID: 2357972820471658918}
-  - {fileID: 3522554407437452042}
-  - {fileID: 2254903379165624288}
-  - {fileID: 6543591029568656434}
-  - {fileID: 4416117367325877877}
-  - {fileID: 7193024853915153071}
-  - {fileID: 8833058880613541926}
-  - {fileID: 4523756624363836510}
-  - {fileID: 2676658031166812860}
-  - {fileID: 7805338272986262777}
-  - {fileID: 3390198629089201541}
-  - {fileID: 6112762872565449798}
-  - {fileID: 7961896366269743888}
-  - {fileID: 6232540197674210182}
-  - {fileID: 484772553021373414}
-  - {fileID: 8296938533678206480}
-  - {fileID: 3797814792938524536}
+  - {fileID: 5860283102825464858}
+  - {fileID: 1787493465222434311}
+  - {fileID: 7188015839593755224}
+  - {fileID: 6669883475335289356}
+  - {fileID: 8800102932546477009}
+  - {fileID: 7398595308632427978}
+  - {fileID: 9141785996839966069}
+  - {fileID: 2135277922799760918}
+  - {fileID: 8357945927009197561}
+  - {fileID: 3659452934389358823}
+  - {fileID: 2103024182496107272}
+  - {fileID: 3224711714721979624}
+  - {fileID: 1959550204260779850}
+  - {fileID: 3110807537391179897}
+  - {fileID: 8540030085065057972}
+  - {fileID: 5918459834177072100}
+  - {fileID: 5863502734062661306}
+  - {fileID: 7810239712314210515}
+  - {fileID: 6896477274738023871}
+  - {fileID: 3000335491888813548}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 3462143008716987514}
+  m_RootBone: {fileID: 5860283102825464858}
   m_AABB:
-    m_Center: {x: -0.01356221, y: 0.009999581, z: 0.000006213784}
-    m_Extent: {x: 0.13553026, y: 0.049778603, z: 0.16108812}
+    m_Center: {x: -0.014223646, y: 0.0021776631, z: 0.002242431}
+    m_Extent: {x: 0.13486893, y: 0.08039139, z: 0.13013306}
   m_DirtyAABB: 0
---- !u!1 &7859776946889439837
+--- !u!1 &6486978006646474610
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2008,30 +1806,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6934327565073454920}
+  - component: {fileID: 8296039890163439433}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftElbowEffector
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6934327565073454920
+--- !u!4 &8296039890163439433
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7859776946889439837}
-  m_LocalRotation: {x: -0.0005165787, y: 0.041709732, z: 0.01321763, w: 0.9990423}
-  m_LocalPosition: {x: -0.084697515, y: 0.17393668, z: -0.004275739}
+  m_GameObject: {fileID: 6486978006646474610}
+  m_LocalRotation: {x: -0.13387495, y: 0.09543195, z: 0.033152636, w: 0.98583525}
+  m_LocalPosition: {x: 0.012827234, y: -0.0002537918, z: 0.0005120325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 6
+  m_Children:
+  - {fileID: 7498674020429778089}
+  m_Father: {fileID: 3699173546289947061}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7911353820397263148
+--- !u!1 &6497513022156634873
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2039,31 +1838,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7726436110076451501}
+  - component: {fileID: 2532042923427973906}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Reference
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7726436110076451501
+--- !u!4 &2532042923427973906
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7911353820397263148}
+  m_GameObject: {fileID: 6497513022156634873}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0006440639, y: 0.00014231443, z: 0.01094521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3462143008716987514}
-  m_Father: {fileID: 1400644369805629243}
-  m_RootOrder: 2
+  - {fileID: 1229188294373359212}
+  - {fileID: 3519285919799582137}
+  - {fileID: 1176062693763755222}
+  - {fileID: 3699173546289947061}
+  - {fileID: 5775021242056804244}
+  - {fileID: 5336900958312180512}
+  - {fileID: 7920852722047924115}
+  - {fileID: 8796640442179774911}
+  - {fileID: 841665423897568386}
+  - {fileID: 657562127671227035}
+  - {fileID: 115291667888808526}
+  - {fileID: 8104160018456890523}
+  - {fileID: 1382635449183909724}
+  - {fileID: 7212795311925555430}
+  - {fileID: 6860412006120501261}
+  - {fileID: 4223939321865326521}
+  - {fileID: 3101241649509881315}
+  - {fileID: 2685056144839056828}
+  - {fileID: 4563265842887062650}
+  m_Father: {fileID: 747959547563596484}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7986641393277626214
+--- !u!1 &6824988466773787434
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2071,188 +1888,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7582272279533251112}
+  - component: {fileID: 797752695284713797}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftArm
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7582272279533251112
+--- !u!4 &797752695284713797
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7986641393277626214}
-  m_LocalRotation: {x: 0.0003743325, y: -0.016157296, z: 0.013015198, w: 0.9997847}
-  m_LocalPosition: {x: -0.018726794, y: -3.5527136e-17, z: 1.110223e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2564985006301690526}
-  m_Father: {fileID: 1529140233590629697}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8088623204389012844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4523756624363836510}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_LeftShoulder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4523756624363836510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088623204389012844}
-  m_LocalRotation: {x: -0.48526037, y: 0.5143174, z: 0.48526037, w: 0.5143174}
-  m_LocalPosition: {x: -0.025646217, y: 0.0033624312, z: 0.012484524}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2676658031166812860}
-  m_Father: {fileID: 8833058880613541926}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8109111405844852304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6528040073836956516}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightToeBase
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6528040073836956516
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8109111405844852304}
-  m_LocalRotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
-  m_LocalPosition: {x: 0.00000057816504, y: -0.010886516, z: 0.006893495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3627579749069534501}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8247904557379152635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5469006061065014661}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightAnkleEffector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5469006061065014661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8247904557379152635}
-  m_LocalRotation: {x: 0.00020852685, y: 0.0061207153, z: 0.009666263, w: 0.99993455}
-  m_LocalPosition: {x: 0.018322801, y: 0.018368527, z: -0.009523556}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6218579157807258025}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8751497543123078184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7458469689724073321}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_RightHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7458469689724073321
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751497543123078184}
-  m_LocalRotation: {x: 0.00000013104413, y: 0.000032168595, z: 0.00000041102012, w: 1}
-  m_LocalPosition: {x: 0.02754839, y: -3.5527136e-17, z: -1.110223e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3006972617640314908}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8826067375971977765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3433966325533814275}
-  m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_LeftUpLeg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3433966325533814275
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8826067375971977765}
-  m_LocalRotation: {x: -0.062034633, y: -0.0967347, z: -0.040505078, w: 0.992549}
+  m_GameObject: {fileID: 6824988466773787434}
+  m_LocalRotation: {x: -0.23789096, y: -0.08844155, z: -0.05655692, w: 0.96560204}
   m_LocalPosition: {x: -0.012827234, y: -0.0002537918, z: 0.0005120325}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4299914240281751741}
-  m_Father: {fileID: 408116707503424486}
+  - {fileID: 5982766195716198725}
+  m_Father: {fileID: 3699173546289947061}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8880142778111402957
+--- !u!1 &6934135142747125725
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2260,33 +1920,33 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1802771385129930219}
+  - component: {fileID: 3699173546289947061}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Ctrl_Spine2
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1802771385129930219
+--- !u!4 &3699173546289947061
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880142778111402957}
-  m_LocalRotation: {x: -2.0816682e-17, y: -1.3197925e-17, z: 1.3996837e-16, w: 1}
-  m_LocalPosition: {x: -0, y: 0.0106121255, z: -0.0007755828}
+  m_GameObject: {fileID: 6934135142747125725}
+  m_LocalRotation: {x: 0.072620146, y: 4.4467013e-18, z: -4.4467013e-18, w: 0.9973597}
+  m_LocalPosition: {x: -0, y: 0.11768733, z: -0.0029049176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1529140233590629697}
-  - {fileID: 9122414043709688376}
-  - {fileID: 6746198129207961454}
-  m_Father: {fileID: 4165925401692103111}
-  m_RootOrder: 0
+  - {fileID: 797752695284713797}
+  - {fileID: 8296039890163439433}
+  - {fileID: 1680141246152472048}
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9103516518580730002
+--- !u!1 &6942545953029651145
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2294,33 +1954,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8833058880613541926}
+  - component: {fileID: 7846661985095516027}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Spine2
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8833058880613541926
+--- !u!4 &7846661985095516027
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9103516518580730002}
-  m_LocalRotation: {x: 2.7046862e-20, y: -1.7751552e-21, z: -0.007416254, w: 0.9999725}
-  m_LocalPosition: {x: -0.010640427, y: 3.6002726e-10, z: 2.220446e-18}
+  m_GameObject: {fileID: 6942545953029651145}
+  m_LocalRotation: {x: 0.00031454634, y: -0.0001243438, z: 0.0000015067568, w: 0.99999994}
+  m_LocalPosition: {x: -0.02754839, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4523756624363836510}
-  - {fileID: 8296938533678206480}
-  - {fileID: 6112762872565449798}
-  m_Father: {fileID: 3824358125355558314}
+  m_Children: []
+  m_Father: {fileID: 441179561986962412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9188588984276415435
+--- !u!1 &7023795715341408562
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2328,27 +1985,481 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8296938533678206480}
+  - component: {fileID: 9141785996839966069}
   m_Layer: 8
-  m_Name: QuickRigCharacter_Neck
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8296938533678206480
+--- !u!4 &9141785996839966069
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9188588984276415435}
-  m_LocalRotation: {x: 0, y: 0, z: -0.07288083, w: 0.9973407}
-  m_LocalPosition: {x: -0.031179806, y: 0.0000000060891225, z: 6.938894e-18}
+  m_GameObject: {fileID: 7023795715341408562}
+  m_LocalRotation: {x: 0.054297104, y: -0.00986429, z: -0.17838731, w: 0.98241156}
+  m_LocalPosition: {x: 0.047430046, y: 0.00000049005166, z: -0.000000061964705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3797814792938524536}
-  m_Father: {fileID: 8833058880613541926}
+  - {fileID: 2135277922799760918}
+  m_Father: {fileID: 7398595308632427978}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7092500482805876521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8796640442179774911}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftFootEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8796640442179774911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7092500482805876521}
+  m_LocalRotation: {x: 0.00020584464, y: -0.006132549, z: -0.009685141, w: 0.9999343}
+  m_LocalPosition: {x: -0.017606007, y: 0.021467358, z: -0.015373586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7410013739577982590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135277922799760918}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2135277922799760918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7410013739577982590}
+  m_LocalRotation: {x: 0.03301681, y: -0.017293759, z: 0.38936478, w: 0.9203293}
+  m_LocalPosition: {x: 0.05358857, y: -0.00000005669445, z: 0.000000020065377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8357945927009197561}
+  m_Father: {fileID: 9141785996839966069}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7645202642078470212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7810239712314210515}
+  - component: {fileID: 1200484116901783675}
+  - component: {fileID: 1872010308600384214}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_RightHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7810239712314210515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645202642078470212}
+  m_LocalRotation: {x: -0.13016899, y: 0.006221337, z: 0.016631484, w: 0.9913328}
+  m_LocalPosition: {x: 0.027548399, y: 0.000000007588519, z: -0.000000013928087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5863502734062661306}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1200484116901783675
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645202642078470212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.02, z: 0.03}
+  m_Center: {x: 0.01, y: 0, z: 0}
+--- !u!114 &1872010308600384214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645202642078470212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa2e0cc96f7f7543a15ee753dff6223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCD: 2
+  damage: 60
+--- !u!1 &7728287798132791892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3101241649509881315}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightKneeEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3101241649509881315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728287798132791892}
+  m_LocalRotation: {x: 0.11753012, y: 0.04374875, z: 0.0163123, w: 0.9919711}
+  m_LocalPosition: {x: 0.01713958, y: 0.07044779, z: 0.0030483971}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7850627065345117652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8131802337771127486}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_RightHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8131802337771127486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7850627065345117652}
+  m_LocalRotation: {x: -0.13016905, y: 0.016631497, z: -0.0062213806, w: 0.9913328}
+  m_LocalPosition: {x: 0.02754839, y: -3.5527136e-17, z: -1.110223e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 569945338111303148}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8031379804548748636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5818548051420072017}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5818548051420072017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031379804548748636}
+  m_LocalRotation: {x: 0.18617944, y: 0.067665964, z: 0.6052784, w: 0.77097124}
+  m_LocalPosition: {x: -0.018726794, y: -3.5527136e-17, z: 1.110223e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 441179561986962412}
+  m_Father: {fileID: 9026134371544501101}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8092568325226311496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1959550204260779850}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftForeArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1959550204260779850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092568325226311496}
+  m_LocalRotation: {x: -0.00017489788, y: -0.00030556312, z: -0.23451638, w: 0.9721121}
+  m_LocalPosition: {x: -0.05353216, y: 0.0000000632868, z: -0.0000027386757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3110807537391179897}
+  m_Father: {fileID: 3224711714721979624}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8328815250388392583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3519285919799582137}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_ChestOriginEffector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3519285919799582137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328815250388392583}
+  m_LocalRotation: {x: 0.07262027, y: -9.766189e-17, z: -9.905196e-17, w: 0.9973597}
+  m_LocalPosition: {x: -0, y: 0.12825438, z: -0.0012738263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532042923427973906}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8479349013919653176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7730311862538042945}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_LeftFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7730311862538042945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479349013919653176}
+  m_LocalRotation: {x: -0.3482529, y: 0.038072366, z: -0.016239809, w: 0.93648636}
+  m_LocalPosition: {x: -0, y: -0.05358863, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3624244551935632257}
+  m_Father: {fileID: 5982766195716198725}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8751317015378908944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3672003027870987876}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_Ctrl_Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3672003027870987876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751317015378908944}
+  m_LocalRotation: {x: -0.000000041906514, y: -2.566034e-24, z: 2.566034e-24, w: 1}
+  m_LocalPosition: {x: -0, y: 0.031687792, z: 0.0027883607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1675936259284511047}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9143872537288122282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787493465222434311}
+  m_Layer: 8
+  m_Name: Alien_tank_rig:QuickRigCharacter_LeftUpLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787493465222434311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143872537288122282}
+  m_LocalRotation: {x: -0.05621476, y: -0.08866187, z: 0.9646685, w: -0.24164784}
+  m_LocalPosition: {x: 0.0002498032, y: 0.00051399146, z: 0.012827248}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7188015839593755224}
+  m_Father: {fileID: 5860283102825464858}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7676229139654740398
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7352858271907079012}
+    m_Modifications:
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.889
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.104248144
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.26265615
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.07648474
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.95618737
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 11.597
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -29.768
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 189.352
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801554313378547143, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+      propertyPath: m_Name
+      value: ge_slash01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+--- !u!4 &6793297660185398382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3801554313378547136, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+  m_PrefabInstance: {fileID: 7676229139654740398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6793297660185398383 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3801554313378547137, guid: 38048827c6644b44ea2aff41812ec7af, type: 3}
+  m_PrefabInstance: {fileID: 7676229139654740398}
+  m_PrefabAsset: {fileID: 0}
