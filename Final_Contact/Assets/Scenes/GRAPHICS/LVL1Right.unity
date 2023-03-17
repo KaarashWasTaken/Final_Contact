@@ -674,7 +674,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208600231
 GameObject:
@@ -2741,7 +2741,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   readyPlayers: 0
   nrOfPlayers: 0
-  enemiesPopup: {fileID: 6334548679497006009, guid: 1495ff68e472a0942853d733af4d17c4, type: 3}
+  enemiesPopup: {fileID: 6075901551673570100, guid: 2a3f9ee1ff68d1f41bd6e53d75261383, type: 3}
+--- !u!136 &1066477654
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066477650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 10
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1073536970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2912,6 +2926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6334548679497006009, guid: 1495ff68e472a0942853d733af4d17c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8114744211279800869, guid: 1495ff68e472a0942853d733af4d17c4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2922,7 +2940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8114744211279800869, guid: 1495ff68e472a0942853d733af4d17c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.4
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 8114744211279800869, guid: 1495ff68e472a0942853d733af4d17c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3216,7 +3234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490134040961813534, guid: 40280cdea6458594993b7cfef396afb2, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 490134040961813534, guid: 40280cdea6458594993b7cfef396afb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3396,7 +3414,7 @@ Transform:
   - {fileID: 403797736}
   - {fileID: 1095094053}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1267617597
 PrefabInstance:
@@ -4163,7 +4181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5450419071082067104, guid: cea61f5127e5873429ad11396a2e828a, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5450419071082067104, guid: cea61f5127e5873429ad11396a2e828a, type: 3}
       propertyPath: m_LocalScale.x
