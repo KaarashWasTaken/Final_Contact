@@ -11,19 +11,20 @@ public class PlayerAnimationManager : MonoBehaviour
     {
         controller= GetComponent<PlayerController>();
         animator= GetComponent<Animator>();
+        animator.SetLayerWeight(2, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (controller.shooting != 0)
-            animator.SetBool("isShooting",true);
+            animator.SetLayerWeight(animator.GetLayerIndex("Shooting"), 1);
         else
-            animator.SetBool("isShooting",false);
+            animator.SetLayerWeight(animator.GetLayerIndex("Shooting"), 0);
         if (controller.moving)
-            animator.SetBool("isMoving", true);
+            animator.SetFloat("Velocity", 1);
         else
-            animator.SetBool("isMoving", false);
+            animator.SetFloat("Velocity", 0);
         if (controller.downed)
             animator.SetBool("isDowned", true);
         else
