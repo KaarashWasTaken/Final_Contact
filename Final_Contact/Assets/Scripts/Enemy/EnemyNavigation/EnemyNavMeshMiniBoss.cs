@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,6 +24,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
     private float lastAttack;
     [SerializeField]
     private float dashDamage = 5f;
+    public bool isShooting = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -89,12 +91,14 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
     }
     private void ShootAtPlayer()
     {
+        isShooting = true;
         transform.LookAt(currentTarget.transform.position);
         navMeshAgent.isStopped = true;
         gameObject.GetComponentInChildren<EnemyShootShotgun>().Shoot();
     }
     private void DashAtPlayer()
     {
+        isShooting = false;
         navMeshAgent.isStopped = false;
         dashing = true;
         navMeshAgent.speed *= 5;
