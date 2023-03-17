@@ -17,7 +17,6 @@ public class DamageMelee : MonoBehaviour
             lastAttack = Time.time;
             other.gameObject.GetComponent<playerBehaviour>().health -= damage;
             Debug.Log("hit");
-            GetComponent<EnemyNavMeshMelee>().AttackCD();
         }
     }
 }
