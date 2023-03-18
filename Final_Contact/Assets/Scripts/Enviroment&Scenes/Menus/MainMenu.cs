@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartPlaying()
     {
-        SceneManager.LoadScene("Armory");
+        SceneManager.LoadScene("LVLArmory");
         EventSystem.current.SetSelectedGameObject(null);
     }
     public void StopPlaying()
