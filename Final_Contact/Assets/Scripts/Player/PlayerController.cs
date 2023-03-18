@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private GameObject spawnPoint;
     //Shooting & aiming variables
     public float shooting = 0;
-    private Vector2 aiming = Vector2.zero;
+    public Vector2 aiming = Vector2.zero;
     //Dodge variables
     public float dodgeCD = 3.0f;
     private float dodgeInput = 0;
