@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
         Destroy(GameObject.Find("Pause"));
         gameOverUI.SetActive(false);
         Destroy(GameObject.Find("GameOver"));
-        SceneManager.LoadScene("Armory");
+        SceneManager.LoadScene("LVLArmory");
     }
     public void MainMenu()
     {
