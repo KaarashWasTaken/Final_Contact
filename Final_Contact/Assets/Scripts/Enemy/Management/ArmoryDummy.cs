@@ -10,7 +10,7 @@ public class ArmoryDummy : MonoBehaviour
     private MaterialPropertyBlock propBlock;
     private Renderer[] _renderer;
     private float dissolveValue = 0.1f;
-    private float dissolveSpeed = 0.5f;
+    private float dissolveSpeed = 0.05f;
     private bool dissolve = false;
     // Update is called once per frame
     void Update()
