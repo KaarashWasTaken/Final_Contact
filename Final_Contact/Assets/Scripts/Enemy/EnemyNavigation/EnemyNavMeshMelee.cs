@@ -90,12 +90,12 @@ public class EnemyNavMeshMelee : MonoBehaviour
     {
         slashEffect.Stop();
         isAttacking = false;
-        //Debug.Log("AttackCdstopped");
+        Debug.Log("AttackCdstopped");
     }
     private void Chase()
     {
         chasing = true;
-        //Debug.Log("Chasing");
+        Debug.Log("Chasing");
         navMeshAgent.isStopped= false;
     }
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UpgradeManager : MonoBehaviour
 {
+    public GameObject[] upgrades;
     GameObject[] playerMenu;
     public bool upgradeMenuOpened= false;
-    public bool inArmory = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +16,10 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!inArmory)
+        if(GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !upgradeMenuOpened)
         {
-            if (GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !upgradeMenuOpened)
-            {
-                SetMenuActive();
-                upgradeMenuOpened = true;
-            }
+            SetMenuActive();
+            upgradeMenuOpened = true;
         }
     }
     public void SetMenuActive()
