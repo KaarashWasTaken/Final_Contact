@@ -17,14 +17,28 @@ public class NextLevelSelect : MonoBehaviour
     {
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("1A");
+        SceneManager.LoadScene("LVL1Left");
         EventSystem.current.SetSelectedGameObject(null);
     }
     public void NextLevel1B() 
     {
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("1B");
+        SceneManager.LoadScene("LVL1Right");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevel2A()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL2Left");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevel2B()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL2Right");
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -32,7 +46,42 @@ public class NextLevelSelect : MonoBehaviour
     {
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MiniBoss");
+        SceneManager.LoadScene("LVL3Miniboss");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevel4A()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL4Left");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevel4B()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL4Right");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevel5A()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL5Left");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevel5B()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL5Right");
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+    public void NextLevelBoss()
+    {
+        levelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LVL6Boss");
         EventSystem.current.SetSelectedGameObject(null);
     }
 }

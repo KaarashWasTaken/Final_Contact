@@ -30,13 +30,6 @@ public class NextLevel : MonoBehaviour
                 GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
                 Debug.Log("Choose Level");
             }
-            Debug.Log("Player ready");
-            //int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            //if (SceneManager.sceneCount > nextSceneIndex)
-            //{
-            //    SceneManager.LoadScene(nextSceneIndex);
-            //}
-            //CheckIfReady();
         }
         else if(other.CompareTag("Player") && enemyManager.enemyLevelCount > 0 && !popupActive)
         {
@@ -52,7 +45,6 @@ public class NextLevel : MonoBehaviour
             other.GetComponent<PlayerController>().ready = false;
             //Decreases the amount of readyplayers by 1
             readyPlayers--;
-            Debug.Log("Player Unready");
         }
     }
     private void KillEnemiesPopup()

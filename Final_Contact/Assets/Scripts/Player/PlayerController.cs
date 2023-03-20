@@ -15,12 +15,13 @@ public class PlayerController : MonoBehaviour
     public bool ready = false;
     private float pauseInput = 0;
     private float lastPause = 0;
+    private float upMenuInput = 0;
+    private GameObject spawnPoint;
     //Shooting & aiming variables
     public float shooting = 0;
-    private Vector2 aiming = Vector2.zero;
+    public Vector2 aiming = Vector2.zero;
     //Dodge variables
-    [SerializeField]
-    private float dodgeCD = 3.0f;
+    public float dodgeCD = 3.0f;
     private float dodgeInput = 0;
     private float lastDodge;
     [SerializeField]
@@ -28,19 +29,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boostTime = 0.2f;
     private bool isBoostActivated = false;
+    private float timeSinceDodge;
+    //for hud
+    public float dodgeTimePercentage=1;
     // PLayer Down
     public bool downed = false;
     [SerializeField]
     private Rigidbody Player;
     public MeshCollider ReviveCollider;
     public GameObject ReviveSphere;
+    private float dropping = 0;
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerSpeed = initalPlayerSpeed;
-        //ReviveCollider= gameObject.GetComponentInChildren<MeshCollider>();
         DontDestroyOnLoad(gameObject.transform.parent);
         lastDodge = -3;
+        StartPos();
+    }
+    public void StartPos()
+    {
+        spawnPoint = GameObject.Find("PlayerSpawnPoint");
+        controller.enabled = false;
+        transform.position = spawnPoint.transform.position;
+        controller.enabled = true;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -58,6 +70,10 @@ public class PlayerController : MonoBehaviour
     {
         shooting = context.ReadValue<float>();
     }
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        dropping = context.ReadValue<float>();
+    }
     public void Aiming(InputAction.CallbackContext context)
     {
         aiming = context.ReadValue<Vector2>();
@@ -69,6 +85,10 @@ public class PlayerController : MonoBehaviour
     public void OnPause(InputAction.CallbackContext context)
     {
         pauseInput = context.ReadValue<float>();
+    }
+    public void OnOpenUpgradeMenu(InputAction.CallbackContext context)
+    {
+        upMenuInput = context.ReadValue<float>();
     }
     void Update()
     {
@@ -83,10 +103,10 @@ public class PlayerController : MonoBehaviour
             move.Normalize();
             controller.Move(move * Time.deltaTime * playerSpeed);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 0f)
+            if (tempPos.y != spawnPoint.transform.position.y + 0.8f)
             {
-                Debug.Log("Updatingpos");
-                tempPos.y = 0f;
+                //Debug.Log("Updatingpos");
+                tempPos.y = spawnPoint.transform.position.y + 0.8f;
                 transform.position = tempPos;
             }
             if (move != Vector3.zero && aiming == Vector2.zero)
@@ -102,6 +122,10 @@ public class PlayerController : MonoBehaviour
             {
                 Shoot();
             }
+            if (dropping != 0)
+            {
+                Drop();
+            }
             if (dodgeInput != 0 && Time.time >= lastDodge + dodgeCD)
             {
                 lastDodge = Time.time;
@@ -112,13 +136,27 @@ public class PlayerController : MonoBehaviour
                 Pause();
                 lastPause = Time.time;
             }
+            if(upMenuInput != 0)
+            {
+                OpenUpgradeMenu();
+            }
         }
         if (downed)
         {
+            //tracks time in revive circle
             Player.velocity = Vector3.zero;
         }
-        //tracks time in revive circle
         
+        timeSinceDodge = Time.time - lastDodge;
+        dodgeTimePercentage = timeSinceDodge / dodgeCD;
+        
+        if (dodgeTimePercentage > 1)
+        {
+            dodgeTimePercentage = 1;
+            lastDodge= Time.time - dodgeCD;
+        }
+        
+
     }
     private void AimDirection()
     {
@@ -129,6 +167,10 @@ public class PlayerController : MonoBehaviour
     private void Shoot()
     {
         gameObject.GetComponentInChildren<WeaponManager>().Shoot();
+    }
+    private void Drop()
+    {
+        gameObject.GetComponentInChildren<WeaponManager>().Drop();
     }
     private void Dodge()
     {
@@ -146,6 +188,10 @@ public class PlayerController : MonoBehaviour
     {
         isBoostActivated = false;
         playerSpeed = initalPlayerSpeed;
+    }
+    private void OpenUpgradeMenu()
+    {
+        GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>().SetMenuActive();
     }
     private void Pause()
     {
@@ -170,9 +216,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log("playerisdown");
             transform.rotation = Quaternion.Euler(90, 0, 0);
             Vector3 tempPos = transform.position;
-            if (tempPos.y != 1f)
+            if (tempPos.y != spawnPoint.transform.position.y + 0.8f)
             {
-                tempPos.y = 1f;
+                tempPos.y = spawnPoint.transform.position.y + 0.8f;
                 transform.position = tempPos;
             }
         }

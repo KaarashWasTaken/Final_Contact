@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class EnemyNavMeshMelee : MonoBehaviour
 {
     private Rigidbody rb;
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
     private bool wandering = false;
     private bool dissolving;
-    private bool isStopped;
+    public bool isAttacking;
+    private float lastAttack = -2;
+    private float timeNow;
+    private bool chasing;
+    public ParticleSystem slashEffect;
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
@@ -23,14 +25,19 @@ public class EnemyNavMeshMelee : MonoBehaviour
 
     private void Update()
     {
+        timeNow = Time.time;
         if (!dissolving)
         {
             //If the enemy doenst have a target or targets a downed player it will 
             if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
                 currentTarget = GameObject.Find("TempTarget");
-            if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isStopped)
+            if (!currentTarget.CompareTag("Player") && !wandering && !isAttacking)
             {
                 Invoke(nameof(Wander), 0);
+            }
+            if (!wandering && !isAttacking && !chasing)
+            {
+                Invoke(nameof(Chase), 0);
             }
             players = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject g in players)
@@ -64,17 +71,31 @@ public class EnemyNavMeshMelee : MonoBehaviour
         if (wandering)
             wandering = false;
     }
-    public void AttackCD()
+    private void OnTriggerStay(Collider collision)
     {
-        Debug.Log("AttackCD");
-        isStopped= true;
-        navMeshAgent.isStopped= true;
-        Invoke(nameof(StopCD), 1);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            navMeshAgent.isStopped = true;
+            if (timeNow >= lastAttack + 2)
+            {
+                chasing = false;
+                isAttacking = true;
+                slashEffect.Play();
+                lastAttack = Time.time;
+                Invoke(nameof(StopCD), 2);
+            }
+        }
     }
     private void StopCD()
     {
-        isStopped = false;
+        slashEffect.Stop();
+        isAttacking = false;
         Debug.Log("AttackCdstopped");
+    }
+    private void Chase()
+    {
+        chasing = true;
+        Debug.Log("Chasing");
         navMeshAgent.isStopped= false;
     }
 }

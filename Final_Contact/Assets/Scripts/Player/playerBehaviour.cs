@@ -8,9 +8,10 @@ public class playerBehaviour : MonoBehaviour
 {
     public float health;
     [SerializeField]
-    private float maxHealth;
+    public float maxHealth;
     public Image healthBar;
-    public Image cooldownBar;
+    public Image heatBar;
+    public Image staminaBar;
     public bool downed;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,10 @@ public class playerBehaviour : MonoBehaviour
         {
             GetComponent<PlayerController>().Down();
         }
-        cooldownBar.fillAmount = Mathf.Clamp(1-GetComponentInChildren<WeaponManager>().heat, 0, 1);
+        heatBar.fillAmount = Mathf.Clamp(GetComponentInChildren<WeaponManager>().heat, 0, 1);
+        staminaBar.fillAmount = Mathf.Clamp(GetComponent<PlayerController>().dodgeTimePercentage, 0, 1);
+        
+        
     }
     private void OnCollisionEnter(Collision other)
     {

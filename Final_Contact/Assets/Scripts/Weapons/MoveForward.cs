@@ -13,7 +13,7 @@ public class MoveForward : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb= GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         startTime = Time.time;
         rb.velocity = transform.up * projectileSpeed;
     }

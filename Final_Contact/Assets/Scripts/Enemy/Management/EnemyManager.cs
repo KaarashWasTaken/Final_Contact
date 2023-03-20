@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject[] EnemyPrefabs;
     [SerializeField]
     private int baseEnemyCount = 20;
+    [SerializeField]
     private readonly int baseEnemyLimit = 15;
     [SerializeField]
     private int enemyLimit;

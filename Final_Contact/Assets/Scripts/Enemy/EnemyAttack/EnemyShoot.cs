@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-
     [SerializeField]
     private Transform FiringPoint;
     private Transform FiringPointDeviation;
@@ -16,7 +15,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     private float shootSpread = 15;
     private Quaternion originalAngle;
-
+    public ParticleSystem muzzleFlash;
 
     private void Start()
     {
@@ -26,6 +25,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (lastTimeShot + firingspeed <= Time.time)
         {
+            muzzleFlash.Play();
             lastTimeShot = Time.time;
             Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
         }
@@ -35,6 +35,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (lastTimeShot + firingspeed <= Time.time)
         {
+            muzzleFlash.Play();
             originalAngle = FiringPoint.rotation;
             lastTimeShot = Time.time;
             FiringPoint.Rotate(0, 0, Random.Range(-shootSpread, shootSpread));

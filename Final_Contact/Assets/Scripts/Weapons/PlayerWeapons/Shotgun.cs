@@ -33,6 +33,7 @@ public class Shotgun : MonoBehaviour
     public float heat;
     private bool onCooldown;
     public ParticleSystem muzzleFlash;
+    public float damage;
     void Update()
     {
         //Gets a cooldown so cant shoot if weapon gets too hot
