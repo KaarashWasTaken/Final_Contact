@@ -7260,6 +7260,7 @@ GameObject:
   - component: {fileID: 8383555806658543395}
   - component: {fileID: 7887112479181180718}
   - component: {fileID: 1839169112382031740}
+  - component: {fileID: 4320034984571761515}
   m_Layer: 0
   m_Name: sk_Player_Chara_Animation_Prepared_Rig_v8
   m_TagString: Player
@@ -7579,6 +7580,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!136 &4320034984571761515
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674476827718666148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &8687664869920657911
 GameObject:
   m_ObjectHideFlags: 0
