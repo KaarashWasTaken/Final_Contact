@@ -25,9 +25,15 @@ public class PlayerManager : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         //Disables joining when the scene is not armory
         if (scene.name != "LVLArmory")
+        {
             playerManager.DisableJoining();
+            GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>().inArmory = false;
+        }
         if (scene.name == "LVLArmory")
+        {
             playerManager.EnableJoining();
+            GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>().inArmory = true;
+        }
         players = GameObject.FindGameObjectsWithTag("Player");
         //Loops through the players and set them to unready
         foreach (GameObject g in players)
