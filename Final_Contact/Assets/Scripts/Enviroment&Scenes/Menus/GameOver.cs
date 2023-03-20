@@ -27,6 +27,7 @@ public class GameOver : MonoBehaviour
         }
         Destroy(GameObject.Find("EventSystem"));
         Destroy(GameObject.Find("PlayerManager"));
+        Destroy(GameObject.Find("UpgradeManager"));
         Destroy(GameObject.Find("Pause"));
         gameOverUI.SetActive(false);
         Destroy(GameObject.Find("GameOver"));
@@ -41,7 +42,10 @@ public class GameOver : MonoBehaviour
         }
         Destroy(GameObject.Find("PlayerManager"));
         Destroy(GameObject.Find("EventSystem"));
+        Destroy(GameObject.Find("UpgradeManager"));
+        Destroy(GameObject.Find("Pause"));
         gameOverUI.SetActive(false);
+        Destroy(GameObject.Find("GameOver"));
         SceneManager.LoadScene("MainMenu");
         EventSystem.current.SetSelectedGameObject(null);
     }
