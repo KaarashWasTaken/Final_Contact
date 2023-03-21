@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public bool ready = false;
     private float pauseInput = 0;
     private float lastPause = 0;
-    private float upMenuInput = 0;
     private GameObject spawnPoint;
     //Shooting & aiming variables
     public float shooting = 0;
@@ -36,9 +35,9 @@ public class PlayerController : MonoBehaviour
     public bool downed = false;
     [SerializeField]
     private Rigidbody Player;
-    public MeshCollider ReviveCollider;
     public GameObject ReviveSphere;
     private float dropping = 0;
+    public bool gettingUp;
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -49,6 +48,7 @@ public class PlayerController : MonoBehaviour
     }
     public void StartPos()
     {
+        Debug.Log("Spawnpos set");
         spawnPoint = GameObject.Find("PlayerSpawnPoint");
         controller.enabled = false;
         transform.position = spawnPoint.transform.position;
@@ -86,16 +86,12 @@ public class PlayerController : MonoBehaviour
     {
         pauseInput = context.ReadValue<float>();
     }
-    public void OnOpenUpgradeMenu(InputAction.CallbackContext context)
-    {
-        upMenuInput = context.ReadValue<float>();
-    }
     void Update()
     {
-        if (!downed)
+        if (!downed && !gettingUp)
         {
-            controller.detectCollisions = true;
             ReviveSphere.SetActive(false);
+            controller.detectCollisions = true;
             if(!gameObject.CompareTag("Player"))
                 gameObject.tag = "Player";
             //ReviveCollider.enabled = false; //revive collider inactive if not downed
@@ -136,10 +132,11 @@ public class PlayerController : MonoBehaviour
                 Pause();
                 lastPause = Time.time;
             }
-            if(upMenuInput != 0)
-            {
-                OpenUpgradeMenu();
-            }
+        }
+        else if(!downed && gettingUp)
+        {
+            ReviveSphere.SetActive(false);
+            Invoke(nameof(GetUp), 3);
         }
         if (downed)
         {
@@ -189,13 +186,8 @@ public class PlayerController : MonoBehaviour
         isBoostActivated = false;
         playerSpeed = initalPlayerSpeed;
     }
-    private void OpenUpgradeMenu()
-    {
-        GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>().SetMenuActive();
-    }
     private void Pause()
     {
-
         if (!PauseMenu.paused)
         {
             GameObject.FindWithTag("PauseMenu").GetComponent<PauseMenu>().Pause();
@@ -214,7 +206,6 @@ public class PlayerController : MonoBehaviour
             controller.detectCollisions= false;
             ReviveSphere.SetActive(true);
             Debug.Log("playerisdown");
-            transform.rotation = Quaternion.Euler(90, 0, 0);
             Vector3 tempPos = transform.position;
             if (tempPos.y != spawnPoint.transform.position.y + 0.8f)
             {
@@ -224,5 +215,8 @@ public class PlayerController : MonoBehaviour
         }
         GameObject.Find("PlayerManager").GetComponent<PlayerManager>().CheckIfAllDown();
     }
-    
+    private void GetUp()
+    {
+        gettingUp = false;
+    }
 }

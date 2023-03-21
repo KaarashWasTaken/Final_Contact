@@ -9,10 +9,12 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject player;
     WeaponManager weaponManager;
     public GameObject[] buttons;
+    public bool upgradeMenuOpen;
     private void Update()
     {
         if(upgradeMenu.activeSelf)
         {
+            upgradeMenuOpen= true;
             CheckIfButtonSelected();
         }
     }
@@ -24,7 +26,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 if (buttons[i].activeSelf)
                 {
-                    EventSystem.current.SetSelectedGameObject(buttons[i].gameObject);
+                    EventSystem.current.SetSelectedGameObject(buttons[i]);
                 }
             }
         }
@@ -34,8 +36,9 @@ public class UpgradeMenu : MonoBehaviour
         manager = GameObject.Find("UpgradeManager").GetComponent<UpgradeManager>();
         upgradeMenu.SetActive(true);
         weaponManager = player.GetComponentInChildren<WeaponManager>();
+        foreach (GameObject g in buttons)
+            g.SetActive(true);
     }
-
     // Update is called once per frame
     public void DMGUpgrade()
     {
@@ -56,45 +59,48 @@ public class UpgradeMenu : MonoBehaviour
             weaponManager.gameObject.GetComponentInChildren<SMG>().damage += 3f;
         }
         manager.SetDMGInactive();
-        upgradeMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        MenuClose();
     }
     public void HPUpgrade()
     {
-        player.GetComponent<playerBehaviour>().health += 20;
-        upgradeMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        player.GetComponent<playerBehaviour>().maxHealth += 25;
+        player.GetComponent<playerBehaviour>().health += 25;
         manager.SetHPInactive();
+        MenuClose();
     }
     public void HeatUpgrade()
     {
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.AR)
         {
-            weaponManager.gameObject.GetComponentInChildren<AR>().heatEffect *= 0.9f;
+            weaponManager.gameObject.GetComponentInChildren<AR>().heatEffect *= 0.8f;
         }
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.Shotgun)
         {
-            weaponManager.gameObject.GetComponentInChildren<Shotgun>().heatEffect *= 0.9f;
+            weaponManager.gameObject.GetComponentInChildren<Shotgun>().heatEffect *= 0.8f;
 
         }
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.MG)
         {
-            weaponManager.gameObject.GetComponentInChildren<MG>().heatEffect *= 0.9f;
+            weaponManager.gameObject.GetComponentInChildren<MG>().heatEffect *= 0.8f;
 
         }
         if(weaponManager.playerWeapon == WeaponManager.EquippedWeapon.SMG)
         {
-            weaponManager.gameObject.GetComponentInChildren<SMG>().heatEffect *= 0.9f;
+            weaponManager.gameObject.GetComponentInChildren<SMG>().heatEffect *= 0.8f;
         }
-        upgradeMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
         manager.SetHeatInactive();
+        MenuClose();
     }
     public void DodgeCDUpgrade()
     {
-        player.GetComponent<PlayerController>().dodgeCD *= 0.85f;
+        player.GetComponent<PlayerController>().dodgeCD *= 0.8f;
+        manager.SetDodgeCDInactive();
+        MenuClose();
+    }
+    private void MenuClose()
+    {
+        upgradeMenuOpen = false;
         upgradeMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        manager.SetDodgeCDInactive();
     }
 }

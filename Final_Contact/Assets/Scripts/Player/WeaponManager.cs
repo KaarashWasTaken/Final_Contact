@@ -197,7 +197,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void Drop()
     {
-        if (SceneManager.GetActiveScene().name == "LVLArmory")
+        if (SceneManager.GetActiveScene().name == "LVLArmory" && Time.timeScale != 0)
         {
             Debug.Log("drop");
             if (playerWeapon == EquippedWeapon.AR)

@@ -20,7 +20,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private float spawnCooldown = 0.25f;
     private float lastSpawn;
-    private bool firstSpawn;
+    public static bool firstSpawn;
     private void Start()
     {
         firstSpawn = true;

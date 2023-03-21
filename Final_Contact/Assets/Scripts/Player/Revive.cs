@@ -6,7 +6,7 @@ public class Revive : MonoBehaviour
 {
     private float reviveTimer = 0;
     private float reviveBaseTime;
-    private bool reviving = false;
+    public bool reviving = false;
     [SerializeField]
     private float timeToRevive = 3;
     private void Update()
@@ -37,6 +37,7 @@ public class Revive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && reviveTimer > timeToRevive)
         {
+            GetComponentInParent<PlayerController>().gettingUp = true;
             GetComponentInParent<PlayerController>().downed = false;
             reviving = false;
             reviveTimer = 0;

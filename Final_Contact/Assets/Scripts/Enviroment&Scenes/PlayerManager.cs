@@ -25,10 +25,17 @@ public class PlayerManager : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         //Disables joining when the scene is not armory
         if (scene.name != "LVLArmory")
+        {
             playerManager.DisableJoining();
+            UpgradeManager.inArmory = false;
+        }
         if (scene.name == "LVLArmory")
+        {
             playerManager.EnableJoining();
+            UpgradeManager.inArmory = true;
+        }
         players = GameObject.FindGameObjectsWithTag("Player");
+        Debug.Log(players.Length);
         //Loops through the players and set them to unready
         foreach (GameObject g in players)
         {
@@ -36,10 +43,7 @@ public class PlayerManager : MonoBehaviour
             g.GetComponent<PlayerController>().StartPos();
             g.GetComponent<playerBehaviour>().health = g.GetComponent<playerBehaviour>().maxHealth;
         }
-        GameObject[] upgradeMenuButtons = GameObject.FindGameObjectsWithTag("UpgradeMenuButton");
-        foreach (GameObject g in upgradeMenuButtons)
-            g.SetActive(true);
-
+        UpgradeManager.upgradeMenuOpened = false;
     }
     public void CheckIfAllDown()
     {

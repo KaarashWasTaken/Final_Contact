@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UpgradeManager : MonoBehaviour
 {
-    public GameObject[] upgrades;
     GameObject[] playerMenu;
-    public bool upgradeMenuOpened= false;
+    public static bool upgradeMenuOpened= false;
+    public static bool inArmory;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,13 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !upgradeMenuOpened)
+        if (!inArmory)
         {
-            SetMenuActive();
-            upgradeMenuOpened = true;
+            if (GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !upgradeMenuOpened && !EnemyManager.firstSpawn)
+            {
+                SetMenuActive();
+                upgradeMenuOpened = true;
+            }
         }
     }
     public void SetMenuActive()
@@ -32,31 +35,34 @@ public class UpgradeManager : MonoBehaviour
     }
     public void SetDMGInactive()
     {
-        for (int i = 0; i < playerMenu.Length; i++)
+        foreach (GameObject g in playerMenu)
         {
-            GameObject.Find("DMG").SetActive(false);
+            if (g.GetComponent<UpgradeMenu>().upgradeMenuOpen)
+                GameObject.Find("DMG").SetActive(false);
         }
     }
     public void SetHPInactive()
     {
-        for (int i = 0; i < playerMenu.Length; i++)
+        foreach (GameObject g in playerMenu)
         {
-            GameObject.Find("HP").SetActive(false);
+            if (g.GetComponent<UpgradeMenu>().upgradeMenuOpen)
+                GameObject.Find("HP").SetActive(false);
         }
     }
     public void SetHeatInactive()
     {
-        for (int i = 0; i < playerMenu.Length; i++)
+        foreach (GameObject g in playerMenu)
         {
-            GameObject.Find("HEAT").SetActive(false);
+            if (g.GetComponent<UpgradeMenu>().upgradeMenuOpen)
+                GameObject.Find("HEAT").SetActive(false);
         }
     }
     public void SetDodgeCDInactive()
     {
-        for (int i = 0; i < playerMenu.Length; i++)
+        foreach (GameObject g in playerMenu)
         {
-            GameObject.Find("DODGECD").SetActive(false);
+            if (g.GetComponent<UpgradeMenu>().upgradeMenuOpen)
+                GameObject.Find("DODGECD").SetActive(false);
         }
     }
-    //private void 
 }
