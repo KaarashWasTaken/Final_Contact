@@ -36,6 +36,9 @@ public class WeaponManager : MonoBehaviour
     public GameObject MG_Image;
     public GameObject SMG_Image;
     public GameObject SG_Image;
+    [Header("Weapon Boost image")]
+    public GameObject FireSpeedBoost;
+    [Header("Weapon Drop Point")]
     [SerializeField]
     private Transform DropPoint;
     // this script handles weapon types and general effects
@@ -52,28 +55,7 @@ public class WeaponManager : MonoBehaviour
         //returns firing speed to normal after pickup
         if (firingSpeedActive && currentFiringSpeed != originalFiringSpeed && Time.time > timeFiringSpeed)
         {
-            if (playerWeapon == EquippedWeapon.AR)
-            {
-                gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
-                gameObject.GetComponentInChildren<AR>().heatEffect = originalHeatEffect;
-            }
-            if (playerWeapon == EquippedWeapon.Shotgun)
-            {
-                gameObject.GetComponentInChildren<Shotgun>().firingspeed = originalFiringSpeed;
-                gameObject.GetComponentInChildren<Shotgun>().heatEffect = originalHeatEffect;
-            }
-            if (playerWeapon == EquippedWeapon.MG)
-            {
-                gameObject.GetComponentInChildren<MG>().firingspeed = originalFiringSpeed;
-                gameObject.GetComponentInChildren<MG>().heatEffect = originalHeatEffect;
-            }
-            if (playerWeapon == EquippedWeapon.SMG)
-            {
-                gameObject.GetComponentInChildren<SMG>().firingspeed = originalFiringSpeed;
-                gameObject.GetComponentInChildren<SMG>().heatEffect = originalHeatEffect;
-            }
-
-            firingSpeedActive = false;
+            DeactivateFiringSpeedBonus();
         }
 
         //gets how close the picked up weapon is to overheating
@@ -130,10 +112,10 @@ public class WeaponManager : MonoBehaviour
             SMG_Image.SetActive(true);
         }
     }
-    public void FiringSpeedBonus(GameObject pickup)
+    public void ActivateFiringSpeedBonus(GameObject pickup)
     {
         //activates bonus firingspeed
-        if (!firingSpeedActive)
+        if (!firingSpeedActive && playerWeapon != EquippedWeapon.None)
         {
             firingSpeedActive = true;
             timeFiringSpeed = Time.time + pickup.gameObject.GetComponent<PickupFiringSpeed>().bonusTime;
@@ -165,7 +147,33 @@ public class WeaponManager : MonoBehaviour
                 currentFiringSpeed = gameObject.GetComponentInChildren<SMG>().firingspeed;
                 currentHeatEffect = gameObject.GetComponentInChildren<SMG>().heatEffect;
             }
+            FireSpeedBoost.SetActive(true);
         }
+    }
+    public void DeactivateFiringSpeedBonus()
+    {
+        if (playerWeapon == EquippedWeapon.AR)
+        {
+            gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
+            gameObject.GetComponentInChildren<AR>().heatEffect = originalHeatEffect;
+        }
+        if (playerWeapon == EquippedWeapon.Shotgun)
+        {
+            gameObject.GetComponentInChildren<Shotgun>().firingspeed = originalFiringSpeed;
+            gameObject.GetComponentInChildren<Shotgun>().heatEffect = originalHeatEffect;
+        }
+        if (playerWeapon == EquippedWeapon.MG)
+        {
+            gameObject.GetComponentInChildren<MG>().firingspeed = originalFiringSpeed;
+            gameObject.GetComponentInChildren<MG>().heatEffect = originalHeatEffect;
+        }
+        if (playerWeapon == EquippedWeapon.SMG)
+        {
+            gameObject.GetComponentInChildren<SMG>().firingspeed = originalFiringSpeed;
+            gameObject.GetComponentInChildren<SMG>().heatEffect = originalHeatEffect;
+        }
+        FireSpeedBoost.SetActive(false);
+        firingSpeedActive = false;
     }
     public void Shoot()
     {
@@ -194,6 +202,7 @@ public class WeaponManager : MonoBehaviour
             Debug.Log("drop");
             if (playerWeapon == EquippedWeapon.AR)
             {
+                DeactivateFiringSpeedBonus();
                 AR.SetActive(false);
                 playerWeapon = EquippedWeapon.None;
                 originalFiringSpeed = 0;
@@ -203,6 +212,7 @@ public class WeaponManager : MonoBehaviour
             }
             if (playerWeapon == EquippedWeapon.Shotgun)
             {
+                DeactivateFiringSpeedBonus();
                 Shotgun.SetActive(false);
                 playerWeapon = EquippedWeapon.None;
                 originalFiringSpeed = 0;
@@ -212,6 +222,7 @@ public class WeaponManager : MonoBehaviour
             }
             if (playerWeapon == EquippedWeapon.MG)
             {
+                DeactivateFiringSpeedBonus();
                 MG.SetActive(false);
                 playerWeapon = EquippedWeapon.None;
                 originalFiringSpeed = 0;
@@ -221,6 +232,7 @@ public class WeaponManager : MonoBehaviour
             }
             if (playerWeapon == EquippedWeapon.SMG)
             {
+                DeactivateFiringSpeedBonus();
                 SMG.SetActive(false);
                 playerWeapon = EquippedWeapon.None;
                 originalFiringSpeed = 0;
