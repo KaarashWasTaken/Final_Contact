@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 8723293940249162318}
   - component: {fileID: 7123679573282686969}
   - component: {fileID: 4060222309318039530}
+  - component: {fileID: 3518396895978444504}
   m_Layer: 8
   m_Name: a_gatling_walk
   m_TagString: Enemy
@@ -390,7 +391,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.05
+  m_Radius: 0.07
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.12, z: 0}
@@ -468,6 +469,20 @@ MonoBehaviour:
   numberProjectiles: 13
   spread: 130
   muzzleFlash: {fileID: 6494550196091227119}
+--- !u!136 &3518396895978444504
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162080123494322409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.03
+  m_Height: 0.2
+  m_Direction: 2
+  m_Center: {x: 0.04, y: 0.1, z: 0.1}
 --- !u!1 &1208676587767953563
 GameObject:
   m_ObjectHideFlags: 0

@@ -124,5 +124,6 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
             other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
             navMeshAgent.isStopped = true;
         }
+        other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
     }
 }
