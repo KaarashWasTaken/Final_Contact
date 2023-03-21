@@ -116,7 +116,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
         navMeshAgent.speed = 10;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && (Time.time >= (lastAttack + attackCD)))
         {
