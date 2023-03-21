@@ -116,7 +116,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
         navMeshAgent.speed = 10;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && (Time.time >= (lastAttack + attackCD)))
         {
@@ -124,6 +124,5 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
             other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
             navMeshAgent.isStopped = true;
         }
-        other.gameObject.GetComponent<playerBehaviour>().health -= dashDamage;
     }
 }

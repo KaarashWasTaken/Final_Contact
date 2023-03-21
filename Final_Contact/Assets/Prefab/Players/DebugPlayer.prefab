@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 1241514682451416836}
   - component: {fileID: 2522149761699197154}
   - component: {fileID: 7592882980797470292}
+  - component: {fileID: 3486137414237586199}
   m_Layer: 0
   m_Name: sk_Player_Chara_Animation_Prepared_Rig_v8
   m_TagString: Player
@@ -551,6 +552,20 @@ MonoBehaviour:
   Player: {fileID: 8888960501281892476}
   ReviveCollider: {fileID: 0}
   ReviveSphere: {fileID: 7445038870646543926}
+--- !u!136 &3486137414237586199
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517223357276455554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &541901840537075627
 GameObject:
   m_ObjectHideFlags: 0
@@ -5720,7 +5735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495510884793357413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 3.2}
+  m_LocalPosition: {x: 0, y: 1.5, z: 3.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
