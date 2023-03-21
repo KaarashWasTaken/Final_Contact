@@ -42,7 +42,7 @@ public class MoveForward : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //If a projectile collides with a player the player will lose 5 health and the projectile will be destroyed
-            other.gameObject.GetComponent<playerBehaviour>().health -= damage/2;
+            other.gameObject.GetComponent<playerBehaviour>().health -= damage;
             Destroy(gameObject);
         }
     }
