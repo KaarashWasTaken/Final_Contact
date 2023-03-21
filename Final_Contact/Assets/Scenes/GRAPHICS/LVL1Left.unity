@@ -645,7 +645,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2495432268419892225, guid: 9f389310c67986d45ba8be01e8b92fb4, type: 3}
 --- !u!1 &119449709 stripped
@@ -2212,7 +2212,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2495432268419892225, guid: 9f389310c67986d45ba8be01e8b92fb4, type: 3}
 --- !u!1001 &482805786
@@ -2642,7 +2642,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2495432268419892225, guid: 9f389310c67986d45ba8be01e8b92fb4, type: 3}
 --- !u!1001 &635909344
@@ -6104,6 +6104,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76e1cc310e5c392469b86f955ed7a3ad, type: 3}
+--- !u!1 &1314235849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5196849455036094713, guid: 96b881ade8d41e74d90aaf05bf7d8a14, type: 3}
+  m_PrefabInstance: {fileID: 409684633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1314235853
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314235849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2495432268419892225, guid: 9f389310c67986d45ba8be01e8b92fb4, type: 3}
 --- !u!1 &1314371357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5356474670886782517, guid: 96b881ade8d41e74d90aaf05bf7d8a14, type: 3}
@@ -7841,7 +7860,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2495432268419892225, guid: 9f389310c67986d45ba8be01e8b92fb4, type: 3}
 --- !u!1 &1700604133 stripped
@@ -8521,7 +8540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753383994001133061, guid: 587635b938ea9054a8232ab56d65fab4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.98
+      value: -12.3
       objectReference: {fileID: 0}
     - target: {fileID: 7753383994001133061, guid: 587635b938ea9054a8232ab56d65fab4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8529,7 +8548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753383994001133061, guid: 587635b938ea9054a8232ab56d65fab4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.965171
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 7753383994001133061, guid: 587635b938ea9054a8232ab56d65fab4, type: 3}
       propertyPath: m_LocalRotation.w
