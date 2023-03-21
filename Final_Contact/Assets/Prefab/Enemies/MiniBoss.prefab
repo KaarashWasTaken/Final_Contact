@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 4060222309318039530}
   - component: {fileID: 5215573227271858954}
   - component: {fileID: 3518396895978444504}
-  - component: {fileID: 2599059992032120516}
+  - component: {fileID: 4664122553128777445}
   m_Layer: 8
   m_Name: a_gatling_walk
   m_TagString: Enemy
@@ -484,8 +484,8 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 2
   m_Center: {x: 0.04, y: 0.1, z: 0.1}
---- !u!136 &2599059992032120516
-CapsuleCollider:
+--- !u!65 &4664122553128777445
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -494,10 +494,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 0.3
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.12, z: 0.05}
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 1, z: 0.28}
+  m_Center: {x: 0, y: 0, z: 0.07}
 --- !u!1 &1208676587767953563
 GameObject:
   m_ObjectHideFlags: 0
