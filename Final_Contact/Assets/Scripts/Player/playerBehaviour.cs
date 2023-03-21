@@ -50,7 +50,7 @@ public class playerBehaviour : MonoBehaviour
         }
         if (other.CompareTag("PickupFiringSpeed"))
         {
-            gameObject.GetComponentInChildren<WeaponManager>().FiringSpeedBonus(other.gameObject);
+            gameObject.GetComponentInChildren<WeaponManager>().ActivateFiringSpeedBonus(other.gameObject);
         }
         if (gameObject.GetComponentInChildren<WeaponManager>().playerWeapon == WeaponManager.EquippedWeapon.None)
         {
