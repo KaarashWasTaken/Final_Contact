@@ -12,6 +12,7 @@ public class UpgradeMenu : MonoBehaviour
     public bool upgradeMenuOpen;
     private void Update()
     {
+        Debug.Log(upgradeMenu.activeSelf);
         if(upgradeMenu.activeSelf)
         {
             upgradeMenuOpen= true;
@@ -26,6 +27,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 if (buttons[i].activeSelf)
                 {
+                    Debug.Log(buttons[i].name);
                     EventSystem.current.SetSelectedGameObject(buttons[i]);
                     break;
                 }
