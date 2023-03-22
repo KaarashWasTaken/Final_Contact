@@ -32,6 +32,11 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
         //Invoke(nameof(Wander), Random.Range(3, 8));
         InvokeRepeating(nameof(DashAtPlayer), 10, Random.Range(8,16));
+        players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
+        foreach (GameObject g in players)
+        {
+            GetComponent<EnemyStandard>().health += 750;
+        }
     }
     private void Update()
     {
@@ -101,7 +106,7 @@ public class EnemyNavMeshMiniBoss : MonoBehaviour
         isShooting = false;
         navMeshAgent.isStopped = false;
         dashing = true;
-        navMeshAgent.speed *= 5;
+        navMeshAgent.speed *= 3.5f;
         Invoke(nameof(EndDashAtPlayer), 1.0f);
     }
 

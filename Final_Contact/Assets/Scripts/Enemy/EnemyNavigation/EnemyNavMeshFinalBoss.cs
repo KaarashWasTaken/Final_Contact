@@ -51,7 +51,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     public void BossAttack()
     {
         navMeshAgent.speed = 11;
-        //Debug.Log("Attacking");
+        //Debug.Log(currentTarget);
         if (!dissolving)
         {
             //If the enemy doenst have a target or targets a downed player it will 
@@ -81,6 +81,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
         //Debug.Log("Shielded");
         navMeshAgent.speed = 18;
         navMeshAgent.destination = bossStartingPoint.position;
+        //Debug.Log(bossStartingPoint.position);
     }
  
 
