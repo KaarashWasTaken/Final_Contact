@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class UpgradeManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!inArmory)
+        if (!inArmory && SceneManager.GetActiveScene().name != "MainMenu")
         {
             if (GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !upgradeMenuOpened && !EnemyManager.firstSpawn)
             {

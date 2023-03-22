@@ -11,6 +11,7 @@ public class MiniBossAnimationManager : MonoBehaviour
     {
         ranged = GetComponentInParent<EnemyNavMeshMiniBoss>();
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame

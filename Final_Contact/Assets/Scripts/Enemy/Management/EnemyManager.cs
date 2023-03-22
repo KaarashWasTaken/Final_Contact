@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class EnemyManager : MonoBehaviour
     private readonly int baseEnemyLimit = 15;
     [SerializeField]
     private int enemyLimit;
-    private int enemies;
+    public int enemies;
     public int enemyLevelCount;
     [SerializeField]
     private int enemySpawnCount;
@@ -24,6 +25,7 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         firstSpawn = true;
+        
     }
     private void Update()
     {
@@ -41,6 +43,10 @@ public class EnemyManager : MonoBehaviour
                 enemyLevelCount = baseEnemyCount * GameObject.FindGameObjectsWithTag("Player").Length;
                 enemyLimit = baseEnemyLimit * GameObject.FindGameObjectsWithTag("Player").Length;
                 enemySpawnCount = enemyLevelCount;
+                if(SceneManager.GetActiveScene().name == "LVL3Miniboss")
+                {
+                    enemyLevelCount++;
+                }
                 firstSpawn = false;
             }
         }
