@@ -27,6 +27,7 @@ public class UpgradeMenu : MonoBehaviour
                 if (buttons[i].activeSelf)
                 {
                     EventSystem.current.SetSelectedGameObject(buttons[i]);
+                    break;
                 }
             }
         }

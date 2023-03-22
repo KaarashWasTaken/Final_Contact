@@ -11,7 +11,6 @@ public class GameOver : MonoBehaviour
     private void Awake()
     {
         gameOverUI.SetActive(false);
-        DontDestroyOnLoad(gameObject);
     }
     public void Activate()
     {
@@ -28,6 +27,7 @@ public class GameOver : MonoBehaviour
         Destroy(GameObject.Find("EventSystem"));
         Destroy(GameObject.Find("PlayerManager"));
         Destroy(GameObject.Find("Pause"));
+        Destroy(GameObject.Find("UpgradeManager"));
         gameOverUI.SetActive(false);
         Destroy(GameObject.Find("GameOver"));
         SceneManager.LoadScene("LVLArmory");
@@ -41,6 +41,7 @@ public class GameOver : MonoBehaviour
         }
         Destroy(GameObject.Find("PlayerManager"));
         Destroy(GameObject.Find("EventSystem"));
+        Destroy(GameObject.Find("UpgradeManager"));
         gameOverUI.SetActive(false);
         SceneManager.LoadScene("MainMenu");
         EventSystem.current.SetSelectedGameObject(null);

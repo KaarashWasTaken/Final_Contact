@@ -15,6 +15,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel1A()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL1Left");
@@ -22,6 +23,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel1B() 
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL1Right");
@@ -29,6 +31,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel2A()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL2Left");
@@ -36,6 +39,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel2B()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL2Right");
@@ -44,6 +48,7 @@ public class NextLevelSelect : MonoBehaviour
 
     public void NextLevelMiniBoss()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL3Miniboss");
@@ -51,6 +56,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel4A()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL4Left");
@@ -58,6 +64,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel4B()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL4Right");
@@ -65,6 +72,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel5A()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL5Left");
@@ -72,6 +80,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevel5B()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL5Right");
@@ -79,6 +88,7 @@ public class NextLevelSelect : MonoBehaviour
     }
     public void NextLevelBoss()
     {
+        Destroy(gameObject);
         levelMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("LVL6Boss");

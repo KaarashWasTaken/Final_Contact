@@ -14,16 +14,16 @@ public class ArmoryManager : MonoBehaviour
     [SerializeField]
     private GameObject dummyPrefab;
     [SerializeField]
-    private Transform[] pickupSpawnPoints;
+    private Transform[] spawnPoints;
     private bool respawningHealth = false;
     private bool respawningFirerate = false;
     private bool respawningDummy = false;
     private Vector3 dummySpawnLocation = new(11.5f, 0, -55);
     private void Start()
     {
-        Instantiate(dummyPrefab, dummySpawnLocation, Quaternion.Euler(0,0,0));
-        Instantiate(healthPrefab, pickupSpawnPoints[1].transform.position, Quaternion.identity);
-        Instantiate(fireRatePrefab, pickupSpawnPoints[0].transform.position, Quaternion.identity);    
+        Instantiate(dummyPrefab, spawnPoints[2].transform.position, Quaternion.Euler(0,270,0));
+        Instantiate(healthPrefab, spawnPoints[1].transform.position, Quaternion.identity);
+        Instantiate(fireRatePrefab, spawnPoints[0].transform.position, Quaternion.identity);    
     }
     // Update is called once per frame
     void Update()
@@ -56,19 +56,19 @@ public class ArmoryManager : MonoBehaviour
     private void RespawnHealthPickup()
     {
         //Spawns a health pickup at the southernmost pickup spawnpoint
-        Instantiate(healthPrefab, pickupSpawnPoints[1].transform.position, Quaternion.identity);    
+        Instantiate(healthPrefab, spawnPoints[1].transform.position, Quaternion.identity);    
         respawningHealth = false;
     }
     private void RespawnFireRatePickup()
     {
         //Spawns a firerate pickup at the northernmost pickup spawnpoint
-        Instantiate(fireRatePrefab, pickupSpawnPoints[0].transform.position, Quaternion.identity);
+        Instantiate(fireRatePrefab, spawnPoints[0].transform.position, Quaternion.identity);
         respawningFirerate = false;
     }
     private void RespawnDummy()
     {
         //Spawns a dummy at the given coordinates with the given rotation
-        Instantiate(dummyPrefab, dummySpawnLocation, Quaternion.Euler(0,0,0));
+        Instantiate(dummyPrefab, spawnPoints[2].transform.position, Quaternion.Euler(0,270,0));
         respawningDummy = false;
     }
 }

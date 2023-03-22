@@ -11,10 +11,6 @@ public class PauseMenu : MonoBehaviour
     public static bool paused = false;
     public GameObject pauseMenuUI;
     public GameObject firstButton;
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
     private void Update()
     {
         if (paused) 
