@@ -33,9 +33,16 @@ public class playerBehaviour : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("EnemyProjectile"))
+        if (!GetComponent<PlayerController>().boosting)
         {
-            health -= other.gameObject.GetComponent<EnemyMoveForward>().damage;
+            if (other.gameObject.CompareTag("EnemyProjectile"))
+            {
+                health -= other.gameObject.GetComponent<EnemyMoveForward>().damage;
+            }
+            if (other.gameObject.CompareTag("Projectile"))
+            {
+                health -= other.gameObject.GetComponent<MoveForward>().damage;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

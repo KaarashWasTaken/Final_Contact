@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public GameObject ReviveSphere;
     private float dropping = 0;
     public bool gettingUp;
+    public bool boosting = false;
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -180,11 +181,13 @@ public class PlayerController : MonoBehaviour
         {
             playerSpeed += boostIncrease;
         }
+        boosting = true;
     }
     private void EndBoost()
     {
         isBoostActivated = false;
         playerSpeed = initalPlayerSpeed;
+        boosting= false;
     }
     private void Pause()
     {
