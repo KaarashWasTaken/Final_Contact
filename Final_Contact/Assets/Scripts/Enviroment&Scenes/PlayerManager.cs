@@ -26,8 +26,8 @@ public class PlayerManager : MonoBehaviour
         //Disables joining when the scene is not armory
         if (scene.name != "LVLArmory")
         {
-            playerManager.DisableJoining();
-            UpgradeManager.inArmory = false;
+            //playerManager.DisableJoining();
+            //UpgradeManager.inArmory = false;
         }
         if (scene.name == "LVLArmory")
         {

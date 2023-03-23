@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBossStandard : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class EnemyBossStandard : MonoBehaviour
     public ParticleSystem deathSpark;
     public static bool isDead = false;
     public static float maxHealth;
+    public GameObject CockPitPopup;
+    public Image BossHealth1;
+    public Image BossHealth2;
     private void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
@@ -23,6 +27,8 @@ public class EnemyBossStandard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BossHealth1.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+        BossHealth2.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
         if (health <= 0)
         {
             Death();
@@ -33,7 +39,7 @@ public class EnemyBossStandard : MonoBehaviour
     {
         isDead= true;
         //Implement escape notification below
-        Debug.Log("Get to the cockpit and escape!");
+        CockPitPopup.SetActive(true);
     }
     private void OnCollisionEnter(Collision other)
     {
