@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UpgradeMenu : MonoBehaviour
 {
     UpgradeManager manager;
+    public EventSystem eventSystem;
     public GameObject upgradeMenu;
     public GameObject player;
     WeaponManager weaponManager;
@@ -12,7 +13,6 @@ public class UpgradeMenu : MonoBehaviour
     public bool upgradeMenuOpen;
     private void Update()
     {
-        Debug.Log(upgradeMenu.activeSelf);
         if(upgradeMenu.activeSelf)
         {
             upgradeMenuOpen= true;
@@ -21,14 +21,16 @@ public class UpgradeMenu : MonoBehaviour
     }
     private void CheckIfButtonSelected()
     {
-        if(EventSystem.current.currentSelectedGameObject == null)
-        {   
+        Debug.Log(eventSystem.currentSelectedGameObject.activeSelf + " button state");
+        if(eventSystem.currentSelectedGameObject == null || !eventSystem.currentSelectedGameObject.activeSelf)
+        {
+            Debug.Log("none selected");
             for(int i = 0; i < buttons.Length; i++)
             {
                 if (buttons[i].activeSelf)
                 {
                     Debug.Log(buttons[i].name);
-                    EventSystem.current.SetSelectedGameObject(buttons[i]);
+                    eventSystem.SetSelectedGameObject(buttons[i]);
                     break;
                 }
             }

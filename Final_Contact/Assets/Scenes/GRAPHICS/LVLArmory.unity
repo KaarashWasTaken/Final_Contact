@@ -1788,6 +1788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 924848547}
   firstButton: {fileID: 997605695}
+  eventSystem: {fileID: 1454910808}
+  eventSystemUI: {fileID: 1454910810}
 --- !u!224 &622455065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2886,6 +2888,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1463909480}
     m_Modifications:
+    - target: {fileID: 2778501189629291532, guid: 06703cf6b24cc6f4fb21a0529b9d32f9, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1454910808}
+    - target: {fileID: 2778501189629291532, guid: 06703cf6b24cc6f4fb21a0529b9d32f9, type: 3}
+      propertyPath: eventSystemUI
+      value: 
+      objectReference: {fileID: 1454910810}
     - target: {fileID: 5052262441059482149, guid: 06703cf6b24cc6f4fb21a0529b9d32f9, type: 3}
       propertyPath: m_Name
       value: GameOver
@@ -3510,7 +3520,6 @@ GameObject:
   - component: {fileID: 1454910811}
   - component: {fileID: 1454910810}
   - component: {fileID: 1454910809}
-  - component: {fileID: 1454910812}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3579,18 +3588,6 @@ Transform:
   m_Father: {fileID: 1463909480}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1454910812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454910808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4e4cb27e3bf5c47b7f27f5f63174c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1463868103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4469,7 +4466,14 @@ MonoBehaviour:
   - {fileID: 6288249918930279408}
   - {fileID: 443116037763642808}
   eventSystem: {fileID: 1454910808}
-  firstButton: {fileID: 805652677}
+  eventSystemUI: {fileID: 1454910810}
+  firstButton:
+  - {fileID: 805652677}
+  - {fileID: 5463372710460232115}
+  - {fileID: 7967885011431064925}
+  - {fileID: 3447113001129818657}
+  - {fileID: 6288249919616210305}
+  - {fileID: 443116038146735049}
 --- !u!114 &1722729377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5917,7 +5921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevelBoss
         m_Mode: 1
@@ -6157,7 +6161,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevel4A
         m_Mode: 1
@@ -6428,7 +6432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevel4B
         m_Mode: 1
@@ -6813,7 +6817,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevel2B
         m_Mode: 1
@@ -6966,7 +6970,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevel2A
         m_Mode: 1
@@ -7526,7 +7530,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevel5B
         m_Mode: 1
@@ -7601,7 +7605,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevel5A
         m_Mode: 1
@@ -7960,7 +7964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1722729376}
         m_TargetAssemblyTypeName: NextLevelSelect, Assembly-CSharp
         m_MethodName: NextLevelMiniBoss
         m_Mode: 1

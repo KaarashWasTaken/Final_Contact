@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public static bool paused = false;
     public GameObject pauseMenuUI;
     public GameObject firstButton;
+    public GameObject eventSystem;
+    public EventSystem eventSystemUI;
     private void Update()
     {
         if (paused) 
@@ -21,17 +23,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        eventSystem.SetActive(true);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
-        EventSystem.current.SetSelectedGameObject(firstButton);
+        eventSystemUI.SetSelectedGameObject(firstButton);
     }
     public void Continue()
     {
         pauseMenuUI.SetActive(false);
         paused = false;
         Time.timeScale = 1f;
-        EventSystem.current.SetSelectedGameObject(null);
+        eventSystemUI.SetSelectedGameObject(null);
+        eventSystem.SetActive(false);
     }
     public void MainMenu()
     {
@@ -41,12 +45,9 @@ public class PauseMenu : MonoBehaviour
             Destroy(player.transform.parent.gameObject);
         }
         Destroy(GameObject.Find("PlayerManager"));
-        Destroy(GameObject.Find("EventSystem"));
-        Destroy(GameObject.Find("UpgradeManager"));
-        Destroy(GameObject.Find("Pause"));
-        Destroy(GameObject.Find("GameOver"));
+        Destroy(GameObject.Find("Menus"));
         SceneManager.LoadScene("MainMenu");
-        EventSystem.current.SetSelectedGameObject(null);
+        eventSystemUI.SetSelectedGameObject(null);
     }
     public void StopPlaying()
     {

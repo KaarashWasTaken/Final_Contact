@@ -8,14 +8,18 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverUI;
     public GameObject firstbutton;
+    public GameObject eventSystem;
+    public EventSystem eventSystemUI;
     private void Awake()
     {
+        eventSystem.SetActive(false);
         gameOverUI.SetActive(false);
     }
     public void Activate()
     {
+        eventSystem.SetActive(true);
         gameOverUI.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(firstbutton);
+        eventSystemUI.SetSelectedGameObject(firstbutton);
     }
     public void Restart()
     {
@@ -40,7 +44,6 @@ public class GameOver : MonoBehaviour
         Destroy(GameObject.Find("Menus"));
         gameOverUI.SetActive(false);
         SceneManager.LoadScene("MainMenu");
-        EventSystem.current.SetSelectedGameObject(null);
     }
     public void StopPlaying()
     {
