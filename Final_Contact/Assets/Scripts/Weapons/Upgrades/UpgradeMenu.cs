@@ -13,6 +13,7 @@ public class UpgradeMenu : MonoBehaviour
     public bool upgradeMenuOpen;
     private void Update()
     {
+        Debug.Log(upgradeMenu.activeSelf + " menu state");
         if(upgradeMenu.activeSelf)
         {
             upgradeMenuOpen= true;
@@ -29,7 +30,6 @@ public class UpgradeMenu : MonoBehaviour
             {
                 if (buttons[i].activeSelf)
                 {
-                    Debug.Log(buttons[i].name);
                     eventSystem.SetSelectedGameObject(buttons[i]);
                     break;
                 }
@@ -42,7 +42,9 @@ public class UpgradeMenu : MonoBehaviour
         upgradeMenu.SetActive(true);
         weaponManager = player.GetComponentInChildren<WeaponManager>();
         foreach (GameObject g in buttons)
-            g.SetActive(true);
+            if(!g.activeSelf)
+                g.SetActive(true);
+        eventSystem.SetSelectedGameObject(buttons[0]);
     }
     // Update is called once per frame
     public void DMGUpgrade()
@@ -106,6 +108,6 @@ public class UpgradeMenu : MonoBehaviour
     {
         upgradeMenuOpen = false;
         upgradeMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        eventSystem.SetSelectedGameObject(null);
     }
 }
