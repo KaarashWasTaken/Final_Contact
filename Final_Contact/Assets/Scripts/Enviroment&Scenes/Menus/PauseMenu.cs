@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+        //pauses game by using timescale set to zero
         eventSystem.SetActive(true);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -52,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Continue()
     {
+        //removes pause screen and sets timescale to 1
         pauseMenuUI.SetActive(false);
         paused = false;
         Time.timeScale = 1f;
