@@ -14,17 +14,17 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     private float currentDistance;
     private bool dying;
     //Dash Damage
-    [SerializeField]
-    private float attackCD = 2.0f;
     private float lastAttack;
     private float timeNow;
-    public bool isAttacking;
-    private bool chasing;
+    public bool isAttacking = false;
+    [SerializeField]
+    private bool chasing = false;
     public Transform bossStartingPoint;
     [NonSerialized]
     public Transform bossCurrentPoint;
     public GameObject shield;
     public static bool bossAtBase = false;
+    public Transform bossLookPos;
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,8 +41,9 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
         {
             bossReacted = false;
             BossShielded();
-            if(bossAtBase)
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+            chasing= false;
+            if (bossAtBase)
+                transform.LookAt(bossLookPos);
         }
         if (GetComponentInParent<BossManager>().bossAttacking == true) // boss stage boss
         {
@@ -52,6 +53,8 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             Invoke(nameof(EndReaction), 2f);
             if (bossReaction)
             {
+                Debug.Log("agent stopped");
+                chasing = false;
                 navMeshAgent.isStopped = true;
             }
         }
@@ -66,6 +69,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             if (!isAttacking && !chasing)
             {
                 chasing = true;
+                Debug.Log("agent chasing");
                 navMeshAgent.isStopped = false;
             }
             //If the enemy doesnt have a target or targets a downed player it will find a new target
@@ -86,6 +90,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             if (GetComponent<EnemyBossStandard>().health <= 0)
             {
                 dying = true;
+                Debug.Log("agent stopped death");
                 navMeshAgent.isStopped = true;
             }
         }
