@@ -7,6 +7,7 @@ public class ArmoryManager : MonoBehaviour
     private float pickupHealth;
     private float pickupFiringSpeed;
     private float dummy;
+    private float mine;
     [SerializeField]
     private GameObject healthPrefab;
     [SerializeField]
@@ -14,13 +15,18 @@ public class ArmoryManager : MonoBehaviour
     [SerializeField]
     private GameObject dummyPrefab;
     [SerializeField]
+    private GameObject minePrefab;
+    [SerializeField]
     private Transform[] spawnPoints;
     private bool respawningHealth = false;
     private bool respawningFirerate = false;
     private bool respawningDummy = false;
+    private bool respawningMine = false;
     private Vector3 dummySpawnLocation = new(11.5f, 0, -55);
     private void Start()
     {
+        //spawns thing that you can destroy in armory
+        Instantiate(minePrefab, spawnPoints[3].transform.position, Quaternion.Euler(0, 270, 0));
         Instantiate(dummyPrefab, spawnPoints[2].transform.position, Quaternion.Euler(0,270,0));
         Instantiate(healthPrefab, spawnPoints[1].transform.position, Quaternion.identity);
         Instantiate(fireRatePrefab, spawnPoints[0].transform.position, Quaternion.identity);    
@@ -28,6 +34,8 @@ public class ArmoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Look how many mines are active in the scene(did not want to add an unecessary tag for just one scene, and since there are no inner walls in armory i tagged it thus)
+        mine = GameObject.FindGameObjectsWithTag("InnerWalls").Length;
         //Look how many health pickups are active in the scene
         pickupHealth = GameObject.FindGameObjectsWithTag("PickupHealth").Length;
         //Look how many firerate pickups are active in the scene
@@ -52,12 +60,23 @@ public class ArmoryManager : MonoBehaviour
             Invoke(nameof(RespawnDummy), 5);
             respawningDummy = true;
         }
+        if (mine < 1 && !respawningMine)
+        {
+            Invoke(nameof(RespawnMine), 5);
+            respawningMine = true;
+        }
     }
     private void RespawnHealthPickup()
     {
         //Spawns a health pickup at the southernmost pickup spawnpoint
         Instantiate(healthPrefab, spawnPoints[1].transform.position, Quaternion.identity);    
         respawningHealth = false;
+    }
+    private void RespawnMine()
+    {
+        //Spawns a health pickup at the southernmost pickup spawnpoint
+        Instantiate(minePrefab, spawnPoints[3].transform.position, Quaternion.identity);
+        respawningMine = false;
     }
     private void RespawnFireRatePickup()
     {

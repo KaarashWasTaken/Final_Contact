@@ -916,6 +916,8 @@ GameObject:
   - component: {fileID: 2691087260143173167}
   - component: {fileID: 5481940225885574436}
   - component: {fileID: 6205240099165245169}
+  - component: {fileID: 4131884535051118288}
+  - component: {fileID: 1041763642800886203}
   m_Layer: 8
   m_Name: a_AlienBomber_run
   m_TagString: Enemy
@@ -1018,6 +1020,46 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.13, z: 0}
+--- !u!114 &4131884535051118288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764022643548388795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80c1194277016b4496c37cdd0d2678a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomberDamage: 60
+  explosionRadius: 5
+  timeToExplosion: 0.5
+  navMeshAgent: {fileID: 0}
+  isExploding: 0
+  explosion: {fileID: 0}
+--- !u!195 &1041763642800886203
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764022643548388795}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 15
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 720
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.15
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4447698653977417320
 GameObject:
   m_ObjectHideFlags: 0

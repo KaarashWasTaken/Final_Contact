@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
     }
     public void Restart()
     {
+        //restarting the game from armory
         GameObject[] players = GameObject.FindGameObjectsWithTag("PlayerDown");
         foreach (GameObject player in players) 
         {
@@ -35,6 +36,7 @@ public class GameOver : MonoBehaviour
     }
     public void MainMenu()
     {
+        //takes you to main menu, resetting the scene you where in
         GameObject[] players = GameObject.FindGameObjectsWithTag("PlayerDown");
         foreach (GameObject player in players)
         {

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2047302651567504031}
   - component: {fileID: 9008022089767296814}
-  - component: {fileID: 8626321652184728251}
   m_Layer: 0
   m_Name: AR
   m_TagString: AR
@@ -56,21 +55,10 @@ MonoBehaviour:
   coolingEffect: 0.01
   heatEffect: 1
   heat: 0
-  shootSpread: 7
+  shootSpreadMoving: 7
+  shootSpreadStill: 3
   muzzleFlash: {fileID: 7759943534672409878}
---- !u!65 &8626321652184728251
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230280963014658921}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  damage: 0
 --- !u!1 &3387229887173389743
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +174,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -5525724687689272198, guid: 45abd1c13f8d121459c9e044b49f6c50, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c12175c41c085f44e9c20eb0e20578d0, type: 2}
+    - target: {fileID: -5525724687689272198, guid: 45abd1c13f8d121459c9e044b49f6c50, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab8496ddbc731374698ab9080ff6630f, type: 2}
     - target: {fileID: -3172719997896002499, guid: 45abd1c13f8d121459c9e044b49f6c50, type: 3}
       propertyPath: m_Layer
       value: 9

@@ -16,11 +16,11 @@ public class EnemyNavMeshMelee : MonoBehaviour
     private void Start()
     {
         currentTarget = GameObject.Find("TempTarget");
-        rb= GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     private void Awake()
     {
-        navMeshAgent= GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -37,7 +37,8 @@ public class EnemyNavMeshMelee : MonoBehaviour
             }
             if (!wandering && !isAttacking && !chasing)
             {
-                Invoke(nameof(Chase), 0);
+                chasing = true;
+                navMeshAgent.isStopped = false;
             }
             players = GameObject.FindGameObjectsWithTag("Player");
             foreach (GameObject g in players)
@@ -90,12 +91,5 @@ public class EnemyNavMeshMelee : MonoBehaviour
     {
         slashEffect.Stop();
         isAttacking = false;
-        Debug.Log("AttackCdstopped");
-    }
-    private void Chase()
-    {
-        chasing = true;
-        Debug.Log("Chasing");
-        navMeshAgent.isStopped= false;
     }
 }

@@ -7,34 +7,14 @@ public class BossManager : MonoBehaviour
 {
     public Transform[] SpawnPoints;
     public GameObject[] EnemyPrefabs;
-    //[SerializeField]
-    //private int baseTurretCount = 20;
-    //private readonly int baseEnemyLimit = 15;
-    //[SerializeField]
-    //private int enemyLimit;
     public int turrets;
-    //public int enemyLevelCount;
-    //[SerializeField]
-    //private int enemySpawnCount;
-    //[SerializeField]
-    //private float spawnCooldown = 0.25f;
     public bool bossAttacking = false;
     public bool turretsActive = false;
     private bool switchStage = true;
-    private float bossHealth;
-
-    //public enum BossStage
-    //{
-    //    Turrets,
-    //    Boss
-    //}
-    //public BossStage activeStage;
+    public float bossHealth;
     private void Start()
     {
-        //firstSpawn = true;
-        //activeStage = BossStage.Turrets;
         turretsActive = true;
-        bossHealth = GetComponentInChildren<EnemyBossStandard>().health;
     }
     private void Update()
     {
