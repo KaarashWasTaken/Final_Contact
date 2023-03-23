@@ -24,16 +24,16 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("OnSceneLoaded: " + scene.name);
         scene = SceneManager.GetActiveScene();
         //Disables joining when the scene is not armory
-        //if (scene.name != "LVLArmory")
-        //{
-        //    playerManager.DisableJoining();
-        //    UpgradeManager.inArmory = false;
-        //}
-        //if (scene.name == "LVLArmory")
-        //{
-        //    playerManager.EnableJoining();
-        //    UpgradeManager.inArmory = true;
-        //}
+        if (scene.name != "LVLArmory")
+        {
+            playerManager.DisableJoining();
+            UpgradeManager.inArmory = false;
+        }
+        if (scene.name == "LVLArmory")
+        {
+            playerManager.EnableJoining();
+            UpgradeManager.inArmory = true;
+        }
         players = GameObject.FindGameObjectsWithTag("Player");
         Debug.Log(players.Length);
         //Loops through the players and set them to unready
@@ -43,6 +43,7 @@ public class PlayerManager : MonoBehaviour
             g.GetComponent<PlayerController>().StartPos();
             g.GetComponent<playerBehaviour>().health = g.GetComponent<playerBehaviour>().maxHealth;
         }
+
         UpgradeManager.upgradeMenuOpened = false;
     }
     public void CheckIfAllDown()

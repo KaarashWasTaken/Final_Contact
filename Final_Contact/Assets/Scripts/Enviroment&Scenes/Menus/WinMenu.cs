@@ -16,6 +16,7 @@ public class WinMenu : MonoBehaviour
     public GameObject QuitButton;
     private void Awake()
     {
+        //selects first button
         EventSystem.current.SetSelectedGameObject(firstButton);
     }
     public void LoadMainMenu()
@@ -25,6 +26,7 @@ public class WinMenu : MonoBehaviour
     }
     public void LoadCredits()
     {
+        //shows credits and pops up a button to get you back
         credits.SetActive(true);
         RemoveCreditsButton.SetActive(true);
         MainMenuButton.SetActive(false);
@@ -34,6 +36,7 @@ public class WinMenu : MonoBehaviour
     }
     public void DeloadCredits()
     {
+        //shows all buttons an removes credits
         credits.SetActive(false);
         RemoveCreditsButton.SetActive(false);
         MainMenuButton.SetActive(true);

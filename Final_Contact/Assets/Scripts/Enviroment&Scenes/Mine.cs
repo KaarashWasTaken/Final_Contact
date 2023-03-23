@@ -42,7 +42,7 @@ public class Mine : MonoBehaviour
         for (int i = 0; i < numberProjectiles; i++)
         {
             FiringPoint.Rotate(0, 0, angleIncrease);
-            
+            Debug.Log(FiringPoint.rotation);
             Instantiate(projectilePrefab, FiringPoint.position, FiringPoint.rotation);
         }
     }

@@ -26,7 +26,7 @@ public class ArmoryManager : MonoBehaviour
     private void Start()
     {
         //spawns thing that you can destroy in armory
-        Instantiate(minePrefab, spawnPoints[3].transform.position, Quaternion.Euler(0, 270, 0));
+        Instantiate(minePrefab, spawnPoints[3].transform.position, spawnPoints[3].transform.rotation);
         Instantiate(dummyPrefab, spawnPoints[2].transform.position, Quaternion.Euler(0,270,0));
         Instantiate(healthPrefab, spawnPoints[1].transform.position, Quaternion.identity);
         Instantiate(fireRatePrefab, spawnPoints[0].transform.position, Quaternion.identity);    

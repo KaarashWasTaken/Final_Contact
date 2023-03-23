@@ -13,7 +13,6 @@ public class UpgradeMenu : MonoBehaviour
     public bool upgradeMenuOpen;
     private void Update()
     {
-        Debug.Log(upgradeMenu.activeSelf + " menu state");
         if(upgradeMenu.activeSelf)
         {
             upgradeMenuOpen= true;
@@ -22,10 +21,8 @@ public class UpgradeMenu : MonoBehaviour
     }
     private void CheckIfButtonSelected()
     {
-        Debug.Log(eventSystem.currentSelectedGameObject.activeSelf + " button state");
         if(eventSystem.currentSelectedGameObject == null || !eventSystem.currentSelectedGameObject.activeSelf)
         {
-            Debug.Log("none selected");
             for(int i = 0; i < buttons.Length; i++)
             {
                 if (buttons[i].activeSelf)
