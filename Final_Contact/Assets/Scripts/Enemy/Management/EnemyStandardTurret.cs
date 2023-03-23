@@ -14,6 +14,16 @@ public class EnemyStandardTurret : MonoBehaviour
     private bool dissolve = false;
     public ParticleSystem deathSpark;
     private GameObject[] players;
+
+    private void Start()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
+        for (int i = 0; i <= players.Length; i++)
+        {
+            health += 50;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,11 +31,7 @@ public class EnemyStandardTurret : MonoBehaviour
         {
             Death();
         }
-        players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
-        for (int i = 0; i <= players.Length; i++)
-        {
-            health += 50;
-        }
+        
     }
     public void Death()
     {
