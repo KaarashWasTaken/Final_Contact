@@ -20,7 +20,28 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
+    public void Restart()
+    {
+        //restarting the game from armory
+        Time.timeScale = 1f;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            Destroy(player.transform.parent.gameObject);
+        }
+        GameObject[] playersDowned = GameObject.FindGameObjectsWithTag("PlayerDown");
+        foreach (GameObject player in playersDowned)
+        {
+            Destroy(player.transform.parent.gameObject);
+        }
+        Destroy(GameObject.Find("PlayerManager"));
+        Destroy(GameObject.Find("Menus"));
+        pauseMenuUI.SetActive(false);
+        eventSystem.SetActive(false);
+        SceneManager.LoadScene("LVLArmory");
+        paused = false;
 
+    }
     public void Pause()
     {
         eventSystem.SetActive(true);

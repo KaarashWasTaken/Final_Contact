@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class BossManager : MonoBehaviour
     public bool turretsActive = false;
     private bool switchStage = true;
     private float bossHealth;
+    public Image healthBar;
+    public Image healthBar2;
 
     //public enum BossStage
     //{
@@ -35,9 +38,12 @@ public class BossManager : MonoBehaviour
         //activeStage = BossStage.Turrets;
         turretsActive = true;
         bossHealth = GetComponentInChildren<EnemyBossStandard>().health;
+
     }
     private void Update()
     {
+        healthBar.fillAmount = Mathf.Clamp(GetComponentInChildren<EnemyBossStandard>().health/bossHealth, 0, 1);
+        healthBar2.fillAmount = Mathf.Clamp(GetComponentInChildren<EnemyBossStandard>().health / bossHealth, 0, 1);
         if (GetComponentInChildren<EnemyBossStandard>().health <= 0.75 * bossHealth && GetComponentInChildren<EnemyBossStandard>().health >= 0.50 * bossHealth && switchStage)
         {
             switchStage = false;

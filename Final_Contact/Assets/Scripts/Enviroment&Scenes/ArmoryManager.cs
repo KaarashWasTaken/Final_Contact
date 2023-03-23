@@ -21,6 +21,7 @@ public class ArmoryManager : MonoBehaviour
     private Vector3 dummySpawnLocation = new(11.5f, 0, -55);
     private void Start()
     {
+        //spawns thing that you can destroy in armory
         Instantiate(dummyPrefab, spawnPoints[2].transform.position, Quaternion.Euler(0,270,0));
         Instantiate(healthPrefab, spawnPoints[1].transform.position, Quaternion.identity);
         Instantiate(fireRatePrefab, spawnPoints[0].transform.position, Quaternion.identity);    
