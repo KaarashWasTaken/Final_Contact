@@ -12,6 +12,7 @@ public class BossManager : MonoBehaviour
     public bool turretsActive = false;
     private bool switchStage = true;
     public float bossHealth;
+    
     private void Start()
     {
         turretsActive = true;
@@ -43,7 +44,6 @@ public class BossManager : MonoBehaviour
             bossAttacking = true;
             turretsActive = false;
         }
-        //Debug.Log(bossAttacking);
      
         //Looks through the scene if there are any players, doesnt spawn any enemies unless players exist
     }
