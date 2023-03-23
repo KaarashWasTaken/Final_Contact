@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sk_AlienBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8957e02bae67b1c4ba5c6b002846e809, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: df176b9850f72ce46891fd3748137877, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8957e02bae67b1c4ba5c6b002846e809, type: 3}
 --- !u!1 &7444605073463671846 stripped
@@ -155,6 +159,22 @@ MonoBehaviour:
   health: 2000
   dissolveMaterial: {fileID: 2100000, guid: 79ae8aa4c72a2b740874d06a0138c43f, type: 2}
   deathSpark: {fileID: 0}
+--- !u!114 &6144792348833323090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444605073463671846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0258439581af946b4888bf73a53c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDistance: 0
+  attackCD: 2
+  bossStartingPoint: {fileID: 1324227976282770241, guid: b3a382151f507f64e9254ed9120e72ae, type: 3}
+  shield: {fileID: 0}
 --- !u!195 &8005837738726601475
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -191,22 +211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCD: 1
   damage: 50
---- !u!114 &6144792348833323090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7444605073463671846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa0258439581af946b4888bf73a53c8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDistance: 0
-  attackCD: 2
-  bossStartingPoint: {fileID: 1324227976282770241, guid: b3a382151f507f64e9254ed9120e72ae, type: 3}
-  shield: {fileID: 0}
 --- !u!4 &7789921632049374876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8957e02bae67b1c4ba5c6b002846e809, type: 3}

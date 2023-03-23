@@ -5,21 +5,16 @@ using UnityEngine;
 public class EnemyBossStandard : MonoBehaviour
 {
     private GameObject[] players;
-    public float health = 2000; // boss health vs 1 player
-    public Material dissolveMaterial;
-    private MaterialPropertyBlock propBlock;
-    private Renderer[] _renderer;
-    private float dissolveValue = 0.1f;
-    private float dissolveSpeed = 0.05f;
-    private bool dissolve = false;
+    public float health = 1000; // boss health vs 1 player
     public ParticleSystem deathSpark;
+    public static bool isDead = false;
 
     private void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
         foreach (GameObject g in players)
         {
-            health += 250;
+            health += 1000;
         }
     }
 
@@ -29,27 +24,14 @@ public class EnemyBossStandard : MonoBehaviour
         if (health <= 0)
         {
             Death();
-            WinScreen();
         }
         
     }
     public void Death()
     {
-        if (!dissolve)
-        {
-            _renderer = GetComponentsInChildren<Renderer>();
-            propBlock = new MaterialPropertyBlock();
-            dissolve = true;
-            propBlock.SetFloat("_Dissolve_Amount", 0);
-        }
-        foreach (Renderer g in _renderer)
-        {
-            g.GetPropertyBlock(propBlock);
-            g.material = dissolveMaterial;
-            propBlock.SetFloat("_Dissolve_Amount", dissolveValue += Time.deltaTime * dissolveSpeed);
-            g.SetPropertyBlock(propBlock);
-        }
-        Destroy(transform.parent.gameObject, 2.5f);
+        isDead= true;
+        //Implement escape notification below
+        Debug.Log("Get to the cockpit and escape!");
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -62,10 +44,5 @@ public class EnemyBossStandard : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-    }
-    private void WinScreen()
-    {
-        // Trigger win screen here
-        Debug.Log("YOU WIN!!!");
     }
 }
