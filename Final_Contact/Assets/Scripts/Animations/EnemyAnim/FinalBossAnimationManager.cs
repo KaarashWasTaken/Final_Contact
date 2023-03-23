@@ -45,5 +45,12 @@ public class FinalBossAnimationManager : MonoBehaviour
         {
             animator.SetBool("isDead", true);
         }
+        if (!finalBoss.navMeshAgent.isStopped)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+            animator.SetBool("isWalking", false);
+
     }
 }

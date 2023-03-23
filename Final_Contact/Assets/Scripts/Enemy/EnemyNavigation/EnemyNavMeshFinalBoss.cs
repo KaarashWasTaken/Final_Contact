@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyNavMeshFinalBoss : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private GameObject[] players;
     private GameObject currentTarget;
     public bool bossReaction = false;
@@ -43,14 +43,17 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
             BossShielded();
             chasing= false;
             if (bossAtBase)
+            {
                 transform.LookAt(bossLookPos);
+                Debug.Log("Setting boss look at");
+            }
         }
         if (GetComponentInParent<BossManager>().bossAttacking == true) // boss stage boss
         {
             BossAttack();
             if(!bossReacted)
                 bossReaction= true;
-            Invoke(nameof(EndReaction), 2f);
+            Invoke(nameof(EndReaction), 4f);
             if (bossReaction)
             {
                 Debug.Log("agent stopped");
