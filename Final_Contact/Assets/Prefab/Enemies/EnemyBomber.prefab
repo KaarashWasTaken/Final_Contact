@@ -916,8 +916,6 @@ GameObject:
   - component: {fileID: 2691087260143173167}
   - component: {fileID: 5481940225885574436}
   - component: {fileID: 6205240099165245169}
-  - component: {fileID: 4131884535051118288}
-  - component: {fileID: 1041763642800886203}
   m_Layer: 8
   m_Name: a_AlienBomber_run
   m_TagString: Enemy
@@ -941,7 +939,7 @@ Transform:
   - {fileID: 3182908112263977048}
   - {fileID: 9067954787900953467}
   m_Father: {fileID: 8085483042681362131}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7608693988898897275
 Animator:
@@ -1020,46 +1018,6 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.13, z: 0}
---- !u!114 &4131884535051118288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3764022643548388795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80c1194277016b4496c37cdd0d2678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bomberDamage: 60
-  explosionRadius: 5
-  timeToExplosion: 0.5
-  navMeshAgent: {fileID: 0}
-  isExploding: 0
-  explosion: {fileID: 0}
---- !u!195 &1041763642800886203
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3764022643548388795}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 15
-  m_Acceleration: 100
-  avoidancePriority: 50
-  m_AngularSpeed: 720
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.15
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &4447698653977417320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,8 +1943,8 @@ Transform:
   m_LocalScale: {x: 3, y: 5, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 5307296056297163980}
   - {fileID: 4573315305824724737}
+  - {fileID: 5307296056297163980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2027,7 +1985,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0
+  m_BaseOffset: 0.11
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &8871668739604837507
@@ -2158,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3215379505577715714, guid: 4e402d001954aca498956a2305ecd1c6, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3215379505577715714, guid: 4e402d001954aca498956a2305ecd1c6, type: 3}
       propertyPath: m_LocalScale.x
