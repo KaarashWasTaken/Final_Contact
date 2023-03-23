@@ -19,8 +19,9 @@ public class ArmoryNextLevel : MonoBehaviour
             //Sets the bool ready in PlayerController to true
             other.GetComponent<PlayerController>().ready = true;
             readyPlayers++;//Adds 1 to readyPlayers
+            GameObject[] downedPlayers = GameObject.FindGameObjectsWithTag("PlayerDown");
             //If all players are ready the following if statement is run
-            if (readyPlayers >= nrOfPlayers)
+            if (readyPlayers >= nrOfPlayers && downedPlayers.Length <= 0)
             {
                 //Opens level select menu
                 GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
