@@ -17,6 +17,7 @@ public class NextLevel : MonoBehaviour
         //Sets the value of nrOfPlayers to the amount of objects that have the tag Player
         nrOfPlayers = GameObject.FindGameObjectsWithTag("Player").Length;
         enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
+        GameObject[] downedPlayers = GameObject.FindGameObjectsWithTag("PlayerDown");
         //Checks if the trigger is a player, if the player isn't ready and if the player has a weapon equipped
         if (other.CompareTag("Player") && !other.GetComponent<PlayerController>().ready && enemyManager.enemyLevelCount <= 0)
         {
@@ -24,11 +25,10 @@ public class NextLevel : MonoBehaviour
             other.GetComponent<PlayerController>().ready = true;
             readyPlayers++;//Adds 1 to readyPlayers
             //If all players are ready the following if statement is run
-            if (readyPlayers >= nrOfPlayers)
+            if (readyPlayers >= nrOfPlayers && downedPlayers.Length <= 0)
             {
                 //Opens level select menu
                 GameObject.FindWithTag("LevelSelect").GetComponent<NextLevelSelect>().Selection();
-                Debug.Log("Choose Level");
             }
         }
         else if(other.CompareTag("Player") && enemyManager.enemyLevelCount > 0 && !popupActive)
