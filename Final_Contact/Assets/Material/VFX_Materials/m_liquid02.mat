@@ -23,7 +23,9 @@ Material:
   m_Name: m_liquid02
   m_Shader: {fileID: -6465566751694194690, guid: 0fa20e7e4097b754789b0adc0660efa2, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _RECEIVE_SHADOWS_OFF
+  - _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -59,13 +61,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 1
+    - _Blend: 0
+    - _CastShadows: 0
+    - _Cull: 2
+    - _DstBlend: 10
     - _Freshel_Scale: 0.95
     - _Fresnel_Intensity: 3.6
     - _Intersection_Fade_Intensity: 3.5
     - _Lower_Highlight_Intensity: 12
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReceiveShadows: 0
+    - _SrcBlend: 5
+    - _Surface: 1
     - _Upper_Highlight_Intensity: 1.4
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _Base_Color: {r: 0.18822773, g: 0.7824369, b: 0.77743816, a: 0}
     - _Color: {r: 16.067644, g: 157.5865, b: 142.13684, a: 0}
