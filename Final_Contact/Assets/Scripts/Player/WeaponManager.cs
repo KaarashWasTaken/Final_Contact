@@ -152,6 +152,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void DeactivateFiringSpeedBonus()
     {
+        //sets firingspeed back to normal
         if (playerWeapon == EquippedWeapon.AR)
         {
             gameObject.GetComponentInChildren<AR>().firingspeed = originalFiringSpeed;
@@ -197,6 +198,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void Drop()
     {
+        //if the game isnt paused you can drop you weapon in the armory
         if (SceneManager.GetActiveScene().name == "LVLArmory" && Time.timeScale != 0)
         {
             Debug.Log("drop");
