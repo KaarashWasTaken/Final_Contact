@@ -8,14 +8,16 @@ public class EnemyBossStandard : MonoBehaviour
     public float health = 1000; // boss health vs 1 player
     public ParticleSystem deathSpark;
     public static bool isDead = false;
-
+    public static float maxHealth;
     private void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
-        foreach (GameObject g in players)
+        for(int i = 0; i <= players.Length; i++)
         {
             health += 1000;
         }
+        maxHealth= health;
+        GetComponentInParent<BossManager>().bossHealth = health;
     }
 
     // Update is called once per frame
