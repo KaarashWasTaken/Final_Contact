@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class AllEnemiesKilled : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public static bool opened = false;
+    public GameObject clearedCanvas;
     // Update is called once per frame
     void Update()
     {
-        
+        if(!UpgradeManager.inArmory)
+        {
+            if(GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !opened)
+            {
+                opened= true;
+                clearedCanvas.SetActive(true);
+                Invoke(nameof(CloseCanvas), 5);
+            }
+        }
+    }
+    private void CloseCanvas()
+    {
+        clearedCanvas.SetActive(false);
     }
 }

@@ -43,7 +43,7 @@ public class PlayerManager : MonoBehaviour
             g.GetComponent<PlayerController>().StartPos();
             g.GetComponent<playerBehaviour>().health = g.GetComponent<playerBehaviour>().maxHealth;
         }
-
+        AllEnemiesKilled.opened = false;
         UpgradeManager.upgradeMenuOpened = false;
     }
     public void CheckIfAllDown()
