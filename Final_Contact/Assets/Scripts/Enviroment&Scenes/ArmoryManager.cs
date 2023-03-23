@@ -34,9 +34,8 @@ public class ArmoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Look how many health pickups are active in the scene
+        //Look how many mines are active in the scene(did not want to add an unecessary tag for just one scene, and since there are no inner walls in armory i tagged it thus)
         mine = GameObject.FindGameObjectsWithTag("InnerWalls").Length;
-        Debug.Log(mine);
         //Look how many health pickups are active in the scene
         pickupHealth = GameObject.FindGameObjectsWithTag("PickupHealth").Length;
         //Look how many firerate pickups are active in the scene

@@ -361,8 +361,8 @@ MonoBehaviour:
   FiringPoint: {fileID: 1806330304112039577}
   projectilePrefab: {fileID: 8590623308785216238, guid: 06383d9e005c7bd4580d38fcb911b6ef, type: 3}
   numberProjectiles: 40
---- !u!135 &196181828736465262
-SphereCollider:
+--- !u!136 &7148191181748036270
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -371,9 +371,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0.5}
+  m_Radius: 0.5548342
+  m_Height: 3
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.00000002980231, z: 1}
 --- !u!4 &5233526505746385169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6118ec04d7c2f334288e027487ddd89a, type: 3}
