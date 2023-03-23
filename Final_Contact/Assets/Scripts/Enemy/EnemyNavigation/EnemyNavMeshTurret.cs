@@ -56,7 +56,7 @@ public class EnemyNavMeshTurret : MonoBehaviour
     {
         transform.LookAt(currentTarget.transform.position);
         navMeshAgent.isStopped = true;
-        gameObject.GetComponent<EnemyShoot>().SpreadShoot();
+        gameObject.GetComponent<EnemyTurretShoot>().SpreadShoot();
     }
 
 }
