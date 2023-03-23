@@ -19,7 +19,7 @@ public class EnemyStandardTurret : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
         for (int i = 0; i <= players.Length; i++)
         {
-            health += 50;
+            health += 100;
         }
     }
 
