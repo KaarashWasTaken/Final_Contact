@@ -40,6 +40,8 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
        if(GetComponentInParent<BossManager>().bossAttacking == false) // boss stage turret
         {
             bossReacted = false;
+            if(navMeshAgent.isStopped)
+                navMeshAgent.isStopped = false;
             BossShielded();
             chasing= false;
             if (bossAtBase)

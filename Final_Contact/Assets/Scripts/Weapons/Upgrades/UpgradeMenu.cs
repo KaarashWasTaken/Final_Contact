@@ -48,7 +48,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (weaponManager.playerWeapon == WeaponManager.EquippedWeapon.AR)
         {
-            weaponManager.gameObject.GetComponentInChildren<AR>().damage += 4f;
+            weaponManager.gameObject.GetComponentInChildren<AR>().damage += 5f;
         }
         if (weaponManager.playerWeapon == WeaponManager.EquippedWeapon.Shotgun)
         {
@@ -56,19 +56,19 @@ public class UpgradeMenu : MonoBehaviour
         }
         if (weaponManager.playerWeapon == WeaponManager.EquippedWeapon.MG)
         {
-            weaponManager.gameObject.GetComponentInChildren<MG>().damage += 2.5f;
+            weaponManager.gameObject.GetComponentInChildren<MG>().damage += 5f;
         }
         if (weaponManager.playerWeapon == WeaponManager.EquippedWeapon.SMG)
         {
-            weaponManager.gameObject.GetComponentInChildren<SMG>().damage += 3f;
+            weaponManager.gameObject.GetComponentInChildren<SMG>().damage += 4f;
         }
         manager.SetDMGInactive();
         MenuClose();
     }
     public void HPUpgrade()
     {
-        player.GetComponent<playerBehaviour>().maxHealth += 25;
-        player.GetComponent<playerBehaviour>().health += 25;
+        player.GetComponent<playerBehaviour>().maxHealth += 50;
+        player.GetComponent<playerBehaviour>().health += 50;
         manager.SetHPInactive();
         MenuClose();
     }

@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private int baseEnemyCount = 20;
     [SerializeField]
-    private readonly int baseEnemyLimit = 15;
+    private int baseEnemyLimit = 15;
     [SerializeField]
     private int enemyLimit;
     public int enemies;
@@ -41,7 +41,7 @@ public class EnemyManager : MonoBehaviour
             else if (firstSpawn) 
             {
                 enemyLevelCount = baseEnemyCount * GameObject.FindGameObjectsWithTag("Player").Length;
-                enemyLimit = baseEnemyLimit * GameObject.FindGameObjectsWithTag("Player").Length;
+                enemyLimit = baseEnemyLimit + (baseEnemyLimit /2) * GameObject.FindGameObjectsWithTag("Player").Length;
                 enemySpawnCount = enemyLevelCount;
                 if(SceneManager.GetActiveScene().name == "LVL3Miniboss")
                 {
