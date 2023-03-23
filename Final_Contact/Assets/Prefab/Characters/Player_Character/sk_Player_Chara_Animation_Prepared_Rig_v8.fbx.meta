@@ -24,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -80,7 +80,477 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: sk_Player_Chara_Animation_Prepared_Rig_v8(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:Root_CTRL
+      parentName: sk_Player_Chara_Animation_Prepared_Rig_v8(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1003.58496, y: 1003.58496, z: 1003.58496}
+    - name: Rigged_player_chara:R_leg_CTRL
+      parentName: Rigged_player_chara:Root_CTRL
+      position: {x: 0.00021268506, y: 0.00013710384, z: -0.000114099625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.009964278, y: 0.009964278, z: 0.009964278}
+    - name: Rigged_player_chara:R_Toes_CTRL
+      parentName: Rigged_player_chara:R_leg_CTRL
+      position: {x: 0.0028440645, y: -0.0093527865, z: -0.023165053}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_leg_CTRL
+      parentName: Rigged_player_chara:Root_CTRL
+      position: {x: -0.00021227637, y: 0.00013710384, z: -0.000114099625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.009964278, y: 0.009964278, z: 0.009964278}
+    - name: Rigged_player_chara:L_Toes_CTRl
+      parentName: Rigged_player_chara:L_leg_CTRL
+      position: {x: -0.0016980296, y: -0.0093527865, z: -0.028949797}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:HIp_CTRL
+      parentName: Rigged_player_chara:Root_CTRL
+      position: {x: 0.000013111876, y: 0.00159339, z: -0.00006006842}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.009964278, y: 0.009964278, z: 0.009964278}
+    - name: Rigged_player_chara:Spine_CTRL
+      parentName: Rigged_player_chara:HIp_CTRL
+      position: {x: -0.0013158883, y: 0.035402384, z: 0.0060283765}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:Chest_CTRL
+      parentName: Rigged_player_chara:Spine_CTRL
+      position: {x: -0, y: 0.027106244, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:Head_CTRL
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: -0, y: 0.050912507, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_ARM_CTRL
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: 0.124275126, y: 0.012407193, z: 0.0051654135}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_Hand_CTRL
+      parentName: Rigged_player_chara:R_ARM_CTRL
+      position: {x: 0.010925486, y: 0.0005924401, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_ARM_CTRL
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: -0.12603156, y: 0.012407193, z: 0.0051654135}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_Hand_CTRL
+      parentName: Rigged_player_chara:L_ARM_CTRL
+      position: {x: -0.008278251, y: 0.0005924401, z: 0.00023032915}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_ARM_PoleVector
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: 0.09298465, y: 0.011317215, z: -0.03271011}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_ARM_PoleVector
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: -0.08670645, y: 0.011317215, z: -0.03271011}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:Breastplate_CTRL
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: -0, y: -0.005114897, z: 0.03410883}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:Backplate_CTRL
+      parentName: Rigged_player_chara:Chest_CTRL
+      position: {x: -0, y: -0.000082033555, z: -0.031453643}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_FrontSkirt_CTRL
+      parentName: Rigged_player_chara:HIp_CTRL
+      position: {x: 0.030771948, y: -0.048908938, z: 0.02956346}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_FrontSkirt_CTRL
+      parentName: Rigged_player_chara:HIp_CTRL
+      position: {x: -0.03205207, y: -0.050242834, z: 0.028244935}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_BackSkirt_CTRL
+      parentName: Rigged_player_chara:HIp_CTRL
+      position: {x: 0.030366376, y: -0.053908948, z: -0.011203571}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_BackSkirt_CTRL
+      parentName: Rigged_player_chara:HIp_CTRL
+      position: {x: -0.032994565, y: -0.05284915, z: -0.01029427}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_Leg_PoleVector
+      parentName: Rigged_player_chara:Root_CTRL
+      position: {x: 0.00021369134, y: 0.0008354666, z: 0.00040183176}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.009964278, y: 0.009964278, z: 0.009964278}
+    - name: Rigged_player_chara:R_Leg_PoleVector
+      parentName: Rigged_player_chara:Root_CTRL
+      position: {x: -0.00019677296, y: 0.0008354666, z: 0.00039350527}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.009964278, y: 0.009964278, z: 0.009964278}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      parentName: sk_Player_Chara_Animation_Prepared_Rig_v8(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 10, y: 10, z: 10}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Helmet
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter
+      position: {x: -0, y: 0.28122142, z: 0.009940332}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 32.10467, y: 32.10467, z: 32.10467}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_shoulderPads1
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.030868025, y: 0.25195125, z: -0.0044435505}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_R_ShoulderPad1
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_shoulderPads1
+      position: {x: -0.030868025, y: -0.25195125, z: 0.0044435505}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_L_ShoulderPad1
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_shoulderPads1
+      position: {x: -0.030868025, y: -0.25195125, z: 0.0044435505}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_shoulderPads2
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.032867525, y: 0.22993588, z: -0.006520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sk_R_ShoulderPad2
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_shoulderPads2
+      position: {x: -0.032867525, y: -0.22993588, z: 0.006520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sk_L_ShoulderPad2
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_shoulderPads2
+      position: {x: -0.032867525, y: -0.22993588, z: 0.006520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_upperArmPads
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.06255754, y: 0.22696221, z: -0.006520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_sk_L_UpperArmPads
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_upperArmPads
+      position: {x: -0.06255754, y: -0.22696221, z: 0.006520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_sk_R_UpperArmPads
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_upperArmPads
+      position: {x: -0.06255754, y: -0.22696221, z: 0.006520396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_gauntlets
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.10735834, y: 0.24143822, z: -0.00035558274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_sk_L_Gauntlet
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_gauntlets
+      position: {x: -0.10735834, y: -0.34030342, z: 0.00035558274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_sk_R_Gauntlet1
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_gauntlets
+      position: {x: -0.10735834, y: -0.34030342, z: 0.00035558274}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_gloveCovers
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.13414581, y: 0.23747091, z: 0.0070221587}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_sm_L_GloveCovers
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_gloveCovers
+      position: {x: -0.13414581, y: -0.23747091, z: -0.0070221587}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_sm_R_GloveCovers
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_gloveCovers
+      position: {x: -0.13414581, y: -0.23747091, z: -0.0070221587}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Skirt
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_stomachPlate
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_backPlate
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_chestPlate
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: -0, y: 0, z: -0.057542056}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PCLegs
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.016268492, y: 0.11843759, z: 0.0012436019}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_R_Legs
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PCLegs
+      position: {x: -0.016268492, y: -0.11843759, z: -0.0012436019}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.1781011, y: 1, z: 1.1781011}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_L_Legs
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PCLegs
+      position: {x: -0.016268492, y: -0.11843759, z: -0.0012436019}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.1781011, y: 1, z: 1.1781011}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Greaves
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: -0.019252159, y: 0.051837627, z: -0.0038235255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_R_Greaves
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Greaves
+      position: {x: 0.019252159, y: -0.051837627, z: 0.0038235255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_L_Greaves
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Greaves
+      position: {x: 0.019252159, y: -0.051837627, z: 0.0038235255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Boots
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_PlayerCharacter1
+      position: {x: 0.009656815, y: 0.020206101, z: 0.014780708}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_R_Boots
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Boots
+      position: {x: -0.009656815, y: -0.020206101, z: -0.014780708}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_L_Boots
+      parentName: Rigged_player_chara:modellingPC_0510_masterArmoured:sm_Boots
+      position: {x: -0.009656815, y: -0.020206101, z: -0.014780708}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:Hip
+      parentName: sk_Player_Chara_Animation_Prepared_Rig_v8(Clone)
+      position: {x: 0.012173548, y: 1.5981296, z: -0.05953744}
+      rotation: {x: -0.012755244, y: -0.01269823, z: -0.704594, w: 0.7093824}
+      scale: {x: 9.999997, y: 9.999999, z: 10.000006}
+    - name: Rigged_player_chara:Spine1
+      parentName: Rigged_player_chara:Hip
+      position: {x: -0.025123747, y: -0.0002689857, z: 0.0029627266}
+      rotation: {x: -0.00033955552, y: 0.02567336, z: 0.002094972, w: 0.9996681}
+      scale: {x: 1.0000012, y: 1.0000006, z: 1.0000001}
+    - name: Rigged_player_chara:Spine2
+      parentName: Rigged_player_chara:Spine1
+      position: {x: -0.032646216, y: 0.0003471661, z: -0.003004333}
+      rotation: {x: 0.03314019, y: -0.0013622586, z: -0.002313186, w: 0.99944717}
+      scale: {x: 1.0000014, y: 1.0000037, z: 1.000001}
+    - name: Rigged_player_chara:skel_Backplate
+      parentName: Rigged_player_chara:Spine2
+      position: {x: -0.0043064626, y: -0.0023632448, z: -0.024928775}
+      rotation: {x: -0.02765752, y: 0.01848015, z: 0.70466024, w: 0.70876485}
+      scale: {x: 0.99999976, y: 1, z: 0.99999976}
+    - name: Rigged_player_chara:Neck
+      parentName: Rigged_player_chara:Spine2
+      position: {x: -0.028303396, y: -0.0003578054, z: -0.0055207754}
+      rotation: {x: 0.000000007450581, y: -0.0000000037252903, z: -0.0012302354, w: 0.9999993}
+      scale: {x: 1.000002, y: 1.0000018, z: 0.9999997}
+    - name: Rigged_player_chara:L_Shoulder
+      parentName: Rigged_player_chara:Neck
+      position: {x: 0.011870816, y: -0.029353062, z: -0.0040693586}
+      rotation: {x: 0.086267985, y: -0.063173376, z: 0.69152445, w: -0.7143955}
+      scale: {x: 1.0000044, y: 1.000004, z: 0.9999991}
+    - name: Rigged_player_chara:L_Elbow
+      parentName: Rigged_player_chara:L_Shoulder
+      position: {x: 0.054733366, y: -0.0031553945, z: 0.0036709802}
+      rotation: {x: -0.0049426327, y: 0.09881565, z: -0.042680155, w: 0.9941778}
+      scale: {x: 1.0000026, y: 1.0000031, z: 1.0000014}
+    - name: Rigged_player_chara:L_wrist
+      parentName: Rigged_player_chara:L_Elbow
+      position: {x: 0.04119538, y: 0.0010727947, z: 0.0111674005}
+      rotation: {x: 0.11565458, y: -0.027920358, z: 0.035993703, w: 0.99224436}
+      scale: {x: 0.9999993, y: 0.9999991, z: 1.0000004}
+    - name: Rigged_player_chara:L_fingers
+      parentName: Rigged_player_chara:L_wrist
+      position: {x: 0.010779189, y: -0.00000016003435, z: 0.000000013680802}
+      rotation: {x: -0.00011146067, y: 0.0128609175, z: 0.008666443, w: 0.9998797}
+      scale: {x: 1.0000011, y: 1.0000006, z: 0.9999998}
+    - name: Rigged_player_chara:L_Fingertips
+      parentName: Rigged_player_chara:L_fingers
+      position: {x: 0.010788, y: -0.000095, z: 0.00241322}
+      rotation: {x: 0.7033756, y: -0.71081847, z: -0.000000012747478, w: 0.000000017695129}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.99999976}
+    - name: Rigged_player_chara:L_thumb
+      parentName: Rigged_player_chara:L_wrist
+      position: {x: 0.0024815283, y: 0.00097515987, z: 0.005218835}
+      rotation: {x: 0.2711843, y: -0.5339265, z: -0.44678897, w: 0.66465133}
+      scale: {x: 1.000001, y: 1.0000021, z: 1.0000002}
+    - name: Rigged_player_chara:L_thumbtip
+      parentName: Rigged_player_chara:L_thumb
+      position: {x: 0.0024369692, y: 0.007730708, z: -0.0034136353}
+      rotation: {x: -8.622598e-31, y: 0.40373462, z: 1.1382405e-14, w: 0.91487616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_Shoulder
+      parentName: Rigged_player_chara:Neck
+      position: {x: 0.012486464, y: 0.029096663, z: -0.0040693544}
+      rotation: {x: -0.6863785, y: 0.7179317, z: 0.044760246, w: -0.107029915}
+      scale: {x: 1.0000017, y: 1.0000002, z: 1.0000013}
+    - name: Rigged_player_chara:R_Elbow
+      parentName: Rigged_player_chara:R_Shoulder
+      position: {x: -0.054733373, y: 0.0031559018, z: -0.0036709786}
+      rotation: {x: -0.0045285127, y: 0.073285855, z: -0.045387782, w: 0.9962673}
+      scale: {x: 1.0000023, y: 0.9999997, z: 1.000003}
+    - name: Rigged_player_chara:R_wrist
+      parentName: Rigged_player_chara:R_Elbow
+      position: {x: -0.041195188, y: -0.0010727999, z: -0.011167393}
+      rotation: {x: 0.11323437, y: 0.05199573, z: 0.050428383, w: 0.9909245}
+      scale: {x: 0.9999995, y: 0.99999976, z: 1.000001}
+    - name: Assualt_rifle
+      parentName: Rigged_player_chara:R_wrist
+      position: {x: -0.0038051556, y: -0.0041411947, z: 0.0060002715}
+      rotation: {x: 0.99623734, y: -0.085427135, z: 0.011131823, w: 0.009457578}
+      scale: {x: 25, y: 25, z: 25}
+    - name: Bone
+      parentName: Assualt_rifle
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.6732519, y: -0.21617542, z: 0.21617542, w: 0.673252}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_end
+      parentName: Bone
+      position: {x: -0, y: 0.00057409285, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:R_fingers
+      parentName: Rigged_player_chara:R_wrist
+      position: {x: -0.010779703, y: 0, z: 0}
+      rotation: {x: -0.000111453206, y: 0.012860896, z: 0.008666068, w: 0.99987984}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000011}
+    - name: Rigged_player_chara:R_Fingertips
+      parentName: Rigged_player_chara:R_fingers
+      position: {x: -0.010787785, y: 0.00009471377, z: -0.002413226}
+      rotation: {x: 0.7033757, y: -0.7108183, z: 0.000000008294589, w: 0.000000009313222}
+      scale: {x: 0.9999995, y: 1.0000002, z: 0.9999999}
+    - name: Rigged_player_chara:R_thumb
+      parentName: Rigged_player_chara:R_wrist
+      position: {x: -0.0024817043, y: -0.0009752099, z: -0.005218809}
+      rotation: {x: 0.348382, y: -0.5563083, z: -0.41772038, w: 0.62822026}
+      scale: {x: 1.0000006, y: 0.99999994, z: 1.0000012}
+    - name: Rigged_player_chara:R_thumbtip
+      parentName: Rigged_player_chara:R_thumb
+      position: {x: -0.002436756, y: -0.0077307946, z: 0.0034133259}
+      rotation: {x: 0, y: 0.40373462, z: -0, w: 0.91487616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:head
+      parentName: Rigged_player_chara:Neck
+      position: {x: -0.01554764, y: -0.00029650735, z: 0.0070547885}
+      rotation: {x: -0.99984574, y: 0.014511746, z: -0.0001435943, w: 0.009895393}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000006}
+    - name: Rigged_player_chara:Scalp
+      parentName: Rigged_player_chara:head
+      position: {x: -0.028858956, y: -0.0012551873, z: -0.007720224}
+      rotation: {x: 0.70053595, y: -0.71361727, z: 4.6566123e-10, w: 0.000000017644195}
+      scale: {x: 0.99999946, y: 0.99999994, z: 1.0000002}
+    - name: Rigged_player_chara:skel_Breastplate
+      parentName: Rigged_player_chara:Spine2
+      position: {x: -0.00008889789, y: 0.00187357, z: 0.040304247}
+      rotation: {x: -0.03684448, y: -0.0000000016298143, z: -0.00000004777393, w: 0.99932104}
+      scale: {x: 1.0000008, y: 1.0000008, z: 0.9999992}
+    - name: Rigged_player_chara:R_Leg1
+      parentName: Rigged_player_chara:Hip
+      position: {x: 0.00068287255, y: 0.016556663, z: 0}
+      rotation: {x: -0.0060966746, y: 0.9992954, z: -0.018597988, w: 0.03202544}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1.0000005}
+    - name: Rigged_player_chara:skel_R_BackSkirt
+      parentName: Rigged_player_chara:R_Leg1
+      position: {x: -0.052119423, y: 0.013449839, z: 0.016071912}
+      rotation: {x: -0.004222712, y: -0.02757613, z: 0.0014659867, w: 0.9996097}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:skel_R_FrontSkirt
+      parentName: Rigged_player_chara:R_Leg1
+      position: {x: -0.051215865, y: 0.012382448, z: -0.024978789}
+      rotation: {x: -0.0042227227, y: -0.027576128, z: 0.0014659773, w: 0.9996097}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Rigged_player_chara:R_Leg2
+      parentName: Rigged_player_chara:R_Leg1
+      position: {x: -0.0758953, y: 0.0006906664, z: -0.001061066}
+      rotation: {x: 0.00010534286, y: 0.061171755, z: -0.007566182, w: 0.99809855}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000007}
+    - name: Rigged_player_chara:R_foot1
+      parentName: Rigged_player_chara:R_Leg2
+      position: {x: -0.070397295, y: -0.00039460763, z: 0.0124983955}
+      rotation: {x: -0.017589001, y: -0.014250092, z: -0.14478435, w: 0.9892043}
+      scale: {x: 1.0000013, y: 1.0000004, z: 1.0000015}
+    - name: Rigged_player_chara:R_foor2
+      parentName: Rigged_player_chara:R_foot1
+      position: {x: -0.010141568, y: -0.0016926016, z: -0.017875949}
+      rotation: {x: 0.0000000018626451, y: 0.0000000018626451, z: 0.08980559, w: 0.99595934}
+      scale: {x: 1.0000006, y: 1, z: 1.0000008}
+    - name: Rigged_player_chara:R_toe
+      parentName: Rigged_player_chara:R_foor2
+      position: {x: -0.0014754314, y: 0.0014256033, z: -0.01865842}
+      rotation: {x: 0.066333674, y: -0.99779755, z: -0.0000000016639744, w: -9.569652e-10}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rigged_player_chara:L_Leg1
+      parentName: Rigged_player_chara:Hip
+      position: {x: 0.00026352832, y: -0.016568663, z: 0}
+      rotation: {x: 0.018191706, y: -0.032260414, z: -0.018740624, w: 0.99913824}
+      scale: {x: 1.0000017, y: 1.0000002, z: 0.99999917}
+    - name: Rigged_player_chara:skel_L_FrontSkirt
+      parentName: Rigged_player_chara:L_Leg1
+      position: {x: 0.05255603, y: -0.012963728, z: 0.024009738}
+      rotation: {x: 0.032844152, y: -0.00078085053, z: 0.025293842, w: 0.9991401}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Rigged_player_chara:skel_L_BackSkirt
+      parentName: Rigged_player_chara:L_Leg1
+      position: {x: 0.05180221, y: -0.014895218, z: -0.014573323}
+      rotation: {x: 0.032844152, y: -0.00078085053, z: 0.025293842, w: 0.9991401}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Rigged_player_chara:L_Leg2
+      parentName: Rigged_player_chara:L_Leg1
+      position: {x: 0.076136686, y: -0.0014426586, z: 0.0010568225}
+      rotation: {x: 0.00010785647, y: 0.06117144, z: -0.007564988, w: 0.9980987}
+      scale: {x: 1, y: 1.0000005, z: 0.9999997}
+    - name: Rigged_player_chara:L_foot1
+      parentName: Rigged_player_chara:L_Leg2
+      position: {x: 0.07039737, y: 0.00039455472, z: -0.01249837}
+      rotation: {x: -0.013498825, y: -0.0069635343, z: -0.13662642, w: 0.9905062}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000001}
+    - name: Rigged_player_chara:L_foor2
+      parentName: Rigged_player_chara:L_foot1
+      position: {x: 0.010141536, y: 0.0016925934, z: 0.017875921}
+      rotation: {x: 0.0000000027939677, y: 0.000000009778887, z: 0.0898053, w: 0.9959594}
+      scale: {x: 0.9999995, y: 1.0000007, z: 0.9999998}
+    - name: Rigged_player_chara:L_toe
+      parentName: Rigged_player_chara:L_foor2
+      position: {x: 0.0014754251, y: -0.0014255712, z: 0.018658381}
+      rotation: {x: -0.06633371, y: 0.99779755, z: 0.0000000030546208, w: 0.000000010821384}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000005}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -91,7 +561,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: Rigged_player_chara:Hip
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
