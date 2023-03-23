@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyStandardTurret : MonoBehaviour
 {
@@ -12,12 +13,18 @@ public class EnemyStandardTurret : MonoBehaviour
     private float dissolveSpeed = 0.05f;
     private bool dissolve = false;
     public ParticleSystem deathSpark;
+    private GameObject[] players;
     // Update is called once per frame
     void Update()
     {
         if (health <= 0)
         {
             Death();
+        }
+        players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
+        for (int i = 0; i <= players.Length; i++)
+        {
+            health += 50;
         }
     }
     public void Death()
