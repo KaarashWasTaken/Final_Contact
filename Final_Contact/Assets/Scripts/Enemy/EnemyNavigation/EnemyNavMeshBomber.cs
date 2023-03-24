@@ -32,26 +32,25 @@ public class EnemyNavMeshBomber : MonoBehaviour
 
     private void Update()
     {
-        if (!dissolving)
+        if (!dissolving) // code will only run if bomber is alive
         {
-            //If the enemy doenst have a target or targets a downed player it will 
-            if (currentTarget == null || currentTarget.CompareTag("PlayerDown"))
+            if (currentTarget == null || currentTarget.CompareTag("PlayerDown")) // sets target to a temporary target if it is targeting a downed player or doesnt have a target
                 currentTarget = GameObject.Find("TempTarget");
-            if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isExploding)
+            if (currentTarget != gameObject.CompareTag("Player") && !wandering && !isExploding) //if current target is not a player invoke wander function immediately
             {
                 Invoke(nameof(Wander), 0);
             }
-            players = GameObject.FindGameObjectsWithTag("Player");
+            players = GameObject.FindGameObjectsWithTag("Player"); // fill players array with all gameobjects tagged player
             foreach (GameObject g in players)
             {
-                if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
+                if (Vector3.Distance(g.transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position)) // checks for closest player and sets it as the current target
                 {
                     currentTarget = g;
                 }
             }
-            if (currentTarget.CompareTag("Player") && !isExploding)
+            if (currentTarget.CompareTag("Player") && !isExploding) // when it has a player targeted and isnt exploding it moves towards the targeted player
                 navMeshAgent.destination = currentTarget.transform.position;
-            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 1f); //check for players and trigger explosion
+            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 1f); //checks for players within overlap sphere originating on the bomber and trigger explosion
             foreach (Collider c in colliders)
             {
                 if (c.gameObject.CompareTag("Player"))
@@ -88,7 +87,7 @@ public class EnemyNavMeshBomber : MonoBehaviour
     private void BomberExplode()
     {
         GameObject.Find("ge_bomberCloud01").GetComponent<ExplosionDissolve>().exploding = true;
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius); //check for players and do dmg
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius); //check for players and does dmg to them if they are within the sphere as well as setting bombers health to 0
         foreach (Collider c in colliders)
         {
             if (c.gameObject.CompareTag("Player"))
@@ -98,9 +97,6 @@ public class EnemyNavMeshBomber : MonoBehaviour
             }
             GetComponentInChildren<EnemyStandard>().health = 0;
             GetComponentInChildren<EnemyStandard>().dissolveSpeed = 0.2f;
-            //else
-            //    Destroy(gameObject, 0.55f);
-            //GetComponentInChildren<EnemyStandard>().Death();
         }
     }
 }
