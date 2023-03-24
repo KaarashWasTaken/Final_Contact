@@ -12,7 +12,8 @@ public class SpawnPopup : MonoBehaviour
         nrOfPlayers = GameObject.FindGameObjectsWithTag("Player").Length;
         if (nrOfPlayers != 0)
         {
-            Popup.SetActive(false);
+            Destroy(Popup);
         }
+        
     }
 }
