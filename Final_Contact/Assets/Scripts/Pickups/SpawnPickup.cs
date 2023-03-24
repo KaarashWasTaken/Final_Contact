@@ -13,13 +13,13 @@ public class SpawnPickup : MonoBehaviour
     public GameObject parentSpawnPoint;
     private void Start()
     {
-        Invoke(nameof(SpawnPickups), Random.Range(25, 45));
+        Invoke(nameof(SpawnPickups), Random.Range(5, 45));
     }
     public void StartSpawn()
     {
         if(!hasPickup && !isSpawningPickup)
         {
-            Invoke(nameof(SpawnPickups), Random.Range(25, 50));
+            Invoke(nameof(SpawnPickups), Random.Range(15, 35));
             isSpawningPickup = true;
         }
     }

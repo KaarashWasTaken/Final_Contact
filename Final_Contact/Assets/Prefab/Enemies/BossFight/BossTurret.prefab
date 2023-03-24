@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6618994190490985049}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: empty firing point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6300927998616153491}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: empty firing point2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,10 @@ PrefabInstance:
     - target: {fileID: 6038771538900810193, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
       propertyPath: m_Name
       value: ge_enemyMuzzleFlash01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038771538900810193, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6038771538900810198, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
       propertyPath: m_RootOrder
@@ -151,6 +155,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6038771539329431152, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038771539546727109, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038771539674485774, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
 --- !u!4 &4785196023908045932 stripped
@@ -173,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 6038771538900810193, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
       propertyPath: m_Name
       value: ge_enemyMuzzleFlash01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038771538900810193, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6038771538900810198, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
       propertyPath: m_RootOrder
@@ -218,6 +238,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6038771539329431152, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038771539546727109, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038771539674485774, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6038771539674485775, guid: c5a7fa78f1ce6ee4c849a8a65d2c9488, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.7
@@ -245,9 +277,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7352858271907079012}
     m_Modifications:
+    - target: {fileID: 1478498955078297032, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3644603743602870327, guid: ff233d6519c62704385137035d97bde9, type: 3}
       propertyPath: m_Name
       value: sk_Turret_boss_Triangulated
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644603743602870327, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702440557424514848, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755506101411499451, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803064052778917744, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4170310611444585101, guid: ff233d6519c62704385137035d97bde9, type: 3}
       propertyPath: m_RootOrder
@@ -316,6 +368,22 @@ PrefabInstance:
     - target: {fileID: 5003286108664594963, guid: ff233d6519c62704385137035d97bde9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251561805196507261, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913294154083518553, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994913102790244090, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968774504411432104, guid: ff233d6519c62704385137035d97bde9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff233d6519c62704385137035d97bde9, type: 3}
@@ -444,7 +512,7 @@ MonoBehaviour:
   FiringPoint1: {fileID: 6618994190490985049}
   FiringPoint2: {fileID: 6300927998616153491}
   projectilePrefab: {fileID: 491760456140334473, guid: 1caac775bcc1e034a95937972a728a75, type: 3}
-  firingspeed: 0.15
+  firingspeed: 0.2
   shootSpread: 25
   muzzleFlash1: {fileID: 4785196024690129335}
   muzzleFlash2: {fileID: 5216862800235222392}
