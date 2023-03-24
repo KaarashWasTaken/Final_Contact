@@ -18,7 +18,7 @@ public class EnemyBossStandard : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player"); // boss health increased by 150hp per extra player 
         for(int i = 0; i <= players.Length; i++)
         {
-            health += 1000;
+            health += 4000;
         }
         maxHealth= health;
         GetComponentInParent<BossManager>().bossHealth = health;
@@ -40,6 +40,7 @@ public class EnemyBossStandard : MonoBehaviour
         isDead= true;
         //Implement escape notification below
         CockPitPopup.SetActive(true);
+        GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemySpawnCount = 0;
     }
     private void OnCollisionEnter(Collision other)
     {

@@ -13,9 +13,6 @@ public class EnemyNavMeshTurret : MonoBehaviour
     private float maxDistance = 30;
     [SerializeField]
     private float currentDistance;
-    [SerializeField]
-    private float timeUntilWander;
-    private bool wandering = false;
     private bool dissolving;
 
     // Start is called before the first frame update

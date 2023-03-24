@@ -16,8 +16,7 @@ public class EnemyManager : MonoBehaviour
     private int enemyLimit;
     public int enemies;
     public int enemyLevelCount;
-    [SerializeField]
-    private int enemySpawnCount;
+    public int enemySpawnCount;
     [SerializeField]
     private float spawnCooldown = 0.25f;
     private float lastSpawn;
