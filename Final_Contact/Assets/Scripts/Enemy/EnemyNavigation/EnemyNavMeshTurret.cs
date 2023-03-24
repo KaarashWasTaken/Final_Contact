@@ -39,7 +39,7 @@ public class EnemyNavMeshTurret : MonoBehaviour
                 }
             }
             currentDistance = Vector3.Distance(currentTarget.transform.position, gameObject.transform.position);
-            if (currentDistance <= maxDistance && !wandering && EnemyNavMeshFinalBoss.bossAtBase == true)
+            if (currentDistance <= maxDistance && EnemyNavMeshFinalBoss.bossAtBase == true)
             {
                 ShootAtPlayer();
                 //Debug.Log("Turret firing");
