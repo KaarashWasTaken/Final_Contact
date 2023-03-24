@@ -22,11 +22,12 @@ public class Mine : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            Shoot();
+            Explode();
         }
     }
     private void OnCollisionEnter(Collision other)
     {
+        //all that the mine takes damage from
         if (other.gameObject.CompareTag("Projectile"))
         {
             health -= other.gameObject.GetComponent<MoveForward>().damage;
@@ -36,8 +37,9 @@ public class Mine : MonoBehaviour
             health -= other.gameObject.GetComponent<EnemyMoveForward>().damage;
         }
     }
-    public void Shoot()
+    public void Explode()
     {
+        //rotates the firing point 360 by increments firing a bullet every increment
         float angleIncrease = spread / (numberProjectiles - 1);
         for (int i = 0; i < numberProjectiles; i++)
         {
