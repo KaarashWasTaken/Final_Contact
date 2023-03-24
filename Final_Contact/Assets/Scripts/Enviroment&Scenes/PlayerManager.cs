@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -54,5 +55,9 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("GameOver");
             GameObject.Find("GameOver").GetComponent<GameOver>().Activate();
         }
+    }
+    private void Update()
+    {
+        Screen.SetResolution(1920, 1080, true);
     }
 }

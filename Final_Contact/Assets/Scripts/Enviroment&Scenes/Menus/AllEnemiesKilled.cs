@@ -11,7 +11,7 @@ public class AllEnemiesKilled : MonoBehaviour
     {
         if(!UpgradeManager.inArmory)
         {
-            if(GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !opened)
+            if(GameObject.Find("EnemyManager").GetComponent<EnemyManager>().enemyLevelCount <= 0 && !opened && !EnemyManager.firstSpawn)
             {
                 opened= true;
                 clearedCanvas.SetActive(true);
