@@ -111,9 +111,9 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
         navMeshAgent.speed = 24;
         navMeshAgent.destination = bossStartingPoint.position;
     }
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             navMeshAgent.isStopped = true;
             if (timeNow >= lastAttack + 2)
@@ -124,6 +124,11 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
                 Invoke(nameof(StopCD), 2);
             }
         }
+        if (other.CompareTag("BossShieldPosition"))
+        {
+            bossAtBase = true;
+            shield.SetActive(true);
+        }
     }
     private void StopCD()
     {
@@ -131,11 +136,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BossShieldPosition"))
-        {
-            bossAtBase = true;
-            shield.SetActive(true);
-        }
+        
     }
     private void OnTriggerExit(Collider other)
     {

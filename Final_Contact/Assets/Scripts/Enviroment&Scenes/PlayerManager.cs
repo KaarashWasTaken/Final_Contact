@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
         //Disables joining when the scene is not armory
         if (scene.name != "LVLArmory")
         {
-            playerManager.DisableJoining();
+            //playerManager.DisableJoining();
             UpgradeManager.inArmory = false;
         }
         if (scene.name == "LVLArmory")
@@ -44,8 +44,8 @@ public class PlayerManager : MonoBehaviour
             g.GetComponent<PlayerController>().StartPos();
             g.GetComponent<playerBehaviour>().health = g.GetComponent<playerBehaviour>().maxHealth;
         }
-        AllEnemiesKilled.opened = false;
         UpgradeManager.upgradeMenuOpened = false;
+        AllEnemiesKilled.opened = false;
     }
     public void CheckIfAllDown()
     {
@@ -55,9 +55,5 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("GameOver");
             GameObject.Find("GameOver").GetComponent<GameOver>().Activate();
         }
-    }
-    private void Update()
-    {
-        Screen.SetResolution(1920, 1080, true);
     }
 }
