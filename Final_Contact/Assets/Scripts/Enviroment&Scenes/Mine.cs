@@ -40,7 +40,7 @@ public class Mine : MonoBehaviour
     public void Explode()
     {
         //rotates the firing point 360 by increments firing a bullet every increment
-        float angleIncrease = spread / (numberProjectiles - 1);
+        float angleIncrease = spread / (numberProjectiles-1);
         for (int i = 0; i < numberProjectiles; i++)
         {
             FiringPoint.Rotate(0, 0, angleIncrease);
