@@ -79,6 +79,7 @@ public class WeaponManager : MonoBehaviour
     public void PickupWeapon(GameObject weapon)
     {
         //picks up weapons depending on tag
+        
         if (weapon.gameObject.CompareTag("AR"))
         {
             AR.SetActive(true);
