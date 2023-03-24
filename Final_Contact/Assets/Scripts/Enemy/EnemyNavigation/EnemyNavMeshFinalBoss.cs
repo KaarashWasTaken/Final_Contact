@@ -67,7 +67,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
 
     public void BossAttack()
     {
-        navMeshAgent.speed = 14;
+        navMeshAgent.speed = 18;
         //Debug.Log(currentTarget);
         if (!dying && !bossReaction)
         {
@@ -108,7 +108,7 @@ public class EnemyNavMeshFinalBoss : MonoBehaviour
     public void BossShielded()
     {
         bossReaction = false;
-        navMeshAgent.speed = 18;
+        navMeshAgent.speed = 24;
         navMeshAgent.destination = bossStartingPoint.position;
     }
     private void OnTriggerStay(Collider collision)
